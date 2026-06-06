@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage[justification=centering]{caption}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{hyperref, xurl}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage{needspace}
+\usepackage{xfrac}
+
+
+%Prevents footnotes from breaking across pages
+\interfootnotelinepenalty=10000
+
+%Link colors
+\hypersetup{
+    colorlinks = true,
+    linkcolor = black,
+    citecolor = black,
+    urlcolor = black
+}
+
+
+%custom colors 
+\definecolor{custom_green}{rgb}{0.0, 0.5, 0.0}
+\definecolor{custom_blue}{rgb}{0.2, 0.2, 0.6}
+\definecolor{custom_blue2}{rgb}{0.16, 0.32, 0.75}
+\definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+
+% Absolute value and norm bars command. Write \abs{x} or \norm{x}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert} 
+
+% new \oset macro:
+\makeatletter
+\newcommand{\oset}[3][0ex]{%
+  \mathrel{\mathop{#3}\limits^{
+    \vbox to#1{\kern-2\ex@
+    \hbox{$\scriptstyle#2$}\vss}}}}
+\makeatother
+
+%Real, complex, natural numbers etc.
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\CP}{\C P}
+
+% Custom command for fancy quotients
+\newcommand{\modulo}[2]{%
+  {#1}\raisebox{-2.5pt}{\scalebox{1.15}{\hspace{-1pt}$/$}}\raisebox{-3.5pt}{$#2$}
+}
+
+
+%Theorems, lemmas etc.
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{claim}{Claim}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+%Change default caption under figures/tables to be smaller
+\captionsetup[figure]{font=small}
+
+%Command for a headline in the middle of a subsection
+\newcommand{\headline}[1]{
+    \vspace{10pt}
+    \noindent{\large\textit{#1}}
+    \vspace{9pt}
+}
+
+
+\renewcommand{\epsilon}{\varepsilon}
+
+\renewcommand{\bullet}{{\mathchoice
+  {\tikz \filldraw (0,0) circle (1pt);}
+  {\tikz \filldraw (0,0) circle (1pt);}
+  {\tikz \filldraw (0,0) circle (0.95pt);}
+  {\tikz \filldraw (0,0) circle (0.5pt);}}}
+
+
+
+\begin{document}
+    % \tableofcontents
+    % \newpage
+
+    \include{Introduction/introduction}
+    \include{Preliminaries/preliminaries}
+    \include{The_Construction/the_construction}
+
+    % Bibliography (Comment out for faster compilation)
+
+% \nocite{*} %Include all entries from BibTeX file
+% \bibliographystyle{alpha}
+% \bibliography{ref}
+
+
+\end{document}

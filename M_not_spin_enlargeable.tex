@@ -1,0 +1,40 @@
+\noindent \textbf{Behauptung:} Die Mannigfaltigkeit $M := \CP^2 \# \CP^2 \# T^4$ besitzt keine spin Überlagerung, ist also insbesondere nicht vergrößerbar.
+
+    \begin{proof}[Beweis]
+      Sei $p \colon \hat{M} \to M$ eine Überlagerung und $i \colon \CP^2 - D^4 \to M$ die Inklusion des linken $\CP^2$-Summanden. Dann ist die Einschränkung $i^\ast \hat{M} \cong p^{-1}(\CP^2-D^4) \to \CP^2 - D^4$ weiterhin eine Überlagerung und da $\CP^2-D^4$ einfach zusammenhängend ist (Seifert-van-Kampen) folgt aus der Klassifikation von Überlagerungen, dass jede Wegzusammenhangskomponente von $i^\ast \hat{M}$ diffeomorph zu $CP^2-D^4$ ist. Insbesondere ist $\CP^2-D^4$ also eine Kodimension $0$ Untermannigfaltigkeit in $i^\ast\hat{M}$ und somit auch in $\hat{M}$. Da aber $\CP^2-D^4$ nicht spin ist folgt, dass auch $\hat{M}$ nicht spin ist.
+    \end{proof}
+
+    Ich habe überlegt die $\CP^2$-Summanden durch eine andere Mannigfaltigkeit $N$ zu ersetzen, aber damit das Argument durch geht müsste $N$ folgende Eigenschaften haben:
+    \begin{enumerate}[label=\roman*)]
+      \item $N$ besitzt eine endliche spin Überlagerung, damit $M$ vergrößerbar ist,
+      \item Die universelle Überlagerung von $N$ ist nicht-spin, damit das konstruierte $S^1$-Bündel $E \to M$ ebenfalls eine nicht-spin universelle Überlagerung hat und wir dann die Existenz einer PSC-Metrik auf $E$ bekommen.
+    \end{enumerate}
+
+    \noindent So ein $N$ existiert aber nicht, aufgrund folgender Behauptung. \vspace{.75em}
+    
+    \noindent\textbf{Behauptung:} Ist die universelle Überlagerung einer Mannigfaltigkeit nicht-spin, so auch jede andere Überlagerung.
+    
+    \begin{proof}[Beweis]
+      Sei $p \colon \hat{N} \to N$ eine Überlagerung und $\pi \colon \tilde{N} \to N$ die universelle Überlagerung.  Nach dem Liftungstheorem existiert eine Abbildung $\phi \colon \tilde{N} \to \hat{N}$, so dass 
+      \[\begin{tikzcd}
+      & {\hat{N}} \\
+      {\tilde{N}} & N
+      \arrow["p", from=1-2, to=2-2]
+      \arrow["\phi", from=2-1, to=1-2]
+      \arrow["\pi", from=2-1, to=2-2]
+      \end{tikzcd}\]
+      kommutiert. Da $p$ und $\pi$ lokale Diffeomorphismen sind folgt, dass auch $\phi$ ein lokaler Diffeomorphismus ist. Damit ist
+      \[\begin{tikzcd}
+      {T\tilde{N}} & {T\hat{N}} \\
+      {\tilde{N}} & {\hat{N}}
+      \arrow["{d\phi}", from=1-1, to=1-2]
+      \arrow[from=1-1, to=2-1]
+      \arrow[from=1-2, to=2-2]
+      \arrow["\phi", from=2-1, to=2-2]
+      \end{tikzcd}\]
+      ein Pullback Diagramm, denn $d\phi$ ist faserweise ein Isomorphismus. Ist also $\hat{N}$ spin, so auch 
+      \[
+      w_2(T\tilde{N}) = \phi^\ast w_2(T\hat{N}) = 0,
+      \] 
+      im Widerspruch zur Annahme, dass $\tilde{N}$ nicht-spin ist.
+    \end{proof}
