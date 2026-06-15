@@ -1,17 +1,18 @@
 \section{The Construction}
 
-We will now construct counterexamples to the question raised in the beginning, that is circle bundles $E \to M$ over enlargeable $M$, where the total space $E$ admits a metric of positive scalar curvature. In order to show the existence of such a metric we will employ the following Theorem.
+We will now construct counterexamples to the question raised in the beginning, that is circle bundles $E \to M$ over enlargeable $M$, where the total space $E$ admits a metric of positive scalar curvature. 
+In the following we will refer to orientable manifolds with non-spin universal cover as \emph{totally non-spin}.
+% In order to show the existence of such a metric we will employ the following Theorem.
 
-\begin{theorem}[Gromov, Hanke \cite{gromov2024torsion}]
-    \label{thm:gromov_hanke}
-    Let $V$ be a closed connected oriented smooth $n$-manifold with non-spin universal cover, $n \geq 5$. Let $\phi \colon V \to B\pi_1(V)$ be the classifying map and assume that there exists a closed oriented $n$-manifold $V^\prime$, which admits a positive scalar curvature metric, as well as a map $f \colon V^\prime \to B\pi_1(V)$, such that 
-    \[
-    \phi_\ast([V]) = f_\ast([V^\prime]) \in H_n(\pi_1(V);\Z).
-    \]
-    (This includes the case $\phi_\ast([V]) = 0$.) Then $V$ admits a positive scalar curvature metric.
-\end{theorem}
-
-Let $N^{2n}$ be any $2n$-dimensional manifold with non-spin universal cover, $n\geq 2$. We could for example take $N:= \CP^2 \times T^{2n-4}$ (hier vllt noch kurz Begründung reinschreiben). Consider the manifold
+% \begin{theorem}[Gromov, Hanke \cite{gromov2024torsion}]
+%     \label{thm:gromov_hanke}
+%     Let $V$ be a closed connected oriented smooth $n$-manifold with non-spin universal cover, $n \geq 5$. Let $\phi \colon V \to B\pi_1(V)$ be the classifying map and assume that there exists a closed oriented $n$-manifold $V^\prime$, which admits a positive scalar curvature metric, as well as a map $f \colon V^\prime \to B\pi_1(V)$, such that 
+%     \[
+%     \phi_\ast([V]) = f_\ast([V^\prime]) \in H_n(\pi_1(V);\Z).
+%     \]
+%     (This includes the case $\phi_\ast([V]) = 0$.) Then $V$ admits a positive scalar curvature metric.
+% \end{theorem}
+For $n \geq 2$ let $N^{2n}$ be any $2n$-dimensional totally non-spin manifold. We could for example take $N:= \CP^2 \times T^{2n-4}$, which is totally non-spin by Lemma \ref{lem:totally_non_spin_lemma} and Lemma \ref{lem:cp2_not_spin} (see Appendix). Now consider the manifold
 \[
 M := \CP^n \# T^{2n} \# N.
 \]
@@ -47,11 +48,11 @@ the inclusions, the diagram
 \end{tikzcd}\]
 commutes and thus $i_2^\ast(c_1) = j^\ast(\alpha)$. So the first chern classes of $i_2^\ast E$ and $j^\ast S^{2n+1}$ agree, hence they must be isomorphic bundles. 
 
-With this intuition in mind we now want to show the existence of a metric of positive scalar curvature on $E$ by applying Theorem \ref{thm:gromov_hanke}. In order to apply the Theorem we will show the following two claims.
+With this intuition in mind we will now show the following two claims.
 
 \begin{claim}
 	\label{claim1}
-$E$ is totally non-spin, that is the universal cover of $E$ is non-spin.
+$E$ is totally non-spin.
 \end{claim}
 
 \begin{claim}
@@ -59,36 +60,46 @@ $E$ is totally non-spin, that is the universal cover of $E$ is non-spin.
 The projection $p \colon E \to M$ induces an isomorphism on $\pi_1$.
 \end{claim}
 
-Granting these Claims for now let us see why they suffice for the assumptions of Theorem \ref{thm:gromov_hanke} to be satisfied.  
-For this we would like to show that the classifying map $\phi \colon E \to B\pi_1(E)$ maps $[E]$ to $0 \in H_{2n+1}(\pi_1(E);\Z)$, which can be seen by using Claim \ref{claim2} as follows. Let $q \colon DE \to M$ be the disk bundle corresponding to $E$. Moreover let $\Phi \colon DE \to B\pi_1(DE)$ be the classifiying map for $DE$. Then the diagram 
-\[\begin{tikzcd}
-	DE & {B\pi_1(DE)} \\
-	E & {B\pi_1(E)}
-	\arrow["\Phi", from=1-1, to=1-2]
-	\arrow["\iota", from=2-1, to=1-1]
-	\arrow["\phi", from=2-1, to=2-2]
-	\arrow["{B\pi_1(\iota)}"', from=2-2, to=1-2]
-\end{tikzcd}\]
-commutes (hier noch Begründung rein), where the vertical maps are (induced by) the inclusion $\iota \colon E \to DE$. We claim that $B\pi_1(\iota)$ is an isomorphism. This follows from commutativity of  
-\[\begin{tikzcd}[column sep = small]
-	{B\pi_1(E)} && {B\pi_1(DE)} \\
-	& {B\pi_1(M)}
-	\arrow["{B\pi_1(\iota)}", from=1-1, to=1-3]
-	\arrow["{B\pi_1(p)}"',"\cong", from=1-1, to=2-2]
-	\arrow["{B\pi_1(q)}","\cong"', from=1-3, to=2-2]
-\end{tikzcd}\]
-where $B\pi_1(q)$ is an isomorphism by homotopy invariance and $B\pi_1(p)$ is an isomorphism by Claim \ref{claim2}. Thus $\phi$ factors over $\iota$. Since $DE$ is an oriented null-cobordism of $E$ it follows that $\iota_\ast[E] = 0 \in H_{2n+1}(DE;\Z)$ and so in particular $\phi_\ast [E] = 0\in H_{2n+1}(\pi_1(E);\Z)$ as we wanted to show. So together with Claim \ref{claim1} all assumptions of Theorem \ref{thm:gromov_hanke} are satisfied, showing that $E$ admits a metric of positive scalar curvature. We will now proof Claim \ref{claim1} and Claim \ref{claim2}
+Granting these claims for now, let us see how to conclude the existence of a positive scalar curvature metric on $E$. The disk bundle $DE \to M$ corresponding to $E$ defines an oriented null-cobordism of $E$. Moreover, since $DE \to M$ is a homotopy equivalence it follows from Claim \ref{claim1} that the inclusion $E \to DE$ is an isomorphism on $\pi_1$. So together with Claim \ref{claim2} the following Theorem applies.
+
+\begin{theorem}
+	Let $X^n$ be a closed connected totally non-spin manifold of dimension $n \geq 5$. Suppose there exists an oriented null-cobordism $W$ of $X$, such that the inclusion $X \to W$ induces an isomorphism on $\pi_1$. Then $X$ admits a metric of positive scalar curvature.
+\end{theorem}
+
+We will give a proof of this theorem further below, which is essentially an application of the well known Gromov-Lawson surgery principle (SOURCE). Let us now proof Claim \ref{claim1} and Claim \ref{claim2}.
+
+% Granting these Claims for now let us see why they suffice for the assumptions of Theorem \ref{thm:gromov_hanke} to be satisfied.  
+% For this we would like to show that the classifying map $\phi \colon E \to B\pi_1(E)$ maps $[E]$ to $0 \in H_{2n+1}(\pi_1(E);\Z)$, which can be seen by using Claim \ref{claim2} as follows. Let $q \colon DE \to M$ be the disk bundle corresponding to $E$. Moreover let $\Phi \colon DE \to B\pi_1(DE)$ be the classifiying map for $DE$. Then the diagram 
+% \[\begin{tikzcd}
+% 	DE & {B\pi_1(DE)} \\
+% 	E & {B\pi_1(E)}
+% 	\arrow["\Phi", from=1-1, to=1-2]
+% 	\arrow["\iota", from=2-1, to=1-1]
+% 	\arrow["\phi", from=2-1, to=2-2]
+% 	\arrow["{B\pi_1(\iota)}"', from=2-2, to=1-2]
+% \end{tikzcd}\]
+% commutes (hier noch Begründung rein), where the vertical maps are (induced by) the inclusion $\iota \colon E \to DE$. We claim that $B\pi_1(\iota)$ is an isomorphism. This follows from commutativity of  
+% \[\begin{tikzcd}[column sep = small]
+% 	{B\pi_1(E)} && {B\pi_1(DE)} \\
+% 	& {B\pi_1(M)}
+% 	\arrow["{B\pi_1(\iota)}", from=1-1, to=1-3]
+% 	\arrow["{B\pi_1(p)}"',"\cong", from=1-1, to=2-2]
+% 	\arrow["{B\pi_1(q)}","\cong"', from=1-3, to=2-2]
+% \end{tikzcd}\]
+% where $B\pi_1(q)$ is an isomorphism by homotopy invariance and $B\pi_1(p)$ is an isomorphism by Claim \ref{claim2}. Thus $\phi$ factors over $\iota$. Since $DE$ is an oriented null-cobordism of $E$ it follows that $\iota_\ast[E] = 0 \in H_{2n+1}(DE;\Z)$ and so in particular $\phi_\ast [E] = 0\in H_{2n+1}(\pi_1(E);\Z)$ as we wanted to show. So together with Claim \ref{claim1} all assumptions of Theorem \ref{thm:gromov_hanke} are satisfied, showing that $E$ admits a metric of positive scalar curvature. 
 
 \begin{proof}[Proof of Claim \ref{claim1}]
 	Let $i \colon N- D^{2n} \to M$ be the inclusion. We have already established above, that $E$ is trivial over the $T^{2n} \# N$ summand and so in particular
 	\[
 	i^\ast E \cong (N- D^{2n}) \times S^1.
 	\]
-	Note that if $N$ is totally non-spin then so is $N - D^{2n}$ (hier auch evtl noch Begründung rein). Write $N_0 := N - D^{2n}$. Then the universal cover of $i^\ast E$ is given by $\tilde{N}_0 \times \R$, where $\tilde{N}_0$ is the universal cover of $N_0$. Let $\pi_{\tilde{N}_0} \colon \tilde{N}_0 \times \R \to \tilde{N}_0$ and $\pi_\R \colon \tilde{N}_0 \times \R \to \R$ be the projections. We compute 
-	\[
-	w_2(T(\tilde{N}_0 \times \R)) = w_2(\pi_{\tilde{N}_0}^\ast T\tilde{N}_0 \oplus \pi_\R^\ast T\R) = \pi_{\tilde{N}_0}^\ast w_2(T\tilde{N}_0).
-	\]
-	Since $\pi_{\tilde{N}_0}$ is a homotopy equivalence and $\tilde{N}_0$ is non-spin it follows that $w_2(T(\tilde{N}_0 \times \R)) \neq 0$, such that $i^\ast E$ is totally non spin. Therefore $M$ contains a totally non-spin submanifold of codimension $0$ and is consequently itself totally non-spin by (hier vllt noch kurze Begründung reinschreiben)
+	From Lemma \ref{lem:totally_non_spin_lemma} we conclude that $N_0 := N - D^{2n}$ and consequently also $(N- D^{2n}) \times S^1$ are totally non-spin. 
+	% Then the universal cover of $i^\ast E$ is given by $\tilde{N}_0 \times \R$, where $\tilde{N}_0$ is the universal cover of $N_0$. Let $\pi_{\tilde{N}_0} \colon \tilde{N}_0 \times \R \to \tilde{N}_0$ and $\pi_\R \colon \tilde{N}_0 \times \R \to \R$ be the projections. We compute 
+	% \[
+	% w_2(T(\tilde{N}_0 \times \R)) = w_2(\pi_{\tilde{N}_0}^\ast T\tilde{N}_0 \oplus \pi_\R^\ast T\R) = \pi_{\tilde{N}_0}^\ast w_2(T\tilde{N}_0).
+	% \]
+	% Since $\pi_{\tilde{N}_0}$ is a homotopy equivalence and $\tilde{N}_0$ is non-spin it follows that $w_2(T(\tilde{N}_0 \times \R)) \neq 0$, such that $i^\ast E$ is totally non spin. 
+	Therefore $E$ contains a totally non-spin submanifold of codimension $0$ and so again Lemma \ref{lem:totally_non_spin_lemma} implies that $E$ is totally non-spin.
 \end{proof}
 
 \begin{proof}[Proof of Claim \ref{claim2}]

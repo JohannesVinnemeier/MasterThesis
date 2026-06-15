@@ -7,13 +7,13 @@ The question of whether a closed manifold admits a metric of positive scalar cur
     \item Products of enlargeable manifolds are enlargeable.
 \end{enumerate}
 
-From this it follows at once that the $n$-Torus $T^n$ is enlargeable and thus does not admit a metric of positive scalar curvature for all dimensions $n \geq 0$, which had long been an open question. This example already highlights the importance of the concept of enlargeabilty, which, since its emergence, has been a subject of extensive research. More generally, the two facts above show that if $M$ is enlargeable, $M \times S^1$ does not admit a metric of positive scalar curvature. There are two natural ways one may try to generalize this statement. Firstly, we can ask what happens if we replace $M$ by any non-enlargeable manifold, which does not admit a metric of positive scalar curvature. Naively one might expect the statement to still be true, nonetheless it turns out that there are counterexamples, see [??]. Secondly, we can ask what happens if the $S^1$-factor appears as the fiber of some non-trivial circle bundle over $M$. However, once again, this seemingly plausible expectation does not hold. Counterexamples to this second question have recently been constructed in [??] by relying on techniques from symplectic geometry. In the following we will provide an alternative construction for such counterexamples, employing only basic topological notions. Let us begin by recalling the definition of enlargeabilty.
+From this it follows at once that the $n$-Torus $T^n$ is enlargeable and thus does not admit a metric of positive scalar curvature for all dimensions $n \geq 0$, which had long been an open question. This example already highlights the importance of the concept of enlargeabilty, which, since its emergence, has been a subject of extensive research. More generally, the two facts above show that if $M$ is enlargeable, $M \times S^1$ does not admit a metric of positive scalar curvature. There are two natural ways one may try to generalize this statement. Firstly, we can ask what happens if we replace $M$ by any non-enlargeable manifold, which does not admit a metric of positive scalar curvature. Naively one might expect the statement to still be true, nonetheless it turns out that there are counterexamples, see \cite[Remark 1.4]{cecchini2023nonnegative}, \cite[Counterexample 4.16]{stolz2014metrics}. Secondly, we can ask what happens if the $S^1$-factor appears as the fiber of some non-trivial circle bundle over $M$. However, once again, this seemingly plausible expectation does not hold. Counterexamples to this second question have recently been constructed in \cite{kumar2025circle} by relying on techniques from symplectic geometry. In the following we will provide an alternative construction for such counterexamples, employing only basic topological notions. Let us begin by recalling the definition of enlargeabilty.
 
 \begin{definition}
     A closed oriented Riemannian $n$-manifold $M$ is called enlargeable if for all $\epsilon >0$ there exists a finite Riemannian covering $\hat{M} \to M$ together with an $\epsilon$-contracting (that is $\epsilon$-Lipschitz) map $\hat{M} \to S^n$ of non-zero degree.
 \end{definition}
 
-Note that this notion does not depend on the particular choice of Riemannian metric on $M$, since for closed manifolds all metrics are in bi-Lipschitz correspondence. Our definition of enlargeabilty is adopted from \cite{cecchini_schick} and [?] in contrast to the orginial definition in \cite{gromov_lawson}, where the coverings $\hat{M}$ were additionally required to be spin. The observation that enlargeabilty is an obstruction to the existence of positive scalar curvature metrics was first shown by Gromov and Lawson \cite{gromov1980spin} in the case where $M$ is spin. This was later generalized by Cecchini and Schick \cite{cecchini2021enlargeable} to the non-spin case.
+Note that this notion does not depend on the particular choice of Riemannian metric on $M$, since for closed manifolds all metrics are in bi-Lipschitz correspondence. Our definition of enlargeabilty is adopted from \cite{cecchini2021enlargeable} and \cite{brunnbauer2010large} in contrast to the orginial definition in \cite{gromov1980spin}, where the coverings $\hat{M}$ were additionally required to be spin. The observation that enlargeabilty is an obstruction to the existence of positive scalar curvature metrics was first shown by Gromov and Lawson \cite{gromov1980spin} in the case where $M$ is spin. This was later generalized by Cecchini and Schick \cite{cecchini2021enlargeable} to the non-spin case.
 
 As already mentioned above, the simplest example for an enlargeable manifold is $S^1$. To see this consider the Riemannian covering $(S^1,n g) \to (S^1, g), z \mapsto z^n$, where $g$ is the standard metric on $S^1$. Then the map $(S^1,n g) \to (S^1, g), z \mapsto z$ is $\sfrac{1}{n}$-Lipschitz and of degree $1$. Since we can choose $n$ arbitrarily large it follows that $S^1$ is enlargeable. 
 
@@ -22,13 +22,44 @@ The following Lemma now provides two easy ways to construct new enlargeable mani
 \begin{lemma}
     \label{lem:constructing_enlargeable_mnf}
     \begin{enumerate}[label=(\roman*)]
-        \item The product of enlargeable manifolds is enlargeable.
-        \item A closed oriented manifold $M$ admitting a non-zero degree map onto an enlargeable manifold is enlargeable. \label{eq:lem_for_constructing_enlargeable_mnf_2}
+        \item The product of enlargeable manifolds is enlargeable. \label{eq:lem_for_constructing_enlargeable_mnf_1}
+        \item A closed oriented manifold admitting a non-zero degree map onto an enlargeable manifold is enlargeable. \label{eq:lem_for_constructing_enlargeable_mnf_2}
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-    
+    For \ref{eq:lem_for_constructing_enlargeable_mnf_1} let $M^m$ and $N^n$ be enlargeable. Given $\epsilon > 0$ choose Riemannian coverings $p \colon \hat{M} \to M$ and $q \colon \hat{N} \to N$ as well as $\epsilon$-contracting maps $f \colon \hat{M} \to S^m$ and $g \colon \hat{N} \to S^n$ of non-zero degree. Then 
+    \[
+    p \times q \colon \hat{M} \times \hat{N} \to M \times N
+    \]
+    is a Riemannian covering, where both manifolds are equipped with the corresponding product metric. Moreover 
+    \[
+    f \times g \colon \hat{M} \times \hat{N} \to S^m \times S^n
+    \]
+    defines an $\epsilon$-contracting map of degree $\mathrm{deg}(f \times g) = \mathrm{deg}(f)\mathrm{deg}(g) \neq 0$. Now consider the map 
+    \[
+    \phi \colon S^m \times S^n \to S^m \wedge S^n \cong S^{m+n},
+    \]
+    given by projection onto the smash product 
+    \[
+    S^m \wedge S^n := \raisebox{3pt}{$\modulo{S^m \times S^n}{(S^m \times \ast \cup \ast \times S^n)}$},
+    \]
+    which is well known to be homeomorphic to the sphere $S^{m+n}$. The map $\phi$ is easily seen to be of degree $\pm 1$ (depending on the chosen orientations) and after a slight perturbation we may also assume it to be smooth. Moreover, because $S^m \times S^n$ is closed, it follows that $\phi$ is a $\lambda$-Lipschitz map for some constant $\lambda > 0$. Therefore $\phi \circ (f \times g)$ is a $\lambda \epsilon$-Lipschitz map of non-zero degree and since $\epsilon$ was chosen arbitrarily the statement follows.
+
+    For \ref{eq:lem_for_constructing_enlargeable_mnf_2} let $M^m$ be enlargeable and let $h \colon P \to M$ be some non-zero degree map. Again given $\epsilon > 0$ choose a Riemannian covering $p \colon \hat{M} \to M$ as well as an $\epsilon$-contracting map $f \colon \hat{M} \to S^m$. Define a covering $\pi \colon \hat{P} \to P$ as the pullback covering of $p$ under $h$, that is $\pi$ fits into a pullback diagram of the form 
+    \[\begin{tikzcd}
+	{\hat{P}} & {\hat{M}} \\
+	P & M
+	\arrow["H", from=1-1, to=1-2]
+	\arrow["\pi", from=1-1, to=2-1]
+	\arrow["p", from=1-2, to=2-2]
+	\arrow["h", from=2-1, to=2-2]
+    \end{tikzcd}\]
+    where $H$ is some suitable smooth map. Since $\hat{M}$ and $P$ are closed, the same holds for $\hat{P}$. Moreover $h$ is $\mu$-Lipschitz for some constant $\mu > 0$, because $P$ is closed. Consequently $H$ is also $\mu$-Lipschitz, given that both $\pi$ and $p$ are local isometries. For the degree of $H$ we compute 
+    \[
+    \mathrm{deg}(p)\mathrm{deg}(H) = \mathrm{deg}(p \circ H) = \mathrm{deg}(h \circ \pi) = \mathrm{deg}(h)\mathrm{deg}(p) \neq 0,
+    \]
+    using the fact that $\mathrm{deg}(h) \neq 0$ by assumption and that the degree of a covering is given by the cardinality of the fiber. We conclude that $H$ is of non-zero degree, such that $f \circ H \colon \hat{P} \to S^m$ is a $\mu \epsilon$-Lipschitz map of non-zero degree. Again since $\epsilon$ was chosen arbitrarily the statement follows.
 \end{proof}
 
 From Part \ref{eq:lem_for_constructing_enlargeable_mnf_2} of the above Lemma it follows immediately, that enlargeabilty is a homotopy invariant, since a homotopy equivalence of connected closed oriented manifolds has degree $\pm 1$. In fact more is true, ...
