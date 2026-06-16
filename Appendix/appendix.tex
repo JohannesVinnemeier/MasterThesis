@@ -8,12 +8,12 @@ The following lemma collects a few basic facts about totally non-spin manifolds.
     \begin{enumerate}[label=(\roman*)]
         \item The product of a totally non-spin manifold with any non-empty manifold is totally non-spin. \label{eq:totally_non_spin_lemma1}
         \item A manifold containing a totally non-spin submanifold of codimension $0$ is totally non-spin. \label{eq:totally_non_spin_lemma2}
-        \item If $M$ is totally non-spin and of dimension $n \geq 4$, then $M - D^n$ is totally non-spin for any embedded disk $D^n \subseteq \mathrm{int}(M)$. \label{eq:totally_non_spin_lemma3}
+        \item If $M$ is totally non-spin and of dimension $n \geq 3$, then $M - D^n$ is totally non-spin for any embedded disk $D^n \subseteq \mathrm{int}(M)$ in the interior of $M$. \label{eq:totally_non_spin_lemma3}
     \end{enumerate}
 \end{lemma}
 
 \begin{remark}
-    All statements of the lemma remain valid if ``totally non-spin'' is replaced by ``non-spin''. The corresponding proofs are just simpler versions of the arguments given below.
+    All statements of the above lemma remain valid if ``totally non-spin'' is replaced by ``non-spin''. The corresponding proofs are just simpler versions of the arguments given below.
 \end{remark}
 
 \begin{proof}%[Proof of Lemma \ref{lem:totally_non_spin_lemma}]
@@ -49,19 +49,16 @@ The following lemma collects a few basic facts about totally non-spin manifolds.
     \end{tikzcd}\]
     Therefore $\tilde{\iota}^\ast w_2(T\tilde{M}) = w_2(T\tilde{N}) \neq 0$ and so $w_2(T\tilde{M}) \neq 0$.
 
-    For \ref{eq:totally_non_spin_lemma3} assume without of loss generality that $M$ is connected. Denote by $B^n := \mathrm{int}(D^n)$ the open ball. Then inclusion 
+    For \ref{eq:totally_non_spin_lemma3} assume without of loss generality that $M$ is connected. Denote by $B^n := \mathrm{int}(D^n)$ the open ball. Then $M - D^n$ is the interior of $M - B^n$ 
+    from which we conclude that $M - D^n$ is totally non-spin if and only if $M- B^n$ is totally non-spin. This follows using an analogous argument as in \ref{eq:totally_non_spin_lemma2} by noting that for a manifold $N$ with boundary the universal cover of $\mathrm{int}(N)$ is given by $\mathrm{int}(\tilde{N})$ and the inlcusion $\mathrm{int}(\tilde{N}) \to \tilde{N}$ is a homotopy equivalence. We will now show that $M - B^n$ is totally non-spin. Let $p \colon \tilde{M} \to M$ be the universal cover of $M$ and write $M_0 := M - B^n$. We claim that the universal cover of $M_0$ agrees with the covering 
     \[
-    M - D^n \to M - B^n
-    \]
-    is a homotopy equivalence from which we conclude (using analogous arguments as for \ref{eq:totally_non_spin_lemma2}) that $M - D^n$ is totally non-spin if and only if $M- B^n$ is totally non-spin. We will now show this for the latter. Let $p \colon \tilde{M} \to M$ be the universal cover of $M$ and write $M_0 := M - B^n$. We claim that the universal cover of $M_0$ agrees with the covering 
-    \[
-    \hat{M}_0 = \tilde{M} - p^{-1}(B^n) \xrightarrow{p} M_0.
+    \hat{M}_0 = \tilde{M}|_{M_0} = \tilde{M} - p^{-1}(B^n) \xrightarrow{p} M_0.
     \]
     First of all $\hat{M}_0$ is connected as $n \geq 2$. We now have to show that $\hat{M}_0$ is simply connected. Let $F = p^{-1}(x)$ be some fiber of $p$. From the classification of coverings we see that 
     \[
     p^{-1}(B^n) \cong B^n \times F
     \]
-    since $B^n$ is simply connected. If the fiber $f$ is finite we can apply the Seifer-van-Kampen Theorem to conclude that $\tilde{M}$ with a single disk $B^n$ removed is still simply connected, such that the statement follows inductively. If the fiber is not finite we can argue more generally as follows. Let $\phi \colon S^1 \to \hat{M}_0$ be some smooth loop. Certainly we can contract this loop in $\tilde{M}$, that is we can find some map $\Phi \colon D^2 \to \tilde{M}$ restricting to $\alpha$ on the boundary. We now show that $\Phi$ is homotopic rel$\,S^1$ to some map $\Phi_1 \colon D^2 \to \tilde{M}$, such that the image of $\Phi_1$ is already contained in $\tilde{M}_0$, from which the claim follows. To construct such a homotopy let $0 \in B^n \subseteq \tilde{M}$ be the center of the embedded disk. After a preliminary homotopy we may assume that $\Phi$ is transversal to $p^{-1}(0)$. Since $n \geq 3$ this is equivalent to requiring that $\Phi$ does not intersect $p^{-1}(0)$. Now note that $S^{n-1}$ is a strong deformation retract of $D^n - 0$ and applying such a deformation retraction on each disk $D^n - 0 \subseteq p^{-1}(D^n - 0)$ shows that $\hat{M}_0 = \tilde{M} - p^{-1}(B^n)$ is a strong deformation retract of $\tilde{M} - p^{-1}(0)$. Let 
+    since $B^n$ is simply connected. If the fiber $f$ is finite we can apply the Seifert-van-Kampen Theorem to conclude that $\tilde{M}$ with a single disk $B^n$ removed is still simply connected, such that the statement follows inductively. If the fiber is not finite we can argue more generally as follows. Let $\phi \colon S^1 \to \hat{M}_0$ be some smooth loop. Certainly we can contract this loop in $\tilde{M}$, that is we can find some map $\Phi \colon D^2 \to \tilde{M}$ restricting to $\alpha$ on the boundary. We now show that $\Phi$ is homotopic rel$\,S^1$ to some map $\Phi_1 \colon D^2 \to \tilde{M}$, such that the image of $\Phi_1$ is already contained in $\tilde{M}_0$, from which the claim follows. To construct such a homotopy let $0 \in B^n \subseteq M$ be the center of the embedded disk. After a preliminary homotopy we may assume that $\Phi$ is transversal to $p^{-1}(0)$. Since $n \geq 3$ this is equivalent to requiring that $\Phi$ does not intersect $p^{-1}(0)$. Now note that $S^{n-1}$ is a strong deformation retract of $D^n - 0$ and applying such a deformation retraction on each disk $D^n - 0 \subseteq p^{-1}(D^n - 0)$ shows that $\hat{M}_0$ is a strong deformation retract of $\tilde{M} - p^{-1}(0)$. Let 
     \[
     r \colon \tilde{M} - p^{-1}(0) \to \hat{M}_0
     \]
@@ -69,11 +66,11 @@ The following lemma collects a few basic facts about totally non-spin manifolds.
     \[
     r_t \colon \tilde{M} - p^{-1}(0) \to \tilde{M} - p^{-1}(0)
     \]
-    be a homotopy from the identity to $r$ (composed with the corresponding inclusion). Then $\Phi_t := r_t \circ \Phi$ defines a homotopy rel$\,S^1$ from $\Phi$ to some map $\Phi_1$ whose image is contained in $\hat{M}_0$. 
+    be a homotopy rel$\,S^1$ from the identity to $r$ (composed with the corresponding inclusion). Then $\Phi_t := r_t \circ \Phi$ defines a homotopy rel$\,S^1$ from $\Phi$ to some map $\Phi_1$ whose image is contained in $\hat{M}_0$. 
     % Since $\Phi_1^\prime(S^1) = \phi(S^1)$ is contained in the interior $\hat{M}_0$ of this manifold we can take a further homotopy rel$\,S^1$ from $\Phi_1^\prime$ to a map $\Phi_1$ whose image is contained in $\hat{M}_0$. 
     This shows the claim and hence the universal cover of $M_0$ is given by 
     \[
-    \tilde{M}_0 = \hat{M}_0 = \tilde{M} - p^{-1}(B^n) \cong \tilde{M} - (B^n \times F)
+    \hat{M}_0 = \tilde{M} - p^{-1}(B^n) \cong \tilde{M} - (B^n \times F).
     \]
     Finally the Mayer-Vietoris sequence of the pushout 
     \[\begin{tikzcd}
@@ -84,9 +81,9 @@ The following lemma collects a few basic facts about totally non-spin manifolds.
 	\arrow[from=1-2, to=2-2]
 	\arrow["\iota", from=2-1, to=2-2]
     \end{tikzcd}\]
-    where all maps are inclusions, then shows that $\iota$ is an isomorphism on $H^2(-;\Z_2)$. Here we need $n \geq 4$. Therefore
+    where all maps are inclusions, then shows that $\iota$ is injective on $H^2(-;\Z_2)$. Therefore
     \[
-    w_2(T\tilde{M}_0) = \iota^\ast w_2(T\tilde{M}) \neq 0.
+    w_2(T\hat{M}_0) = w_2(\iota^\ast T\tilde{M}) = \iota^\ast w_2(T\tilde{M}) \neq 0.
     \]
 \end{proof}
 
