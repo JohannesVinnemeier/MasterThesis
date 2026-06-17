@@ -1,11 +1,80 @@
 \section{Preliminaries}
 
-\begin{itemize}
-    \item Chern and Stiefel-Whitney classes
-    \item 1:1 correspondence of $\K$ vector bundles and $GL(n,\K)$ principal bundles + in particular complex line bundles and $S^1$-principal bundles ($\to$ two different constructions either as underlying principal bundle or by choosing metric)
-    (\item example: underlying principal bundle of canonical line bundle over $\CP^n$ is $S^{2n+1} \to \CP^n$)
-    \item 1:1 correspondence of $S^1$-principal bundles over $M$ and second cohomology classes of $M$
-    \item Definition of spin/non-spin/totally-non-spin (Example: $\CP^2$ is not spin)
-    \item Lemma: If $M$ contains a codimension $0$ (immersed) submanifold which is totally non-spin, then $M$ is itself totally non-spin
-    \item Definieren die classifying maps $X \to B\pi_1(X)$ eine natürliche Transformation? (Für Kommutativität von dem einen Diagram)
-\end{itemize}
+% \begin{itemize}
+%     \item Chern and Stiefel-Whitney classes
+%     \item 1:1 correspondence of $\K$ vector bundles and $GL(n,\K)$ principal bundles + in particular complex line bundles and $S^1$-principal bundles ($\to$ two different constructions either as underlying principal bundle or by choosing metric)
+%     (\item example: underlying principal bundle of canonical line bundle over $\CP^n$ is $S^{2n+1} \to \CP^n$)
+%     \item 1:1 correspondence of $S^1$-principal bundles over $M$ and second cohomology classes of $M$
+%     \item Definition of spin/non-spin/totally-non-spin (Example: $\CP^2$ is not spin)
+%     \item Lemma: If $M$ contains a codimension $0$ (immersed) submanifold which is totally non-spin, then $M$ is itself totally non-spin
+%     \item Definieren die classifying maps $X \to B\pi_1(X)$ eine natürliche Transformation? (Für Kommutativität von dem einen Diagram)
+% \end{itemize}
+
+Let us begin by recalling the definition of enlargeability.
+
+\begin{definition}
+    A closed oriented Riemannian $n$-manifold $M$ is called enlargeable if for all $\epsilon >0$ there exists a finite Riemannian covering $\hat{M} \to M$ together with an $\epsilon$-contracting (that is $\epsilon$-Lipschitz) map $\hat{M} \to S^n$ of non-zero degree.
+\end{definition}
+
+Note that this notion does not depend on the particular choice of Riemannian metric on $M$, since for closed manifolds all metrics are in bi-Lipschitz correspondence. Our definition of enlargeability is adopted from \cite{cecchini2021enlargeable} and \cite{HankeSchick} in contrast to the orginial definition in \cite{gromov1980spin}, where the coverings $\hat{M}$ were additionally required to be spin. The observation that enlargeability is an obstruction to the existence of positive scalar curvature metrics was first shown by Gromov and Lawson \cite{gromov1980spin} in the case where $M$ is spin. This was later generalized by Cecchini and Schick \cite{cecchini2021enlargeable} to the non-spin case.
+
+As already mentioned above, the simplest example for an enlargeable manifold is $S^1$. To see this consider the Riemannian covering $(S^1,n g) \to (S^1, g), z \mapsto z^n$, where $g$ is the standard metric on $S^1$. Then the map $(S^1,n g) \to (S^1, g), z \mapsto z$ is $\sfrac{1}{n}$-Lipschitz and of degree $1$. Since we can choose $n$ arbitrarily large it follows that $S^1$ is enlargeable. 
+
+The following Lemma now provides two easy ways to construct new enlargeable manifolds out of given ones. 
+
+\begin{lemma}
+    \label{lem:constructing_enlargeable_mnf}
+    \begin{enumerate}[label=(\roman*)]
+        \item The product of enlargeable manifolds is enlargeable. \label{eq:lem_for_constructing_enlargeable_mnf_1}
+        \item A closed oriented manifold admitting a non-zero degree map onto an enlargeable manifold is enlargeable. \label{eq:lem_for_constructing_enlargeable_mnf_2}
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    For \ref{eq:lem_for_constructing_enlargeable_mnf_1} let $M^m$ and $N^n$ be enlargeable. For $\epsilon > 0$ choose Riemannian coverings $p \colon \hat{M} \to M$ and $q \colon \hat{N} \to N$ as well as $\epsilon$-contracting maps $f \colon \hat{M} \to S^m$ and $g \colon \hat{N} \to S^n$ of non-zero degree. Then 
+    \[
+    p \times q \colon \hat{M} \times \hat{N} \to M \times N
+    \]
+    is a Riemannian covering, where both manifolds are equipped with the corresponding product metric. Moreover 
+    \[
+    f \times g \colon \hat{M} \times \hat{N} \to S^m \times S^n
+    \]
+    defines an $\epsilon$-contracting map of degree $\mathrm{deg}(f \times g) = \mathrm{deg}(f)\mathrm{deg}(g) \neq 0$. Now consider the map 
+    \[
+    \phi \colon S^m \times S^n \to S^m \wedge S^n \cong S^{m+n},
+    \]
+    given by projection onto the smash product 
+    \[
+    S^m \wedge S^n := \raisebox{3pt}{$\modulo{S^m \times S^n}{(S^m \times \ast \cup \ast \times S^n)}$},
+    \]
+    which is well known to be homeomorphic to the sphere $S^{m+n}$. The map $\phi$ is easily seen to be of degree $\pm 1$ (depending on the chosen orientations) and after a slight perturbation we may also assume it to be smooth. Moreover, because $S^m \times S^n$ is closed, it follows that $\phi$ is a $\lambda$-Lipschitz map for some constant $\lambda > 0$. Therefore $\phi \circ (f \times g)$ is a $\lambda \epsilon$-Lipschitz map of non-zero degree and since $\epsilon$ was chosen arbitrarily the statement follows.
+
+    For \ref{eq:lem_for_constructing_enlargeable_mnf_2} let $M^m$ be enlargeable and let $h \colon P \to M$ be some non-zero degree map. Again given $\epsilon > 0$ choose a Riemannian covering $p \colon \hat{M} \to M$ as well as an $\epsilon$-contracting map $f \colon \hat{M} \to S^m$. Define a covering $\pi \colon \hat{P} \to P$ as the pullback covering of $p$ under $h$, that is $\pi$ fits into a pullback diagram of the form 
+    \[\begin{tikzcd}
+	{\hat{P}} & {\hat{M}} \\
+	P & M
+	\arrow["H", from=1-1, to=1-2]
+	\arrow["\pi", from=1-1, to=2-1]
+	\arrow["p", from=1-2, to=2-2]
+	\arrow["h", from=2-1, to=2-2]
+    \end{tikzcd}\]
+    where $H$ is some suitable smooth map. Since $\hat{M}$ and $P$ are closed, the same holds for $\hat{P}$. Moreover $h$ is $\mu$-Lipschitz for some constant $\mu > 0$, because $P$ is closed. Consequently $H$ is also $\mu$-Lipschitz, given that both $\pi$ and $p$ are local isometries. For the degree of $H$ we compute 
+    \[
+    \mathrm{deg}(p)\mathrm{deg}(H) = \mathrm{deg}(p \circ H) = \mathrm{deg}(h \circ \pi) = \mathrm{deg}(h)\mathrm{deg}(\pi) \neq 0,
+    \]
+    using the fact that $\mathrm{deg}(h) \neq 0$ by assumption and that the degree of a covering is given by the cardinality of the fiber. We conclude that $H$ is of non-zero degree, such that $f \circ H \colon \hat{P} \to S^m$ is a $\mu \epsilon$-Lipschitz map of non-zero degree. Again since $\epsilon$ was chosen arbitrarily the statement follows.
+\end{proof}
+
+From Part \ref{eq:lem_for_constructing_enlargeable_mnf_2} of the above lemma it follows immediately, that enlargeability is a homotopy invariant, since a homotopy equivalence of connected closed oriented manifolds has degree $\pm 1$. In fact much more is true, namely that enlargeability is a homological invariant in the following sense. 
+
+\begin{theorem}[\cite{BrunnbauerHanke}]
+    Let $M$ be a closed oriented $n$-manifold and let $\phi \colon M \to B\pi_1(M)$ be the classifying map of the universal cover. Then there exists a rational vector subspace 
+    \[
+    H_n^\mathrm{small}(B\pi_1(M);\Q) \subseteq H_n(B\pi_1(M);\Q)
+    \]
+    of ``small'' classes with the property that $M$ is enlargeable if and only if $\phi_\ast [M] \notin H_n^\mathrm{small}(B\pi_1(M);\Q)$, that is $\phi_\ast [M]$ is ``large''.
+    % In fact the assignment $M \mapsto H_n^\mathrm{small}(B\pi_1(M);\Q)$ is functorial for maps $f \colon M \to N$ inducing an epimorphism on $\pi_1$, that is $f_\ast \colon H_n(B\pi_1(M);\Q) \to H_n(B\pi_1(N);\Q)$ maps small classes to small classes.
+\end{theorem}
+ In \cite{BrunnbauerHanke} the authors showed this by giving a general definition of ``small'' and ``large'' homology classes of a simplicial complex $X$ with finitely generated fundamental group, such that the assignment $X \mapsto H_n^\mathrm{small}(X;\Q)$ is functorial for continuous maps $f \colon X \to Y$ inducing an epimorphism on $\pi_1$, that is $f_\ast \colon H_n(X;\Q) \to H_n(Y;\Q)$ maps small classes to small classes. Moreover if $f$ happen to induce an isomorphism on $\pi_1$ then $f_\ast$ also maps large classes to large classes. This general definition then specializes to the fact that a closed oriented manifold $M$ is enlargeable if and only if the fundamental class $[M]$ is large, that is $[M] \notin H_n^\mathrm{small}(M;\Q)$. Combining these observations, the theorem follows. Furthermore this argument shows that the notion of enlargeability can be purely thought of as a concept of simplicial complexes. For details we refer the reader to \cite{BrunnbauerHanke}.
+
+% In particular the above Theorem implies homotopy invariance of enlargeability. In \cite{BrunnbauerHanke} the authors showed this by giving a general definition of ``small'' and ``large'' homology classes of a simplicial complex $X$ with finitely generated fundamental group, such that the assignment $X \mapsto H_n^\mathrm{small}(X;\Q)$ is again functorial for continuous maps inducing an epimorphism on $\pi_1$. This definition then specializes to the fact that a closed oriented manifold $M$ is enlargeable if and only if the fundamental class $[M]$ is large, that is $[M] \notin H_n^\mathrm{small}(M;\Q)$, from which the Theorem follows. Moreover this argument shows that the notion of enlargeability can be purely thought of as a concept of simplicial complexes. For details we refer the reader to \cite{BrunnbauerHanke}.

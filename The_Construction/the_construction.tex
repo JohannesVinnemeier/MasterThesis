@@ -1,4 +1,4 @@
-\section{The Construction}
+\section{Construction of the Circle Bundles}
 
 We will now construct counterexamples to the question raised in the beginning, that is circle bundles $E \to M$ over enlargeable $M$, where the total space $E$ admits a metric of positive scalar curvature. 
 In the following we will refer to orientable manifolds with non-spin universal cover as \emph{totally non-spin}.
@@ -20,7 +20,7 @@ Since the collapse map $M \to T^{2n}$ has degree $1$ and $T^{2n}$ is enlargeable
 \[
 c_1 \in H^2(M;\Z) \cong H^2(\CP^n;\Z) \oplus H^2(T^{2n};\Z) \oplus H^2(N;\Z)
 \]
-be the cohomology class corresponding to the first chern class $\alpha \in H^2(\CP^n;\Z)$ of the canonical bundle $S^{2n+1} \to \CP^n$. We then define $E \to M$ as the unique $S^1$-principal bundle with first chern class equal to $c_1$. Now this is quite an abstract definition, so let us develop an intuition for how this bundle looks like. We claim that $E$ is trivial over the summand $T^{2n} \# N$ and is given by the restriction of the canonical bundle $S^{2n+1} \to \CP^n$ over the $\CP^n$ summand. To make this precise let 
+be the cohomology class corresponding to the first chern class $\alpha \in H^2(\CP^n;\Z)$ of the canonical bundle $S^{2n+1} \to \CP^n$ under the above isomorphism. We then define $E \to M$ as the unique $S^1$-principal bundle with first chern class equal to $c_1$. Now this is quite an abstract definition, so let us develop an intuition for how this bundle looks like. We claim that $E$ is trivial over the summand $T^{2n} \# N$ and is given by the restriction of the canonical bundle $S^{2n+1} \to \CP^n$ to $\CP^n - D^{2n} \subseteq M$ over the $\CP^n$ summand. To make this precise let 
 \[
 i_1 \colon (T^{2n} \# N) - D^{2n} \to M
 \]
@@ -93,17 +93,17 @@ We will give a proof of this theorem further below, which is essentially an appl
 	\[
 	i^\ast E \cong (N- D^{2n}) \times S^1.
 	\]
-	From Lemma \ref{lem:totally_non_spin_lemma} we conclude that $N_0 := N - D^{2n}$ and consequently also $(N- D^{2n}) \times S^1$ are totally non-spin. 
+	From Lemma \ref{lem:totally_non_spin_lemma} \ref{eq:totally_non_spin_lemma1} and \ref{eq:totally_non_spin_lemma3} we conclude that $(N- D^{2n}) \times S^1$ is totally non-spin. 
 	% Then the universal cover of $i^\ast E$ is given by $\tilde{N}_0 \times \R$, where $\tilde{N}_0$ is the universal cover of $N_0$. Let $\pi_{\tilde{N}_0} \colon \tilde{N}_0 \times \R \to \tilde{N}_0$ and $\pi_\R \colon \tilde{N}_0 \times \R \to \R$ be the projections. We compute 
 	% \[
 	% w_2(T(\tilde{N}_0 \times \R)) = w_2(\pi_{\tilde{N}_0}^\ast T\tilde{N}_0 \oplus \pi_\R^\ast T\R) = \pi_{\tilde{N}_0}^\ast w_2(T\tilde{N}_0).
 	% \]
 	% Since $\pi_{\tilde{N}_0}$ is a homotopy equivalence and $\tilde{N}_0$ is non-spin it follows that $w_2(T(\tilde{N}_0 \times \R)) \neq 0$, such that $i^\ast E$ is totally non spin. 
-	Therefore $E$ contains a totally non-spin submanifold of codimension $0$ and so again Lemma \ref{lem:totally_non_spin_lemma} implies that $E$ is totally non-spin.
+	Therefore $E$ contains a totally non-spin submanifold of codimension $0$ and so Lemma \ref{lem:totally_non_spin_lemma} \ref{eq:totally_non_spin_lemma2} implies that $E$ is also totally non-spin.
 \end{proof}
 
 \begin{proof}[Proof of Claim \ref{claim2}]
-	Let $j \colon \CP^{n} - D^{2n}$ be the inclusion. Consider the following commutative diagram, where the rows are taken from the long exact sequences of homotopy groups of the respective fibrations and the vertical maps are induced by inclusions: 
+	We have to show that the fibers of $E$ can be contracted. This is essentially due to the fact that $E$ contains (the restriction of) the canonical bundle $S^{2n+1} \to \CP^n$ for which the fibers are contractible. To formalize this let $j \colon \CP^{n} - D^{2n}$ be the inclusion. Consider the following commutative diagram, where the rows are taken from the long exact sequences of homotopy groups of the respective fibrations and the vertical maps are induced by inclusions: 
 	\[\begin{tikzcd}
 	{\pi_2(M)} & {\pi_1(S^1)} & {\pi_1(E)} \\
 	{\pi_2(\CP^n - D^{2n})} & {\pi_1(S^1)} & {\pi_1(j^\ast E)} \\
@@ -128,9 +128,9 @@ The vertical map on the lower left is an isomorphism, because both $\CP^n$ and $
 	\arrow[from=1-1, to=1-2]
 	\arrow["\cong", from=1-1, to=2-1]
 	\arrow["\cong", from=1-2, to=2-2]
-	\arrow["\cong", from=2-1, to=2-2]
+	\arrow[from=2-1, to=2-2]
 \end{tikzcd}\]
-commutes and the vertical maps are isomorphisms. We now claim that $\partial_1$ is surjective. For this it suffices to show surjectivity of $\partial_2$, which in turn is equivalent to surjectivity of $\partial_3$. But this is clear by exactness of the rows and $\pi_1(S^{2n+1}) = 0$. Consequently
+commutes and the vertical maps are isomorphisms. Since the bottom horizontal map is an isomorphism the same holds for the top horizontal map. We now claim that $\partial_1$ is surjective. For this it suffices to show surjectivity of $\partial_2$, which in turn is equivalent to surjectivity of $\partial_3$. But this is clear by exactness of the rows and $\pi_1(S^{2n+1}) = 0$. Consequently
 \[
 \pi_1(S^1) \to \pi_1(E)
 \]
@@ -141,4 +141,4 @@ is the zero map and therefore we conclude from exactness of
 that $\pi_1(E) \to \pi_1(M)$ is indeed an isomorphism.
 \end{proof}
 
-The above construction now gives examples for circle bundles with positive scalar curvature over enlargeable manifolds in all even dimensions $\geq 4$. To also get examples in odd dimensions let $E \to M$ be as above and let $\pi \colon M \times S^1 \to M$ be the projection. Then the pullback bundle $\pi^\ast E \cong E \times S^1$ clearly admits a metric of positive scalar curvature and by Lemma \ref{lem:constructing_enlargeable_mnf} the base space $M \times S^1$ is still enlargeable.
+The above construction now gives examples for circle bundles with positive scalar curvature over enlargeable manifolds $M$ in all even dimensions $\mathrm{dim}(M)\geq 4$. To also get examples in odd dimensions let $E \to M$ be as above and let $\pi \colon M \times S^1 \to M$ be the projection. Then the pullback bundle $\pi^\ast E \cong E \times S^1$ clearly admits a metric of positive scalar curvature and by Lemma \ref{lem:constructing_enlargeable_mnf} the base space $M \times S^1$ is still enlargeable. Naturally, the question arises as to what happens in dimensions $\mathrm{dim}(M) \leq 3$. In this case it turns out that no circle bundle $E \to M$ admits a metric of positive scalar curvature, see \cite[Theorem B]{kumar2025circle}.
