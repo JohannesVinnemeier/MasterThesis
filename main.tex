@@ -67,15 +67,18 @@
 
 %Theorems, lemmas etc.
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem} %%%%%%%%%%%%
+\newtheorem*{gromov}{Enlargeable Decay Theorem} %%%%%%%%%%%%
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
+\newtheorem*{question}{Question} %%%%%%%%%%%%
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{counterexample}[theorem]{Counterexample}
 \newtheorem{exercise}[theorem]{Exercise}
-\newtheorem{question}[theorem]{Question}
+% \newtheorem{question}[theorem]{Question}
 \newtheorem{claim}{Claim}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
@@ -101,19 +104,24 @@
   {\tikz \filldraw (0,0) circle (0.5pt);}}}
 
 \begin{document}
-    \include{Titlepage/titlepage}
-    \tableofcontents
+
+  \include{Sections/bundles}
+
+
+    % \include{Misc/toc_draft}
+    % \include{Titlepage/titlepage}
+    % \tableofcontents
     % \newpage
-    \include{Introduction/introduction}
-    \include{Preliminaries/preliminaries}
-    \include{The_Construction/the_construction}
-    \include{Appendix/appendix}
+    % \include{Introduction/introduction}
+    % \include{Preliminaries/preliminaries}
+    % \include{The_Construction/the_construction}
+    % \include{Appendix/appendix}
 
     %Bibliography (Comment out for faster compilation)
 
-\nocite{*} %Include all entries from BibTeX file
-\bibliographystyle{alpha}
-\bibliography{ref}
+% \nocite{*} %Include all entries from BibTeX file
+% \bibliographystyle{alpha}
+% \bibliography{ref}
 
 
 \end{document}

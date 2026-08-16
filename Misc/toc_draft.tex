@@ -1,0 +1,50 @@
+\begin{enumerate}[label=\arabic*)]
+    \item Motivation
+    \item Universal Bundles and Characteritsic Classes 
+    \begin{itemize}
+        \item Contains some basic preliminaries about principal bundles, universal bundles \& classifying spaces, Stiefel-Whitney \& Chern Classes
+    \end{itemize}
+    \item Positive Scalar Curvature
+    \begin{itemize}
+        \item Brief discussion of PSC as a whole
+        \item Construction of PSC metrics (here I give a proof of Theorem \ref{toc_draft:thm1} below, which I need to conclude the existence of a psc metric on the $S^1$-bundle. I do this by precisley showing how to perform surgery on the cobordism to make the inlcusion $M_1 \to W$ 2-connected and then cite Theorem \ref{toc_draft:thm2} below. I also briefly explain how to adapt the proof in the spin setting)
+        \item Some basic technical Lemmas I need about spin and totally non-spin manifolds in the construction
+    \end{itemize}
+    \item Enlargeability
+    \begin{itemize}
+        \item Definition of Enlargeability, Examples, construction of enlargeable manifolds, homological viewpoint
+        \item brief discussion of non-existence of PSC metrics in spin and non-spin case
+    \end{itemize}
+    \item Construction of PSC Circle Bundles
+    \begin{itemize}
+        \item The construction of psc $S^1$-bundles over enlargeable manifolds in all dimensions $\geq 4$ (+ short discussion why no examples in dimensions $\leq 3$ exist)
+        \item Brief discussion of troubles to extend this construction to the spin case
+        \item Necessity of Enlargeability Assumption in this Gromov Theorem (Theorem \ref{toc_draft:thm3})
+        \item Further Questions (Does the total space $E$ admit an $S^1$-invariant metric $\rightsquigarrow$ no! Can the $S^1$-action be used to produce non-trivial elements in $\pi_1(\mathcal{R}_{\mathrm{scal} > 0}(E))$?)
+    \end{itemize}
+\end{enumerate}
+
+
+\begin{theorem}
+    \label{toc_draft:thm1}
+    Let $W^{n+1}$ be an oriented cobordism from $M_0$ to $M_1$, $n \geq 5$. Suppose that $M_1$ is a connected totally non-spin manifold, the inlcusion $M_1 \to W$ induces an isomorphism on $\pi_1$ and that $M_0$ carries a psc-metric. Then $M_1$ also carries a psc-metric. In fact the psc-metric on $M_0$ can be extended to a psc-metric on $W$, which is of product form near the boundary. 
+\end{theorem}
+
+\begin{theorem}
+    \label{toc_draft:thm2}
+    Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, $n \geq 5$, such that the inclusion $M_1 \to W$ is $2$-connected. Then any psc-metric on $M_0$ extends to a psc-metric on $W$ with cylindrical boundary.
+\end{theorem}
+
+\begin{theorem}[Enlargeable Decay Theorem]
+    \label{toc_draft:thm3}
+    Let $X$ be a complete Riemannian manifold, $V \to M$ a two dimensional vector bundle over a compact enlargeable manifold $M$. Assume that 
+    \begin{enumerate}[label=\roman*)]
+        \item There exists a proper map $f \colon X \to V$, $\mathrm{deg}(f) \neq 0$,
+        \item The total space of the circle bundle associated to $V \to M$ is also enlargeable.
+    \end{enumerate}
+    Then 
+    \[
+    \min_{B_{x_0}(R)} \mathrm{scal}(X) \leq \frac{8 \pi^2}{(R - R_0)^2}
+    \]
+    for some $R_0 = R_0(X,x_0)$ and all $R > R_0$.
+\end{theorem}
