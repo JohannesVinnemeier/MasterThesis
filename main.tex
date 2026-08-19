@@ -68,13 +68,12 @@
 
 %Theorems, lemmas etc.
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem*{theorem*}{Theorem} %%%%%%%%%%%%
-\newtheorem*{gromov}{Enlargeable Decay Theorem} %%%%%%%%%%%%
+\newtheorem*{theorem*}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
-\newtheorem*{question}{Question} %%%%%%%%%%%%
+\newtheorem*{question}{Question}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{counterexample}[theorem]{Counterexample}
@@ -106,25 +105,21 @@
 
 \begin{document}
 
+  % \include{Titlepage/titlepage}
+  % \tableofcontents
+  % \newpage
+
   \include{Sections/introduction}
   \include{Sections/bundles}
   \include{Sections/psc}
   \include{Sections/enlargeability}
+  \include{Sections/the_construction}
 
+  %Bibliography (Comment out for faster compilation)
 
-    % \include{Misc/toc_draft}
-    % \include{Titlepage/titlepage}
-    % \tableofcontents
-    % \newpage
-    % \include{Misc/introduction}
-    % \include{The_Construction/the_construction}
-    % \include{Appendix/appendix}
-
-    %Bibliography (Comment out for faster compilation)
-
-% \nocite{*} %Include all entries from BibTeX file
-% \bibliographystyle{alpha}
-% \bibliography{ref}
+  % \nocite{*} %Include all entries from BibTeX file
+  % \bibliographystyle{alpha}
+  % \bibliography{ref}
 
 
 \end{document}

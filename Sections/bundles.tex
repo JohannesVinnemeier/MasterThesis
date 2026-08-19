@@ -1,6 +1,7 @@
-\section{Universal Bundles and Characteristic Classes}
+\section{Classifying Spaces and Characteristic Classes}
+\label{sec:bundles}
 
-This section will lay the groundwork for the subsequent material, by recalling the notions of principal bundles, universal bundles and characteristic classes. We assume the reader to be familiar with the concept of a fiber bundle with structure group. A classical reference for this is for example \cite{steenrod1951topology}.
+This section will lay the groundwork for the subsequent material, by recalling the notions of principal bundles, classifiying spaces and characteristic classes. We assume the reader to be familiar with the concept of a fiber bundle with structure group. A classical reference for this is for example \cite{steenrod1951topology}.
 
 \subsection{Principal Bundles and Associated Bundles}
 
@@ -96,10 +97,11 @@ The Borel construction is the reason why the bundle obtained from $P \to B$ by c
 Lets look at some concrete examples for the theory developed above.
 
 \begin{example} For simplicity we assume all base spaces $B$ to be smooth manifolds in this example.
+    \label{bundles:ex:associated_bundles}
     \begin{enumerate}[label=\roman*)]
         \item Let $E \to B$ be a real rank $n$ vector bundle. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $O(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle of $E$}, whose fiber over a point $x \in B$ is the space of all ordered bases of $E_x$. 
         \item An orientation of a real vector bundle allows us to further reduce the structure group to $SO(n)$. The associated principal bundle is then given by the \textit{oriented orthonormal frame bundle of $E$}, whose fiber over a point $x \in B$ is the space of all oriented ordered bases of $E_x$. 
-        \item An example, which will be of relevance later is the following. Let $P \to B$ be an $S^1$-prinicpal bundle. We can change the fiber of $P$ from $S^1$ to $D^2$ to obtain another bundle $E \to B$, where $S^1$ acts on $D^2$ by rotations. Since this action just extends the action of $S^1 = \partial D^2$ on itself we see that $P \cong \partial E$. So in particular the total space of any $S^1$-prinicpal bundle is null-bordant. 
+        \item \label{bundles:ex:associated_bundles_part3} An example, which will be of relevance later is the following. Let $P \to B$ be an $S^1$-prinicpal bundle. We can change the fiber of $P$ from $S^1$ to $D^2$ to obtain another bundle $E \to B$, where $S^1$ acts on $D^2$ by rotations. Since this action just extends the action of $S^1 = \partial D^2$ on itself we see that $P \cong \partial E$. So in particular the total space of any $S^1$-prinicpal bundle is null-bordant. 
         \item The associated prinicpal bundle of the tautological line bundle $\xi_1^n \to \CP^n$ is given by the projection map $S^{2n+1} \to \CP^n$ dividing out the $S^1$ action on $S^{2n+1}$. PROOF
     \end{enumerate}
 \end{example}

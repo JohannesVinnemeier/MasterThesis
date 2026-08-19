@@ -1,19 +1,41 @@
 \section*{Introduction}
 
-\begin{gromov}[\cite{gromov2018metric}]
-Let $X$ be a Riemannian manifold, $V \to M$ a two dimensional vector bundle over a compact enlargeable manifold $M$. Assume that 
+The scalar curvature of a Riemannian Manifold $(M,g)$ is a smooth function $\mathrm{scal} \colon M \to \R$ measuring how much the volume of small geodesic balls around a point deviates from that of euclidian balls. While it is the weakest curvature condition for a Riemannian manifold, the presence of positive scalar curvature can still have strong topological implications. The archetypal example is the celebrated Gauß-Bonnet Theorem:
+
+\begin{theorem*}[Gauß-Bonnet]
+    Let $(M,g)$ be a closed Riemannian $2$-manifold. Then 
+    \[
+    \int_M \mathrm{scal} \, \mathrm{d}A = 4\pi\chi(M),
+    \]
+    where $\chi(M)$ is the Euler characteristic of $M$.
+\end{theorem*}
+
+For non-compact complete manifolds, merely having positive scalar curvature may be too weak of a condition. The problem is that scal can still tend to zero quite rapidly at infinity. However, if the rate of decay at infinity can be controlled, positive scalar curvature still has profound consequences. For example, Chen has recently shown a decomposition result for $3$-manifolds under the assumption that a positive scalar curvature metric with controlled decay at infinity exists [Chen2025]. This naturally raises the question of how fast the scalar curvature of a given complete Riemannian manifold $X$ decays at infinity. One statement in this direction is the following theorem by Gromov:
+
+\begin{theorem*}[Enlargeable Decay Theorem, \cite{gromov2018metric}, page 15f.]
+    \label{intro:thm:gromov_thm}
+Let $X$ be a complete Riemannian manifold, $E \to M$ a two dimensional vector bundle over an enlargeable manifold $M$. Assume that 
 \begin{enumerate}[label=(\roman*)]
-    \item There exists a proper map $f \colon X \to V$, $\mathrm{deg}(f) \neq 0$,
-    \item[\textcolor{red}{(ii)}] \textcolor{red}{The total space of the circle bundle corresponding to $V$ is also enlargeable.}
+    \item There exists a proper map $f \colon X \to E$, $\mathrm{deg}(f) \neq 0$,
+    \item \label{intro:eq:gromov_thm_condition_2}The total space of the circle bundle corresponding to $E$ is also enlargeable.
 \end{enumerate}
 Then 
 \[
 \min_{B_{x_0}(R)} \mathrm{scal}(X) \leq \frac{8 \pi^2}{(R-R_0)^2}
 \]
 for some $R_0 = R_0(X,x_0)$ and all $R > R_0$.
-\end{gromov}
+\end{theorem*}
 
+It is easy to see that condition \ref{intro:eq:gromov_thm_condition_2} is always fullfilled if the bundle $E \to M$ is trivial (compare Lemma \ref{enl:lem:constructing_enlargeable_mnf} \ref{enl:eq:lem_for_constructing_enlargeable_mnf_1}), which lead Gromov to pose the following question:
 
 \begin{question}[\cite{gromov2018metric}]
-``What happens to nontrivial bundles $V \to M$? [...] In general, the examples in \cite{BrunnbauerHanke} indicate a possibility of non-enlargeable circle bundles over enlargeable $M$; yet, it seems hard(er) to find such examples, where the corresponding total space would admit metrics with $\mathrm{scal} > 0$.''
+``What happens to nontrivial bundles $E \to M$? [...] In general, the examples in \cite{BrunnbauerHanke} indicate a possibility of non-enlargeable circle bundles over enlargeable $M$; yet, it seems hard(er) to find such examples, where the corresponding total space would admit metrics with $\mathrm{scal} > 0$.''
 \end{question}
+
+As it turns out, such examples do in fact exist, that is, circle bundles over enlargeable manifolds, where the total space admits a metric of positive scalar curvature and thus, in particular, is not enlargeable. Bundles with this behaviour have recently been constructed in a paper by Kumar and Sen \cite{kumar2025circle} by utilizing tools from symplectic geometry. A very rough sketch of the construction can be given as follows. Take $M$ to be a so-called Donaldson divisor of a suitable closed symplectic manifold, e.g., the torus $T^{2n}$, $n \geq 3$. Such a Donaldson divisor is a certain codimension $2$ symplectic submanifold $M^{2n-2} \subseteq T^{2n}$, which in some cases can be shown to be enlargeable. Now define a circle bundle $E := \partial \nu(M)$ over $M$ as the boundary of a tubular neighbourhood $\nu(M) \subseteq T^{2n}$ of $M$. In order to construct a positive scalar curvature metric on $E$, consider the nullbordism $W := T^{2n} - \nu(M)$ obtained by removing the tubular neighbourhood from the ambient manifold. Now explicitly construct a Morse function $\psi \colon W \to \R$ with critical points of index at most $n$, which shows that $E$ is obtained from the empty set by surgeries of codimension at least $n \geq 3$. Thus, $E$ admits a metric of positive scalar curvature by the Gromov-Lawson-Schoen-Yau Surgery Theorem (see Theorem \ref{psc:thm:surgery_thm}).
+
+In this thesis, we provide an alternative, much more direct construction relying simply on basic topological concepts. It should be said, however, that this alternative approach only provides examples in the totally non-spin case.
+
+\newpage
+
+The thesis is organized as follows. \hyperref[sec:bundles]{Chapter 1} recalls some concepts from the broader theory of principal bundles, laying the foundation for the subsequent chapters. In \hyperref[sec:psc]{Chapter 2}, we briefly introduce the reader to the theory of positive scalar curvature and prove two existence theorems for positive scalar curvature metrics, which are used in the main construction in \hyperref[sec:constr]{Chapter 4}. The proofs of these theorems are based on methods from surgery theory, which we also take some time to explain. \hyperref[sec:enl]{Chapter 3} provides a brief discussion of the concept of enlargeability, which is the central idea underlying this thesis. Finally, \hyperref[sec:constr]{Chapter 4} contains the main results. We present a simple construction of circle bundles over enlargeable manifolds whose total spaces admit metrics of positive scalar curvature in all dimensions $\geq 4$. These bundles are then used to obtain counterexamples to the \hyperref[intro:thm:gromov_thm]{Enlargeable Decay Theorem} above if condition \ref{intro:eq:gromov_thm_condition_2} is dropped.
