@@ -2,12 +2,12 @@
 \section{Appendix}
 \subsection{A Short Introduction to Surgery}
 
-Surgery Theory provides a way to change the topology of a manifold in a controlled way. The basic idea is the following simple observation. A product $S^k \times S^{n-k-1}$ of spheres can be considered as the boundary of both $S^k \times D^{n-k}$ and $D^{k+1} \times S^{n-k-1}$. This observation has the following consequence. Let $M^n$ be a smooth $n$-dimensional manifold and let $F \colon S^k \times D^{n-k} \to M$ be an embedding into the interior of $M$. Then we can remove the interior of the image of $F$ resulting in a manifold 
+Surgery Theory provides a way to change the topology of a manifold in a controlled way. The basic idea is the simple observation, that a product $S^k \times S^{n-k-1}$ of spheres can be considered as the boundary of both $S^k \times D^{n-k}$ and of $D^{k+1} \times S^{n-k-1}$. This allows for the following construction. Let $M^n$ be a smooth $n$-dimensional manifold and let $F \colon S^k \times D^{n-k} \to M$ be an embedding into the interior of $M$. Then we can remove the interior of the image of $F$ resulting in a manifold 
 \[
 \tilde{M} := M - \mathrm{int}(\mathrm{im}(F)).
 \]
 To $\tilde{M}$ we can attach $D^{k+1} \times S^{n-k-1}$ along the boundary component $F(S^k \times S^{n-k-1}) \subseteq \tilde{M}$ to obtain a manifold $M^\prime$. More precisely we define $M^\prime$ as the pushout 
-\[\begin{tikzcd}
+\[\begin{tikzcd}[column sep = 1.75cm]
 	{S^k \times S^{n-k-1}} & {\tilde{M}} \\
 	{D^{k+1} \times S^{n-k-1}} & {M^\prime}
 	\arrow["{F|_{S^k \times S^{n-k-1}}}", from=1-1, to=1-2]
@@ -27,7 +27,7 @@ A different, yet closely related concept, is the theory of cobordisms. Two close
 	\arrow[from=2-1, to=2-2]
 \end{tikzcd}\]
 We also refer to $(k+1)$ as the \textit{index} of the handle.
-Some care needs to be taken to define a smooth structure on $W^\prime$, see [Milnor, Morse Theory]. It turns out that any cobordism $W$ from $M$ to $M^\prime$ can be obtained from the trivial cobordism $M \times [0,1]$ by attaching finitely many handles [REFERENCE]. Now the connection between surgery theory and cobordisms is the following fundamental result, which can be shown by means of Morse theory. 
+Again some care needs to be taken to define a smooth structure on $W^\prime$, see [Milnor, Morse Theory]. It turns out that any cobordism $W$ from $M$ to $M^\prime$ can be obtained from the trivial cobordism $M \times [0,1]$ by attaching finitely many handles [REFERENCE]. Now the connection between surgery theory and cobordisms is the following fundamental result, which can be shown by means of Morse theory. 
 
 \begin{theorem}[Milnor1965, Theorem 3.13 and Theorem 3.14 + other source!!]
     Let $M$ and $M^\prime$ be closed manifolds of the same dimension. Then $M^\prime$ is obtained from $M$ by a surgery of dimension $k$ if and only if there exists a cobordism $W$ from $M$ to $M^\prime$ containing only a single handle of index $k+1$, that is $W$ is obtained from the trivial cobordism $M \times [0,1]$ by attaching a single $(k+1)$-handle.
@@ -39,11 +39,17 @@ One common usecase of surgery is to modify a given manifold $M$ in order to simp
 
 % let us briefly recall what surgery theory is about. The basic oberervation ist that a product $S^k \times S^{n-k-1}$ of spheres can be considered as the boundary of $S^k \times D^{n-k}$ or of $D^{k+1} \times S^{n-k-1}$... davor noch sowas schreiben wie "change the topology of a manifold in a controlled way"; remove thickened embedded $k$-sphere ($\to$ terminology of surgery of dimension k); EMBEDDINGS ALWAYS INTO INTERIOR (dann muss ich das unten in proposition zur surgery nicht mehr immer dazu schreiben) + can extend embedding of sphere iff trivial normal bundle; surgery intinmately connected to cobordism theory; how does surgery correspond to handles?; one common application of surgery theory is to "kill" certain homotopy groups $\to$ explain this process more precisely below 
 
+\begin{figure}
+    \centering
+    \includegraphics[scale=1]{graphics/surgery.pdf}
+    \caption{Test}
+\end{figure}
+
 \begin{proposition}
     \label{appendix:prop:surger_killer}
     Let $W^n$ be a smooth manifold with basepoint $w_0 \in W$, $M \subseteq \partial W$ a boundary component with basepoint $x_0 \in M$ and $2(k+1) \leq n$.
     \begin{enumerate}[label=(\roman*)]
-        \item \label{psc:eq:surgery_killer_absolute_version} Let $\alpha_1,\ldots,\alpha_l \in \pi_k(W,w_0)$ be classes, which are represented by embeddings with trivial normal bundle. Then there exists a manifold $W^\prime$ obtained from $W$ by $l$-many $k$-surgeries away from the point $w_0$ together with an epimorphism
+        \item \label{appendix:eq:surgery_killer_absolute_version} Let $\alpha_1,\ldots,\alpha_l \in \pi_k(W,w_0)$ be classes, which are represented by embeddings with trivial normal bundle. Then there exists a manifold $W^\prime$ obtained from $W$ by $l$-many $k$-surgeries away from the point $w_0$ together with an epimorphism
         \[
         \pi_k(W,w_0) \twoheadrightarrow \pi_k(W^\prime,w_0)
         \]
@@ -52,7 +58,7 @@ One common usecase of surgery is to modify a given manifold $M$ in order to simp
         \pi_i(W,w_0) \cong \pi_i(W^\prime,w_0)
         \] 
         for all $i \leq k-1$.
-        \item \label{psc:eq:surgery_killer_relative_version} Let $\alpha_1^\mathrm{rel},\ldots,\alpha_l^\mathrm{rel} \in \pi_k(W,M,x_0)$ be classes, which lift to classes $\alpha_1,\ldots,\alpha_l \in \pi_k(W,x_0)$ under the map $\pi_k(W,x_0) \to \pi_k(W,M,x_0)$ induced by the inclusion. Again assume that $\alpha_1,\ldots,\alpha_l$ are represented by embeddings with trivial normal bundle. Then there exists a manifold $W^\prime$ obtained from $W$ by $l$-many $k$-surgeries together with an epimorphism
+        \item \label{appendix:eq:surgery_killer_relative_version} Let $\alpha_1^\mathrm{rel},\ldots,\alpha_l^\mathrm{rel} \in \pi_k(W,M,x_0)$ be classes, which lift to classes $\alpha_1,\ldots,\alpha_l \in \pi_k(W,x_0)$ under the map $\pi_k(W,x_0) \to \pi_k(W,M,x_0)$ induced by the inclusion. Again assume that $\alpha_1,\ldots,\alpha_l$ are represented by embeddings with trivial normal bundle. Then there exists a manifold $W^\prime$ obtained from $W$ by $l$-many $k$-surgeries together with an epimorphism
         \[
         \pi_k(W,M,x_0) \twoheadrightarrow \pi_k(W^\prime,M,x_0)
         \]
@@ -68,19 +74,36 @@ One common usecase of surgery is to modify a given manifold $M$ in order to simp
 
 \begin{lemma}
     \label{appendix:lem:change_of_basepoint_homotopy_lemma}
-    Let $X$ be a topological space and let $H \colon S^k \times [0,1] \to X$ be a homotopy from some map $f \colon S^k \to X$ to some map $g \colon S^k \to X$. Fix a basepoint $s_0 \in S^k$ and consider the path $\gamma(t) := H(s_0,t)$ from $x_0 := f(s_0)$ to $y_0 := g(s_0)$. Then the change of basepoint isomorphism
+    Let $X$ be a topological space and let $H \colon S^k \times [0,1] \to X$ be a homotopy from some map $f \colon S^k \to X$ to some map $g \colon S^k \to X$. Fix a basepoint $s_0 \in S^k$ and consider the path $\gamma(t) := H(s_0,t)$ from $x_0 := f(s_0)$ to $x_1 := g(s_0)$. Then the change of basepoint isomorphism
     \[
-    b_\gamma \colon \pi_k(X,x_0) \to \pi_k(X,y_0)
+    b_\gamma \colon \pi_k(X,x_0) \to \pi_k(X,x_1)
     \]
     induced by $\gamma$ maps the class $[f]$ to the class $[g]$.
 \end{lemma}
 
+\needspace{5cm}
+
 \begin{proof}
-    We represent the classes $[f]$ and $[g]$ by maps $D^k \to X$...
+    Represent the classes $[f]$ and $[g]$ by maps $f^\prime \colon D^k \to X$ and $g^\prime \colon D^k \to X$, which are constant on the boundary. Let $H^\prime \colon D^k \times [0,1] \to X$ be the corresponding homotopy from $f^\prime$ to $g^\prime$, such that $H^\prime(S^{k-1},t) = \gamma(t)$. Then by $b_\gamma([f^\prime])$ is by definition represented by 
+    \[
+    D^k \to X, \quad y \mapsto 
+    \begin{dcases}
+        f^\prime(2y), & \norm{y} \leq \frac{1}{2},\\
+        \gamma(2\norm{y}-1), & \norm{y} \geq \frac{1}{2}.
+    \end{dcases}
+    \] 
+    This map is homotopic to $g^\prime$ relative $S^{k-1}$ by virtue of the following homotopy. 
+    \[
+    D^k \times [0,1] \to X, \quad y \mapsto 
+    \begin{dcases}
+        H^\prime\left(\frac{2}{1+t}y,t\right), & \norm{y} \leq \frac{1}{2}(1+t),\\
+        \gamma(2\norm{y}-1), & \norm{y} \geq \frac{1}{2}(1+t).
+    \end{dcases}
+    \] 
 \end{proof}
 
 \begin{proof}[Proof of Proposition \ref{appendix:prop:surger_killer}]
-    We first prove the absolute version \ref{psc:eq:surgery_killer_absolute_version} of the Proposition in three steps. \vspace{.5em}
+    We first prove the absolute version \ref{psc:eq:surgery_killer_absolute_version} of the Proposition in three steps. \vspace{-.5em}
 
     \noindent \textbf{Step 1.} We start by explaining how to kill a single homotopy class by surgery. Suppose that $w_0 \in W$ is an interior point. Let $\beta \in \pi_k(W,w_0)$ be a class represented by an embedding $f \colon (S^k,s_0) \to (W,w_0)$ for a specified basepoint $s_0 \in S^k$, which extends to an embedding $F \colon S^k \times D^{n-k} \to W$ into the interior of $W$. Let 
     \begin{align*}

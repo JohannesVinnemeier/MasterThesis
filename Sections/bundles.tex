@@ -22,7 +22,8 @@ This is well defned since by definition $G$ acts on itself by \textit{left} tran
 A morphism of principal bundles should respect this right action, thus we define:
 
 \begin{definition}
-    A morphism from a $G$-principal bundle $P \to B$ to a $G$-principal bundle $P^\prime \to B^\prime$ is a pair $(F,f)$ of continuous maps $F \colon P \to P^\prime$ and $f \colon B \to B^\prime$, such that 
+    \label{bundles:def:principal_bundles_morphism}
+    A morphism from a $G$-principal bundle $P \to B$ to an $H$-principal bundle $P^\prime \to B^\prime$ is a pair $(F,f)$ of continuous maps $F \colon P \to P^\prime$ and $f \colon B \to B^\prime$ together with a homomorphism $\rho \colon G \to H$, such that 
     \[\begin{tikzcd}
 	P & {P^\prime} \\
 	B & {B^\prime}
@@ -31,7 +32,7 @@ A morphism of principal bundles should respect this right action, thus we define
 	\arrow[from=1-2, to=2-2]
 	\arrow["f", from=2-1, to=2-2]
     \end{tikzcd}\]
-    commutes and such that $F$ is equivariant, that is $F(x \cdot g) = F(x) \cdot g$ for all $x \in P$ and $g \in G$. If $B = B^\prime$ we assume $f$ to be the identity.
+    commutes and such that $F$ is $\rho$-equivariant, that is $F(x \cdot g) = F(x) \cdot \rho(g)$ for all $x \in P$ and $g \in G$. If $G=H$ we assume $\rho$ to be the identity and if $B = B^\prime$ we assume $f$ to be the identity.
 \end{definition}
 
 The condition of equivariance in the above definition is actually quite strong as illustrated by the following proposition.
@@ -69,22 +70,22 @@ where the equivalence relation $\sim$ is defined by
 \[
 (b,f^\prime,\beta) \sim (b,\tau_{\alpha,\beta}(b) \cdot f^\prime,\alpha)
 \]
-and let $p^\prime \colon E^\prime \to B, \: [(b,f^\prime,\alpha)] \mapsto b$. It is then not too hard to show, that $p^\prime \colon E^\prime \to B$ can be given the structure of a fiber bundle with fiber $F^\prime$ and structure group $G$ with the same transition functions $\tau_{\alpha\beta}$ (QUELLE). We say that this new bundle is obtained from $E \to B$ by \textit{changing the fiber} from $F$ to $F^\prime$ (with the $G$-action on $F^\prime$ be implicit). Note that we can obtain $E \to B$ back from $E^\prime \to B$ by changing the fiber from $F^\prime$ back to $F$. Thus no information is lost in this process. Considering the special case $F^\prime = G$ with $G$ acting on itself by left translations, we call the bundle obtained from $E \to B$ by changing the fiber from $F$ to $G$ the \textit{associated principal bundle}. Morally speaking if we want to understand the bundle $E \to B$ it is sufficient to understand its associated prinicpal bundle, as it contains the same information as we have seen above. The benefit of studying principal bundles is that they are very symmetric obejcts, making them easier to understnad. For example many constructions simlify when performed on principal bundles, such as the ... of universal bundles as we will see in the next subsection. Another such instance is the construction of changing the fiber from above, which can be made more dirctly in the case of principal bundles. This is known as the \textit{Borel Construction}:
+and let $p^\prime \colon E^\prime \to B, \: [(b,f^\prime,\alpha)] \mapsto b$. It is then not too hard to show, that $p^\prime \colon E^\prime \to B$ can be given the structure of a fiber bundle with fiber $F^\prime$ and structure group $G$ with the same transition functions $\tau_{\alpha\beta}$ (QUELLE). We say that this new bundle is obtained from $E \to B$ by \textit{changing the fiber} from $F$ to $F^\prime$ (with the $G$-action on $F^\prime$ be implicit). Note that we can obtain $E \to B$ back from $E^\prime \to B$ by changing the fiber from $F^\prime$ back to $F$. Thus no information is lost in this process. Considering the special case $F^\prime = G$ with $G$ acting on itself by left translations, we call the bundle obtained from $E \to B$ by changing the fiber from $F$ to $G$ the \textit{associated principal bundle}. Morally speaking if we want to understand the bundle $E \to B$ it is sufficient to understand its associated prinicpal bundle, as it contains the same information as we have seen above. The benefit of studying principal bundles is that they are very symmetric obejcts, making them easier to understnad. For example many constructions simlify when performed on principal bundles, such as the ... of universal bundles as we will see in the next subsection. Another such instance is the construction of changing the fiber from above, which can be made more dirctly in the case of principal bundles and has the benefit of also allowing for non-effective group actions. This is known as the \textit{Borel Construction}:
 
 \begin{lemma}[Borel Construction, QUELLE?]
     \label{bundles:lem:borel_construction}
-    Let $P \xrightarrow{p} B$ be a $G$-principal bundle and $F$ a space upon which $G$ acts effectively from the left. Then 
+    Let $P \xrightarrow{p} B$ be a $G$-principal bundle and $F$ a space upon which $G$ acts from the left. Then 
     \[
     E := \modulo{(P \times F)}{\sim}, \quad (y,f) \sim (y\cdot g, g^{-1}f)
     \]
-    together with the map $\pi \colon E \to B$ given by $[(y,f)] \mapsto p(y)$ is a fiber bundle with fiber $F$ and structure group $G$. Moreover this bundle is isomorphic to the bundle obtained from $P \to B$ by changing the fiber from $G$ to $F$ using the construction outlined above.
+    together with the map $\pi \colon E \to B$ given by $[(y,f)] \mapsto p(y)$ is a fiber bundle with fiber $F$ and structure group $G$. Moreover, if the action of $G$ on $F$ is effective, this bundle is isomorphic to the bundle obtained from $P \to B$ by changing the fiber from $G$ to $F$ using the construction outlined above.
 \end{lemma}
 
 The Borel construction is the reason why the bundle obtained from $P \to B$ by changing the fiber from $G$ to $F$ is usually denoted by $P \times_G F \to B$. With this notation in mind we can formulate an important naturality property regarding the change of fibers. 
 
 \begin{lemma}
         \label{bundles:lem:natruality_of_changing_fiber}
-        Let $P \to B$ be a $G$-prinicpal bundle, $F$ a space upon which $G$ acts effectively and $f \colon B^\prime \to B$ a continuous map. Then 
+        Let $P \to B$ be a $G$-prinicpal bundle, $F$ a space upon which $G$ acts from the left and $f \colon B^\prime \to B$ a continuous map. Then 
         \[
         (f^\ast P) \times_G F \cong f^\ast(P \times_G F).
         \]
@@ -102,7 +103,7 @@ Lets look at some concrete examples for the theory developed above.
         \item Let $E \to B$ be a real rank $n$ vector bundle. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $O(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle of $E$}, whose fiber over a point $x \in B$ is the space of all ordered bases of $E_x$. 
         \item An orientation of a real vector bundle allows us to further reduce the structure group to $SO(n)$. The associated principal bundle is then given by the \textit{oriented orthonormal frame bundle of $E$}, whose fiber over a point $x \in B$ is the space of all oriented ordered bases of $E_x$. 
         \item \label{bundles:ex:associated_bundles_part3} An example, which will be of relevance later is the following. Let $P \to B$ be an $S^1$-prinicpal bundle. We can change the fiber of $P$ from $S^1$ to $D^2$ to obtain another bundle $E \to B$, where $S^1$ acts on $D^2$ by rotations. Since this action just extends the action of $S^1 = \partial D^2$ on itself we see that $P \cong \partial E$. So in particular the total space of any $S^1$-prinicpal bundle is null-bordant. 
-        \item The associated prinicpal bundle of the tautological line bundle $\xi_1^n \to \CP^n$ is given by the projection map $S^{2n+1} \to \CP^n$ dividing out the $S^1$ action on $S^{2n+1}$. PROOF
+        \item The associated prinicpal bundle of the tautological line bundle $\tau_1^n \to \CP^n$ is given by the projection map $S^{2n+1} \to \CP^n$ dividing out the $S^1$ action on $S^{2n+1}$. PROOF
     \end{enumerate}
 \end{example}
 
@@ -216,9 +217,11 @@ understood principal bundles, how can we recover information abotu general bundl
 Let us look at some examples...
 
 \begin{example}
-    \begin{enumerate}[label=*)]
-        \item[label]
-        \item $BO(n)$ and $EO(n)$ explicit via Stiefel Manifolds (compare n lab) + $EO(n) \times_{O(n)} \R^n \cong \xi_n^\infty$ for $\xi_n^\infty$ tautological bundle over grassmanain
+    \label{bundles:ex:examples_for_classifiying_spaces}
+    \begin{enumerate}[label=(\roman*)]
+        \item[]
+        \item homotopy groups of $BG$ ($\pi_k(BG) \cong \pi_{k-1}(G)$ for $k \geq 1$ and $\pi_0(BG) = \ast$, since $BG = \pi(EG)$, where $\pi \colon EG \to BG$ projection)
+        \item $BO(n)$ and $EO(n)$ explicit via Stiefel Manifolds (compare n lab) + $EO(n) \times_{O(n)} \R^n \cong \gamma_n$ for $\gamma_n$ tautological bundle over grassmanain + orientable vector bundles classfied by BSO(n) (universal vector bundle over this denoted by $\gamma_n^{\so}$)
         \item Analogous for complex case??
         \item Special cases $\RP^\infty$ and $\CP^\infty$
         \item $M \to B\pi_1(M)$ induces iso on $\pi_1$
@@ -244,7 +247,7 @@ For real vector bundles the most important characteristic classes are the so cal
         \item $w_i(E) \in H^i(B;\Z_2)$ for any real bundle $E \to B$,
         \item \label{bundles:eq:prop2_for_stiefel_whitney_classes} $w_i(E) = 0$ for $i > \mathrm{rank}(E)$,
         \item \label{bundles:eq:prop3_for_stiefel_whitney_classes} $w(E_1 \oplus E_2) = w(E_1) \smile w(E_2)$, where $w = 1 + w_1 + w_2 + \ldots$,
-        \item For the canonical line bundle $\xi_1^\infty \to \RP^\infty$, $w_1(E)$ is the generator of $H^1(\RP^\infty;\Z_2) \cong \Z_2$.
+        \item For the canonical line bundle $\gamma_1 \to \RP^\infty$, $w_1(\gamma_1)$ is the generator of $H^1(\RP^\infty;\Z_2) \cong \Z_2$.
     \end{enumerate}
 \end{definition}
 
@@ -258,18 +261,19 @@ Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes} the sum
         \item $c_i(E) \in H^{2i}(B;\Z)$ for any complex bundle $E \to B$,
         \item $c_i(E) = 0$ for $i > \mathrm{rank}(E)$,
         \item $c(E_1 \oplus E_2) = c(E_1) \smile c(E_2)$, where $c = 1 + c_1 + c_2 + \ldots$,
-        \item For the canonical line bundle $\tau_1^\infty \to \CP^\infty$, $c_1(E)$ is a generator of $H^2(\CP^\infty;\Z) \cong \Z$ specified in advance.
+        \item For the canonical line bundle $\tau_1 \to \CP^\infty$, $c_1(\tau_1)$ is a generator of $H^2(\CP^\infty;\Z) \cong \Z$ specified in advance.
     \end{enumerate}
 \end{definition}
 
 Again $c = 1 + c_1 + c_2 + \ldots$ is well-defined and is called the \textit{total Chern class}. Again one sometimes writes $c_0(E) := 1 \in H^0(B;\Z)$. See [HATCHER] for a proof of existence and uniqueness.
 
 \begin{example}
+    \label{bundles:ex:characteristic_classes}
     \begin{enumerate}[label=\roman*)]
         \item[]
-        \item Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \xi_1^\infty \cong \xi_1^n$ is the tautological line bundle $\xi_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology we conclude from naturality that $w_1(\xi_1^n) = \iota^\ast w_1(\xi_1^\infty)$ is the generator of $H^n(\RP^n;\Z_2) \cong \Z_2$. Similiarly $c_1(\tau_1^n)$ of the tautological complex line bundle $\tau_1^n \to \CP^n$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
+        \item Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1 \cong \gamma_1^n$ is the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^n(\RP^n;\Z_2) \cong \Z_2$. Similiarly $c_1(\tau_1^n)$ of the tautological complex line bundle $\tau_1^n \to \CP^n$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
         \item Let $\epsilon \to B$ be a trivial real bundle over some space $B$. Then $\epsilon \cong f^\ast \epsilon$ for a constant map $f \colon B \to B$ and thus $w_i(\epsilon_n) = f^\ast w_i(\epsilon) = 0$ for all $i \geq 1$. Similiarly all Chern classes for complex trivial bundles vanish.
-        \item Let $TS^n \to S^n$ be the tangent bundle of the sphere and let $\nu_n \to S^n$ be the normal bundle. Since $\nu_n$ and $TS^n \oplus \nu_n$ are trivial we conclude from the example above and property \ref{bundles:eq:prop3_for_stiefel_whitney_classes} in Definition \ref{bundles:def:Steifel_Whitney_Classes} that 
+        \item \label{bundles:ex:characteristic_classes_part3} Let $TS^n \to S^n$ be the tangent bundle of the sphere and let $\nu_n \to S^n$ be the normal bundle. Since $\nu_n$ and $TS^n \oplus \nu_n$ are trivial we conclude from the example above and property \ref{bundles:eq:prop3_for_stiefel_whitney_classes} in Definition \ref{bundles:def:Steifel_Whitney_Classes} that 
         \[
         1 = w(TS^n \oplus \nu_n) = w(TS^n) \smile w(\nu_n) = w(TS^n) \smile 1 = w(TS^n).
         \]
@@ -287,22 +291,36 @@ This allows us to define line bundles by only prescribing their first Stiefel-Wh
 While the first Stiefel-Whitney class of higher dimensional bundles does not identify their isomorphism type it does characterize another important invariant, namely orinetability:
 
 \begin{proposition}[Hatcher, Prop 3.11]
+    \label{bundles:prop:orientable_iff_w1_vanishes}
     Let $X$ be a CW-complex. A real vector bundle $E \to X$ is orientable if and only if $w_1(E) = 0$.
 \end{proposition}
 
-Similiarly vanishing of the second Stiefel Whitney class $w_2(E)$ corresponds to the existence of another structure on $E$, namely a spin structure. We need not be concerned with what precisely a spin structure is, such that the following definition suffices for our pruposes. 
+Similiarly vanishing of the second Stiefel Whitney class $w_2(E)$ corresponds to the existence of another structure on $E$, namely a spin structure. 
 
 \begin{definition}
-    An orientable manifold $M$ is called 
-    \begin{enumerate}[label=\roman*)]
-        \item \textit{spin}, if $w_2(TM) = 0$,
-        \item \textit{totally non-spin}, if the universal cover of $M$ is not spin.
+    Let $n \geq 3$.
+    \begin{enumerate}[label=(\roman*)]
+        \item The \textit{spin group} $\mathrm{Spin}(n)$ is defined as the universal cover $\rho \colon \mathrm{Spin}(n) \to \mathrm{SO}(n)$.
+        \item Let $E \to B$ be an oriented real vector bundle equipped with a fiber metric and let $P_{\mathrm{SO}(n)}$ be its oriented orthonormal frame bundle. A \textit{spin structure} on $E$ is a $\mathrm{Spin}(n)$-principal bundle $P_{\mathrm{Spin}(n)}$ together with a map 
+        \[
+        \phi \colon P_{\mathrm{Spin}(n)} \to P_{\mathrm{SO}(n)}
+        \]
+        of principal bundles, which is $\rho$-equivariant (compare Definition \ref{bundles:def:principal_bundles_morphism}).
+        \item An orientable manifold $M$ is called \textit{spin} if its tangent bundle $TM$ admits a spin structure and is called \textit{totally non-spin} if the universal cover of $M$ is not spin.
     \end{enumerate}
 \end{definition}
+
+Note that the existence of a spin structure does not depend on the chose orientation or fiber metric, since different choices yield isomorphic oriented orthonormal frame bundles. In fact the only obstruction to the existence of a spin structure is the second Stiefel-Whitney class, as mentioned above.
+
+\begin{theorem}[Lawson,Micheaslon]
+    \label{bundles:thm:spin_iff_w2_vanishes}
+    Let $X$ be a CW-complex. An orientable real vector bundle $E \to X$ admits a spin structure if and only if $w_2(E) = 0$. 
+\end{theorem}
 
 Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ restricted to any embedded loop $S^1 \subseteq M$ is trivial. Or in other words ``$TM$ does not contain any Moebius Bands''. A similiar characterization can be given for spin manifolds, which is why the property of being spin is sometimes referred to as a higher dimensional analogue of orientability.
 
 \begin{proposition}[Georg Paper, Proposition 2.6]
+    \label{bundles:prop:spin_characterisation}
     Let $M$ be a connected oriented manifold of dimension at least $5$.
     \begin{enumerate}[label=\roman*)]
         \item \label{bundles:eq:characterization_spin} $M$ is spin if and only if for every embedded surface $S \subseteq M$ the restriction $TM|_S$ of the tangent bundle to $S$ is trivial.
@@ -314,10 +332,30 @@ Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ 
     Since we will not be making use of the first characterization of spin manifolds, we shall only proof part \ref{bundles:eq:characterization_totally_non_spin} of the proposition and refer the reader to [Georg Paper] for a proof of part \ref{bundles:eq:characterization_spin}. ...(Proof)
 \end{proof}
 
+\begin{remark}
+    \label{bundles:rem:classifying_map_for_spin_bundles}
+    Let $E \to X$ be a real vector bundle over a CW-complex. If an orientation is given, $E$ can be classified by a map $X \to B\mathrm{SO}(n)$ (see example \ref{bundles:ex:examples_for_classifiying_spaces}). Similiarly, if a spin structure exists, $E$ can be classified by a map $X \to B\mathrm{Spin}(n)$, which can be seen as follows. Let $\phi \colon P_{\mathrm{Spin}(n)} \to P_{\mathrm{SO}(n)}$ be a spin structure on $E$ and let $f \colon X \to B\mathrm{Spin}(n)$ be the classifiying map for $P_{\mathrm{Spin}(n)}$. Define a vector bundle 
+    \[
+    \gamma_n^\spin := E\mathrm{Spin}(n) \times_{\mathrm{Spin}(n)} \R^n
+    \]
+    using Lemma \ref{bundles:lem:borel_construction}, where $\mathrm{Spin}(n)$ acts on $\R^n$ by virtue of the covering map $\rho \colon \mathrm{Spin}(n) \to \mathrm{SO}(n)$ and the canonical action of $\so(n)$. From Lemma \ref{bundles:lem:natruality_of_changing_fiber} we obtain
+    \[
+    f^\ast \gamma_n^\spin \cong P_{\spin(n)} \times_{\spin(n)} \R^n.
+    \]
+    Moreover, the spin structure $\phi$ induces an isomorphism $P_{\spin(n)} \times_{\spin(n)} \R^n \to P_{\so(n)} \times_{\so(n)} \R^n \cong E$ of vector bundles by
+    \[
+    [(x,v)] \mapsto [(\phi(x),v)].
+    \]
+    This map is clearly a linear bijection on fibers, hence an isomorphism of vector bundles. 
+\end{remark}
+
 Finally we record another scenario in which the vanishing of all Stiefel-Whitney classes of a bundle is sufficient for triviality.
 
 \begin{lemma}
-    Let $E \to S$ be a real vector bundle over a surface $S$ of rank at least $3$. Then $E$ is trivial if and only if $w_1(E) = w_2(E) = 0$.
+    \label{bundles:lem:criterion_for_triviality}
+    Let $E \to S$ be a real vector bundle of rank at least $3$ over a two dimensional CW-complex $S$. Then $E$ is trivial if and only if $w_1(E) = w_2(E) = 0$.
 \end{lemma}
 
-proof...
+\begin{proof}
+    Combining Theorem \ref{bundles:thm:spin_iff_w2_vanishes} and Remark \ref{bundles:rem:classifying_map_for_spin_bundles} we conclude that there exists a classifiying map $f \colon S \to B\spin(n)$ for $E$, where $n$ is the rank of $E$. From example \ref{bundles:ex:examples_for_classifiying_spaces} it follows that $\pi_k(B\spin(n)) = 0$ for $k \geq 2$. Since $S$ is two dimensional the map $f$ is homotopic to a constant ([Hatcher, Lemma 4.6]), therefore $E \cong f^\ast \xi_\spin$ is trivial.
+\end{proof}

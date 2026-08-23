@@ -7,32 +7,27 @@ brief definition, maybe intuition and osbtructions/backgroudn etc. based on over
 
 psc is somehow sweetspot for rigidity and flexibility
 
-Probably the most important existence Theorem for positive scalar curvature metrics... See Appendix for a brief review of surgery theory.
+Probably the most important existence result for positive scalar curvature metrics is the following theorem, which has been shown independently by Schoen and Yau [SY79] as well as Gromov and Lawson [GL80]. We refer the reader to the Appendix for a brief introduction of surgery and cobordism theory.
 
 \begin{theorem}[Schoen,Yau 1979, Gromov,Lawson,1980]
     \label{psc:thm:surgery_thm}
     (Surgery Theorem)
 \end{theorem}
 
-In order to apply this theorem we need a way to control the dimension of the surgeries performed or equivalently the indices of handles in a given cobordism. This question is completely independent of scalar curvature and has been subject of research especially in the context of the $h$-cobordims theorem. One central tool to control the indices of the handles in a cobordism is the following theorem due to Wall
+In order to apply this theorem we need a way to control the dimension of the surgeries performed or equivalently the indices of handles in a given cobordism. This question is completely independent of scalar curvature and has for example been studied quite thoroughly in the context of the $h$-cobordims theorem. One central tool to control the indices of the handles in a cobordism is the following theorem due to Wall
 
 \begin{theorem}[Wall, 1971]
+    \label{psc:thm:wall_thm}
     (Wall Theorem)
 \end{theorem}
 
-Combining gromov,lawson and Wall we see that: $M_0$ is psc, $M_1 \to W$ 2-connected then $M_1$ psc. In fact one can use the Theorem of Wall to obtain an even stronger result:
+Combining the above theorem with the Surgery Theorem \ref{psc:thm:surgery_thm}, we can make the following observation. If $M_0$ admits a psc metric and the inclusion $M_1 \to W$ is $2$-connected, then $M_1$ also admits a psc metric. In fact, using the conclusion of Theorem \ref{psc:thm:wall_thm} it is possible to obtain an even stronger result:
 
 \begin{theorem}[extending psc to corbodism, Georg,Gaja]
     ...
 \end{theorem}
 
-So in view of the above discussion, one strategy to construct a psc metric on a given closed manifold $M_1$ of dimension at least $5$ is to first find a cobordism $W$ from some psc manifold $M_0$ to $M_1$ and then modify this cobordism by surgeries to obtain another cobordism $W^\prime$ from $M_0$ to $M_1$, such that the inlcusion $M_1 \to W^\prime$ is $2$-connected. Of course, such a modification by surgeries may not always be possible, so our next goal is to explain certain scenarios in which it is. In order to formulate these we recall the following definition. 
-
-\begin{definition}[Spin and Totally non spin]
-    ...
-\end{definition}
-
-We now have the following two existence theorems for psc metrics. One for the spin case and one for the totally non-spin case.
+So in view of the above discussion, one strategy to construct a psc metric on a given closed manifold $M_1$ of dimension at least $5$ is to first find a cobordism $W$ from some psc manifold $M_0$ to $M_1$ and then modify this cobordism by surgeries to obtain another cobordism $W^\prime$ from $M_0$ to $M_1$, such that the inclusion $M_1 \to W^\prime$ is $2$-connected. Of course, such a modification by surgeries may not always be possible, so our next goal is to explain certain scenarios in which it is, one in the spin case and one in the totally non-spin case (see Definition \ref{bundles:def:spin}).
 
 \begin{theorem}
     \label{psc:thm:existence_result_spin}
@@ -44,11 +39,49 @@ We now have the following two existence theorems for psc metrics. One for the sp
     Let $W^{n+1}$ be an oriented cobordism from $M_0$ to $M_1$, $n \geq 5$. Suppose that $M_1$ is a connected totally non-spin manifold, the inlcusion $M_1 \to W$ induces an isomorphism on $\pi_1$ and that $M_0$ carries a psc-metric. Then $M_1$ also carries a psc-metric. In fact the psc-metric on $M_0$ can be extended to a psc-metric on $W$, which is of product form near the boundary. 
 \end{theorem}
 
+We first show the totally non-spin case.
+
+\begin{proof}[Proof of Theorem \ref{psc:thm:existence_result_totally_non_spin}]
+    By the Hurewicz Theorem $\pi_2(W,M_1)$ is finitely generated as a $\Z[\pi_1(M_1)]$-module. Let $\alpha_1^\mathrm{rel},\ldots, \alpha_l^\mathrm{rel}$ be such generators. Our goal is to find lifts of these along the map $\pi_2(W) \to \pi_2(W,M_1)$, which can be represented by embeddings with trivial normal bundle, allowing us to do surgery.  Without loss of generality assume $W$ to be connected as well (otherwise only consider the connected component containing $M$). Let
+    \[
+    F \colon W \to B := B\so(n+1)
+    \]
+    be a classifiying map for the tangent bundle $TW$ and set $f := F \circ i$, where $i \colon M_1 \to W$ is the inlcusion. Then $f$ is a classifiying map for $TM_1 \oplus \underline{\R}$ with $\underline{\R}$ the trivial line bundle. We claim that $f$ is surjective on $\pi_2$. Since $\pi_2(B) \cong \pi_1(\so(n+1)) \cong \Z_2$ it suffices to show that $\pi_2(f)$ is non-zero. By Proposition \ref{bundles:prop:spin_characterisation} there exists an embedding $\iota \colon S^2 \to M_1$, such that $w_2(\iota^\ast TM_1) \neq 0$. We compute 
+    \[
+    w_2((f \circ \iota)^\ast \gamma_n^\so) = w_2(\iota^\ast (TM_1 \oplus \underline{\R})) = w_2(\iota^\ast TM_1) \neq 0.
+    \]
+    Therefore $f \circ \iota$ represents a non-trivial element in $\pi_2(B)$ showing the claim. Now consider the following diagram, where the row is exact.
+    \[\begin{tikzcd}
+	{\pi_2(M_1)} & {\pi_2(W)} & {\pi_2(W,M_1)} \\
+	& {\pi_2(B)}
+	\arrow["{i_\ast}", from=1-1, to=1-2]
+	\arrow["{f_\ast}"', from=1-1, to=2-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["{F_\ast}", from=1-2, to=2-2]
+    \end{tikzcd}\]
+    Using surjectivity of $f_\ast$, a diagram chase shows that we can find lifts $\alpha_1,\ldots, \alpha_l \in \pi_2(W)$ of the generators $\alpha_1^\mathrm{rel},\ldots, \alpha_l^\mathrm{rel} \in \pi_2(W,M_1)$, which lie in the kernel of $F_\ast$. Moreover, since $n \geq 5$ the classes $\alpha_i$ can be represented by embeddings 
+    \[
+    \phi_i \colon S^2 \to W.
+    \]
+    We show that the normal bundle $\nu_i$ of $\phi_i$ is trivial. Since $W$ is oriented it follows from Proposition \ref{bundles:prop:orientable_iff_w1_vanishes} that $w_1(\phi_i^\ast TW) = 0$. Furthermore, $F\circ \phi_i$ is null-homotopic by construction, such that 
+    \[
+    w_2(\phi_i^\ast TW) = w_2 ((F \circ \phi_i)^\ast \gamma_n^\so) = 0.
+    \]
+    Using $w_k(TS^2) = 0$ (see Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3}) we compute
+    \[
+    w_k(\nu_i) = w_k(\nu_i \oplus TS^2) = w_k(\phi_i^\ast TW) = 0
+    \]
+    for $k = 1,2$. Thus Lemma \ref{bundles:lem:criterion_for_triviality} shows that $\nu_i$ is indeed trivial. This allows us to perform surgery to obtain a new cobordism $W^\prime$ from $M_0$ to $M_1$ with 
+    \[
+    \pi_2(W^\prime,M_1) = 0
+    \]
+    and $\pi_1(W^\prime,M_1) \cong \pi_1(W,M_1) = 0$, see Proposition \ref{appendix:prop:surger_killer} \ref{appendix:eq:surgery_killer_relative_version}. In other words, the inclusion $M_1 \to W^\prime$ is $2$-connected.  
+\end{proof}
+
 % By the general strategy we laid out above, the proofs of these theorems will be using the given data to perform surgery on the cobordism $W$, such that the inlcusion $\iota \colon M_1 \to W$ becomes $2$-connected. By assumption $M_1$ is connected and $\iota$ already induces an isomorphism on $\pi_1$, so formulated differently our goal is to ``kill'' all generators in $\pi_2(W,M)$ by surgery. So as a first step let us make precise how one can use surgery to ``kill'' certain homotopy classes. 
 
-Proof of Theorem \ref{psc:thm:existence_result_totally_non_spin} and \ref{psc:thm:existence_result_spin}
 
-In the main construction in section ... we will invoke Theorem \ref{psc:thm:existence_result_totally_non_spin} to construct a psc metric, so let us conclude this section by discussing some basic results for identifying totally non-spin manifolds.
+In the main construction in \hyperref[sec:constr]{Chapter 4} we will invoke Theorem \ref{psc:thm:existence_result_totally_non_spin} to construct a psc metric, so let us conclude this section by discussing some basic results for identifying totally non-spin manifolds.
 
 \begin{lemma}
     \label{lem:totally_non_spin_lemma} 
