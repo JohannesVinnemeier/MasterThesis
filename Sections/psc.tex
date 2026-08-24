@@ -9,25 +9,28 @@ psc is somehow sweetspot for rigidity and flexibility
 
 Probably the most important existence result for positive scalar curvature metrics is the following theorem, which has been shown independently by Schoen and Yau [SY79] as well as Gromov and Lawson [GL80]. We refer the reader to the Appendix for a brief introduction of surgery and cobordism theory.
 
-\begin{theorem}[Schoen,Yau 1979, Gromov,Lawson,1980]
+\begin{theorem}[Gromov,Lawson,1980, Chernysh Theorem Georg Paper]
     \label{psc:thm:surgery_thm}
-    (Surgery Theorem)
+    Let $M$ be a compact manifold, which admits a psc metric. Then any manifold $M^\prime$ obtained from $M$ by surgery of codimension at least $3$ also admits a psc metric.
 \end{theorem}
 
-In order to apply this theorem we need a way to control the dimension of the surgeries performed or equivalently the indices of handles in a given cobordism. This question is completely independent of scalar curvature and has for example been studied quite thoroughly in the context of the $h$-cobordims theorem. One central tool to control the indices of the handles in a cobordism is the following theorem due to Wall
+We remark that the construction of the psc metric on $M^\prime$ only changes the given psc metric on $M$ locally near the embedding along which the surgery is performed. In order to apply this theorem we need a way to control the dimension of the surgeries performed or equivalently the indices of handles in a given cobordism. This question is completely independent of scalar curvature and has for example been studied quite thoroughly in the context of the $h$-cobordims theorem. One central tool to control the indices of the handles in a cobordism is the following theorem due to Wall
 
 \begin{theorem}[Wall, 1971]
     \label{psc:thm:wall_thm}
     (Wall Theorem)
 \end{theorem}
 
-Combining the above theorem with the Surgery Theorem \ref{psc:thm:surgery_thm}, we can make the following observation. If $M_0$ admits a psc metric and the inclusion $M_1 \to W$ is $2$-connected, then $M_1$ also admits a psc metric. In fact, using the conclusion of Theorem \ref{psc:thm:wall_thm} it is possible to obtain an even stronger result:
+Combining the above theorem with the Surgery Theorem \ref{psc:thm:surgery_thm}, we can make the following observation. If $M_0$ admits a psc metric and the inclusion $M_1 \to W$ is $2$-connected, then $M_1$ also admits a psc metric. In fact, using the conclusion of Theorem \ref{psc:thm:wall_thm} it is possible to obtain an even stronger result. We say that a metric $g$ on a manifold $M$ with boundary is of \textit{product form near the boundary}, if there is some collar neighbourhood $\iota \colon \partial M \times [0,1) \to M$, such that $\iota^\ast g = g|_{\partial M} + dt^2$, where $g|_{\partial M}$ is the induced metric on $\partial M$.
 
 \begin{theorem}[extending psc to corbodism, Georg,Gaja]
-    ...
+    \label{psc:thm:extending_psc_to_cobordism}
+    Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, such that the inlcusion $M_1 \to W$ is $2$-connected. Then any psc metric on $M_0$ can be extended to a psc metric on $W$, which is of product form near the boundary.
 \end{theorem}
 
-So in view of the above discussion, one strategy to construct a psc metric on a given closed manifold $M_1$ of dimension at least $5$ is to first find a cobordism $W$ from some psc manifold $M_0$ to $M_1$ and then modify this cobordism by surgeries to obtain another cobordism $W^\prime$ from $M_0$ to $M_1$, such that the inclusion $M_1 \to W^\prime$ is $2$-connected. Of course, such a modification by surgeries may not always be possible, so our next goal is to explain certain scenarios in which it is, one in the spin case and one in the totally non-spin case (see Definition \ref{bundles:def:spin}).
+\subsection{Exitence Results for psc metrics}
+
+In view of the above discussion, one strategy to construct a psc metric on a given closed manifold $M_1$ of dimension at least $5$ is to first find a cobordism $W$ from some psc manifold $M_0$ to $M_1$ and then modify this cobordism by surgeries to obtain another cobordism $W^\prime$ from $M_0$ to $M_1$, such that the inclusion $M_1 \to W^\prime$ is $2$-connected. Of course, such a modification by surgeries may not always be possible, so our next goal is to explain certain scenarios in which it is, one in the spin case and one in the totally non-spin case (see Definition \ref{bundles:def:spin}).
 
 \begin{theorem}
     \label{psc:thm:existence_result_spin}
@@ -42,7 +45,29 @@ So in view of the above discussion, one strategy to construct a psc metric on a 
 We first show the totally non-spin case.
 
 \begin{proof}[Proof of Theorem \ref{psc:thm:existence_result_totally_non_spin}]
-    By the Hurewicz Theorem $\pi_2(W,M_1)$ is finitely generated as a $\Z[\pi_1(M_1)]$-module. Let $\alpha_1^\mathrm{rel},\ldots, \alpha_l^\mathrm{rel}$ be such generators. Our goal is to find lifts of these along the map $\pi_2(W) \to \pi_2(W,M_1)$, which can be represented by embeddings with trivial normal bundle, allowing us to do surgery.  Without loss of generality assume $W$ to be connected as well (otherwise only consider the connected component containing $M$). Let
+    {\color{red}
+    Without loss of generality assume $W$ to be connected as well (otherwise only consider the connected component containing $M$).
+    We first show that $\pi_2(W,M)$ is finitely generated. Let $\tilde{M}$ and $\tilde{W}$ be the universal covers of $M$ and $W$ respectively. Then the inclusion $M \to W$ lifts to a map $\tilde{M} \to \tilde{W}$ by virtue of which we can consider the relative homotopy group $\pi_2(\tilde{W},\tilde{M})$. It follows from the Hurewicz Theorem that 
+    \[
+    \pi_2(\tilde{W},\tilde{M}) \cong H_2(\tilde{W},\tilde{M}).
+    \]
+    By ??? $H_2(\tilde{W},\tilde{M})$ is finitely generated as a $\Z[\pi_1(M)]$ module (??) hence the same holds for $\pi_2(\tilde{W},\tilde{M})$. Now consider the following diagram where the rows are exact.
+    \[\begin{tikzcd}
+	{\pi_2(\tilde{M})} & {\pi_2(\tilde{W})} & {\pi_2(\tilde{W},\tilde{M})} \\
+	{\pi_2(M)} & {\pi_2(W)} & {\pi_2(W,M)}
+	\arrow[from=1-1, to=1-2]
+	\arrow["\cong", from=1-1, to=2-1]
+	\arrow[two heads, from=1-2, to=1-3]
+	\arrow["\cong", from=1-2, to=2-2]
+	\arrow[from=1-3, to=2-3]
+	\arrow[from=2-1, to=2-2]
+	\arrow[two heads, from=2-2, to=2-3]
+\end{tikzcd}\]
+The two rightmost horizontal maps are surjective by exactness, since $\pi_1(\tilde{M}) = 0$ and $\pi_1(M) \to \pi_1(W)$ is an isomorphism. A diagram chase now shows that $\pi_2(\tilde{W},\tilde{M}) \to \pi_2(W,M)$ is an isomorphism.}
+    % By the Hurewicz Theorem $\pi_2(W,M_1)$ is finitely generated as a $\Z[\pi_1(M_1)]$-module. Let $\alpha_1^\mathrm{rel},\ldots, \alpha_l^\mathrm{rel}$ be such generators. Our goal is to find lifts of these along the map $\pi_2(W) \to \pi_2(W,M_1)$, which can be represented by embeddings with trivial normal bundle, allowing us to do surgery. 
+    
+    Next find lifts with...
+    Let
     \[
     F \colon W \to B := B\so(n+1)
     \]
@@ -75,8 +100,20 @@ We first show the totally non-spin case.
     \[
     \pi_2(W^\prime,M_1) = 0
     \]
-    and $\pi_1(W^\prime,M_1) \cong \pi_1(W,M_1) = 0$, see Proposition \ref{appendix:prop:surger_killer} \ref{appendix:eq:surgery_killer_relative_version}. In other words, the inclusion $M_1 \to W^\prime$ is $2$-connected.  
+    and $\pi_1(W^\prime,M_1) \cong \pi_1(W,M_1) = 0$, see Proposition \ref{appendix:prop:surger_killer} \ref{appendix:eq:surgery_killer_relative_version}. In other words, the inclusion $M_1 \to W^\prime$ is $2$-connected. So by Theorem \ref{psc:thm:extending_psc_to_cobordism} there exists a psc metric $g$ on $W^\prime$, which is of product form near the boundary. To construct a psc metric on the original cobordism $W$, observe that since $W^\prime$ was obtained from $W$ by surgeries of dimension $2$, $W$ can be obtained from $W^\prime$ by surgeries of codimension $3$. Therefore the surgery theorem \ref{psc:thm:surgery_thm} applies to construct a psc metric on $W$. Since this construction only changes the given metric $g$ locally near the surgery embeddings, the resulting metric on $W$ is still of product form near the boundary. 
 \end{proof}
+
+\begin{proof}[Proof of Theorem \ref{psc:thm:existence_result_spin}]
+    Again $\pi_2(W,M)$ is finitely generated as a $\Z[\pi_1(M)]$-module. Let $\alpha_1^\mathrm{rel},\ldots, \alpha_l^\mathrm{rel}$ be such generators. We could argue as in the proof of Theorem \ref{psc:thm:existence_result_totally_non_spin}, replacing $B\so(n+1)$ by $B\spin(n+1)$ and observing that the corresponding $f$ is trivially surjective on $\pi_2$ as $\pi_2(B\spin(n+1)) \cong \pi_1(\spin(n+1)) = 0$. However this just amounts to the following more direct argument. Choose lifts $\alpha_1,\ldots,\alpha_l \in \pi_2(W)$ of $\alpha_1^\mathrm{rel},\ldots, \alpha_l^\mathrm{rel}$ and represent $\alpha_i$ by an embedding $\phi_i \colon S^2 \to W$. Then 
+    \[
+    w_k(\phi_i^\ast TW) = \phi_i^\ast w_k(TW) = 0
+    \]
+    for $k = 1,2$ since $W$ is spin. The rest of the proof is now as in Theorem \ref{psc:thm:existence_result_totally_non_spin}.
+\end{proof}
+
+\begin{remark}
+    The proofs of Theorem \ref{psc:thm:existence_result_spin} and \ref{psc:thm:existence_result_totally_non_spin} are very similiar and in fact both statements are a consequence of a more general result. This unifying approach can be formulated using the language of tangential $2$-types, which we shall not discuss further in this thesis. See for example [Georg Paper etc.].
+\end{remark}
 
 % By the general strategy we laid out above, the proofs of these theorems will be using the given data to perform surgery on the cobordism $W$, such that the inlcusion $\iota \colon M_1 \to W$ becomes $2$-connected. By assumption $M_1$ is connected and $\iota$ already induces an isomorphism on $\pi_1$, so formulated differently our goal is to ``kill'' all generators in $\pi_2(W,M)$ by surgery. So as a first step let us make precise how one can use surgery to ``kill'' certain homotopy classes. 
 
