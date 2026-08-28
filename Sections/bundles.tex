@@ -1,9 +1,10 @@
 \section{Preliminaries}
 \label{sec:bundles}
 
-This section develops the necessary preliminaries for what follows, by recalling the notions of principal bundles, classifiying spaces and characteristic classes. We assume the reader to be familiar with the concept of a fiber bundle with structure group. A classical reference for this is for example \cite{steenrod1951topology}.
+This chapter develops the necessary preliminaries for what follows, by recalling the notions of principal bundles, classifiying spaces and characteristic classes. We assume the reader to be familiar with the concept of a fiber bundle with structure group. A classical reference for this is for example \cite{steenrod1951topology}. Moreover, we presuppose some basic familiarity with homotopy and homology theory.
 
 \subsection{Principal Bundles and Associated Bundles}
+\label{subsec:principal_bundles}
 
 \begin{definition}
     \label{bundles:def:principal_bundle}
@@ -177,11 +178,11 @@ Lets look at some concrete examples for the theory developed above.
 % \end{example}
 
 \subsection{Universal Bundles and Classifying Spaces}
-
-A natural question is how many bundles exist... again easier for principal bundles... For simplicity we assume all base spaces to be CW-complexes in this section.
+A natural question is which fiber bundles with specified fiber and structure group can exist over a given base space. Again, this classification problem turns out to be easier for principal bundles.
+For simplicity we assume all base spaces to be CW-complexes in this section.
 
 \begin{definition}
-    A $G$-principal bundle $E \to B$ is called universal if $E$ is weakly contractible as a topological space.
+    A $G$-principal bundle $E \to B$ is called \textit{universal} if $E$ is weakly contractible as a topological space.
 \end{definition}
 
 The significance of this definition is established by the following theorem. We say that two morphisms of $G$-principal bundles are $G$-homotopic if they are homotopic through morphisms of $G$-principal bundles.
@@ -191,15 +192,15 @@ The significance of this definition is established by the following theorem. We 
     Let $E \to B$ be a universal $G$-principal bundle. Then for any other $G$-principal bundle $P \to X$ there exists a morphism $P \to E$ of $G$-principal bundles, which is unique up to $G$-homotopy.
 \end{theorem}
 
-Before showing the Theorem let us discuss its implications. Firstly we can equivalently formulate the Theorem by saying that $E \to B$ is a terminal object in the homotopy category of $G$-principal bundles over CW-complexes and thus in particular uniquely determined (up to $G$-homotopy equivalence). This justifies writing $EG:= E$ and $BG := B$. Since any bundle morphism $(F,f) \colon P \to EG$ induces a morphism $P \to f^\ast EG$ (and vice versa, which is true for arbitrary fiber bundles) we moreover conclude from Proposition \ref{bundles:prop:morphisms_of_principal_bundles} that 
+Before showing the theorem let us discuss its implications. Firstly we can equivalently formulate the theorem by saying that $E \to B$ is a terminal object in the homotopy category of $G$-principal bundles over CW-complexes and thus in particular uniquely determined (up to $G$-homotopy equivalence). This justifies writing $EG:= E$ and $BG := B$ and we refer to $EG \to BG$ as \textit{the} universal $G$-principal bundle. The base space $BG$ is called the \textit{classifiying space} of $G$. Since any bundle morphism $(F,f) \colon P \to EG$ induces a morphism $P \to f^\ast EG$ (and vice versa, which is true for arbitrary fiber bundles) we conclude from Proposition \ref{bundles:prop:morphisms_of_principal_bundles} that 
 \[
 P \cong f^\ast EG.
 \]
-We call $f$ a \textbf{classifiying map} for $P$. By homotopy invariance of the pullback we get a well-defined bijection 
+We call $f$ a \textit{classifiying map} for $P$. By homotopy invariance of the pullback we get a well-defined bijection 
 \[
 \phi_X \colon [X,BG] \to \mathcal{P}_G(X), \; [f] \mapsto [f^\ast EG],
 \]
-where $\mathcal{P}_G(X)$ denotes the set of isomorphism classes of $G$-principal bundles over $X$. To see that $\phi_X$ is indeed bijective note that the existence result in Theorem \ref{fiber_bundles:thm:universal_principal_bundle} shows that $\phi_X$ is surjective and the uniqueness result shows that it is injective. Moreover $\phi_X$ is clearly natural in $X$. Thus we have shown.
+where $\mathcal{P}_G(X)$ denotes the set of isomorphism classes of $G$-principal bundles over $X$. To see that $\phi_X$ is indeed bijective note that the existence result in Theorem \ref{bundles:thm:universal_principal_bundle} shows that $\phi_X$ is surjective and the uniqueness result shows that it is injective. Moreover $\phi_X$ is clearly natural in $X$. Thus we have shown.
 
 \begin{corollary}
 \label{bundles:cor:universal_bundle_defines_natural_isomorphism}
@@ -210,14 +211,14 @@ where $\mathcal{P}_G(X)$ denotes the set of isomorphism classes of $G$-principal
     where $\mathsf{HCW}$ denotes the homotopy category of CW-complexes.
 \end{corollary}
 
-Theorem \ref{bundles:thm:universal_principal_bundle} will be an application of the following Theorem.
+Theorem \ref{bundles:thm:universal_principal_bundle} will be a simple application of the following theorem.
 
 \begin{theorem}
     \label{bundles:thm:extension_theorem}
-    Let $P \to X$ be a $G$-principal bundle and $A \subseteq X$ a subcomplex. Then any morphism $P|_A \to EG$ can be extended to a morphism $P \to EG$. 
+    Let $P \to X$ be a $G$-principal bundle and $A \subseteq X$ a subcomplex. Then any morphism $P|_A \to EG$ of $G$-principal bundles can be extended to a morphism $P \to EG$ of $G$-principal bundles. 
 \end{theorem}
 
-A proof of this Theorem based on an inductive cell by cell approach can be found in \cite[Theorem 2.7.1]{ebert_bordism_script}. 
+The proof of this Theorem based on an inductive cell by cell approach. We refer the reader to \cite[Theorem 2.7.1]{ebert_bordism_script}. 
 
 \begin{proof}[Proof of Theorem \ref{bundles:thm:universal_principal_bundle}]
     Applying Theorem \ref{bundles:thm:extension_theorem} to $A = \emptyset$ shows the existence of a morphism $P \to EG$. Now suppose we are given morphisms $F_0,F_1 \colon P \to EG$. Consider the $G$-principal bundle 
@@ -231,15 +232,35 @@ A proof of this Theorem based on an inductive cell by cell approach can be found
     which by Theorem \ref{bundles:thm:extension_theorem} can be extended to $P \times [0,1]$, thus yielding a $G$-homotopy between $F_0$ and $F_1$.
 \end{proof}
 
-of course for this theoy to be of any use we need such universal bundles to exist...
+Of course for this theory to be of any use we need such universal bundles to exist. The following general existence theorem is due to Milnor.
 
-\begin{theorem}[Milnor construction]
+\begin{theorem}[OG Milnor paper, Ebert]
     For any topological group $G$ there exists a universal $G$-principal bundle $EG \to BG$, where $BG$ is a CW-complex.
 \end{theorem}
 
-understood principal bundles, how can we recover information abotu general bundles --> changing the fiber 
+A priori the space $BG$ constructed in [OG Milnor paper, Ebert] may not be a CW complex. However, if we choose a CW-approximation $f \colon X \to BG$ the total space of the bundle $f^\ast EG \to X$ is still weakly contractible. This follows by applying the five lemma to the following diagram.
+\[\begin{tikzcd}
+	{\pi_{k+1}(X)} & {\pi_k(G)} & {\pi_k(f^\ast EG)} & {\pi_k(X)} & {\pi_{k-1}(G)} \\
+	{\pi_{k+1}(BG)} & {\pi_k(G)} & {\pi_k(EG)} & {\pi_k(BG)} & {\pi_{k-1}(G)}
+	\arrow[from=1-1, to=1-2]
+	\arrow["\cong", from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow["{\mathrm{id}}", from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-3, to=2-3]
+	\arrow[from=1-4, to=1-5]
+	\arrow["\cong", from=1-4, to=2-4]
+	\arrow["{\mathrm{id}}", from=1-5, to=2-5]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+\end{tikzcd}\]
+
+We can now use the classification results for principal bundles to obtain analogues results for general fiber bundles. As discussed in section \ref{subsec:principal_bundles} we can generally recover information about arbitrary fiber bundles by changing the fiber.
 
 \begin{corollary}
+    \label{bundles:cor:universal_fiber_bundles}
     Let $G$ be a topological group acting effectively on a space $F$. Then for any CW-complex $X$ the map 
     \[
     [X,BG] \to \mathcal{F}_{F,G}(X), \; \; [f] \mapsto \left[f^\ast(EG \times_G F)\right]
@@ -263,17 +284,84 @@ understood principal bundles, how can we recover information abotu general bundl
     So the statement follows by again applying Lemma \ref{bundles:lem:natruality_of_changing_fiber}.
 \end{proof}
 
-Let us look at some examples...
+Again let us discuss a few examples.
 
 \begin{example}
     \label{bundles:ex:examples_for_classifiying_spaces}
     \begin{enumerate}[label=(\roman*)]
         \item[]
-        \item homotopy groups of $BG$ ($\pi_k(BG) \cong \pi_{k-1}(G)$ for $k \geq 1$ and $\pi_0(BG) = \ast$, since $BG = \pi(EG)$, where $\pi \colon EG \to BG$ projection)
-        \item $BO(n)$ and $EO(n)$ explicit via Stiefel Manifolds (compare n lab) + $EO(n) \times_{O(n)} \R^n \cong \gamma_n$ for $\gamma_n$ tautological bundle over grassmanain + orientable vector bundles classfied by BSO(n) (universal vector bundle over this denoted by $\gamma_n^{\so}$)
-        \item Analogous for complex case??
-        \item Special cases $\RP^\infty$ and $\CP^\infty$
-        \item $M \to B\pi_1(M)$ induces iso on $\pi_1$ (brauch ich gar nicht...)
+        \item The universal cover $\R \to S^1$ is a $\Z$-prinicpal bundle, $\Z$ acting on itself by addition. Since $\R$ is contractible we obtain $B\Z \cong S^1$ and $E\Z \cong \R$.
+        \item From the long exact sequence of homotopy groups 
+        \[\begin{tikzcd}
+        {\pi_k(EG)} & {\pi_k(BG)} & {\pi_{k-1}(G)} & {\pi_{k-1}(EG)}
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=1-4]
+        \end{tikzcd}\]
+        we conclude that $\pi_k(BG) \cong \pi_{k-1}(G)$ for $k \geq 1$. Moreover, $BG$ is connected since it is the image of the connected space $EG$ under $EG \to BG$.
+        \item The universal $O(k)$-prinicpal bundle $EO(k) \to BO(k)$ also has an explicit description. Consider the Stiefel manifold $V_k^n \subseteq \R^{n\times k}$, which is defined as the compact space of orthonormal $k$-tuples of vectors in $\R^n$. Moreover let $\mathrm{Gr}_k^n$ be the Grassmanian of $k$-planes in $\R^n$, i.e. the set of $k$-dimensional linear subspaces of $\R^n$. The topology on $\mathrm{Gr}_k^n$ is induced by the projection map
+        \[
+        p \colon V_k^n \to \mathrm{Gr}_k^n, \; (v_1,\ldots,v_k) \mapsto \mathrm{span}(v_1,\ldots,v_k)
+        \] 
+        Identifying a linear subspace $V \in \mathrm{Gr}_k^n$ with $\R^k$ yields an identification of the fiber $p^{-1}(V)$ with $O(k)$. Moreover the identifications $V \cong \R^k$ can be chosen consistently in a small neighbourhood around $V$, providing local trivialisations for $p$. The transition of two such trivialisations is realized by actions of $O(k)$, hence $p$ defines an $O(k)$-principal bundle.
+        Now the canonical inclusion $\R^n \to \R^{n+1}$ induces inclusions $V_k^n \to V_k^{n+1}$ and $\mathrm{Gr}_k^n \to \mathrm{Gr}_k^{n+1}$. Consider the colimits over these inclusions 
+        \[
+        V_k^\infty := \operatorname*{colim}_n\,(V_k^n), \quad \mathrm{Gr}_k^\infty := \operatorname*{colim}_n\,(\mathrm{Gr}_k^n)
+        \] 
+        and the induced map $V_k^\infty \to \mathrm{Gr}_k^\infty$. One can choose trivialisations of $V_k^n \to \mathrm{Gr}_k^n$ for varying $n$, which fit together to induce a trivialisation in the colimit, such that $V_k^\infty \to \mathrm{Gr}_k^\infty$ defines an $O(k)$-principal bundle. We claim that $V_k^\infty$ is weakly contractible. Consider the map 
+        \[
+        V_k^n \to S^{n-1}, \; (v_1, \ldots, v_k) \mapsto v_1.
+        \]
+        Similiar arguments as above shows that this map is locally trivial with fiber $V_{k-1}^{n-1}$. Hence we can consider the long exact sequence of homotopy groups 
+        \[\begin{tikzcd}[column sep=scriptsize]
+        {\pi_{i+1}(S^{n-1})} & {\pi_i(V_{k-1}^{n-1})} & {\pi_i(V_n^k)} & {\pi_i(S^{n-1})}
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=1-4]
+        \end{tikzcd}\]
+        So $\pi_i(V_k^n) \cong \pi_i(V_{k-1}^{n-1})$ for $i \leq n-3$. Applying this inductively yields 
+        \[
+        \pi_i(V_k^n) \cong \pi_i(V_1^{n-(k-1)}) = \pi_i(S^{n-k+1}) = 0
+        \] 
+        for $i \leq n-k-1$. Now from compactness of $S^i$ and the fact that $V_k^n$ is closed in $V_k^{n+1}$ we conclude that the image of any map $S^i \to V_k^\infty$ is contained in some finite stage $V_k^n$. Therefore $\pi_i(V_k^\infty) = 0$ for all $i \geq 0$, such that the universal $O(k)$-principal bundle is explicitly given by $V_k^\infty \to \mathrm{Gr}_k^\infty$.
+
+        Similiarly we get an explicit description of the universal $SO(k)$-prinicpal bundle. Let $\tilde{\mathrm{Gr}}_k^n$ be the set of tuples consisting of a $k$-dimensional linear subspace of $\R^n$ together with a chosen orientation. The topology on $\tilde{\mathrm{Gr}}_k^n$ is induced by 
+        \[
+        p \colon V_k^n \to \tilde{\mathrm{Gr}}_k^n, \; (v_1,\ldots,v_k) \mapsto (\mathrm{span}(v_1,\ldots,v_k), \mathrm{o}_{(v_1,\ldots,v_k)}),
+        \] 
+        where $\mathrm{o}_{(v_1,\ldots,v_k)}$ is the unique orientation on $\mathrm{span}(v_1,\ldots,v_k)$, such that $(v_1,\ldots,v_k)$ is positively oriented. Similiar to above we see that $p$ defines an $SO(k)$-principal bundle. Taking the colimit, we obtain the universal $SO(k)$-principal bundle $V_k^\infty \to \tilde{\mathrm{Gr}}_k^\infty$.
+
+        \item \label{bundles:ex:examples_for_classifiying_spaces_universal_vector_bundle} Any real $k$-dimensional vector bundle $E \to X$ can be considered as a fiber bundle with fiber $\R^k$ and structure group $O(k)$. So Corollary \ref{bundles:cor:universal_fiber_bundles} and the example above show that every such $E$ is the pullback of the universal real $k$-dimensional vector bundle $V_k^\infty \times_{O(k)} \R^k$ under some map $X \to \mathrm{Gr}_k^\infty$. We show that this universal vector bundle also has a more explicit description, namely as the tautological bundle $\gamma_k \to \mathrm{Gr}_k^\infty$. Recall that this bundle is defined as 
+        \[
+        \gamma_k := \{(X,v) \in \mathrm{Gr}_k^\infty \times \R^\infty \mid v \in X\}
+        \] 
+        together with the canonical projection map to $\mathrm{Gr}_k^\infty$. An element in $V_k^\infty$ is a $k$-tuple of orthonormal vectors in some $\R^n$, which we will subsequently regard as the columns of an $n \times k$ matrix. Then the map 
+        \[
+        V_k^\infty \times \R^k \to \gamma_k, \;\; (A,v) \mapsto (\mathrm{im}(A), Av)
+        \]
+        descends to the quotient, defining a vector bundle map $V_k^\infty \times_{O(k)} \R^k \to \gamma_k$. This map is clearly a linear isomorphism on fibers, hence an isomorphism of vector bundles. 
+
+        Similiarly, oriented real $k$-dimensional vector bundles are classified by maps to $\tilde{\mathrm{Gr}}_k^\infty$ We claim that the universal oriented real $k$-dimensional vector bundle is given by the tautological bundle $\gamma_k^{SO} \to \tilde{\mathrm{Gr}}_k^\infty$ defined by 
+        \[
+        \gamma_k^{SO} := \{(X,\mathrm{o}_X,v) \in \tilde{\mathrm{Gr}}_k^\infty \times \R^k \mid v \in X\}
+        \]
+        together with the canonical projection map to $\tilde{\mathrm{Gr}}_k^\infty$. To this end consider the map 
+        \[
+        V_k^\infty \times \R^k \to \gamma_k^{SO}, \;\; (A,v) \mapsto (\mathrm{im}(A), \mathrm{o}_A, Av),
+        \]
+        where $\mathrm{o}_A$ is the unique orientation on $\mathrm{im}(A)$, such that $A \colon \R^k \to \mathrm{im}(A)$ is orientation preserving. Again this map descends to the quotient defining an isomorphism $V_k^\infty \times_{SO(k)} \R^k \to \gamma_k^{SO}$.
+
+
+
+         
+        
+        
+        % $BO(n)$ and $EO(n)$ explicit via Stiefel Manifolds (compare n lab) + $EO(n) \times_{O(n)} \R^n \cong \gamma_n$ for $\gamma_n$ tautological bundle over grassmanain + orientable vector bundles classfied by BSO(n) (universal vector bundle over this denoted by $\gamma_n^{\so}$)
+        \item \label{bundles:ex:examples_for_classifiying_spaces_universal_complex_vector_bundle}Completely analogous to the real case we can also define the complex Stiefel manifolds $V_k^\infty(\C)$ and complex Grassmanians $\mathrm{Gr}_k^\infty(\C)$ and show that the universal $U(k)$-prinicpal bundle is given by $V_k^\infty(\C) \to \mathrm{Gr}_k^\infty(\C)$. The universal complex $k$-dimensional vector bundle is the tautological bundle $\tau_k \to \mathrm{Gr}_k^\infty(\C)$. 
+        \item As special cases of the preceeding examples we obtain
+        \[
+        B\Z_2 \cong \RP^\infty, \quad BS^1 \cong \CP^\infty. 
+        \]
     \end{enumerate}
 \end{example}
 
@@ -281,13 +369,13 @@ Let us look at some examples...
 
 \subsection{Stiefel-Whitney and Chern-Classes}
 
-We have seen how Another fundamental question is of course how to decide, whether two bundles are isomorphic. As usual in topology, one tries to define certain invariants posing as an obstruction... For vector bundles (or more generally prinicpal bundles), ... characteristic classes. The general definiton of a characteritsic class is as follows. Let $\K = \R, \C$ and write $\mathrm{Vect}_\K(B)$ for the set of isomorphism classes of $\K$-vector bundles over a space $X$. Then $\mathrm{Vect}_\K(-)$ defines a contravariant functor $\mathsf{Top} \to \mathsf{Set}$. A characteristic class $c$ for $\K$-vector bundles with values in the cohomology theory $H^\ast$ is a natural transformation from the functor $\mathrm{Vect}_\K(-)$ to the functor $H^\ast$ regarded as a functor with values in $\mathsf{Set}$. So in more concrete terms $c$ assigns to each $\K$-vector bundle $E \to B$ a cohomology class $c(E) \in H^\ast(B)$ depending only on the isomorphism class of $E$, such that for any continuous map $f \colon B^\prime \to B$ the following naturality condition holds
+In the preceeding Chapter we discussed the question of how bundles can be classified. Another fundamental question is of course how to determine, whether two given bundles are isomorphic. As usual in topology, a partial solution to this problem is provided by defining computable invariants. For vector bundles the most important invariants are so called \textit{characteristic classes}. The general definiton of a characteritsic class is as follows. Let $\K = \R, \C$ and write $\mathrm{Vect}_\K(B)$ for the set of isomorphism classes of $\K$-vector bundles over a space $B$. Then $\mathrm{Vect}_\K(-)$ defines a contravariant functor $\mathsf{Top} \to \mathsf{Set}$. A characteristic class $c$ for $\K$-vector bundles with values in the cohomology theory $H^\ast$ is a natural transformation from the functor $\mathrm{Vect}_\K(-)$ to the functor $H^\ast$ regarded as a functor with values in $\mathsf{Set}$. So in more concrete terms $c$ assigns to each $\K$-vector bundle $E \to B$ a cohomology class $c(E) \in H^\ast(B)$ depending only on the isomorphism class of $E$, such that for any continuous map $f \colon B^\prime \to B$ the following naturality condition holds
 \[
 c(f^\ast E) = f^\ast c(E).
 \]
-So in particular, using the theory of classifiying spaces developed above, we see that for a real (resp. complex) rank $k$ vector bundle $E \to B$, the class $c(E)$ is uniquely determined by the value $c(\xi_k^\infty) \in H^\ast(BO(k))$ for the universal bundle $\xi_k^\infty$ introduced in example...
+Therefore, using the theory of classifiying spaces developed above, we see that for a real (resp. complex) $k$-dimensional vector bundles, the characteristic class $c$ is uniquely determined by its value for the universal bundle $\gamma_k$ (resp. $\tau_k$) discussed in example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:examples_for_classifiying_spaces_universal_vector_bundle} (resp. \ref{bundles:ex:examples_for_classifiying_spaces_universal_complex_vector_bundle6}).
 
-For real vector bundles the most important characteristic classes are the so called \textit{Stiefel-Whitney classes}, which can be completely characterized by a few axioms.
+For real vector bundles the most important characteristic classes are the \textit{Stiefel-Whitney classes} and for complex vector bundles the \textit{Chern classes}. Both are formally quite similiar and can be characterized by a few axioms.
 
 \begin{definition}[Stiefel-Whitney Classes, HATCHER]
     \label{bundles:def:Steifel_Whitney_Classes}
@@ -302,7 +390,7 @@ For real vector bundles the most important characteristic classes are the so cal
 
 %%Evtl ganz kurze Beweisskizze warum unique
 
-Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes} the sum $w = 1 + w_1 + w_2 + \ldots$ is always finite. This class $w(E)$ is called the \textit{total Stiefel-Whitney class of $E$}. For obvious reasons one sometimes writes $w_0(E) := 1 \in H^0(B;\Z_2)$. The analogues for complex vector bundles are known as \textit{Chern classes}.
+Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes} the sum $w = 1 + w_1 + w_2 + \ldots$ is always finite. The class $w(E)$ is called the \textit{total Stiefel-Whitney class of $E$}. We sometimes write $w_0(E) := 1 \in H^0(B;\Z_2)$ to simplify notation.
 
 \begin{definition}[Chern Classes, HATCHER]
     There is a unique sequence of characteristic classes $c_1, c_2, \ldots$ for complex vector bundles with values in $H^\ast(-;\Z)$, such that 
@@ -314,13 +402,13 @@ Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes} the sum
     \end{enumerate}
 \end{definition}
 
-Again $c = 1 + c_1 + c_2 + \ldots$ is well-defined and is called the \textit{total Chern class}. Again one sometimes writes $c_0(E) := 1 \in H^0(B;\Z)$. See [HATCHER] for a proof of existence and uniqueness.
+Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write $c_0(E) := 1 \in H^0(B;\Z)$. See [HATCHER] for a proof of existence and uniqueness of the Stiefel-Whitney and Chern classes.
 
 \begin{example}
     \label{bundles:ex:characteristic_classes}
     \begin{enumerate}[label=\roman*)]
         \item[]
-        \item Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1 \cong \gamma_1^n$ is the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^n(\RP^n;\Z_2) \cong \Z_2$. Similiarly $c_1(\tau_1^n)$ of the tautological complex line bundle $\tau_1^n \to \CP^n$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
+        \item Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1$ is isomorphic to the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^1(\RP^n;\Z_2) \cong \Z_2$. Similiarly, $c_1(\tau_1^n)$ of the tautological complex line bundle $\tau_1^n \to \CP^n$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
         \item Let $\epsilon \to B$ be a trivial real bundle over some space $B$. Then $\epsilon \cong f^\ast \epsilon$ for a constant map $f \colon B \to B$ and thus $w_i(\epsilon_n) = f^\ast w_i(\epsilon) = 0$ for all $i \geq 1$. Similiarly all Chern classes for complex trivial bundles vanish.
         \item \label{bundles:ex:characteristic_classes_part3} Let $TS^n \to S^n$ be the tangent bundle of the sphere and let $\nu_n \to S^n$ be the normal bundle. Since $\nu_n$ and $TS^n \oplus \nu_n$ are trivial we conclude from the example above and property \ref{bundles:eq:prop3_for_stiefel_whitney_classes} in Definition \ref{bundles:def:Steifel_Whitney_Classes} that 
         \[
