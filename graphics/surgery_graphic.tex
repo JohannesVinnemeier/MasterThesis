@@ -1,0 +1,28 @@
+\documentclass[tikz,border=0pt]{standalone}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % PDF als Hintergrund
+    \node[anchor=south west, inner sep=0] (bild) 
+        at (0,0) {\includegraphics{bild.pdf}};
+
+    % Text darüber
+    \node[anchor=west] at (2,3) {\Large $E = mc^2$};
+
+    % weiterer Text
+    \node[anchor=north west, align=left] at (1,2) {
+        Hier steht normaler\\
+        \LaTeX-Text.
+    };
+
+    % Beispiel für einen Pfeil
+    \draw[->, thick] (4,1) -- (5,2)
+        node[midway, right] {Beschreibung};
+
+\end{tikzpicture}
+
+\end{document}

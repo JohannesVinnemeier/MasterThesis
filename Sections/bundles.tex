@@ -291,7 +291,7 @@ Again let us discuss a few examples.
     \begin{enumerate}[label=(\roman*)]
         \item[]
         \item The universal cover $\R \to S^1$ is a $\Z$-prinicpal bundle, $\Z$ acting on itself by addition. Since $\R$ is contractible we obtain $B\Z \cong S^1$ and $E\Z \cong \R$.
-        \item From the long exact sequence of homotopy groups 
+        \item \label{bundles:ex:homotopy_groups_of_BG} From the long exact sequence of homotopy groups 
         \[\begin{tikzcd}
         {\pi_k(EG)} & {\pi_k(BG)} & {\pi_{k-1}(G)} & {\pi_{k-1}(EG)}
         \arrow[from=1-1, to=1-2]
@@ -341,7 +341,7 @@ Again let us discuss a few examples.
         \]
         descends to the quotient, defining a vector bundle map $V_k^\infty \times_{O(k)} \R^k \to \gamma_k$. This map is clearly a linear isomorphism on fibers, hence an isomorphism of vector bundles. 
 
-        Similiarly, oriented real $k$-dimensional vector bundles are classified by maps to $\tilde{\mathrm{Gr}}_k^\infty$ We claim that the universal oriented real $k$-dimensional vector bundle is given by the tautological bundle $\gamma_k^{SO} \to \tilde{\mathrm{Gr}}_k^\infty$ defined by 
+        Similiarly, oriented real $k$-dimensional vector bundles are classified by maps to $\tilde{\mathrm{Gr}}_k^\infty$. We claim that the universal oriented real $k$-dimensional vector bundle is given by the tautological bundle $\gamma_k^{SO} \to \tilde{\mathrm{Gr}}_k^\infty$ defined by 
         \[
         \gamma_k^{SO} := \{(X,\mathrm{o}_X,v) \in \tilde{\mathrm{Gr}}_k^\infty \times \R^k \mid v \in X\}
         \]
@@ -402,7 +402,7 @@ Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes} the sum
     \end{enumerate}
 \end{definition}
 
-Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write $c_0(E) := 1 \in H^0(B;\Z)$. See [HATCHER] for a proof of existence and uniqueness of the Stiefel-Whitney and Chern classes.
+Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write $c_0(E) := 1 \in H^0(B;\Z)$. We refer the reader to [HATCHER] for a proof of existence and uniqueness of the Stiefel-Whitney and Chern classes.
 
 \begin{example}
     \label{bundles:ex:characteristic_classes}
@@ -410,7 +410,7 @@ Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-define
         \item[]
         \item Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1$ is isomorphic to the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^1(\RP^n;\Z_2) \cong \Z_2$. Similiarly, $c_1(\tau_1^n)$ of the tautological complex line bundle $\tau_1^n \to \CP^n$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
         \item Let $\epsilon \to B$ be a trivial real bundle over some space $B$. Then $\epsilon \cong f^\ast \epsilon$ for a constant map $f \colon B \to B$ and thus $w_i(\epsilon_n) = f^\ast w_i(\epsilon) = 0$ for all $i \geq 1$. Similiarly all Chern classes for complex trivial bundles vanish.
-        \item \label{bundles:ex:characteristic_classes_part3} Let $TS^n \to S^n$ be the tangent bundle of the sphere and let $\nu_n \to S^n$ be the normal bundle. Since $\nu_n$ and $TS^n \oplus \nu_n$ are trivial we conclude from the example above and property \ref{bundles:eq:prop3_for_stiefel_whitney_classes} in Definition \ref{bundles:def:Steifel_Whitney_Classes} that 
+        \item \label{bundles:ex:characteristic_classes_part3} Let $TS^n \to S^n$ be the tangent bundle of the sphere and let $\nu_n \to S^n$ be the normal bundle with respect to the standard embedding $S^n \to \R^{n+1}$. Since $\nu_n$ and $TS^n \oplus \nu_n$ are trivial we conclude from the example above and property \ref{bundles:eq:prop3_for_stiefel_whitney_classes} in Definition \ref{bundles:def:Steifel_Whitney_Classes} that 
         \[
         1 = w(TS^n \oplus \nu_n) = w(TS^n) \smile w(\nu_n) = w(TS^n) \smile 1 = w(TS^n).
         \]
@@ -418,60 +418,49 @@ Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-define
     \end{enumerate}
 \end{example}
 
-In the last example we have seen that although all Stiefel-Whitney classes of a bundle vanish, the bundle need not be trivial. However for one-dimensional real (resp. complex) bundles it turns out that they are already completely classified by their first Stiefel-Whitney class (resp. Chern class):
+In the last example we saw that although all Stiefel-Whitney classes of a bundle vanish, it need not be trivial. However for one-dimensional real (resp. complex) bundles it turns out that the first Stiefel-Whitney (resp. Chern) class already completely determines the bundle:
 
 \begin{theorem}[Hathcer, Proposition 3.10]
     Let $X$ be a CW-complex. Then the maps $$w_1 \colon \mathrm{Vect}_\R(X) \to H^1(X;\Z_2)$$ and $$c_1 \colon \mathrm{Vect}_\C(X) \to H^2(X;\Z)$$ are bijections. 
 \end{theorem}
 
-This allows us to define line bundles by only prescribing their first Stiefel-Whitney class (resp. Chern class), which is often technically easier thank directly writing down this bundle. 
-While the first Stiefel-Whitney class of higher dimensional bundles does not identify their isomorphism type it does characterize another important invariant, namely orinetability:
+% This allows us to define line bundles by only prescribing their first Stiefel-Whitney class (resp. Chern class), which is often technically easier thank directly writing down this bundle. 
+While the first Stiefel-Whitney class of higher dimensional bundles does not identify their isomorphism type it does characterize another important invariant, namely orientability:
 
 \begin{proposition}[Hatcher, Prop 3.11]
     \label{bundles:prop:orientable_iff_w1_vanishes}
     Let $X$ be a CW-complex. A real vector bundle $E \to X$ is orientable if and only if $w_1(E) = 0$.
 \end{proposition}
 
-Similiarly vanishing of the second Stiefel Whitney class $w_2(E)$ corresponds to the existence of another structure on $E$, namely a spin structure. 
+Similiarly vanishing of the second Stiefel Whitney class corresponds to the existence of another structure, namely that of a \textit{spin structure}. 
 
 \begin{definition}
-    Let $n \geq 3$.
     \begin{enumerate}[label=(\roman*)]
-        \item The \textit{spin group} $\mathrm{Spin}(n)$ is defined as the universal cover $\rho \colon \mathrm{Spin}(n) \to \mathrm{SO}(n)$.
+        \item For $n \geq 2$ the \textit{spin group} $\mathrm{Spin}(n)$ is defined as the total space of the non-trivial two-sheeted cover $\rho \colon \mathrm{Spin}(n) \to \mathrm{SO}(n)$. If $n \geq 3$ this is the universal cover and in the case $n=2$ we have $\spin(2) \cong \so(2)$. For $n=1$ we define $\spin(1) := \Z_2$, the total space of the two-sheeted cover $\rho \colon \Z_2 \to \so(1)$.
         \item Let $E \to B$ be an oriented real vector bundle equipped with a fiber metric and let $P_{\mathrm{SO}(n)}$ be its oriented orthonormal frame bundle. A \textit{spin structure} on $E$ is a $\mathrm{Spin}(n)$-principal bundle $P_{\mathrm{Spin}(n)}$ together with a map 
         \[
         \phi \colon P_{\mathrm{Spin}(n)} \to P_{\mathrm{SO}(n)}
         \]
-        of principal bundles, which is $\rho$-equivariant (see Definition \ref{bundles:def:principal_bundles_morphism}).
+        of principal bundles, which is $\rho$-equivariant (compare Definition \ref{bundles:def:principal_bundles_morphism}).
         \item An orientable manifold $M$ is called \textit{spin} if its tangent bundle $TM$ admits a spin structure and is called \textit{totally non-spin} if the universal cover of $M$ is not spin.
     \end{enumerate}
 \end{definition}
 
-Note that the existence of a spin structure does not depend on the chose orientation or fiber metric, since different choices yield isomorphic oriented orthonormal frame bundles. In fact the only obstruction to the existence of a spin structure is the second Stiefel-Whitney class, as mentioned above.
+\begin{remark}
+    When $n=1$, $P_{\so(1)} \cong X$ and a spin structure is simply a two-sheeted cover of $X$.
+\end{remark}
+Note that the existence of a spin structure does not depend on the chose orientation or fiber metric on $E$, since different choices yield isomorphic oriented orthonormal frame bundles. In fact the only obstruction to the existence of a spin structure is the second Stiefel-Whitney class, as mentioned above.
 
-\begin{theorem}[Lawson,Micheaslon]
+\begin{theorem}[Lawson,Micheaslon] %in der quelle steht es glaub ich nur für X eine maniigfaltigkeit, suche noch andere quelle
     \label{bundles:thm:spin_iff_w2_vanishes}
     Let $X$ be a CW-complex. An orientable real vector bundle $E \to X$ admits a spin structure if and only if $w_2(E) = 0$. 
 \end{theorem}
 
-Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ restricted to any embedded loop $S^1 \subseteq M$ is trivial. Or in other words ``$TM$ does not contain any Moebius Bands''. A similiar characterization can be given for spin manifolds, which is why the property of being spin is sometimes referred to as a higher dimensional analogue of orientability.
-
-\begin{proposition}[Georg Paper, Proposition 2.6]
-    \label{bundles:prop:spin_characterisation}
-    Let $M$ be a connected oriented manifold of dimension at least $5$.
-    \begin{enumerate}[label=\roman*)]
-        \item \label{bundles:eq:characterization_spin} $M$ is spin if and only if for every embedded surface $S \subseteq M$ the restriction $TM|_S$ of the tangent bundle to $S$ is trivial.
-        \item \label{bundles:eq:characterization_totally_non_spin} $M$ is totally non-spin if and only if there exists an embedded sphere $S^2 \subseteq M$, such that the restriction $TM|_{S^2}$ of the tangent bundle to this sphere is trivial.
-    \end{enumerate}
-\end{proposition}
-
-\begin{proof}
-    Since we will not be making use of the first characterization of spin manifolds, we shall only proof part \ref{bundles:eq:characterization_totally_non_spin} of the proposition and refer the reader to [Georg Paper] for a proof of part \ref{bundles:eq:characterization_spin}. ...(Proof)
-\end{proof}
+So for example alls spheres $S^n$ are spin (see example \ref{bundles:ex:characteristic_classes_part3}). A non-example for a spin manifold is $\CP^2$ (see [MilnorStasheff??]).
 
 \begin{remark}
     \label{bundles:rem:classifying_map_for_spin_bundles}
-    Let $E \to X$ be a real vector bundle over a CW-complex. If an orientation is given, $E$ can be classified by a map $X \to B\mathrm{SO}(n)$ (see example \ref{bundles:ex:examples_for_classifiying_spaces}). Similiarly, if a spin structure exists, $E$ can be classified by a map $X \to B\mathrm{Spin}(n)$, which can be seen as follows. Let $\phi \colon P_{\mathrm{Spin}(n)} \to P_{\mathrm{SO}(n)}$ be a spin structure on $E$ and let $f \colon X \to B\mathrm{Spin}(n)$ be the classifiying map for $P_{\mathrm{Spin}(n)}$. Define a vector bundle 
+    Let $E \to X$ be a real vector bundle over a CW-complex. If an orientation is given, $E$ is classified by a map $X \to B\mathrm{SO}(n)$. Similiarly, if a spin structure exists, $E$ is classified by a map $X \to B\mathrm{Spin}(n)$, which can be seen as follows. Let $\phi \colon P_{\mathrm{Spin}(n)} \to P_{\mathrm{SO}(n)}$ be a spin structure on $E$ and let $f \colon X \to B\mathrm{Spin}(n)$ be a classifiying map for $P_{\mathrm{Spin}(n)}$. Define a vector bundle 
     \[
     \gamma_n^\spin := E\mathrm{Spin}(n) \times_{\mathrm{Spin}(n)} \R^n
     \]
@@ -486,6 +475,33 @@ Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ 
     This map is clearly a linear bijection on fibers, hence an isomorphism of vector bundles. 
 \end{remark}
 
+Recall that a manifold $M$ \textcolor{red}{(only if dim $ \geq 3$ or so??)} is orientable if and only if its tangent bundle $TM$ restricted to any embedded loop $S^1 \subseteq M$ is trivial. Or in other words ``$TM$ does not contain any Moebius Bands''. A similiar characterization can be given for spin manifolds, which is why the property of being spin is sometimes referred to as a higher dimensional analogue of orientability.
+
+\begin{proposition}[Georg Paper, Proposition 2.6]
+    \label{bundles:prop:spin_characterisation}
+    Let $M$ be a connected oriented manifold of dimension at least $5$.
+    \begin{enumerate}[label=\roman*)]
+        \item \label{bundles:eq:characterization_spin} $M$ is spin if and only if for every embedded surface $S \subseteq M$ the restriction $TM|_S$ of the tangent bundle to $S$ is trivial.
+        \item \label{bundles:eq:characterization_totally_non_spin} $M$ is totally non-spin if and only if there exists an embedded sphere $S^2 \subseteq M$, such that the restriction $TM|_{S^2}$ of the tangent bundle to this sphere is non-trivial.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    Since we will not be making use of the first characterization, we shall only proof part \ref{bundles:eq:characterization_totally_non_spin} of the proposition and refer the reader to [Georg Paper] for a proof of part \ref{bundles:eq:characterization_spin}. Let $\tilde{M}$ be the universal cover of $M$. Since $T\tilde{M}$ does not admit a spin structure we conclude from Theorem \ref{bundles:thm:spin_iff_w2_vanishes} that $w_2(T\tilde{M}) \neq 0$. So by the universal coefficient theorem there exists a homology class $a \in H_2(\tilde{M};\Z_2)$ with 
+    \[
+    \langle w_2(T\tilde{M}), a\rangle \neq 0.
+    \]
+    Once more applying the universal coefficient theorem as well as the Hurewicz theorem we obtain an isomorphism
+    \[
+    \pi_2(\tilde{M}) \otimes \Z_2 \to H_2(\tilde{M};\Z) \otimes \Z_2 \cong H_2(\tilde{M};\Z_2). 
+    \]
+    Explicitly, for some class $\alpha \in \pi_2(\tilde{M})$ represented by a map $f \colon S^2 \to \tilde{M}$ the above isomorphism maps $\alpha \otimes 1$ to $f_\ast [S^2]_{\Z_2}$, where $[S^2]_{\Z_2}$ is the $\Z_2$-fundamental class of $S^2$. Therefore we can write $a = f_\ast [S^2]_{\Z_2}$ for some $f \colon S^2 \to \tilde{M}$. Let $p \colon \tilde{M} \to M$ be the projection and define $g := p \circ f \colon S^2 \to M$. We compute 
+    \[
+    \langle w_2(g^\ast TM), [S^2]_{\Z_2}\rangle = \langle f^\ast w_2(p^\ast TM), [S^2]_{\Z_2}\rangle = \langle w_2(T\tilde{M}), f_\ast [S^2]_{\Z_2}\rangle = \langle w_2(T\tilde{M}), a \rangle \neq 0,
+    \]
+    where we used $p^\ast TM \cong T \tilde{M}$ and naturality of the Kronecker pairing in the second equation. As $\mathrm{dim}(M) \geq 5$ we may assume $g$ to be an embedding and since $w_2(g^\ast TM) \neq 0$ by the above computation we conclude that $g^\ast TM$ can not be trivial.
+\end{proof}
+
 Finally we record another scenario in which the vanishing of all Stiefel-Whitney classes of a bundle is sufficient for triviality.
 
 \begin{lemma}
@@ -494,5 +510,5 @@ Finally we record another scenario in which the vanishing of all Stiefel-Whitney
 \end{lemma}
 
 \begin{proof}
-    Combining Theorem \ref{bundles:thm:spin_iff_w2_vanishes} and Remark \ref{bundles:rem:classifying_map_for_spin_bundles} we conclude that there exists a classifiying map $f \colon S \to B\spin(n)$ for $E$, where $n$ is the rank of $E$. From example \ref{bundles:ex:examples_for_classifiying_spaces} it follows that $\pi_k(B\spin(n)) = 0$ for $k \geq 2$. Since $S$ is two dimensional the map $f$ is homotopic to a constant ([Hatcher, Lemma 4.6]), therefore $E \cong f^\ast \xi_\spin$ is trivial.
+    Combining Theorem \ref{bundles:thm:spin_iff_w2_vanishes} and Remark \ref{bundles:rem:classifying_map_for_spin_bundles} we conclude that there exists a classifiying map $f \colon S \to B\spin(n)$ for $E$, where $n$ is the rank of $E$. From Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG} it follows that $\pi_k(B\spin(n)) = 0$ for $k \geq 2$. Since $S$ is two dimensional the map $f$ is homotopic to a constant ([Hatcher, Lemma 4.6]), therefore $E \cong f^\ast \xi_\spin$ is trivial.
 \end{proof}

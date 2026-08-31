@@ -1,24 +1,96 @@
 \section{Positive Scalar Curvature}
 \label{sec:psc}
 
-\subsection{Overview}
+The purpose of this chapter is twofold. The first half provides a brief introduction to scalar curvature, following \cite{walsh2017aspects} and \cite{carlotto2021survey}. In the second half, we prove two concrete existence results for metrics of positive scalar curvature, which will be used in the construction in Chapter \ref{sec}.
 
-brief definition, maybe intuition and osbtructions/backgroudn etc. based on overview paper
+\subsection{A brief introduction}
 
-psc is somehow sweetspot for rigidity and flexibility
+Let $M^n$ be an $n$-dimensional manifold. Given any Riemannian metric $g$ on $M$, we can associate to it a smooth function $\scal_g \colon M \to \R$ called the \textit{scalar curvature} of $M$. In the case where $M$ is an embedded surface in $\R^3$, the scalar curvature equals twice the classical Gaussian curvature $K \colon M \to \R$. So in this case we can intuitively quantify the scalar curvature at a given point.
 
-Probably the most important existence result for positive scalar curvature metrics is the following theorem, which has been shown independently by Schoen and Yau [SY79] as well as Gromov and Lawson [GL80]. We refer the reader to the Appendix for a brief introduction of surgery and cobordism theory.
+\begin{center}
+    \includegraphics{../graphics/scalar_curvature.pdf}
+\end{center}
 
-\begin{theorem}[Gromov,Lawson,1980, Chernysh Theorem Georg Paper]
-    \label{psc:thm:surgery_thm}
-    Let $M$ be a compact manifold, which admits a psc metric. Then any manifold $M^\prime$ obtained from $M$ by surgery of codimension at least $3$ also admits a psc metric.
+In dimension $2$ the scalar curvature is the only intrinsic notion of curvature, however in dimensions $n \geq 3$ there exists a whole hierarchy of different curvatures. The most prominent are sectional curvature, Ricci curvature and scalar curvature, where the sectional curvature is the strongest notion, determining the entire geometry of $M$. In this thesis we are concerned with the scalar curvature, which is the weakest of the three. In most textbooks on Riemannian geometry it is defined as twice the trace of the Riemannian curvature tensor. While this definiton is best suited for explicit computations it provides no further intuition on what scalar curvature is. Since we have no need for doing such explicit computations, we give a more geometric definition, which essentially extends our intuition in the $2$-dimensional case to arbitrary dimensions.
+
+\begin{definition}
+    Let $(M^n,g)$ be an $n$-dimensional Riemannian manifold. The scalar curvature $\scal_g(x) \in \R$ at the point $x\in M$ is defined as the value appearing in the third coefficient of the Taylor expansion
+    \begin{equation*}
+    \frac{\mathrm{vol}(B_r(x))}{\mathrm{vol}(B_r^{\text{eucl.}}(0))} = 1 - \frac{\scal_g(x)}{6(n+2)}r^2 + \dots,
+    \end{equation*}
+    where $\mathrm{vol}(B_r(x))$ denotes the volume of a geodesic ball in $M$ of radius $r$ centered at $x$ and $\mathrm{vol}(B_r^{\text{eucl.}}(0))$ denotes the volume of a ball of the same radius $r$ in standard euclidian space $\R^n$.
+\end{definition}
+
+Broadly speaking, the study of scalar curvature falls into two categories: \textit{Rigidity} results and \textit{flexibility} results. As the title of this chapter suggests, one is primarily concerned with results about \textit{positive} scalar curvature. The reason for this is the following theorem.
+
+\begin{theorem}
+    Let $M^n$ be a closed manifold of dimension $n \geq 3$ and let $f \colon M \to \R$ be a smooth function.
+    \begin{enumerate}[label=(\roman*)]
+        \item \label{psc:thm:kazdan_warner_part1} If there exists a point $p \in M$ with $f(p) < 0$, then $M$ admits a metric $g$ with scalar curvature $\scal_g = f$.
+        \item \label{psc:thm:kazdan_warner_part2} If $M$ admits a metric whose scalar curvature is non-negative but not identically zero then $M$ admits another metric $g$ with scalar curvature $\scal_g = f$.
+    \end{enumerate}
 \end{theorem}
 
-We remark that the construction of the psc metric on $M^\prime$ only changes the given psc metric on $M$ locally near the embedding along which the surgery is performed. In order to apply this theorem we need a way to control the dimension of the surgeries performed or equivalently the indices of handles in a given cobordism. This question is completely independent of scalar curvature and has for example been studied quite thoroughly in the context of the $h$-cobordims theorem. One central tool to control the indices of the handles in a cobordism is the following theorem due to Wall
+So part \ref{psc:thm:kazdan_warner_part1} of the theorem asserts that the only scalar curvature condition from which we can expect any kind of obstruction results is non-negativity. Moreover, aside from the scalar-flat case (where the scalar curvature is identically zero), part \ref{psc:thm:kazdan_warner_part2} shows that studying non-negative scalar curvature yields nothing new beyond what is already captured by positive scalar curvature. In the following we refer to a metric $g$ on $M$, whose scalar curvature is everywhere positive as a \psc-metric.
+
+The reason why the study of positive scalar curvature has attracted particular attention compared to other other curvature conditions, such as positive Ricci or sectional curvature, is that it strikes an exceptionally good balance between the rigidity and flexibility aspects. While positive Ricci or sectional curvature have substantial topological implitcatons, this also makes it significantly more difficult to construct metrics with these curvature conditons. For example the Bonnet-Myers theorem states that a positive lower bound on the Ricci curvature of $M$ already implies that $M$ must be compact with finite fundamental group. For \psc-metrics however, there are existence results under quite general assumptions, which we will discuss below. First let us consider some examples illustrating the rigidity aspects of positive scalar curvature. The most prominent obstruction to the existence of a \psc-metric comes from spin geometry. Let $(M^n,g)$ be a closed Riemannian spin manifold with $n$ even. Then the spin structure and the metric $g$ determine a Hermitian vector bundle $S \to M$ together with a compatible connection $\nabla^S$ and a self-adjoint first order differential operator $D \colon \Gamma(S) \to \Gamma(S)$ acting on sections of $S$. Moreover, there exists a canonical splitting $S \cong S^+ \oplus S^-$ with respect to which $D$ splits as
+\[
+D = \begin{pmatrix}
+    0 & D^- \\
+    D^+ & 0
+\end{pmatrix}.
+\]
+We call $S \to M$ the \textit{spinor bundle} of $M$ and $D$ the \textit{Dirac operator}. One of the central motivations behind constructing this operator was to find a first order differential operator squaring to the Laplacian. The spinor bundle $S$ carries additional structure making it possible to define such an operator, however, its square agrees with the Laplacian only up to an error term determined by the curvature of $M$. More precisely, the \textit{Schrödinger--Lichnerowicz formula} holds:
+\[
+D^2 = \Delta^S + \frac{1}{4} \scal_g,
+\]
+where $\Delta^S \colon \Gamma(S) \to \Gamma(S)$ is the connection Laplacian determined by $\nabla^S$. Given any vector bundle $E \to N$ over a closed Riemannian manifold $N$ carrying a fiber metric and a compatible connection, it is a general fact that the induced connection Laplacian is a non-negative operator with respect to the $L^2$-inner product $\langle\cdot,\cdot\rangle$ on $\Gamma(E)$ induced by the fiber metric and the volume form of $N$. Applying this to $S$, let $\psi \in \Gamma(S)$. Then
+\[
+0 \leq \langle D\psi, D\psi \rangle = \langle D^2\psi, \psi \rangle = \langle \Delta^S\psi, \psi \rangle + \frac{1}{4} \int_M \scal_g \norm{\psi}^2,
+\]
+where we used self-adjointness of $D$ in the first equation and the Schrödinger--Lichnerowicz formula in the second. If $\scal_g > 0$ and $\psi \neq 0$, the right-hand side is strictly positive, since $\Delta^S$ is a non-negative operator. But the right-hand side equals $\langle D\psi,D\psi\rangle = \norm{D\psi}^2$, so this forces $D\psi \neq 0$. Hence the kernel of $D$ must be trivial. In particular the integer
+\[
+\mathrm{ind}(D) := \mathrm{dim}(\mathrm{ker}\,D^+) - \mathrm{dim}(\mathrm{ker}\,D^-),
+\]
+known as the \textit{index} of $D$, must vanish (one can show that the kernels of $D^\pm$ are finite-dimensional, so this is well defined). Now the major insight is that this index can also be computed in terms of a purely topological invariant of $M$, namely the so-called $\hat{A}$-class $\hat{A}(TM) \in H^{4\ast}(M; \Q)$ of the tangent bundle $TM \to M$, which is a certain characteristic class. The connection between the index of the Dirac operator and the $\hat{A}$-class of the tangent bundle is established by the famous \textit{Atiyah--Singer index theorem}, which states:
+\[
+\mathrm{ind}(D) = \langle \hat{A}(TM), [M]\rangle,
+\]
+where the right-hand side is the evaluation of the cohomology class $\hat{A}(TM)$ against the fundamental class $[M]$ of $M$ (for the components of $\hat{A}(TM)$ in degree $\neq n$ this is $0$, so in particular $\hat{A}(M) = 0$ if $n$ is not divisible by $4$). The number $\hat{A}(M) := \langle \hat{A}(TM), [M]\rangle \in \Q$ is also referred to as the \textit{$\hat{A}$-genus} of $M$. In summary:
+\begin{theorem}[Lichnerowicz, 1963]
+    Let $(M^{4k},g)$ be a closed Riemannian spin manifold with positive scalar curvature. Then $\hat{A}(M) = 0$.
+\end{theorem}
+
+A further, more accessible and geometric example for a rigidity result concerning positive scalar curvature is the following classical result by Llarull.
+
+\begin{theorem}[Llarull, 1998]
+    Let $M^n$ be a closed connected Riemannian spin manifold of dimension $n \geq 2$. Suppose $\scal_g \geq n(n-1)$ and let $f\colon M \to S^n$ be a smooth $1$-Lipschitz map with $\mathrm{deg}(f) \neq 0$. Then $f$ is an isometry.
+\end{theorem}
+
+The constant $n(n-1)$ appearing is no coincidence as the scalar curvature of the $n$-sphere $S^n$ with the standard metric $g_0$ can be computed to precisely equal this constant. Llarull applied this theorem in the special case $M = S^n$ and $f = \mathrm{id}$ to show that the only metric $g$ on $S^n$ with $\scal_g \geq n(n-1)$ and $g \geq g_0$ is the standard metric. Said differently, one cannot increase the curvature of the sphere without contracting distances. We conclude our discussion of scalar curvature rigidity results with another quite geometric statement, which is an example for a so called \textit{band width estimates}. 
+
+\begin{theorem}[Gromov]
+    \label{psc:thm:band_width_estimate}
+    Let $M = T^{n-1} \times [-1,1]$ and let $g$ be a Riemannian metric on $M$ with scalar curvature bounded from below by a positive constant $\sigma > 0$. Then the distance between the boundary components $\partial_{-} M =T^{n-1} \times \{-1\}$ and $\partial_{+} M =T^{n-1} \times \{1\}$ satisfies
+    \[
+    \mathrm{dist}_g(\partial_{-}M, \partial_{+}M) \leq 2 \pi \sqrt{\frac{n-1}{n\sigma}}.
+    \]
+\end{theorem}
+
+Intuitively we think of $M$ as a cylinder (a `band') over $T^{n-1}$ with a left boundary component $\partial_{-} M$ and a right boundary component $\partial_{+} M$. Thus this theorem says, that the boundaries of a band, which is highly positively curved must be close together. There are various generalisations of Theorem \ref{psc:thm:band_width_estimate} to allow for bands over other manifolds [??]. Gromov even conjectures that $T^{n-1}$ can be replaced by any manifold not admitting a \psc-metric [Conjecture C in Metric inequalities].
+
+Let us now turn to the flexibility aspect of positive scalar curvature. The primary method for constructing \psc-metrics is the following theorem, known as the \textit{Surgery Theorem}, which has been shown independently by Schoen and Yau [SY79] as well as Gromov and Lawson [GL80]. We refer the reader to the Appendix for a brief introduction to surgery and cobordism theory.
+
+\begin{theorem}[Gromov,Lawson,1980, Shoen Yau 1979, Chernysh Theorem Georg Paper]
+    \label{psc:thm:surgery_thm}
+    Let $M$ be a compact manifold, which admits a \psc-metric. Then any manifold $M^\prime$ obtained from $M$ by surgery of codimension at least $3$ also admits a \psc-metric.
+\end{theorem}
+
+We remark that the construction of the \psc-metric on $M^\prime$ only changes the given \psc-metric on $M$ locally near the embedding along which the surgery is performed. In order to apply this theorem we need a way to control the dimension of the surgeries performed or equivalently the indices of handles in a given cobordism. This question is completely independent of scalar curvature and has for example been studied quite thoroughly in the context of the $h$-cobordims theorem. One central tool to control the indices of the handles in a cobordism is the following theorem due to Wall
 
 \begin{theorem}[Wall, 1971]
     \label{psc:thm:wall_thm}
-    (Wall Theorem)
+    Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, such that the inclusion is $r$-connected for $r \leq \mathrm{dim}(W) - 4$. Then $W$ contains only handles of index $< \mathrm{dim}(W) - r$.
 \end{theorem}
 
 Combining the above theorem with the Surgery Theorem \ref{psc:thm:surgery_thm}, we can make the following observation. If $M_0$ admits a psc metric and the inclusion $M_1 \to W$ is $2$-connected, then $M_1$ also admits a psc metric. In fact, using the conclusion of Theorem \ref{psc:thm:wall_thm} it is possible to obtain an even stronger result. We say that a metric $g$ on a manifold $M$ with boundary is of \textit{product form near the boundary}, if there is some collar neighbourhood $\iota \colon \partial M \times [0,1) \to M$, such that $\iota^\ast g = g|_{\partial M} + dt^2$, where $g|_{\partial M}$ is the induced metric on $\partial M$.
@@ -28,9 +100,11 @@ Combining the above theorem with the Surgery Theorem \ref{psc:thm:surgery_thm}, 
     Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, such that the inlcusion $M_1 \to W$ is $2$-connected. Then any psc metric on $M_0$ can be extended to a psc metric on $W$, which is of product form near the boundary.
 \end{theorem}
 
-\subsection{Exitence Results for psc metrics}
+In view of the above discussion, one strategy to construct a psc metric on a given closed manifold $M_1$ of dimension at least $5$ is to first find a cobordism $W$ from some psc manifold $M_0$ to $M_1$ and then modify this cobordism by surgeries to obtain another cobordism $W^\prime$ from $M_0$ to $M_1$, such that the inclusion $M_1 \to W^\prime$ is $2$-connected. Of course, such a modification by surgeries may not always be possible, so our next goal is to explain certain scenarios in which it is.
 
-In view of the above discussion, one strategy to construct a psc metric on a given closed manifold $M_1$ of dimension at least $5$ is to first find a cobordism $W$ from some psc manifold $M_0$ to $M_1$ and then modify this cobordism by surgeries to obtain another cobordism $W^\prime$ from $M_0$ to $M_1$, such that the inclusion $M_1 \to W^\prime$ is $2$-connected. Of course, such a modification by surgeries may not always be possible, so our next goal is to explain certain scenarios in which it is, one in the spin case and one in the totally non-spin case (see Definition \ref{bundles:def:spin}).
+\subsection{Existence results for \psc-metrics}
+
+We will proof the following two existence results for \psc-metrics, one in the spin case and one in the totally non-spin case.
 
 \begin{theorem}
     \label{psc:thm:existence_result_spin}
@@ -112,13 +186,13 @@ The two rightmost horizontal maps are surjective by exactness, since $\pi_1(\til
 \end{proof}
 
 \begin{remark}
-    The proofs of Theorem \ref{psc:thm:existence_result_spin} and \ref{psc:thm:existence_result_totally_non_spin} are very similiar and in fact both statements are a consequence of a more general result. This unifying approach can be formulated using the language of tangential $2$-types, which we shall not discuss further in this thesis. See for example [Georg Paper etc.].
+    The similarity between the proofs of Theorems \ref{psc:thm:existence_result_spin} and \ref{psc:thm:existence_result_totally_non_spin} is no coincidence, since both statements are a consequence of a more general result. This unifying approach can be formulated using the language of tangential $2$-types, which we shall not discuss further in this thesis. See for example [Georg Paper etc.].
 \end{remark}
 
 % By the general strategy we laid out above, the proofs of these theorems will be using the given data to perform surgery on the cobordism $W$, such that the inlcusion $\iota \colon M_1 \to W$ becomes $2$-connected. By assumption $M_1$ is connected and $\iota$ already induces an isomorphism on $\pi_1$, so formulated differently our goal is to ``kill'' all generators in $\pi_2(W,M)$ by surgery. So as a first step let us make precise how one can use surgery to ``kill'' certain homotopy classes. 
 
 
-In the main construction in \hyperref[sec:constr]{Chapter 4} we will invoke Theorem \ref{psc:thm:existence_result_totally_non_spin} to construct a psc metric, so let us conclude this section by discussing some basic results for identifying totally non-spin manifolds.
+In the main construction in \hyperref[sec:constr]{Chapter 4} we will invoke Theorem \ref{psc:thm:existence_result_totally_non_spin} to construct a \psc-metric, so let us conclude this section by discussing some basic results for identifying totally non-spin manifolds.
 
 \begin{lemma}
     \label{lem:totally_non_spin_lemma} 
@@ -205,10 +279,10 @@ In the main construction in \hyperref[sec:constr]{Chapter 4} we will invoke Theo
     \]
 \end{proof}
 
-A standard example of a non-spin manifold is $\CP^2$. Since $\CP^2$ is simply connected this is also an example of a totally non-spin manifold, which we will appeal to in section ...
+% A standard example of a non-spin manifold is $\CP^2$. Since $\CP^2$ is simply connected this is also an example of a totally non-spin manifold, which we will appeal to in section ...
 
-\begin{lemma} \label{lem:cp2_not_spin}
-    $\C P^2$ is non-spin.
-\end{lemma}
+% \begin{lemma} \label{lem:cp2_not_spin}
+%     $\C P^2$ is non-spin.
+% \end{lemma}
 
-(proof)
+% (proof)
