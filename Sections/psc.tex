@@ -8,7 +8,7 @@ The purpose of this chapter is twofold. The first half provides a brief introduc
 Let $M^n$ be an $n$-dimensional manifold. Given any Riemannian metric $g$ on $M$, we can associate to it a smooth function $\scal_g \colon M \to \R$ called the \textit{scalar curvature} of $M$. In the case where $M$ is an embedded surface in $\R^3$, the scalar curvature equals twice the classical Gaussian curvature $K \colon M \to \R$. So in this case we can intuitively quantify the scalar curvature at a given point.
 
 \begin{center}
-    \includegraphics{../graphics/scalar_curvature.pdf}
+    \includegraphics[width=\textwidth]{graphics/scalar_curvature.pdf}
 \end{center}
 
 In dimension $2$ the scalar curvature is the only intrinsic notion of curvature, however in dimensions $n \geq 3$ there exists a whole hierarchy of different curvatures. The most prominent are sectional curvature, Ricci curvature and scalar curvature, where the sectional curvature is the strongest notion, determining the entire geometry of $M$. In this thesis we are concerned with the scalar curvature, which is the weakest of the three. In most textbooks on Riemannian geometry it is defined as twice the trace of the Riemannian curvature tensor. While this definiton is best suited for explicit computations it provides no further intuition on what scalar curvature is. Since we have no need for doing such explicit computations, we give a more geometric definition, which essentially extends our intuition in the $2$-dimensional case to arbitrary dimensions.
@@ -31,9 +31,9 @@ Broadly speaking, the study of scalar curvature falls into two categories: \text
     \end{enumerate}
 \end{theorem}
 
-So part \ref{psc:thm:kazdan_warner_part1} of the theorem asserts that the only scalar curvature condition from which we can expect any kind of obstruction results is non-negativity. Moreover, aside from the scalar-flat case (where the scalar curvature is identically zero), part \ref{psc:thm:kazdan_warner_part2} shows that studying non-negative scalar curvature yields nothing new beyond what is already captured by positive scalar curvature. In the following we refer to a metric $g$ on $M$, whose scalar curvature is everywhere positive as a \psc-metric.
+So part \ref{psc:thm:kazdan_warner_part1} of the theorem asserts that the only scalar curvature condition from which we can expect any kind of obstruction results is non-negativity. Moreover, aside from the scalar-flat case (where the scalar curvature is identically zero), part \ref{psc:thm:kazdan_warner_part2} shows that studying non-negative scalar curvature yields nothing new beyond what is already captured by positive, scalar curvature. In the following we refer to a metric $g$ on $M$, whose scalar curvature is everywhere positive as a \psc-metric.
 
-The reason why the study of positive scalar curvature has attracted particular attention compared to other other curvature conditions, such as positive Ricci or sectional curvature, is that it strikes an exceptionally good balance between the rigidity and flexibility aspects. While positive Ricci or sectional curvature have substantial topological implitcatons, this also makes it significantly more difficult to construct metrics with these curvature conditons. For example the Bonnet-Myers theorem states that a positive lower bound on the Ricci curvature of $M$ already implies that $M$ must be compact with finite fundamental group. For \psc-metrics however, there are existence results under quite general assumptions, which we will discuss below. First let us consider some examples illustrating the rigidity aspects of positive scalar curvature. The most prominent obstruction to the existence of a \psc-metric comes from spin geometry. Let $(M^n,g)$ be a closed Riemannian spin manifold with $n$ even. Then the spin structure and the metric $g$ determine a Hermitian vector bundle $S \to M$ together with a compatible connection $\nabla^S$ and a self-adjoint first order differential operator $D \colon \Gamma(S) \to \Gamma(S)$ acting on sections of $S$. Moreover, there exists a canonical splitting $S \cong S^+ \oplus S^-$ with respect to which $D$ splits as
+The reason why the study of positive scalar curvature has attracted particular attention compared to other curvature conditions, such as positive Ricci or sectional curvature, is that it strikes an exceptionally good balance between the rigidity and flexibility aspects. While positive Ricci or sectional curvature have substantial topological implitcatons, this also makes it significantly more difficult to construct metrics with these curvature conditons. For example the Bonnet-Myers theorem states that a positive lower bound on the Ricci curvature of $M$ already implies that $M$ must be compact with finite fundamental group. For \psc-metrics however, there are existence results under quite general assumptions, which we will discuss below. First let us consider some examples illustrating the rigidity aspects of positive scalar curvature. The most prominent obstruction to the existence of a \psc-metric comes from spin geometry. Let $(M^n,g)$ be a closed Riemannian spin manifold with $n$ even. Then the spin structure and the metric $g$ determine a Hermitian vector bundle $S \to M$ together with a compatible connection $\nabla^S$ and a self-adjoint first order differential operator $D \colon \Gamma(S) \to \Gamma(S)$ acting on sections of $S$. Moreover, there exists a canonical splitting $S \cong S^+ \oplus S^-$ with respect to which $D$ splits as
 \[
 D = \begin{pmatrix}
     0 & D^- \\
@@ -67,7 +67,7 @@ A further, more accessible and geometric example for a rigidity result concernin
     Let $M^n$ be a closed connected Riemannian spin manifold of dimension $n \geq 2$. Suppose $\scal_g \geq n(n-1)$ and let $f\colon M \to S^n$ be a smooth $1$-Lipschitz map with $\mathrm{deg}(f) \neq 0$. Then $f$ is an isometry.
 \end{theorem}
 
-The constant $n(n-1)$ appearing is no coincidence as the scalar curvature of the $n$-sphere $S^n$ with the standard metric $g_0$ can be computed to precisely equal this constant. Llarull applied this theorem in the special case $M = S^n$ and $f = \mathrm{id}$ to show that the only metric $g$ on $S^n$ with $\scal_g \geq n(n-1)$ and $g \geq g_0$ is the standard metric. Said differently, one cannot increase the curvature of the sphere without contracting distances. We conclude our discussion of scalar curvature rigidity results with another quite geometric statement, which is an example for a so called \textit{band width estimates}. 
+The constant $n(n-1)$ appearing is no coincidence as the scalar curvature of the $n$-sphere $S^n$ with the standard metric $g_0$ can be computed to precisely equal this constant. Llarull then applied this theorem in the special case $M = S^n$ and $f = \mathrm{id}$ to show that the only metric $g$ on $S^n$ with $\scal_g \geq n(n-1)$ and $g \geq g_0$ is the standard metric. Said differently, one cannot increase the curvature of the sphere without contracting distances. We conclude our discussion of scalar curvature rigidity results with another quite geometric statement, which is an example for a so called \textit{band width estimate}. 
 
 \begin{theorem}[Gromov]
     \label{psc:thm:band_width_estimate}
@@ -77,7 +77,7 @@ The constant $n(n-1)$ appearing is no coincidence as the scalar curvature of the
     \]
 \end{theorem}
 
-Intuitively we think of $M$ as a cylinder (a `band') over $T^{n-1}$ with a left boundary component $\partial_{-} M$ and a right boundary component $\partial_{+} M$. Thus this theorem says, that the boundaries of a band, which is highly positively curved must be close together. There are various generalisations of Theorem \ref{psc:thm:band_width_estimate} to allow for bands over other manifolds [??]. Gromov even conjectures that $T^{n-1}$ can be replaced by any manifold not admitting a \psc-metric [Conjecture C in Metric inequalities].
+Intuitively we think of $M$ as a cylinder (a `band') over $T^{n-1}$ with a left boundary component $\partial_{-} M$ and a right boundary component $\partial_{+} M$. Then this theorem says, that the boundaries of a band, which is highly positively curved must be close together. There are various generalisations of Theorem \ref{psc:thm:band_width_estimate} to allow for bands over other manifolds [??]. Gromov even conjectures that $T^{n-1}$ can be replaced by any manifold not admitting a \psc-metric [Conjecture C in Metric inequalities].
 
 Let us now turn to the flexibility aspect of positive scalar curvature. The primary method for constructing \psc-metrics is the following theorem, known as the \textit{Surgery Theorem}, which has been shown independently by Schoen and Yau [SY79] as well as Gromov and Lawson [GL80]. We refer the reader to the Appendix for a brief introduction to surgery and cobordism theory.
 
@@ -93,11 +93,11 @@ We remark that the construction of the \psc-metric on $M^\prime$ only changes th
     Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, such that the inclusion is $r$-connected for $r \leq \mathrm{dim}(W) - 4$. Then $W$ contains only handles of index $< \mathrm{dim}(W) - r$.
 \end{theorem}
 
-Combining the above theorem with the Surgery Theorem \ref{psc:thm:surgery_thm}, we can make the following observation. If $M_0$ admits a psc metric and the inclusion $M_1 \to W$ is $2$-connected, then $M_1$ also admits a psc metric. In fact, using the conclusion of Theorem \ref{psc:thm:wall_thm} it is possible to obtain an even stronger result. We say that a metric $g$ on a manifold $M$ with boundary is of \textit{product form near the boundary}, if there is some collar neighbourhood $\iota \colon \partial M \times [0,1) \to M$, such that $\iota^\ast g = g|_{\partial M} + dt^2$, where $g|_{\partial M}$ is the induced metric on $\partial M$.
+Combining the above theorem with the Surgery Theorem \ref{psc:thm:surgery_thm}, we can make the following observation. If $M_0$ admits a \psc-metric and the inclusion $M_1 \to W$ is $2$-connected, then $M_1$ also admits a \psc-metric. In fact, using the conclusion of Theorem \ref{psc:thm:wall_thm} it is possible to obtain an even stronger result. We say that a metric $g$ on a manifold $M$ with boundary is of \textit{product form near the boundary}, if there is some collar neighbourhood $\iota \colon \partial M \times [0,1) \to M$, such that $\iota^\ast g = g|_{\partial M} + dt^2$, where $g|_{\partial M}$ is the induced metric on $\partial M$.
 
 \begin{theorem}[extending psc to corbodism, Georg,Gaja]
     \label{psc:thm:extending_psc_to_cobordism}
-    Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, such that the inlcusion $M_1 \to W$ is $2$-connected. Then any psc metric on $M_0$ can be extended to a psc metric on $W$, which is of product form near the boundary.
+    Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, such that the inlcusion $M_1 \to W$ is $2$-connected. Then any \psc-metric on $M_0$ can be extended to a \psc-metric on $W$, which is of product form near the boundary.
 \end{theorem}
 
 In view of the above discussion, one strategy to construct a psc metric on a given closed manifold $M_1$ of dimension at least $5$ is to first find a cobordism $W$ from some psc manifold $M_0$ to $M_1$ and then modify this cobordism by surgeries to obtain another cobordism $W^\prime$ from $M_0$ to $M_1$, such that the inclusion $M_1 \to W^\prime$ is $2$-connected. Of course, such a modification by surgeries may not always be possible, so our next goal is to explain certain scenarios in which it is.
@@ -195,7 +195,7 @@ The two rightmost horizontal maps are surjective by exactness, since $\pi_1(\til
 In the main construction in \hyperref[sec:constr]{Chapter 4} we will invoke Theorem \ref{psc:thm:existence_result_totally_non_spin} to construct a \psc-metric, so let us conclude this section by discussing some basic results for identifying totally non-spin manifolds.
 
 \begin{lemma}
-    \label{lem:totally_non_spin_lemma} 
+    \label{psc:lem:totally_non_spin_lemma} 
     \begin{enumerate}[label=(\roman*)]
         \item The product of a totally non-spin manifold with any non-empty manifold is totally non-spin. \label{eq:totally_non_spin_lemma1}
         \item A manifold containing a totally non-spin submanifold of codimension $0$ is totally non-spin. \label{eq:totally_non_spin_lemma2}

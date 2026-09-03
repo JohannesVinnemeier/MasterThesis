@@ -109,17 +109,24 @@
   {\tikz \filldraw (0,0) circle (0.95pt);}
   {\tikz \filldraw (0,0) circle (0.5pt);}}}
 
+%Inserts placeholder graphic
+\newcommand{\placeholder}{%
+  \begin{center}
+    \includegraphics[scale=0.2]{graphics/placeholder.png}
+  \end{center}
+}
+
 \begin{document}
 
   \include{Titlepage/titlepage}
-  % \tableofcontents
-  % \newpage
+  \tableofcontents
+  \newpage
 
   \include{Sections/introduction}
   \include{Sections/bundles}
   \include{Sections/psc}
-  % \include{Sections/enlargeability}
-  % \include{Sections/the_construction}
+  \include{Sections/enlargeability}
+  \include{Sections/the_construction}
 
   % \include{Sections/appendix}
 

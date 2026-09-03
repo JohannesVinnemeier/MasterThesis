@@ -1,27 +1,82 @@
-\section{Construction of the Circle Bundles}
+\section{Main Construction}
 \label{sec:constr}
 
-We will now construct counterexamples to the question raised in the beginning, that is circle bundles $E \to M$ over enlargeable $M$, where the total space $E$ admits a metric of positive scalar curvature. 
-% In the following we will refer to orientable manifolds with non-spin universal cover as \emph{totally non-spin}.
-% In order to show the existence of such a metric we will employ the following Theorem.
+\subsection{Construction of Circle Bundles with \psc}
 
-% \begin{theorem}[Gromov, Hanke \cite{gromov2024torsion}]
-%     \label{thm:gromov_hanke}
-%     Let $V$ be a closed connected oriented smooth $n$-manifold with non-spin universal cover, $n \geq 5$. Let $\phi \colon V \to B\pi_1(V)$ be the classifying map and assume that there exists a closed oriented $n$-manifold $V^\prime$, which admits a positive scalar curvature metric, as well as a map $f \colon V^\prime \to B\pi_1(V)$, such that 
-%     \[
-%     \phi_\ast([V]) = f_\ast([V^\prime]) \in H_n(\pi_1(V);\Z).
-%     \]
-%     (This includes the case $\phi_\ast([V]) = 0$.) Then $V$ admits a positive scalar curvature metric.
-% \end{theorem}
-For $n \geq 2$ let $N^{2n}$ be any $2n$-dimensional totally non-spin manifold. We could for example take $N:= \CP^2 \times T^{2n-4}$, which is totally non-spin by Lemma \ref{lem:totally_non_spin_lemma} and Lemma \ref{lem:cp2_not_spin}. Now consider the manifold
+In the beginning we raised the following question.
+
+\begin{question}
+	Does there exist a circle bundle $E \to M$ over an enlargeable manifold $M$, such that the total space $E$ admits a \psc-metric?
+\end{question}
+
+We will now construct examples of such bundles in all dimensions $\mathrm{dim}(M) \geq 4$. Let us first describe the strategy behind the construction. The existence of a \psc-metric on $E$ will be established as an application of Theorem \ref{psc:thm:existence_result_totally_non_spin}, restated here for convenience:
+
+\vspace{\baselineskip}
+\noindent\textbf{Theorem~\ref{psc:thm:existence_result_totally_non_spin}.}\itshape\ 
+Let $W^{n+1}$ be an oriented cobordism from $M_0$ to $M_1$, $n \geq 5$. Suppose that $M_1$ is a connected totally non-spin manifold, the inlcusion $M_1 \to W$ induces an isomorphism on $\pi_1$ and that $M_0$ carries a psc-metric. Then $M_1$ also carries a psc-metric. In fact the psc-metric on $M_0$ can be extended to a psc-metric on $W$, which is of product form near the boundary. 
+\normalfont
+\vspace{\baselineskip}
+
+In order to apply this in our case, we make the following two observations, which hold true for any circle bundle $E \to M$ over a closed orientable manifold $M$. 
+
+\begin{enumerate}[label=(\roman*)]
+	\item There exists an oriented nullbordism of $E$, namely the total space of the associated disk bundle $DE \to M$,
+	\item \label{constr:eq:circle_bundle_observation2} The inclusion $E \cong \partial DE \to DE$ induces an isomorphism on $\pi_1$ if and only if the fibers of $E$ are contractible, that is the inclusion $S^1 \to E$ is trivial on $\pi_1$.
+\end{enumerate}
+
+We have already observed in Example \ref{bundles:ex:associated_bundles_part3} that $DE$ is a nullbordism of $E$. Moreover, the structure group of $DE \to M$ acts on fibers by orientation preserving diffeomorphisms. Thus any orientation on $M$ gives rise to an orientation on $DE$, which is uniquely determined by requiring local trivialisations to be orientation preserving. For \ref{constr:eq:circle_bundle_observation2} note that $DE \to M$ is a homotopy equivalence. Hence the diagram 
+\[\begin{tikzcd}[column sep=0cm]
+	E && DE \\
+	& M
+	\arrow[from=1-1, to=1-3]
+	\arrow[from=1-1, to=2-2]
+	\arrow["\simeq", from=1-3, to=2-2]
+\end{tikzcd}\]
+shows that $E \to DE$ induces an isomorphism on $\pi_1$ if and only if $E \to M$ does. Then the claim follows follows from the long exact sequence of homotopy groups:
+\[\begin{tikzcd}
+	{\pi_1(S^1)} & {\pi_1(E)} & {\pi_1(M)} & {\pi_0(S^1)}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+\end{tikzcd}\]
+
+So to answer the question above positively, we have to construct circle bundles $E \to M$ with the following properties.
+
+\begin{enumerate}[label = (\Roman*)]
+	\item \label{constr:property1} $M$ is enlargeable, orientable and connected,
+	\item \label{constr:property2} $E$ is totally non-spin,
+	\item \label{constr:property3} The inclusion $S^1 \to E$ is trivial on $\pi_1$.
+\end{enumerate}
+
+We define $M$ as the connected sum of three closed manifolds. Let $N^{2n}$ be any $2n$-dimensional orientable totally non-spin manifold. For example take $N:= \CP^2 \times T^{2n-4}$, which is totally non-spin by Lemma \ref{psc:lem:totally_non_spin_lemma} and Example \ref{bundles:ex:cp2_not_spin}. Then consider
 \[
 M := \CP^n \# T^{2n} \# N.
+\] 
+Intuitively the bundle $E \to M$ will now look as follows. It is trivial over the summands $T^{2n}$ and $N$, and is given by the canonical bundle $S^{2n+1} \to \CP^n$ over the $\CP^n$ summand (or rather the restriction of this bundle to $\CP^n - D^{2n} \subseteq M$). Schematically:
+
+\placeholder
+
+The presence of the Torus summand then corresponds to property \ref{constr:property1}, the trivial bundle over $N$ to property \ref{constr:property2} and the $S^{2n+1}$ over $\CP^n$ to property \ref{constr:property3}. We will now construct this bundle rigourously and afterwards discuss the proof of properties \ref{constr:property1} - \ref{constr:property3} in more detail. 
+
+Let 
+\[
+c_1 \in H^2(M;\Z) \cong H^2(\CP^n;\Z) \oplus H^2(T^{2n};\Z) \oplus H^2(N;\Z)
 \]
+be the cohomology class corresponding to the first chern class $\alpha \in H^2(\CP^n;\Z)$ of the canonical bundle $S^{2n+1} \to \CP^n$ under the above isomorphism. Define $E \to M$ as the unique $S^1$-principal bundle with first chern class equal to $c_1$. We claim that $E$ is as described above.
+
+
+
+Since the collapse map $M \to T^{2n}$ has degree $1$ and $T^{2n}$ is enlargeable, it follows from Lemma \ref{enl:lem:constructing_enlargeable_mnf} that $M$ is also enlargeable. 
+
+
+
+For $n \geq 2$  Now consider the manifold
+
 Since the collapse map $M \to T^{2n}$ has degree $1$ and $T^{2n}$ is enlargeable, it follows from Lemma \ref{enl:lem:constructing_enlargeable_mnf} that $M$ is also enlargeable. We will now construct a circle bundle $E \to M$ as follows. Let 
 \[
 c_1 \in H^2(M;\Z) \cong H^2(\CP^n;\Z) \oplus H^2(T^{2n};\Z) \oplus H^2(N;\Z)
 \]
-be the cohomology class corresponding to the first chern class $\alpha \in H^2(\CP^n;\Z)$ of the canonical bundle $S^{2n+1} \to \CP^n$ under the above isomorphism. We then define $E \to M$ as the unique $S^1$-principal bundle with first chern class equal to $c_1$. Now this is quite an abstract definition, so let us develop an intuition for how this bundle looks like. We claim that $E$ is trivial over the summand $T^{2n} \# N$ and is given by the restriction of the canonical bundle $S^{2n+1} \to \CP^n$ to $\CP^n - D^{2n} \subseteq M$ over the $\CP^n$ summand. To make this precise let 
+be the cohomology class corresponding to the first chern class $\alpha \in H^2(\CP^n;\Z)$ of the canonical bundle $S^{2n+1} \to \CP^n$ under the above isomorphism. We then define $E \to M$ as the unique $S^1$-principal bundle with first chern class equal to $c_1$. Now this is quite an abstract definition, so let us develop an intuition for how this bundle looks like. We show that $E$ is trivial over the summand $T^{2n} \# N$ and is given by the restriction of the canonical bundle $S^{2n+1} \to \CP^n$ to $\CP^n - D^{2n} \subseteq M$ over the $\CP^n$ summand. To make this precise let 
 \[
 i_1 \colon (T^{2n} \# N) - D^{2n} \to M
 \]
@@ -139,3 +194,12 @@ that $\pi_1(E) \to \pi_1(M)$ is indeed an isomorphism.
 \end{proof}
 
 The above construction now gives examples for circle bundles with positive scalar curvature over enlargeable manifolds $M$ in all even dimensions $\mathrm{dim}(M)\geq 4$. To also get examples in odd dimensions let $E \to M$ be as above and let $\pi \colon M \times S^1 \to M$ be the projection. Then the pullback bundle $\pi^\ast E \cong E \times S^1$ clearly admits a metric of positive scalar curvature and by Lemma \ref{enl:lem:constructing_enlargeable_mnf} the base space $M \times S^1$ is still enlargeable. Naturally, the question arises as to what happens in dimensions $\mathrm{dim}(M) \leq 3$. In this case it turns out that no circle bundle $E \to M$ admits a metric of positive scalar curvature, see \cite[Theorem B]{kumar2025circle}.
+
+
+\subsection{Necessity of the Enlargeability Assumption in Gromov's Decay Theorem}
+
+
+Coming back to..
+
+
+\subsection{Further Questions}
