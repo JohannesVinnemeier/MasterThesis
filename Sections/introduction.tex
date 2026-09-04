@@ -14,10 +14,10 @@ So any closed surface carrying a positive scalar curvature metric must be diffeo
 
 \begin{theorem*}[Enlargeable Decay Theorem, \cite{gromov2018metric}, page 15f.]
     \label{intro:thm:gromov_thm}
-Let $X$ be a complete Riemannian manifold, $E \to M$ a two dimensional vector bundle over an enlargeable manifold $M$. Assume that 
+Let $X$ be a complete Riemannian manifold, $V \to M$ a two dimensional vector bundle over an enlargeable manifold $M$. Assume that 
 \begin{enumerate}[label=(\roman*)]
-    \item There exists a proper map $f \colon X \to E$, $\mathrm{deg}(f) \neq 0$,
-    \item \label{intro:eq:gromov_thm_condition_2}The total space of the circle bundle corresponding to $E$ is also enlargeable.
+    \item There exists a proper map $f \colon X \to V$, $\mathrm{deg}(f) \neq 0$,
+    \item \label{intro:eq:gromov_thm_condition_2}The total space of the circle bundle corresponding to $V$ is also enlargeable.
 \end{enumerate}
 Then 
 \[
@@ -26,10 +26,10 @@ Then
 for some $R_0 = R_0(X,x_0)$ and all $R > R_0$.
 \end{theorem*}
 
-It is easy to see that condition \ref{intro:eq:gromov_thm_condition_2} is always fullfilled if the bundle $E \to M$ is trivial (compare Lemma \ref{enl:lem:constructing_enlargeable_mnf} \ref{enl:eq:lem_for_constructing_enlargeable_mnf_1}), which lead Gromov to pose the following question:
+It is easy to see that condition \ref{intro:eq:gromov_thm_condition_2} is always fullfilled if the bundle $V \to M$ is trivial (compare Lemma \ref{enl:lem:constructing_enlargeable_mnf} \ref{enl:eq:lem_for_constructing_enlargeable_mnf_1}), which lead Gromov to pose the following question:
 
 \begin{question}[\cite{gromov2018metric}]
-``What happens to nontrivial bundles $E \to M$? [...] In general, the examples in \cite{BrunnbauerHanke} indicate a possibility of non-enlargeable circle bundles over enlargeable $M$; yet, it seems hard(er) to find such examples, where the corresponding total space would admit metrics with $\mathrm{scal} > 0$.''
+``What happens to nontrivial bundles $V \to M$? [...] In general, the examples in \cite{BrunnbauerHanke} indicate a possibility of non-enlargeable circle bundles over enlargeable $M$; yet, it seems hard(er) to find such examples, where the corresponding total space would admit metrics with $\mathrm{scal} > 0$.''
 \end{question}
 
 As it turns out, such examples do in fact exist, that is, circle bundles over enlargeable manifolds, where the total space admits a metric of positive scalar curvature and thus, in particular, is not enlargeable. Bundles with this behaviour have recently been constructed in a paper by Kumar and Sen \cite{kumar2025circle} by utilizing tools from symplectic geometry. A very rough sketch of the construction can be given as follows. Take $M$ to be a so-called Donaldson divisor of a suitable closed symplectic manifold, e.g., the torus $T^{2n}$, $n \geq 3$. Such a Donaldson divisor is a certain codimension $2$ symplectic submanifold $M^{2n-2} \subseteq T^{2n}$, which in some cases can be shown to be enlargeable. Now define a circle bundle $E := \partial \nu(M)$ over $M$ as the boundary of a tubular neighbourhood $\nu(M) \subseteq T^{2n}$ of $M$. In order to construct a positive scalar curvature metric on $E$, consider the nullbordism $W := T^{2n} - \nu(M)$ obtained by removing the tubular neighbourhood from the ambient manifold. Now explicitly construct a Morse function $\psi \colon W \to \R$ with critical points of index at most $n$, which shows that $E$ is obtained from the empty set by surgeries of codimension at least $n \geq 3$. Thus, $E$ admits a metric of positive scalar curvature by the Gromov-Lawson-Schoen-Yau Surgery Theorem (see Theorem \ref{psc:thm:surgery_thm}).

@@ -122,21 +122,25 @@
   \tableofcontents
   \newpage
 
+  \addcontentsline{toc}{section}{Introduction}
   \include{Sections/introduction}
   \include{Sections/bundles}
   \include{Sections/psc}
   \include{Sections/enlargeability}
   \include{Sections/the_construction}
 
-  % \include{Sections/appendix}
+  \include{Sections/appendix}
 
   % \include{Misc/to_do}
 
   % Bibliography (Comment out for faster compilation)
 
-  % \nocite{*} %Include all entries from BibTeX file
-  % \bibliographystyle{alpha}
-  % \bibliography{ref}
+  \cleardoublepage
+
+  \nocite{*} %Include all entries from BibTeX file
+  \bibliographystyle{alpha}
+  \addcontentsline{toc}{section}{Bibliography}
+  \bibliography{ref}
 
 
 \end{document}

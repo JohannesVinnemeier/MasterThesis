@@ -7,9 +7,12 @@ The purpose of this chapter is twofold. The first half provides a brief introduc
 
 Let $M^n$ be an $n$-dimensional manifold. Given any Riemannian metric $g$ on $M$, we can associate to it a smooth function $\scal_g \colon M \to \R$ called the \textit{scalar curvature} of $M$. In the case where $M$ is an embedded surface in $\R^3$, the scalar curvature equals twice the classical Gaussian curvature $K \colon M \to \R$. So in this case we can intuitively quantify the scalar curvature at a given point.
 
-\begin{center}
+\begin{figure}[ht]
+    \centering
     \includegraphics[width=\textwidth]{graphics/scalar_curvature.pdf}
-\end{center}
+    \caption{Scalar curvature in dimension $2$.}
+    \label{fig:scalar_curvature}
+\end{figure}
 
 In dimension $2$ the scalar curvature is the only intrinsic notion of curvature, however in dimensions $n \geq 3$ there exists a whole hierarchy of different curvatures. The most prominent are sectional curvature, Ricci curvature and scalar curvature, where the sectional curvature is the strongest notion, determining the entire geometry of $M$. In this thesis we are concerned with the scalar curvature, which is the weakest of the three. In most textbooks on Riemannian geometry it is defined as twice the trace of the Riemannian curvature tensor. While this definiton is best suited for explicit computations it provides no further intuition on what scalar curvature is. Since we have no need for doing such explicit computations, we give a more geometric definition, which essentially extends our intuition in the $2$-dimensional case to arbitrary dimensions.
 
@@ -20,6 +23,18 @@ In dimension $2$ the scalar curvature is the only intrinsic notion of curvature,
     \end{equation*}
     where $\mathrm{vol}(B_r(x))$ denotes the volume of a geodesic ball in $M$ of radius $r$ centered at $x$ and $\mathrm{vol}(B_r^{\text{eucl.}}(0))$ denotes the volume of a ball of the same radius $r$ in standard euclidian space $\R^n$.
 \end{definition}
+
+So intuitively $\scal_g(x) > 0$ means that the volume of balls in $M$ around $x$ of sufficiently small radius $r$ is smaller than the volume of the euclidian ball of the same radius. Similiarly, if $\scal_g(x) < 0$ the volume of the ball in $M$ is larger and if $\scal_g(x) = 0$ the volumes are (asymptotically) identical. Note that this is in accordance with Figure \ref{fig:scalar_curvature}. 
+
+\begin{example}
+    \begin{enumerate}[label=(\roman*)]
+        \label{psc:ex:scalar_curvature_examples}
+        \item We immediately obtain from the definiton that the scalar curvature of $\R^n$ with the usual euclidian metric is zero.
+        \item \label{psc:ex:scalar_curvature_examples2} If $(M,g)$ is one-dimensional, the volume of a radius $r$ ball is simply $2r$. Therefore $\scal_g = 0$.
+        \item The scalar curvature of the unit sphere $S^n \subseteq \R^{n+1}$ can be computed to equal $n(n-1)$.
+        \item \label{psc:ex:scalar_curvature_examples4} Let $(M_1,g_1)$ and $(M_2,g_2)$ be Riemannian manifolds. Then for the scalar curvature of the product $(M_1 \times M_2, g_1 + g_2)$ equipped with the product metric $g_1 + g_2$ one obtains $\scal_{g_1 + g_2}(x_1,x_2) = \scal_{g_1}(x_1) + \scal_{g_2}(x_2)$ for $x_i \in M_i$. We refer the reader to any classical textbook on Riemannian geometry for a proof of these last two examples.
+    \end{enumerate}
+\end{example}
 
 Broadly speaking, the study of scalar curvature falls into two categories: \textit{Rigidity} results and \textit{flexibility} results. As the title of this chapter suggests, one is primarily concerned with results about \textit{positive} scalar curvature. The reason for this is the following theorem.
 
