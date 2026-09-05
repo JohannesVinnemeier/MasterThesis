@@ -165,18 +165,49 @@ Let $E \to M$ be a circle bundle as constructed in the previous section. The exi
 \[
 \iota^\ast g = g_E + dt^2.
 \]
-Moreover, consider the Riemannian manifold $(E \times (-\infty, 0], g_E + dt^2)$ equipped with the identity as a collar neighbourhood. We can glue this manifold with $(DE, g)$ along the common boundary $E$ to define another Riemannian manifold 
+Moreover, consider the Riemannian manifold $(E \times [1,\infty), g_E + dt^2)$ equipped with the identity as a collar neighbourhood. We can glue this manifold with $(DE, g)$ along the common boundary $E$ to define another Riemannian manifold 
 \[
-(V^\prime, h) := (E \times (-\infty, 0] \cup_E DE, (g_E + dt^2) \cup_E g).
+(V^\prime, h) := (E \times [1,\infty) \cup_E DE, (g_E + dt^2) \cup_E g).
 \]
-We explicitly mention that the smooth structure on $V^\prime$ is defined with respect to the chosen collar neighbourhoods $\iota$ and $\mathrm{id}_{E \times (-\infty,0]}$, such that $h$ is indeed smooth. Note that the metrics on both $E \times (-\infty, 0]$ and $DE$ are complete, therefore $h$ is also complete. Furthermore, the scalar curvature of $g_E + dt^2$ is  uniformly positive by compactness of $E$ and Example \ref{psc:ex:scalar_curvature_examples} \ref{psc:ex:scalar_curvature_examples4}. The same holds for the scalar curvature of $g$. Consequently $\scal_h$ is uniformly positive as well. Now consider the map $p \colon E \times (-\infty,0] \to M$ defined as the compostion of the projection $E \times (-\infty,0] \to E$ and the bundle projection $p \colon E \to M$. Together with the bundle projection $q \colon DE \to M$ we define the map 
+We explicitly mention that the smooth structure on $V^\prime$ is defined with respect to the chosen collar neighbourhoods $\iota$ and $\mathrm{id}_{E \times [1,\infty)}$, such that $h$ is indeed smooth. Note that the metrics on both $E \times [1,\infty)$ and $DE$ are complete, therefore $h$ is also complete. Furthermore, $g_E$ is a \psc-metric, hence the scalar curvature of $g_E + dt^2$ is uniformly positive by compactness of $E$ and Example \ref{psc:ex:scalar_curvature_examples} \ref{psc:ex:scalar_curvature_examples4}. The same holds for the scalar curvature of $g$. Consequently, $\scal_h$ is uniformly positive as well. Now consider the map $p_0 \colon E \times [1,\infty) \to M$ defined as the compostion of the projection $E \times [1,\infty) \to E$ and the bundle projection $p \colon E \to M$. Together with the bundle projection $q \colon DE \to M$ we set
 \[
-\pi := p \cup_E q \colon V \to M.
+\pi := p_0 \cup_E q \colon V^\prime \to M,
 \] 
-This now defines a rank $2$ vector bundle, however, $\pi$ is in general only a continous map as the collar neighbourhood contains no information about the bundle structure of $DE$. We can remedy this subtlety as follows. 
+which we will show to be a rank $2$ vector bundle. However, in general we can only expect $\pi$ to be a continous map as the collar neighbourhood $\iota$ contains no information about the bundle structure on $DE$. To resolve this subtlety, we proceed as follows, being quite precise about the details. Choose trivialisations
+\[
+\phi_\alpha \colon U_\alpha \times S^1 \to p^{-1}(U_\alpha), \;\; \phi_\beta \colon U_\beta \times S^1 \to p^{-1}(U_\beta)
+\]
+of $E \to M$ with smooth transition function $\tau_{\alpha\beta} \colon U_\alpha \cap U_\beta \to S^1$. By definition there are then trivialisations
+\[
+\psi_\alpha \colon U_\alpha \times D^2 \to q^{-1}(U_\alpha), \;\; \psi_\beta \colon U_\beta \times D^2 \to q^{-1}(U_\beta)
+\]
+of $DE \to M$ with the same transition function $\tau_{\alpha\beta}$. Let $B \subseteq \R^2$ be the open ball of radius $1$ and consider the diffeomorphism
+\[
+\mu \colon \R^2 - B \to S^1 \times [1,\infty), \; w \mapsto \left( \frac{w}{\abs{w}}, \abs{w} \right),
+\]
+which is equivariant under the canonical $S^1$-actions. Then we can define a trivialisation
+\[
+\theta_\alpha \colon U_\alpha \times (\R^2 - B) \xrightarrow{\mathrm{id} \times \mu} U_\alpha \times S^1 \times [1,\infty) \xrightarrow{\phi_\alpha \times \mathrm{id}} p^{-1}(U_\alpha) \times  [1,\infty) = p_0^{-1}(U_\alpha)
+\]
+of $E \times [1,\infty)$ and similiarly $\theta_\beta \colon U_\beta \times (\R^2 - B) \to p_0^{-1}(U_\beta)$. By construction, the transition function of these trivialisations is again $\tau_{\alpha\beta}$. The maps $\theta_\alpha$ and $\psi_\alpha$ now glue together to a \textit{homeomorphism} 
+\[
+\xi_\alpha \colon U_\alpha \times \R^2 = (U_\alpha \times (\R^2 - B)) \cup (U_\alpha \times D^2)\xrightarrow{\theta_\alpha \cup \psi_\alpha} p_0^{-1}(U_\beta) \cup q^{-1}(U_\beta) = \pi^{-1}(U_\alpha).
+\] 
+Likewise we obtain a homeomorphism $\xi_\beta \colon  U_\beta \times \R^2 \to \pi^{-1}(U_\beta)$. From the discussion about the transition functions we conclude 
+\[
+(\xi_\beta^{-1} \circ \xi_\alpha)(x,w) = (x, \tau_{\alpha\beta}(x) \cdot w).
+\]
+Observe that this map is smooth. Therefore, the collection of maps constructed in the same manner as $\xi_\alpha$ define a smooth structure on $V^\prime$. This structure may not agree with the one previously defined with respect to the collar neighbourhoods, so for clarity let us refer to the topological manifold $V^\prime$ equipped with this new smooth structure as $V$. Then the map $\pi \colon V \to M$ is clearly smooth and carries the structure of a \textit{smooth} rank $2$ vector bundle. To now obtain a complete metric on $V$ with uniformly positive scalar curvature we recall the following. The smooth structure on $V^\prime$ (defined via the collar neighbourhoods) is up to diffeomorphism the unique smooth structure on the topological manifold $V^\prime$, such that the topological embeddings 
+\[
+E \times [1,\infty) \to V^\prime, \; \; DE \to V^\prime
+\]
+are smooth embeddings [hcbord, Theorem 1.4]. Note that the inclusion $E \times [1,\infty) \to V$ is locally given by the inlcusion
+\[
+U_\alpha \times (\R^2 - B) \to U_\alpha \times \R^2 
+\]
+with respect to the smooth trivialisations $\theta_\alpha$ and $\xi_\alpha$. Similiarly the inclusion $DE \to V$ is locally given by the inlcusion 
+\[
+U_\alpha \times D^2 \to U_\alpha \times \R^2 
+\]
+with respect to $\psi_\alpha$ and $\xi_\alpha$. Hence we conclude from the uniqueness statement above that there exists a diffeomorphism $f \colon V \to V^\prime$. Then the metric $f^\ast h$ on $V$ is complete and of uniformly positive scalar curvature.
 
-
-% The smooth structure on $V$ is defined with respect to the chosen collar neighbourhoods $\iota$ and $\mathrm{id}_{E \times (-\infty,0]}$. Define a metric $h$ on $V$, which is given by $g_E + dt^2$ on $E \times (-\infty, 0] \subseteq V$ and by $g$ on $DE$. Since $\iota^\ast g = g_E + dt^2$ this metric is smooth with respect to the previously defined smooth structure on $V$. 
-
-
-\subsection{Further Questions}

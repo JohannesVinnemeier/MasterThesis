@@ -375,7 +375,7 @@ Again let us discuss a few examples.
         
         % $BO(n)$ and $EO(n)$ explicit via Stiefel Manifolds (compare n lab) + $EO(n) \times_{O(n)} \R^n \cong \gamma_n$ for $\gamma_n$ tautological bundle over grassmanain + orientable vector bundles classfied by BSO(n) (universal vector bundle over this denoted by $\gamma_n^{\so}$)
         \item \label{bundles:ex:examples_for_classifiying_spaces_universal_complex_vector_bundle}Completely analogous to the real case we can also define the complex Stiefel manifolds $V_k^\infty(\C)$ and complex Grassmanians $\mathrm{Gr}_k^\infty(\C)$ and show that the universal $U(k)$-prinicpal bundle is given by $V_k^\infty(\C) \to \mathrm{Gr}_k^\infty(\C)$. The universal complex $k$-dimensional vector bundle is the tautological bundle $\tau_k \to \mathrm{Gr}_k^\infty(\C)$. 
-        \item As special cases of the preceeding examples we obtain
+        \item \label{bundles:es:examples_for_classifying_spaces_special_case}As special cases of the preceeding examples we obtain
         \[
         B\Z_2 \cong \RP^\infty, \quad BS^1 \cong \CP^\infty. 
         \]
@@ -420,6 +420,13 @@ Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes} the sum
 \end{definition}
 
 Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write $c_0(E) := 1 \in H^0(B;\Z)$. We refer the reader to [HATCHER] for a proof of existence and uniqueness of the Stiefel-Whitney and Chern classes.
+
+Not only are the preceeding definitions formally quite similiar, but there is also a direct connection between the two.
+
+\begin{proposition}[Hatcher Proposition 3.8]
+    \label{bundles:prop:connection_chern_stiefel_whitney_classes}
+    Regarding a complex rank $n$ vector bundle $E \to B$ as a real rank $2n$ vector bundle, $w_{2i +1}(E) = 0$ and $w_{2i}(E)$ is the image of $c_i(E)$ under the coefficient homomorphism $H^{2i}(B;\Z) \to H^{2i}(B;\Z_2)$.  
+\end{proposition}
 
 \begin{example}
     \label{bundles:ex:characteristic_classes}
