@@ -52,7 +52,12 @@ by Proposition \ref{bundles:prop:connection_chern_stiefel_whitney_classes}. In o
 \end{tikzcd}\]
 where $\partial$ is the boundary map from the long exact sequence of homotopy groups for the fibration $E \to M$ and the vertical maps are given by the Hurewicz homomorphism. Moreover $[S^1]$ denotes the fundamental class of $S^1$. Granting this claim for now, it then follows from $c_1(L) = 2\alpha$ that $\partial \colon \pi_2(M) \to \pi_1(S^1)$ cannot be surjective and consequently $\pi_1(S^1) \to \pi_1(E)$ is non-zero by exactness. Hence a bundle satisfying both \ref{constr:property1_spin} and \ref{constr:property2_spin} does not exist. To show commutativity of the above square let $\tau_1 \to \CP^\infty$ be the universal complex line bundle (compare Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:es:examples_for_classifying_spaces_special_case}) and let $f \colon M \to \CP^\infty$ be a classifiying map for $L \to M$. Then essentially commutativity is due to the fact that the corresponding square for the \emph{universal} principal bundle commutes and all maps are compatible with the classifiying map $f$. To make this precise we extend the diagram as follows 
 
-\[\begin{tikzcd}[column sep=1.5em,row sep=large]
+\[\begin{tikzcd}[column sep=1.5em,row sep=large, execute at end picture={
+  \node at (3.3,0) {$(1)$};
+  \node at (-3,0) {$(3)$};
+  \node at (0.2,1.7) {$(2)$};
+  \node at (0.2,-1.7) {$(4)$};
+}]
 	{\pi_2(\CP^\infty)} &&&&& {\pi_1(S^1)} \\
 	& {\pi_2(M)} &&& {\pi_1(S^1)} \\
 	& {H_2(M;\Z)} &&& {H_1(S^1;\Z)} \\
@@ -71,7 +76,7 @@ where $\partial$ is the boundary map from the long exact sequence of homotopy gr
 	\arrow["{\langle c_1(\tau_1),-\rangle [S^1]}", bend right = 6, from=4-1, to=4-6]
 \end{tikzcd}\]
 
-Again the top horizontal map is the boundary map from the long exact sequence for the fibration $ES^1 \to \CP^\infty$ and the outer vertical maps are given by the Hurewicz homomorphism. Since $\CP^\infty$ is simply connected $\pi_2(\CP^\infty) \to H_2(\CP^\infty;\Z)$ is an isomorphism. Moreover, the boundary map $\partial \colon \pi_2(\CP^\infty) \to \pi_1(S^1)$ is an isomorphism by Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG}. Clearly 1 commutes. Furthermore 2 commutes by naturality of the long exact sequence of homotopy groups and 3 commutes by naturality of the Hurewicz homomorphism. For commutativity of 4 we compute for $a \in H_2(M;\Z)$:
+Again the top horizontal map is the boundary map from the long exact sequence for the fibration $ES^1 \to \CP^\infty$ and the outer vertical maps are given by the Hurewicz homomorphism. Since $\CP^\infty$ is simply connected $\pi_2(\CP^\infty) \to H_2(\CP^\infty;\Z)$ is an isomorphism. Moreover, the boundary map $\partial \colon \pi_2(\CP^\infty) \to \pi_1(S^1)$ is an isomorphism by Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG}. Clearly $(1)$ commutes. Furthermore $(2)$ commutes by naturality of the long exact sequence of homotopy groups and $(3)$ commutes by naturality of the Hurewicz homomorphism. For commutativity of $(4)$ we compute for $a \in H_2(M;\Z)$:
 \[
 \langle c_1(\tau_1),f_\ast a \rangle = \langle f^\ast c_1(\tau_1),a \rangle = \langle c_1(L),a \rangle,
 \]
@@ -85,6 +90,38 @@ is an isomorphism. By definiton $c_1(\tau_1) \in H^2(\CP^\infty;\Z)$ is a genera
 \]
 is an isomorphism. So all maps in the outer square are isomorphisms and, moreover, all groups are isomorphic to $\Z$. Hence the outer square commutes up to sign and the claim follows. 
 
+Thus, we have established that our previous methods for constructing a \psc-metric on $E \to M$ do not apply when $M$ is a spin manifold. Nevertheless, examples answering Question \ref{constr:question_A} in the spin case do exist. These were obtained by Kumar and Sen \cite{kumar2025circle} using more sophisticated methods, as we have briefly sketched in the introduction.
 
 
 \subsection{A Question about the Homotopy Groups of the Space of \psc-Metrics}
+
+In Chapter \ref{sec:psc} we have discussed sufficient conditions for the the existence of a \psc-metric on a manifold. Given a manifold $M$, which admits a \psc-metric we can further ask how many of such metrics exist. More precisely the question should be whether any two \psc-metrics on $M$ can be deformed into each other via a continous path of \psc-metrics. Phrased differently, if we denote by $\mR(M)$ the space of all \psc-metrics on $M$, equipped with the $C^\infty$-topology, this statement asks whether $\pi_0(\mR(M))$ is trivial. For instance, this is always true for $M = S^2$. In fact $\mR(S^2)$ is contractible and so in particular connected [??]. However, in higher dimensions this breaks down even for such simple spaces as spheres as demonstrated by the following theorem due to Carr.
+
+\begin{theorem}
+	\label{further_questions:thm:carr}
+	For $n \geq 2$ the space $\mR(S^{4n-1})$ has infinitely many path components.
+\end{theorem}
+
+This already illustrates the complexity the space of \psc-metrics may exhibit. Going one step further, we can also investigate the higher homotopy groups of this space, essentially asking which \emph{families} of \psc-metrics can be deformed into each other. One result in this direction is the following theorem due to Hanke, Schick and Steimle.
+
+\begin{theorem}
+	Let $k \in \N_0$. Then there exists a number $N(k)$, such that for every $n \geq N(k)$ and every spin manifold $M$ of dimension $4n - k - 1$ admitting a \psc-metric $g_0$, the homotopy group 
+	\[
+	\pi_k(\mR(M), g_0)
+	\]
+	contains elements of infinite order if $k \geq 1$ and infinitely many distinct elements if $k=0$.
+\end{theorem}
+
+Note that for $k=0$ and $M=S^{4n-1}$, the statement above generalizes Theorem \ref{further_questions:thm:carr} quite substantially. Tying this discussion back to our results of Chapter \ref{sec:constr}, let us analyze the \psc-metric constructed on $E$ more closely. A natural question is whether this metric is invariant under the $S^1$-action on $E$. We can answer this question in the negative due to a theorem of Bérard-Bergery, which states that a closed manifold with a free $S^1$-action admits an $S^1$-invariant \psc-metric if and only if its orbit space admits a \psc-metric; see \cite[Theorem C]{BerardBergery1983} and \cite[Theorem 2.2]{Wiemeler2016}. But in our case $E / S^1 \cong M$ and $M$ is enlargeable. Therefore it follows from Theorem \ref{enl:thm:enl_mnf_do_not_admit_psc} that $M$ does not admit a \psc-metric. In view of the above dicussion about the homotopy groups of the space of \psc-metrics we are thus lead to the following question.
+
+\begin{question}
+	\label{further_questions:question_B}
+	Let $g \in \mathcal{R}^+(E)$ be the \psc-metric constructed in Chapter \ref{sec:constr}. Does the map 
+	\[
+	S^1 \to \mathcal{R}^+(E), \;\; \zeta \mapsto \zeta^\ast g
+	\] 
+	represent a non-trivial element in $\pi_1(\mathcal{R}^+(E),g)$?
+\end{question}
+
+Given the preceding observations, the most that can be said is that this loop is non-constant. However, it may of course still be contractible. At the time of writing, we do not know the answer to Question \ref{further_questions:question_B} and leave it as an open problem for future investigation.
+

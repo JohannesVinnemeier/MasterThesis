@@ -386,32 +386,30 @@ Again let us discuss a few examples.
 
 \subsection{Stiefel-Whitney and Chern-Classes}
 
-In the preceeding Chapter we discussed the question of how bundles can be classified. Another fundamental question is of course how to determine, whether two given bundles are isomorphic. As usual in topology, a partial solution to this problem is provided by defining computable invariants. For vector bundles the most important invariants are so called \textit{characteristic classes}. The general definiton of a characteritsic class is as follows. Let $\K = \R, \C$ and write $\mathrm{Vect}_\K(B)$ for the set of isomorphism classes of $\K$-vector bundles over a space $B$. Then $\mathrm{Vect}_\K(-)$ defines a contravariant functor $\mathsf{Top} \to \mathsf{Set}$. A characteristic class $c$ for $\K$-vector bundles with values in the cohomology theory $H^\ast$ is a natural transformation from the functor $\mathrm{Vect}_\K(-)$ to the functor $H^\ast$ regarded as a functor with values in $\mathsf{Set}$. So in more concrete terms $c$ assigns to each $\K$-vector bundle $E \to B$ a cohomology class $c(E) \in H^\ast(B)$ depending only on the isomorphism class of $E$, such that for any continuous map $f \colon B^\prime \to B$ the following naturality condition holds
+In the preceding chapter we discussed the question of how bundles can be classified. Another fundamental question is, of course, how to determine whether two given bundles are isomorphic. As usual in topology, a partial solution to this problem is provided by defining computable invariants. For vector bundles the most important invariants are so-called \textit{characteristic classes}. The general definition of a characteristic class is as follows. Let $\K = \R, \C$ and write $\mathrm{Vect}_\K(B)$ for the set of isomorphism classes of $\K$-vector bundles over a space $B$. Then $\mathrm{Vect}_\K(-)$ defines a contravariant functor $\mathsf{Top} \to \mathsf{Set}$. A characteristic class $c$ for $\K$-vector bundles with values in a cohomology theory $H^\ast$ is a natural transformation from the functor $\mathrm{Vect}_\K(-)$ to the functor $H^\ast$, regarded as a functor with values in $\mathsf{Set}$. In more concrete terms, $c$ assigns to each $\K$-vector bundle $E \to B$ a cohomology class $c(E) \in H^\ast(B)$, depending only on the isomorphism class of $E$, such that for any continuous map $f \colon B' \to B$ the following naturality condition holds:
 \[
 c(f^\ast E) = f^\ast c(E).
 \]
-Therefore, using the theory of classifiying spaces developed above, we see that for a real (resp. complex) $k$-dimensional vector bundles, the characteristic class $c$ is uniquely determined by its value for the universal bundle $\gamma_k$ (resp. $\tau_k$) discussed in example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:examples_for_classifiying_spaces_universal_vector_bundle} (resp. \ref{bundles:ex:examples_for_classifiying_spaces_universal_complex_vector_bundle6}).
+Using the theory of classifying spaces developed above, it follows that for real (resp. complex) $k$-dimensional vector bundles, the characteristic class $c$ is uniquely determined by its value on the universal bundle $\gamma_k$ (resp. $\tau_k$) discussed in Example~\ref{bundles:ex:examples_for_classifiying_spaces}~\ref{bundles:ex:examples_for_classifiying_spaces_universal_vector_bundle} (resp.~\ref{bundles:ex:examples_for_classifiying_spaces_universal_complex_vector_bundle6}).
 
-For real vector bundles the most important characteristic classes are the \textit{Stiefel-Whitney classes} and for complex vector bundles the \textit{Chern classes}. Both are formally quite similiar and can be characterized by a few axioms.
+For real vector bundles the most important characteristic classes are the \textit{Stiefel-Whitney classes} and for complex vector bundles the \textit{Chern classes}. Both are characterized by a few axioms.
 
 \begin{definition}[Stiefel-Whitney Classes, HATCHER]
     \label{bundles:def:Steifel_Whitney_Classes}
     There is a unique sequence of characteristic classes $w_1, w_2, \ldots$ for real vector bundles with values in $H^\ast(-;\Z_2)$, such that 
-    \begin{enumerate}[label=\roman*)]
+    \begin{enumerate}[label=(\roman*)]
         \item $w_i(E) \in H^i(B;\Z_2)$ for any real bundle $E \to B$,
         \item \label{bundles:eq:prop2_for_stiefel_whitney_classes} $w_i(E) = 0$ for $i > \mathrm{rank}(E)$,
         \item \label{bundles:eq:prop3_for_stiefel_whitney_classes} $w(E_1 \oplus E_2) = w(E_1) \smile w(E_2)$, where $w = 1 + w_1 + w_2 + \ldots$,
-        \item For the universal real line bundle $\gamma_1 \to \RP^\infty$, $w_1(\gamma_1)$ is the generator of $H^1(\RP^\infty;\Z_2) \cong \Z_2$.
+        \item \label{bundles:eq:prop4_for_stiefel_whitney_classes} For the universal real line bundle $\gamma_1 \to \RP^\infty$, $w_1(\gamma_1)$ is the generator of $H^1(\RP^\infty;\Z_2) \cong \Z_2$.
     \end{enumerate}
 \end{definition}
-
-%%Evtl ganz kurze Beweisskizze warum unique
 
 Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes} the sum $w = 1 + w_1 + w_2 + \ldots$ is always finite. The class $w(E)$ is called the \textit{total Stiefel-Whitney class of $E$}. We sometimes write $w_0(E) := 1 \in H^0(B;\Z_2)$ to simplify notation.
 
 \begin{definition}[Chern Classes, HATCHER]
     There is a unique sequence of characteristic classes $c_1, c_2, \ldots$ for complex vector bundles with values in $H^\ast(-;\Z)$, such that 
-    \begin{enumerate}[label=\roman*)]
+    \begin{enumerate}[label=(\roman*)]
         \item $c_i(E) \in H^{2i}(B;\Z)$ for any complex bundle $E \to B$,
         \item $c_i(E) = 0$ for $i > \mathrm{rank}(E)$,
         \item $c(E_1 \oplus E_2) = c(E_1) \smile c(E_2)$, where $c = 1 + c_1 + c_2 + \ldots$,
@@ -419,18 +417,20 @@ Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes} the sum
     \end{enumerate}
 \end{definition}
 
-Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write $c_0(E) := 1 \in H^0(B;\Z)$. We refer the reader to [HATCHER] for a proof of existence and uniqueness of the Stiefel-Whitney and Chern classes.
+Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write $c_0(E) := 1 \in H^0(B;\Z)$. Note that in both definitions, property \ref{bundles:eq:prop4_for_stiefel_whitney_classes} uniquely determines the values of the respective characteristic classes on line bundles and, together with property \ref{bundles:eq:prop3_for_stiefel_whitney_classes}, prescribes their values on bundles that split as sums of line bundles. The values on arbitrary bundles can then be deduced from a general splitting principle [??]. We refer the reader to [HATCHER] for a detailed proof of existence and uniqueness.
 
-Not only are the preceeding definitions formally quite similiar, but there is also a direct connection between the two.
+Not only are the definitions of Stiefel-Whitney and Chern classes formally quite similiar, but there is also a direct connection between the two.
 
 \begin{proposition}[Hatcher Proposition 3.8]
     \label{bundles:prop:connection_chern_stiefel_whitney_classes}
     Regarding a complex rank $n$ vector bundle $E \to B$ as a real rank $2n$ vector bundle, $w_{2i +1}(E) = 0$ and $w_{2i}(E)$ is the image of $c_i(E)$ under the coefficient homomorphism $H^{2i}(B;\Z) \to H^{2i}(B;\Z_2)$.  
 \end{proposition}
 
+Let us consider some examples.
+
 \begin{example}
     \label{bundles:ex:characteristic_classes}
-    \begin{enumerate}[label=\roman*)]
+    \begin{enumerate}[label=(\roman*)]
         \item[]
         \item Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1$ is isomorphic to the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^1(\RP^n;\Z_2) \cong \Z_2$. Similiarly, $c_1(\tau_1^n)$ of the tautological complex line bundle $\tau_1^n \to \CP^n$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
         \item Let $\epsilon \to B$ be a trivial real bundle over some space $B$. Then $\epsilon \cong f^\ast \epsilon$ for a constant map $f \colon B \to B$ and thus $w_i(\epsilon_n) = f^\ast w_i(\epsilon) = 0$ for all $i \geq 1$. Similiarly all Chern classes for complex trivial bundles vanish.
@@ -487,14 +487,14 @@ Note that the existence of a spin structure does not depend on the chose orienta
 
 \begin{example}
     \begin{enumerate}[label=(\roman*)]
-        \item All spheres $S^n$, $n\geq 1$ are spin by Example \ref{bundles:ex:characteristic_classes_part3}.
+        \item All spheres $S^n$, $n\geq 1$ are spin by Example \label{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3}.
         \item \label{bundles:ex:cp2_not_spin} The standard example for non-spin manifolds are all even dimensional complex projective spaces $\CP^{2k}$, see [MilnorStasheff??].
     \end{enumerate}
 \end{example}
 
 \begin{remark}
     \label{bundles:rem:classifying_map_for_spin_bundles}
-    Let $E \to X$ be a real vector bundle over a CW-complex. If an orientation is given, $E$ is classified by a map $X \to B\mathrm{SO}(n)$. Similiarly, if a spin structure exists, $E$ is classified by a map $X \to B\mathrm{Spin}(n)$, which can be seen as follows. Let $\phi \colon P_{\mathrm{Spin}(n)} \to P_{\mathrm{SO}(n)}$ be a spin structure on $E$ and let $f \colon X \to B\mathrm{Spin}(n)$ be a classifiying map for $P_{\mathrm{Spin}(n)}$. Define a vector bundle 
+    Let $E \to X$ be a real vector bundle over a CW-complex. If $E$ is orientable, we have seen that this bundle is classified by a map $X \to B\mathrm{SO}(n)$. Similiarly, if a spin structure exists, $E$ is classified by a map $X \to B\mathrm{Spin}(n)$, which can be seen as follows. Let $\phi \colon P_{\mathrm{Spin}(n)} \to P_{\mathrm{SO}(n)}$ be a spin structure on $E$ and let $f \colon X \to B\mathrm{Spin}(n)$ be a classifiying map for $P_{\mathrm{Spin}(n)}$. Define a vector bundle 
     \[
     \gamma_n^\spin := E\mathrm{Spin}(n) \times_{\mathrm{Spin}(n)} \R^n
     \]
