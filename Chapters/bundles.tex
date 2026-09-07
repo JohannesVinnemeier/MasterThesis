@@ -1,9 +1,9 @@
-\section{Preliminaries}
+\chapter{Preliminaries}
 \label{sec:bundles}
 
 This chapter develops the necessary preliminaries for what follows, by recalling the notions of principal bundles, classifiying spaces and characteristic classes. We assume the reader to be familiar with the concept of a fiber bundle with structure group. A classical reference for this is for example \cite{steenrod1951topology}. Moreover, we presuppose some basic familiarity with homotopy and homology theory.
 
-\subsection{Principal Bundles and Associated Bundles}
+\section{Principal Bundles and Associated Bundles}
 \label{subsec:principal_bundles}
 
 \begin{definition}
@@ -194,7 +194,7 @@ Lets look at some concrete examples for the theory developed above.
 %     \end{enumerate}
 % \end{example}
 
-\subsection{Universal Bundles and Classifying Spaces}
+\section{Universal Bundles and Classifying Spaces}
 A natural question is which fiber bundles with specified fiber and structure group can exist over a given base space. Again, this classification problem turns out to be easier for principal bundles.
 For simplicity we assume all base spaces to be CW-complexes in this section.
 
@@ -384,7 +384,7 @@ Again let us discuss a few examples.
 
 
 
-\subsection{Stiefel-Whitney and Chern-Classes}
+\section{Stiefel-Whitney and Chern-Classes}
 
 In the preceding chapter we discussed the question of how bundles can be classified. Another fundamental question is, of course, how to determine whether two given bundles are isomorphic. As usual in topology, a partial solution to this problem is provided by defining computable invariants. For vector bundles the most important invariants are so-called \textit{characteristic classes}. The general definition of a characteristic class is as follows. Let $\K = \R, \C$ and write $\mathrm{Vect}_\K(B)$ for the set of isomorphism classes of $\K$-vector bundles over a space $B$. Then $\mathrm{Vect}_\K(-)$ defines a contravariant functor $\mathsf{Top} \to \mathsf{Set}$. A characteristic class $c$ for $\K$-vector bundles with values in a cohomology theory $H^\ast$ is a natural transformation from the functor $\mathrm{Vect}_\K(-)$ to the functor $H^\ast$, regarded as a functor with values in $\mathsf{Set}$. In more concrete terms, $c$ assigns to each $\K$-vector bundle $E \to B$ a cohomology class $c(E) \in H^\ast(B)$, depending only on the isomorphism class of $E$, such that for any continuous map $f \colon B' \to B$ the following naturality condition holds:
 \[

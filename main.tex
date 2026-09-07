@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[11pt,a4paper]{scrbook}
 \usepackage{geometry}
 \geometry{a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm}
 \usepackage{amsfonts,amsmath,amssymb,amsthm}
@@ -39,6 +39,8 @@
 \definecolor{custom_blue2}{rgb}{0.16, 0.32, 0.75}
 \definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
 
+
+
 % Absolute value and norm bars command. Write \abs{x} or \norm{x}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert} 
@@ -72,6 +74,13 @@
 \newcommand{\scal}{\mathrm{scal}}
 \newcommand{\psc}{$\mathsf{PSC}$}
 \newcommand{\mR}{\mathcal{R}^+}
+
+%Specifically for proof of Proposition about homotopy groups in Appendix
+\newcommand{\tX}{\tilde{X}}
+\newcommand{\tA}{\tilde{A}}
+\newcommand{\tx}{\tilde{x}}
+\newcommand{\tY}{\tilde{Y}}
+\newcommand{\tB}{\tilde{B}}
 
 
 %Theorems, lemmas etc.
@@ -122,30 +131,36 @@
 
 \begin{document}
 
+  \frontmatter
+
   \include{Titlepage/titlepage}
   \tableofcontents
   \newpage
 
-  % \addcontentsline{toc}{section}{Introduction}
-  \include{Sections/introduction}
-  \include{Sections/bundles}
-  \include{Sections/psc}
-  \include{Sections/enlargeability}
-  \include{Sections/the_construction}
-  \include{Sections/further_questions}
+  \mainmatter
 
-  \include{Sections/appendix}
+  \addcontentsline{toc}{chapter}{Introduction}
+  \include{Chapters/introduction}
+  \include{Chapters/bundles}
+  \include{Chapters/psc}
+  \include{Chapters/enlargeability}
+  \include{Chapters/the_construction}
+  \include{Chapters/further_questions}
 
-  \include{Misc/to_do}
+  \backmatter
+
+  \include{Chapters/appendix}
+
+  % \include{Misc/to_do}
 
   % Bibliography (Comment out for faster compilation)
 
-  % \cleardoublepage
+  \cleardoublepage
 
   % \nocite{*} %Include all entries from BibTeX file
-  % \bibliographystyle{alpha}
-  % \addcontentsline{toc}{section}{Bibliography}
-  % \bibliography{ref}
+  \bibliographystyle{alpha}
+  \addcontentsline{toc}{chapter}{Bibliography}
+  \bibliography{ref}
 
 
 \end{document}
