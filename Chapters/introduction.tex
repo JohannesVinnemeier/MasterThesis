@@ -1,6 +1,6 @@
 \chapter*{Introduction}
 
-The scalar curvature of a Riemannian Manifold $(M,g)$ is a smooth function $\mathrm{scal} \colon M \to \R$ measuring how much the volume of small geodesic balls around a point deviates from that of euclidian balls. While it is the weakest curvature condition for a Riemannian manifold, the presence of positive scalar curvature can still have strong topological implications. The archetypal example is the celebrated Gauß-Bonnet Theorem:
+The scalar curvature of a Riemannian manifold $(M,g)$ is a smooth function $\mathrm{scal} \colon M \to \R$. Roughly speaking, the value $\mathrm{scal}_g(x)$ at a point $x \in M$ measures how much the volume of a small geodesic ball around $x$ deviates from that of a Euclidean ball of the same radius. While scalar curvature is the weakest of the standard curvature conditions for a Riemannian manifold, the presence of \emph{positive} scalar curvature can still have strong topological implications. The archetypal example is the celebrated Gauß-Bonnet Theorem:
 
 \begin{theorem*}[Gauß-Bonnet]
     Let $(M,g)$ be a closed Riemannian $2$-manifold. Then 
@@ -10,32 +10,34 @@ The scalar curvature of a Riemannian Manifold $(M,g)$ is a smooth function $\mat
     where $\chi(M)$ is the Euler characteristic of $M$.
 \end{theorem*}
 
-So any closed surface carrying a positive scalar curvature metric must be diffeomorphic to either the sphere $S^2$ or $\RP^2$. For non-compact complete manifolds, merely having positive scalar curvature may be too weak of a condition. The problem is that scal can still tend to zero quite rapidly at infinity. However, if the rate of decay at infinity can be controlled, positive scalar curvature still has profound consequences. For example, Chen has recently shown a decomposition result for $3$-manifolds under the assumption that a positive scalar curvature metric with controlled decay at infinity exists [Chen2025]. This naturally raises the question of how fast the scalar curvature of a given complete Riemannian manifold $X$ decays at infinity. One statement in this direction is the following theorem by Gromov:
+So any closed surface carrying a metric of positive scalar curvature must be diffeomorphic to either the sphere $S^2$ or $\RP^2$. For non-compact complete manifolds, positive scalar curvature alone may be too weak a condition for such rigidity results though. The problem is that $\mathrm{scal}$ can still tend to zero quite rapidly at infinity. However, if the rate of decay at infinity can be controlled, positive scalar curvature still has profound consequences. For example, Chen has recently shown a decomposition result for $3$-manifolds under the assumption that a metric of positive scalar curvature with controlled decay at infinity exists [Chen2025]. This naturally raises the question of how fast the scalar curvature of a given complete Riemannian manifold $X$ decays at infinity. One result in this direction is the following theorem by Gromov \cite[p. 15f.]{gromov2018metric}.
 
-\begin{theorem*}[Enlargeable Decay Theorem, \cite{gromov2018metric}, page 15f.]
-    \label{intro:thm:gromov_thm}
-Let $X$ be a complete Riemannian manifold, $V \to M$ a two dimensional vector bundle over an enlargeable manifold $M$. Assume that 
+\begin{theorem*}[Enlargeable Decay Theorem] \label{intro:thm:gromov_thm}
+Let $X$ be a complete Riemannian manifold and $V \to M$ a $2$-dimensional real vector bundle over an enlargeable manifold $M$. Assume that 
 \begin{enumerate}[label=(\roman*)]
     \item There exists a proper map $f \colon X \to V$, $\mathrm{deg}(f) \neq 0$,
-    \item \label{intro:eq:gromov_thm_condition_2}The total space of the circle bundle corresponding to $V$ is also enlargeable.
+    \item \label{intro:eq:gromov_thm_condition_2}The total space of the circle bundle corresponding to $V$ is enlargeable.
 \end{enumerate}
 Then 
 \[
-\min_{B_{x_0}(R)} \mathrm{scal}(X) \leq \frac{8 \pi^2}{(R-R_0)^2}
+\min_{B_R(x_0)} \mathrm{scal}(X) \leq \frac{8 \pi^2}{(R-R_0)^2}
 \]
-for some $R_0 = R_0(X,x_0)$ and all $R > R_0$.
+for some $R_0 = R_0(X,x_0)$ and all $R > R_0$, where $B_R(x_0)$ is the ball of radius $R$ around a point $x_0 \in M$.
 \end{theorem*}
 
-It is easy to see that condition \ref{intro:eq:gromov_thm_condition_2} is always fullfilled if the bundle $V \to M$ is trivial (compare Lemma \ref{enl:lem:constructing_enlargeable_mnf} \ref{enl:eq:lem_for_constructing_enlargeable_mnf_1}), which lead Gromov to pose the following question:
+Condition \ref{intro:eq:gromov_thm_condition_2} is always fulfilled if the bundle $V \to M$ is trivial (compare Lemma \ref{enl:lem:constructing_enlargeable_mnf} \ref{enl:eq:lem_for_constructing_enlargeable_mnf_1}), which led Gromov to pose the following question, here written using the notation introduced above.
 
-\begin{question*}[\cite{gromov2018metric}]
-``What happens to nontrivial bundles $V \to M$? [...] In general, the examples in \cite{BrunnbauerHanke} indicate a possibility of non-enlargeable circle bundles over enlargeable $M$; yet, it seems hard(er) to find such examples, where the corresponding total space would admit metrics with $\mathrm{scal} > 0$.''
+\begin{question*}[{\cite[p. 16]{gromov2018metric}}]
+``What happens to nontrivial bundles $V \to M$? [\dots] In general, the examples in \cite{BrunnbauerHanke} indicate a possibility of non-enlargeable circle bundles over enlargeable $M$; yet, it seems hard(er) to find such examples, where the corresponding $V$ would admit complete metrics with $\mathrm{scal} \geq \sigma > 0$.''
 \end{question*}
 
-As it turns out, such examples do in fact exist, that is, circle bundles over enlargeable manifolds, where the total space admits a metric of positive scalar curvature and thus, in particular, is not enlargeable. Bundles with this behaviour have recently been constructed in a paper by Kumar and Sen \cite{kumar2025circle} by utilizing tools from symplectic geometry. A very rough sketch of the construction can be given as follows. Take $M$ to be a so-called Donaldson divisor of a suitable closed symplectic manifold, e.g., the torus $T^{2n}$, $n \geq 3$. Such a Donaldson divisor is a certain codimension $2$ symplectic submanifold $M^{2n-2} \subseteq T^{2n}$, which in some cases can be shown to be enlargeable. Now define a circle bundle $E := \partial \nu(M)$ over $M$ as the boundary of a tubular neighbourhood $\nu(M) \subseteq T^{2n}$ of $M$. In order to construct a positive scalar curvature metric on $E$, consider the nullbordism $W := T^{2n} - \nu(M)$ obtained by removing the tubular neighbourhood from the ambient manifold. Now explicitly construct a Morse function $\psi \colon W \to \R$ with critical points of index at most $n$, which shows that $E$ is obtained from the empty set by surgeries of codimension at least $n \geq 3$. Thus, $E$ admits a metric of positive scalar curvature by the Gromov-Lawson-Schoen-Yau Surgery Theorem (see Theorem \ref{psc:thm:surgery_thm}).
 
-In this thesis, we provide an alternative, much more direct construction relying simply on basic topological concepts. It should be said, however, that this alternative approach only provides examples in the totally non-spin case.
+% So formatieren, dass dieser Satz noch auf die Seite mit der Frage passt
+Note that the existence of such a bundle $V \to M$ would provide counterexamples to the above decay theorem if condition \ref{intro:eq:gromov_thm_condition_2} is dropped entirely.
 
-\newpage
+As anticipated by Gromov, examples of non-enlargeable circle bundles over enlargeable manifolds do in fact exist. Bundles with this behaviour have recently been constructed in a paper by Kumar and Sen \cite{kumar2025circle} by utilizing tools from symplectic geometry. A very rough sketch of the construction can be given as follows. Take $M$ to be a so-called Donaldson divisor of a suitable closed symplectic manifold, e.g., the torus $T^{2n}$, $n \geq 3$. Such a Donaldson divisor is a certain codimension $2$ symplectic submanifold $M^{2n-2} \subseteq T^{2n}$, which in some cases can be shown to be enlargeable. Now define a circle bundle $E := \partial \nu(M)$ over $M$ as the boundary of a tubular neighbourhood $\nu(M) \subseteq T^{2n}$ of $M$. The authors then proceed to show that $E$ admits a metric of positive scalar curvature by the following argument. Consider the nullbordism $W := T^{2n} - \nu(M)$ obtained by removing the tubular neighbourhood from the ambient manifold. Now explicitly construct a Morse function $\psi \colon W \to \R$ with critical points of index at most $n$, which shows that $E$ is obtained from the empty set by surgeries of codimension at least $n \geq 3$. Thus, $E$ admits a metric of positive scalar curvature by the Surgery Theorem (see Theorem \ref{psc:thm:surgery_thm}) and so in particular it is not enlargeable (see Theorem \ref{enl:thm:enl_mnf_do_not_admit_psc}).
 
-The thesis is organized as follows. \hyperref[sec:bundles]{Chapter 1} recalls some concepts from the broader theory of principal bundles, laying the foundation for the subsequent chapters. In \hyperref[sec:psc]{Chapter 2}, we briefly introduce the reader to the theory of positive scalar curvature and prove two existence theorems for positive scalar curvature metrics, which are used in the main construction in \hyperref[sec:constr]{Chapter 4}. The proofs of these theorems are based on methods from surgery theory, which we also take some time to explain. \hyperref[sec:enl]{Chapter 3} provides a brief discussion of the concept of enlargeability, which is the central idea underlying this thesis. Finally, \hyperref[sec:constr]{Chapter 4} contains the main results. We present a simple construction of circle bundles over enlargeable manifolds whose total spaces admit metrics of positive scalar curvature in all dimensions $\geq 4$. These bundles are then used to obtain counterexamples to the \hyperref[intro:thm:gromov_thm]{Enlargeable Decay Theorem} above if condition \ref{intro:eq:gromov_thm_condition_2} is dropped.
+In this thesis, we take a different approach and provide a much more direct construction of such bundles drawing only on general topological concepts, without invoking symplectic methods. This approach, however, is limited to the totally non-spin case. We then apply our results to obtain examples of $2$-dimensional vector bundles over enlargeable manifolds, where the total space admits a metric of uniformly positive scalar curvature, thereby providing an affirmative answer to Gromov's question. Note that 
+
+The thesis is organized as follows. \hyperref[chapter:preliminaries]{Chapter 1} serves as a review of principal bundles, classifying spaces and characteristic classes and lays the foundation for the subsequent chapters. In \hyperref[chapter:psc]{Chapter 2}, we briefly introduce the reader to the theory of positive scalar curvature and prove two existence theorems, which are later applied in the main construction. \hyperref[chapter:enlargeability]{Chapter 3} provides a brief discussion of the concept of enlargeability. With the necessary background established, we then present the main results discussed above in \hyperref[chapter:main_construction]{Chapter 4}. Finally, \hyperref[chapter:further_questions]{Chapter 5} discusses some further questions regarding the preceding construction.
+

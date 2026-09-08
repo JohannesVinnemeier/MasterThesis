@@ -1,5 +1,5 @@
 \chapter{Preliminaries}
-\label{sec:bundles}
+\label{chapter:preliminaries}
 
 This chapter develops the necessary preliminaries for what follows, by recalling the notions of principal bundles, classifiying spaces and characteristic classes. We assume the reader to be familiar with the concept of a fiber bundle with structure group. A classical reference for this is for example \cite{steenrod1951topology}. Moreover, we presuppose some basic familiarity with homotopy and homology theory.
 
@@ -148,7 +148,7 @@ In view of the above constrcution one usually denotes the bundle obtained  from 
 
 Lets look at some concrete examples for the theory developed above.
 
-\begin{example} For simplicity we assume all base spaces $B$ to be smooth manifolds in this example. \vspace{-.5cm}
+\begin{example} For simplicity we assume all base spaces $B$ to be smooth manifolds in this example.
     \label{bundles:ex:associated_bundles}
     \begin{enumerate}[label=(\roman*)]
         \item Let $E \to B$ be a real rank $n$ vector bundle. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $O(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle $\mathrm{O}(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all ordered orthonormal bases of $E_x$. The topology on $O(E)$ is the subspace topology $O(E) \subseteq E \times \ldots \times E$. Local trivialisations of the canonical map $p \colon \mathrm{O}(E) \to B$ can be defined as follows. Choose an orthonormal local frame $e_1,\ldots,e_n$ of $E$ defined over an open set $U \subseteq B$. Then a trivialisation $\phi \colon U \times \mathrm{O}(n) \to p^{-1}(U)$ is given by
@@ -487,7 +487,7 @@ Note that the existence of a spin structure does not depend on the chose orienta
 
 \begin{example}
     \begin{enumerate}[label=(\roman*)]
-        \item All spheres $S^n$, $n\geq 1$ are spin by Example \label{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3}.
+        \item All spheres $S^n$, $n\geq 1$ are spin by Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3}.
         \item \label{bundles:ex:cp2_not_spin} The standard example for non-spin manifolds are all even dimensional complex projective spaces $\CP^{2k}$, see [MilnorStasheff??].
     \end{enumerate}
 \end{example}
@@ -514,9 +514,9 @@ Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ 
 \begin{proposition}[Georg Paper, Proposition 2.6]
     \label{bundles:prop:spin_characterisation}
     Let $M$ be a connected oriented manifold of dimension at least $5$.
-    \begin{enumerate}[label=\roman*)]
+    \begin{enumerate}[label=(\roman*)]
         \item \label{bundles:eq:characterization_spin} $M$ is spin if and only if for every embedded surface $S \subseteq M$ the restriction $TM|_S$ of the tangent bundle to $S$ is trivial.
-        \item \label{bundles:eq:characterization_totally_non_spin} $M$ is totally non-spin if and only if there exists an embedded sphere $S^2 \subseteq M$, such that the restriction $TM|_{S^2}$ of the tangent bundle to this sphere is non-trivial.
+        \item \label{bundles:eq:characterization_totally_non_spin} $M$ is totally non-spin if and only if there exists an embedding $ \iota \colon S^2 \to M$, such that $w_2(\iota^\ast TM) \neq 0$. In particular, the restriction $\iota^\ast TM$ of the tangent bundle to this embedded sphere is non-trivial.
     \end{enumerate}
 \end{proposition}
 
@@ -529,11 +529,11 @@ Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ 
     \[
     \pi_2(\tilde{M}) \otimes \Z_2 \to H_2(\tilde{M};\Z) \otimes \Z_2 \cong H_2(\tilde{M};\Z_2). 
     \]
-    Explicitly, for some class $\alpha \in \pi_2(\tilde{M})$ represented by a map $f \colon S^2 \to \tilde{M}$ the above isomorphism maps $\alpha \otimes 1$ to $f_\ast [S^2]_{\Z_2}$, where $[S^2]_{\Z_2}$ is the $\Z_2$-fundamental class of $S^2$. Therefore we can write $a = f_\ast [S^2]_{\Z_2}$ for some $f \colon S^2 \to \tilde{M}$. Let $p \colon \tilde{M} \to M$ be the projection and define $g := p \circ f \colon S^2 \to M$. We compute 
+    Explicitly, for some class $\alpha \in \pi_2(\tilde{M})$ represented by a map $f \colon S^2 \to \tilde{M}$ the above isomorphism maps $\alpha \otimes 1$ to $f_\ast [S^2]_{\Z_2}$, where $[S^2]_{\Z_2}$ is the $\Z_2$-fundamental class of $S^2$. Therefore we can write $a = f_\ast [S^2]_{\Z_2}$ for some $f \colon S^2 \to \tilde{M}$. Let $p \colon \tilde{M} \to M$ be the projection and define $\iota := p \circ f \colon S^2 \to M$. Since $\mathrm{dim}(M) \geq 5$ we may assume $\iota$ to be an embedding. We compute 
     \[
-    \langle w_2(g^\ast TM), [S^2]_{\Z_2}\rangle = \langle f^\ast w_2(p^\ast TM), [S^2]_{\Z_2}\rangle = \langle w_2(T\tilde{M}), f_\ast [S^2]_{\Z_2}\rangle = \langle w_2(T\tilde{M}), a \rangle \neq 0,
+    \langle w_2(\iota^\ast TM), [S^2]_{\Z_2}\rangle = \langle f^\ast w_2(p^\ast TM), [S^2]_{\Z_2}\rangle = \langle w_2(T\tilde{M}), f_\ast [S^2]_{\Z_2}\rangle = \langle w_2(T\tilde{M}), a \rangle \neq 0,
     \]
-    where we used $p^\ast TM \cong T \tilde{M}$ and naturality of the Kronecker pairing in the second equation. As $\mathrm{dim}(M) \geq 5$ we may assume $g$ to be an embedding and since $w_2(g^\ast TM) \neq 0$ by the above computation we conclude that $g^\ast TM$ can not be trivial.
+    where we used $p^\ast TM \cong T \tilde{M}$ and naturality of the Kronecker pairing in the second equation. Therefore $w_2(\iota^\ast TM) \neq 0$.
 \end{proof}
 
 Finally we record another scenario in which the vanishing of all Stiefel-Whitney classes of a bundle is sufficient for triviality.

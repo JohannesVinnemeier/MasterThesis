@@ -1,16 +1,17 @@
 \chapter{Main Construction}
-\label{sec:constr}
+\label{chapter:main_construction}
+
+Recall the following question discussed in the introduction.
+
+\begin{question}
+    Do there exist circle bundles $E \to M$ over an enlargeable manifold $M$, such that the total space $E$ is non-enlargeable? Moreover, do there exist $2$-dimensional real vector bundles $V \to M$, where $V$ admits a complete metric of uniformly positive scalar curvature?
+\end{question}
+
+We begin this chapter with an alternative approach to the one presented in \cite{kumar2025circle} for constructing examples addressing the first part of the question. We subsequently build on this construction to obtain an affirmative answer to the second part of the question.  
 
 \section{Construction of Circle Bundles with \psc}
 
-In the beginning we raised the following question.
-
-\begin{question}
-	\label{constr:question_A}
-	Does there exist a circle bundle $E \to M$ over an enlargeable manifold $M$, such that the total space $E$ admits a \psc-metric?
-\end{question}
-
-We will now construct examples of such bundles in all dimensions $\mathrm{dim}(M) \geq 4$. Let us first describe the strategy behind the construction. The existence of a \psc-metric on $E$ will be established as an application of Theorem \ref{psc:thm:existence_result_totally_non_spin}, restated here for convenience:
+ In this section we construct examples of circle bundles $E \to M$ over enlargeable manifolds $M$ in all dimensions $\mathrm{dim}(M) \geq 4$, such that $E$ admits a \psc-metric. In particular $E$ is non-enlargeable by Theorem \ref{enl:thm:enl_mnf_do_not_admit_psc}. Let us first describe the strategy behind the construction. The existence of a \psc-metric on $E$ will be established as an application of Theorem \ref{psc:thm:existence_result_totally_non_spin}, restated here for convenience:
 
 \vspace{\baselineskip}
 \noindent\textbf{Theorem \ref{psc:thm:existence_result_totally_non_spin}.}\itshape\ 
@@ -41,7 +42,7 @@ shows that $E \to DE$ induces an isomorphism on $\pi_1$ if and only if $E \to M$
 	\arrow[from=1-3, to=1-4]
 \end{tikzcd}\]
 
-So to answer the Question \ref{constr:question_A} positively, we have to construct circle bundles $E \to M$ with the following properties.
+With these observations in mind, we have to construct circle bundles $E \to M$ with the following properties.
 
 \begin{enumerate}[label = (\Roman*)]
 	\item \label{constr:property1} $M$ is enlargeable, orientable and connected,
@@ -55,7 +56,13 @@ M := \CP^n \# T^{2n} \# N.
 \] 
 Intuitively the bundle $E \to M$ will now look as follows. It is trivial over the summands $T^{2n}$ and $N$, and is given by the canonical bundle $S^{2n+1} \to \CP^n$ over the $\CP^n$ summand (or rather the restriction of this bundle to $\CP^n - D^{2n} \subseteq M$). Schematically:
 
-\placeholder
+\vspace{.3cm}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{graphics/main_construction_graphic/main_constr_graphic.pdf}
+	\caption{Sketch of the constructed circle bundle}
+\end{figure}
+\vspace{.1cm}
 
 The presence of the Torus summand then corresponds to property \ref{constr:property1}, the trivial bundle over $N$ to property \ref{constr:property2} and the $S^{2n+1}$ over $\CP^n$ to property \ref{constr:property3}. We will now construct this bundle rigourously and subsequently discuss the proof of properties \ref{constr:property1} - \ref{constr:property3} in more detail. Let $\alpha \in H^2(\CP^n)$ be the generator given boundary the first chern class of the tautological complex line bundle $\tau_1^n \to \CP^n$. Implicitly all homology and cohomology groups in this chapter are taken with $\Z$-coefficients. Consider the isomorphism 
 \[
@@ -139,28 +146,14 @@ We now claim that $\partial_1$ is surjective. For this it suffices to show surje
 is the zero map.
 \end{proof}
 
-The above construction now gives examples for circle bundles with positive scalar curvature over enlargeable manifolds $M$ in all even dimensions $\mathrm{dim}(M)\geq 4$. To also get examples in odd dimensions let $E \to M$ be as above and let $\pi \colon M \times S^1 \to M$ be the projection. Then by Example \ref{psc:ex:scalar_curvature_examples} \ref{psc:ex:scalar_curvature_examples2} and \ref{psc:ex:scalar_curvature_examples4} the pullback bundle $\pi^\ast E \cong E \times S^1$ admits a metric of positive scalar curvature. Furthermore the base space $M \times S^1$ is still enlargeable by Lemma \ref{enl:lem:constructing_enlargeable_mnf}. Naturally, the question arises as to what happens in dimensions $\mathrm{dim}(M) \leq 3$. In this case it turns out that no circle bundle $E \to M$ over an enlargeable manifold $M$ admits a metric of positive scalar curvature. This was shown in \cite[Theorem B, Remark 2]{kumar2025circle}.
+The above construction now gives examples for circle bundles with positive scalar curvature over enlargeable manifolds $M$ in all even dimensions $\mathrm{dim}(M)\geq 4$. We argue as in \cite{kumar2025circle} to also obtain examples in odd dimensions as follows. Let $E \to M$ be as above and let $\pi \colon M \times S^1 \to M$ be the projection. Then by Example \ref{psc:ex:scalar_curvature_examples} the pullback bundle $\pi^\ast E \cong E \times S^1$ admits a metric of positive scalar curvature. Furthermore the base space $M \times S^1$ is still enlargeable by Lemma \ref{enl:lem:constructing_enlargeable_mnf}. Naturally, the question arises as to what happens in dimensions $\mathrm{dim}(M) \leq 3$. In this case it turns out that no circle bundle $E \to M$ over an enlargeable manifold $M$ admits a metric of positive scalar curvature. This was shown in \cite[Theorem B, Remark 2]{kumar2025circle}.
 
 
 \section{Necessity of the Enlargeability Assumption in Gromov's Decay Theorem}
 
-Let us come back to the Theorem, which originally motivated the whole discussion. 
+In this section we will use the preceeding results to construct examples of $2$-dimensional real vector bundles $V \to M$ over enlargeable manifolds $M$, such that $V$ admits a complete metric of uniformly positive scalar curvature. 
 
-\begin{theorem*}[Enlargeable Decay Theorem, \cite{gromov2018metric}, page 15f.]
-    \label{intro:thm:gromov_thm}
-Let $X$ be a complete Riemannian manifold, $V \to M$ a two dimensional vector bundle over an enlargeable manifold $M$. Assume that 
-\begin{enumerate}[label=(\roman*)]
-    \item There exists a proper map $f \colon X \to V$, $\mathrm{deg}(f) \neq 0$,
-    \item \label{intro:eq:gromov_thm_condition_2}The total space of the circle bundle corresponding to $V$ is also enlargeable.
-\end{enumerate}
-Then 
-\[
-\min_{B_{x_0}(R)} \mathrm{scal}(X) \leq \frac{8 \pi^2}{(R-R_0)^2}
-\]
-for some $R_0 = R_0(X,x_0)$ and all $R > R_0$.
-\end{theorem*}
-
-We have seen above that for non-trivial bundles $V \to M$ condition \ref{intro:eq:gromov_thm_condition_2} need not be satisfied. Nonetheless, this does not yet answer the question of whether this condition is even necessary. In this section we will use the preceeding results to construct counterexamples to the Theorem if one drops condition \ref{intro:eq:gromov_thm_condition_2} entirely. Specifically, we construct vector bundles $V \to M$ over enlargeable manifolds $M$, such that $V$ admits a complete metric of uniformly positive scalar curvature. Then setting $X := V$ and $f := \mathrm{id}$ provides the desired counterexamples.
+% We have seen above that for non-trivial bundles $V \to M$ condition \ref{intro:eq:gromov_thm_condition_2} need not be satisfied. Nonetheless, this does not yet answer the question of whether this condition is even necessary. In this section we will use the preceeding results to construct counterexamples to the Theorem if one drops condition \ref{intro:eq:gromov_thm_condition_2} entirely. Specifically, we construct vector bundles $V \to M$ over enlargeable manifolds $M$, such that $V$ admits a complete metric of uniformly positive scalar curvature. Then setting $X := V$ and $f := \mathrm{id}$ provides the desired counterexamples.
 
 Let $E \to M$ be a circle bundle as constructed in the previous section. The existence of a \psc-metric on $E$ followed from an application of Theorem \ref{psc:thm:existence_result_totally_non_spin}. However, we did not make use of the full strength of this theorem. Not only do we obtain a \psc-metric on $E$ but also a \psc-metric on the nullbordism $DE$, which is of product form near the boundary. This observation allows for the following construction. Let $g$ be such a \psc-metric on $DE$ and denote the induced metric on $E$ by $g_E$. Choose some collar neighbourhood $\iota \colon E \times [0,1) \to DE$ with respect to which $g$ is in product form, i.e. 
 \[

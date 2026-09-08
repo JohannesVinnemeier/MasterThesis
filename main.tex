@@ -19,6 +19,13 @@
 \usepackage{etoolbox}
 \usepackage{needspace}
 \usepackage{xfrac}
+% \usepackage[
+%     backend=biber,
+%     style=alphabetic,
+%     sorting=nyt
+% ]{biblatex}
+
+% \addbibresource{ref.bib}
 
 
 %Prevents footnotes from breaking across pages
@@ -84,7 +91,7 @@
 
 
 %Theorems, lemmas etc.
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}[chapter]
 \newtheorem*{theorem*}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -139,12 +146,14 @@
 
   \mainmatter
 
+  % \include{Misc/temp}
+
   \addcontentsline{toc}{chapter}{Introduction}
   \include{Chapters/introduction}
-  \include{Chapters/bundles}
+  \include{Chapters/preliminaries}
   \include{Chapters/psc}
   \include{Chapters/enlargeability}
-  \include{Chapters/the_construction}
+  \include{Chapters/main_construction}
   \include{Chapters/further_questions}
 
   \backmatter
@@ -155,12 +164,11 @@
 
   % Bibliography (Comment out for faster compilation)
 
-  \cleardoublepage
+  % \cleardoublepage
 
-  % \nocite{*} %Include all entries from BibTeX file
-  \bibliographystyle{alpha}
-  \addcontentsline{toc}{chapter}{Bibliography}
-  \bibliography{ref}
+  % % \nocite{*} %Include all entries from BibTeX file
+  % \addcontentsline{toc}{chapter}{Bibliography}
+  % \printbibliography
 
 
 \end{document}

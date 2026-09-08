@@ -1,0 +1,127 @@
+% \section{Existence Results for \psc-Metrics}
+
+In this section, we prove the following two existence results for \psc-metrics, one in the spin case and one in the totally non-spin case.
+
+\begin{theorem}
+    \label{psc:thm:existence_result_spin}
+    Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, $n \geq 5$, such that $W$ is spin. Suppose that $M_1$ is connected, the inclusion $M_1 \to W$ induces an isomorphism on $\pi_1$, and that $M_0$ admits a \psc-metric. Then $M_1$ also admits a \psc-metric. In fact, the \psc-metric on $M_0$ can be extended to a \psc-metric on $W$, which is of product form near the boundary. 
+\end{theorem}
+
+\begin{theorem}
+    \label{psc:thm:existence_result_totally_non_spin}
+    Let $W^{n+1}$ be an oriented cobordism from $M_0$ to $M_1$, $n \geq 5$. Suppose that $M_1$ is connected and totally non-spin, the inclusion $M_1 \to W$ induces an isomorphism on $\pi_1$, and that $M_0$ admits a \psc-metric. Then $M_1$ also admits a \psc-metric. In fact, the \psc-metric on $M_0$ can be extended to a \psc-metric on $W$, which is of product form near the boundary. 
+\end{theorem}
+
+The similarity between the two statements is no coincidence. In fact, both are a consequence of a more general result, see \cite[Theorem 1.5]{FrenckEbertChernysh}. The proofs presented here are essentially adaptations of the proof in \cite{FrenckEbertChernysh} to the special cases at hand. Let us first prove Theorem \ref{psc:thm:existence_result_totally_non_spin}.
+
+\begin{proof}[Proof of Theorem \ref{psc:thm:existence_result_totally_non_spin}]
+Without loss of generality, assume $W$ to be connected as well. Otherwise, consider only the connected component containing $M_1$. The crux of the proof is to find generators of $\pi_2(W,M_1)$ lifting to elements in $\pi_2(W)$ that are represented by embeddings with trivial normal bundle along which we can then perform surgery (compare Proposition \ref{appendix:prop:surger_killer}). Ideally, we would like $\pi_2(W,M_1)$ to be a finitely generated group for this purpose, which is, however, not the case in general. Nevertheless, viewed as a $\Z[\pi_1(M_1)]$-module, $\pi_2(W,M_1)$ is always finitely generated. We have included a detailed proof of this fact in Proposition \ref{appendix2:prop:finite_generation_lemma}. Let $\alpha_1^\mathrm{rel},\ldots, \alpha_l^\mathrm{rel} \in \pi_2(W,M_1)$ be such a set of generators. We will now construct lifts in $\pi_2(W)$ with the desired properties. 
+Let
+\[
+F \colon W \to B := B\so(n+1)
+\]
+be a classifying map for the tangent bundle $TW$ and set $f := F \circ i \colon M_1 \to B$, where $i \colon M_1 \to W$ is the inclusion. Then $f$ is a classifying map for $TM_1 \oplus \underline{\R}$ with $\underline{\R}$ the trivial line bundle. We claim that $f$ is surjective on $\pi_2$. Since $\pi_2(B) \cong \pi_1(\so(n+1)) \cong \Z_2$, it suffices to show that $f$ is non-zero on $\pi_2$. By Proposition \ref{bundles:prop:spin_characterisation} \ref{bundles:eq:characterization_totally_non_spin}, there exists an embedding $\iota \colon S^2 \to M_1$ such that $w_2(\iota^\ast TM_1) \neq 0$. We compute 
+\[
+w_2((f \circ \iota)^\ast \gamma_{n+1}^\so) = w_2(\iota^\ast (TM_1 \oplus \underline{\R})) = w_2(\iota^\ast TM_1) \neq 0.
+\]
+Therefore, $f \circ \iota$ represents a non-trivial element in $\pi_2(B)$, which shows the claim. Now consider the following diagram, where the row is exact, using the fact that $\pi_1(M_1) \to \pi_1(W)$ is an isomorphism.
+\[
+\begin{tikzcd}
+	{\pi_2(M_1)} & {\pi_2(W)} & {\pi_2(W,M_1)} & 0 \\ 
+	& {\pi_2(B)}
+	\arrow["{i_\ast}", from=1-1, to=1-2]
+	\arrow["{f_\ast}"', from=1-1, to=2-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["{F_\ast}", from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+\end{tikzcd}
+\]
+Using surjectivity of $f_\ast$, a diagram chase shows that there exist lifts $\alpha_1,\ldots, \alpha_l \in \pi_2(W)$ of the generators $\alpha_1^\mathrm{rel},\ldots, \alpha_l^\mathrm{rel} \in \pi_2(W,M_1)$, which lie in the kernel of $F_\ast$. Moreover, since $n \geq 5$, the classes $\alpha_i$ can be represented by embeddings 
+\[
+\phi_i \colon S^2 \to W.
+\]
+We show that the normal bundle $\nu_i$ of $\phi_i$ is trivial. Since $W$ is oriented, it follows from Proposition \ref{bundles:prop:orientable_iff_w1_vanishes} that $w_1(\phi_i^\ast TW) = 0$. Furthermore, $F\circ \phi_i$ is null-homotopic by construction, such that 
+\[
+w_2(\phi_i^\ast TW) = w_2 ((F \circ \phi_i)^\ast \gamma_{n+1}^\so) = 0.
+\]
+Using $w_k(TS^2) = 0$ (see Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3}), we compute
+\[
+w_k(\nu_i) = w_k(\nu_i \oplus TS^2) = w_k(\phi_i^\ast TW) = 0
+\]
+for $k = 1,2$. Thus, Lemma \ref{bundles:lem:criterion_for_triviality} shows that $\nu_i$ is indeed trivial. We can therefore perform surgery to obtain a new cobordism $W^\prime$ from $M_0$ to $M_1$ with 
+\[
+\pi_2(W^\prime,M_1) = 0
+\]
+and $\pi_1(W^\prime,M_1) \cong \pi_1(W,M_1) = 0$, see Proposition \ref{appendix:prop:surger_killer} \ref{appendix:eq:surgery_killer_relative_version} and Remark \ref{appendix:rem:zpi_module_in_kernel}. In other words, the inclusion $M_1 \to W^\prime$ is $2$-connected. So, by Theorem \ref{psc:thm:extending_psc_to_cobordism}, there exists a \psc-metric $g$ on $W^\prime$, which is of product form near the boundary. To construct a \psc-metric on the original cobordism $W$, observe that, since $W^\prime$ was obtained from $W$ by surgeries of dimension $2$, $W$ can be obtained from $W^\prime$ by surgeries of codimension $3$. Therefore, the Surgery Theorem \ref{psc:thm:surgery_thm} applies to construct a \psc-metric on $W$. Since this construction only changes the given metric $g$ locally near the surgery embeddings, the resulting metric on $W$ is still of product form near the boundary.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{psc:thm:existence_result_spin}]
+    As before, $\pi_2(W,M_1)$ is finitely generated as a $\Z[\pi_1(M_1)]$-module. Let $\alpha_1^\mathrm{rel},\ldots, \alpha_l^\mathrm{rel}$ be such generators. One could argue as in the proof of Theorem \ref{psc:thm:existence_result_totally_non_spin}, replacing $B\so(n+1)$ by $B\spin(n+1)$ and observing that the corresponding $f$ is trivially surjective on $\pi_2$, as $\pi_2(B\spin(n+1)) \cong \pi_1(\spin(n+1)) = 0$. However, this just amounts to the following more direct argument. Choose lifts $\alpha_1,\ldots,\alpha_l \in \pi_2(W)$ of $\alpha_1^\mathrm{rel},\ldots,\alpha_l^\mathrm{rel}$ and represent each $\alpha_i$ by an embedding $\phi_i \colon S^2 \to W$. Then
+    \[
+    w_k(\phi_i^\ast TW) = \phi_i^\ast w_k(TW) = 0
+    \]
+    for $k = 1,2$, since $W$ is spin. The remainder of the proof proceeds as in Theorem \ref{psc:thm:existence_result_totally_non_spin}.
+\end{proof}
+
+\newpage
+
+\section*{Relevant Lemmas etc. cited in the proofs above}
+
+\begin{proposition}
+    \label{appendix2:prop:finite_generation_lemma}
+    Let $(X,A)$ be a CW pair with $X$ connected. Suppose that $(X,A)$ is $(n-1)$-connected for $n \geq 2$, that the inclusion $A \to X$ induces an isomorphism on $\pi_1$, and that $(X,A)$ contains only finitely many $n$-cells. Then $\pi_n(X,A)$ is finitely generated as a $\Z[\pi_1(A)]$-module.
+\end{proposition}
+
+\begin{proposition}
+    \label{appendix:prop:surger_killer}
+    Let $W^n$ be a smooth manifold with basepoint $w_0 \in W$, $M \subseteq \partial W$ a subset of the boundary with basepoint $x_0 \in M$, $2(k+1) \leq n$ and $k \geq 1$.
+    \begin{enumerate}[label=(\roman*)]
+        \item \label{appendix:eq:surgery_killer_absolute_version} Let $\alpha_1,\ldots,\alpha_l \in \pi_k(W,w_0)$ be classes, which are represented by embeddings with trivial normal bundle. Then there exists a manifold $W^\prime$ obtained from $W$ by $l$-many $k$-surgeries away from the point $w_0$ together with a homomorphism $\phi \colon \pi_1(W,w_0) \to \pi_1(W^\prime,w_0)$ and a $\phi$-equivariant epimorphism
+        \[
+        \pi_k(W,w_0) \twoheadrightarrow \pi_k(W^\prime,w_0)
+        \]
+        containing $\alpha_1,\ldots,\alpha_l$ in its kernel. Moreover, 
+        \[
+        \pi_i(W,w_0) \cong \pi_i(W^\prime,w_0)
+        \] 
+        for all $i \leq k-1$.
+        \item \label{appendix:eq:surgery_killer_relative_version} Let $\alpha_1^\mathrm{rel},\ldots,\alpha_l^\mathrm{rel} \in \pi_k(W,M,x_0)$ be classes, which lift to classes $\alpha_1,\ldots,\alpha_l \in \pi_k(W,x_0)$ under the map $\pi_k(W,x_0) \to \pi_k(W,M,x_0)$ induced by the inclusion. Again assume that $\alpha_1,\ldots,\alpha_l$ are represented by embeddings with trivial normal bundle. Then there exists a manifold $W^\prime$ obtained from $W$ by $l$-many $k$-surgeries together with a $\pi_1(M,x_0)$-equivariant epimorphism
+        \[
+        \pi_k(W,M,x_0) \twoheadrightarrow \pi_k(W^\prime,M,x_0)
+        \]
+        containing $\alpha_1^\mathrm{rel},\ldots,\alpha_l^\mathrm{rel}$ in its kernel. Moreover, 
+        \[
+        \pi_i(W,M,x_0) \cong \pi_i(W^\prime,M,x_0)
+        \] 
+        for all $1 \leq i \leq k-1$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{remark}
+    \label{appendix:rem:zpi_module_in_kernel}
+    If $\pi_k(W,w_0)$ is abelian (for example if $k \geq 2$) equivariance of the epimorphism $\pi_k(W,w_0) \twoheadrightarrow \pi_k(W^\prime,w_0)$ implies that it contains the entire $\Z[\pi_1(W,w_0)]$-module generated by $\alpha_1,\ldots,\alpha_l$ in its kernel. An analogous statement holds in the relative case. 
+\end{remark}
+
+\begin{proposition}
+    \label{bundles:prop:spin_characterisation}
+    Let $M$ be a connected oriented manifold of dimension at least $5$.
+    \begin{enumerate}[label=(\roman*)]
+        \item \label{bundles:eq:characterization_spin} $M$ is spin if and only if for every embedded surface $S \subseteq M$ the restriction $TM|_S$ of the tangent bundle to $S$ is trivial.
+        \item \label{bundles:eq:characterization_totally_non_spin} $M$ is totally non-spin if and only if there exists an embedding $ \iota \colon S^2 \to M$, such that $w_2(\iota^\ast TM) \neq 0$. In particular, the restriction $\iota^\ast TM$ of the tangent bundle to this embedded sphere is non-trivial.
+    \end{enumerate}
+\end{proposition}
+
+\begin{lemma}
+    \label{bundles:lem:criterion_for_triviality}
+    Let $E \to S$ be a real vector bundle of rank at least $3$ over a two dimensional CW-complex $S$. Then $E$ is trivial if and only if $w_1(E) = w_2(E) = 0$.
+\end{lemma}
+
+\begin{proposition}
+    \label{bundles:prop:orientable_iff_w1_vanishes}
+    Let $X$ be a CW-complex. A real vector bundle $E \to X$ is orientable if and only if $w_1(E) = 0$.
+\end{proposition}
+
+\begin{theorem}
+    \label{psc:thm:extending_psc_to_cobordism}
+    Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, such that the inlcusion $M_1 \to W$ is $2$-connected. Then any \psc-metric on $M_0$ can be extended to a \psc-metric on $W$, which is of product form near the boundary.
+\end{theorem}
