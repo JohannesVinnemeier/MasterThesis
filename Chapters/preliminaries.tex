@@ -1,7 +1,7 @@
 \chapter{Preliminaries}
 \label{chapter:preliminaries}
 
-This chapter develops the necessary preliminaries for what follows, by recalling the notions of principal bundles, classifiying spaces and characteristic classes. We assume the reader to be familiar with the concept of a fiber bundle with structure group. A classical reference for this is for example \cite{steenrod1951topology}. Moreover, we presuppose some basic familiarity with homotopy and homology theory.
+This chapter develops the necessary preliminaries for what follows by recalling the notions of principal bundles, classifying spaces, and characteristic classes. We assume that the reader is familiar with the concept of a fiber bundle with structure group. A classical reference for this is, for example, \cite{steenrod1951topology}. Moreover, we presuppose some basic familiarity with homotopy and homology theory. The first section, on principal bundles, draws mainly on \cite{davis2001lecture} and \cite{Mitchell2011PrincipalBundles}. In the second section, on classifying spaces, we follow \cite{ebert_bordism_script}. Finally, the third section, on characteristic classes, is based primarily on \cite{Hatcher2003VectorBundles}, with additional material drawn from \cite{LawsonMichelsohn1989SpinGeometry} and \cite{Frenck2026Doubling}.
 
 \section{Principal Bundles and Associated Bundles}
 \label{subsec:principal_bundles}
@@ -11,7 +11,7 @@ This chapter develops the necessary preliminaries for what follows, by recalling
     Let $G$ be a topological group. A $G$-principal bundle is a fiber bundle with fiber $G$ and structure group $G$ acting by left translations.
 \end{definition}
 
-The total space of a $G$-principal bundle $P \xrightarrow{\pi} B$ carries a natural right action of $G$ defined as follows. Around $y \in P$ choose a local trivialisation
+The total space of a $G$-principal bundle $P \xrightarrow{\pi} B$ carries a natural right action of $G$ defined as follows. Around $y \in P$, choose a local trivialisation
 \[
 \phi \colon U \times G \to \pi^{-1}(U)
 \]
@@ -19,12 +19,12 @@ and let $\phi^{-1}(y) = (\pi(y),h)$. Then set
 \[
 y \cdot g := \phi(\pi(y),hg).
 \]
-This is well defned since by definition $G$ acts on itself by \textit{left} translations under a change of local trivialisation. 
+This is well defined since, by definition, $G$ acts on itself by \textit{left} translations under a change of local trivialisation. 
 A morphism of principal bundles should respect this right action, thus we define:
 
 \begin{definition}
     \label{bundles:def:principal_bundles_morphism}
-    A morphism from a $G$-principal bundle $P \to B$ to an $H$-principal bundle $P^\prime \to B^\prime$ is a pair $(F,f)$ of continuous maps $F \colon P \to P^\prime$ and $f \colon B \to B^\prime$ together with a homomorphism $\rho \colon G \to H$, such that 
+    A morphism from a $G$-principal bundle $P \to B$ to an $H$-principal bundle $P^\prime \to B^\prime$ is a triple $(F,f, \rho)$ of continuous maps $F \colon P \to P^\prime$ and $f \colon B \to B^\prime$ together with a homomorphism $\rho \colon G \to H$, such that 
     \[\begin{tikzcd}
 	P & {P^\prime} \\
 	B & {B^\prime}
@@ -33,10 +33,10 @@ A morphism of principal bundles should respect this right action, thus we define
 	\arrow[from=1-2, to=2-2]
 	\arrow["f", from=2-1, to=2-2]
     \end{tikzcd}\]
-    commutes and such that $F$ is $\rho$-equivariant, that is $F(x \cdot g) = F(x) \cdot \rho(g)$ for all $x \in P$ and $g \in G$. If $G=H$ we assume $\rho$ to be the identity and if $B = B^\prime$ we assume $f$ to be the identity.
+    commutes and such that $F$ is $\rho$-equivariant, that is $F(x \cdot g) = F(x) \cdot \rho(g)$ for all $x \in P$ and $g \in G$. If $G=H$, we assume $\rho$ to be the identity, and if $B = B^\prime$, we assume $f$ to be the identity.
 \end{definition}
 
-The condition of equivariance in the above definition is actually quite strong as illustrated by the following proposition.
+The condition of equivariance in the above definition is actually quite strong, as illustrated by the following proposition.
 
 \begin{proposition}
     \label{bundles:prop:morphisms_of_principal_bundles}
@@ -52,16 +52,17 @@ The condition of equivariance in the above definition is actually quite strong a
     \[
     F(x,g) = (x,\phi_x(g))
     \]
-    for a continuous family of equivariant maps $\phi_x \colon G \to G$. By equivariance $\phi_x(g) = \phi_x(e) g$ and thus an inverse of $F$ is given by
+    for a continuous family of maps $\phi_x \colon G \to G$. By equivariance, $\phi_x(g) = \phi_x(e) g$, and thus an inverse of $F$ is given by
     \[
     F^{-1}(x,g) := (x, \phi_x(e)^{-1} g).
     \]
-    Since every $G$-principal bundle is locally trivial this shows that we can always find local inverses in the general case and since inverses are unique they fit together to define a global inverse.
+    Since every $G$-principal bundle is locally trivial, this shows that we can always find local inverses in the general case. As inverses are unique, they fit together to define a global inverse.
 \end{proof}
-To any fiber bundle with structure group $G$ one can canonically associate a $G$-principal bundle, obtained by applying a general construction, which can be used to change the fiber of a given bundle. We now recall this construction of changing the fiber. 
+
+To any fiber bundle with structure group $G$, one can canonically associate a $G$-principal bundle by a general construction that allows one to change the fiber of a given bundle. We now recall this construction of changing the fiber. 
 Let $p \colon E \to B$ be a fiber bundle with fiber $F$ and structure group $G$ and let $F^\prime$ be another space upon which $G$ acts effectively. Then we can construct a new bundle as follows. Choose an open cover $(U_\alpha)_{\alpha \in A}$ of $B$ together with local trivialisations $\phi_\alpha \colon U_\alpha \times F \to p^{-1}(U_\alpha)$. Let $\tau_{\alpha\beta} \colon U_\alpha \cap U_\beta \to G$ be the corresponding transition functions defined by 
 \[
-(\phi_\beta^{-1} \circ \phi_\alpha)(x,f) = (x, \tau_{\alpha\beta}(x) \cdot f).
+(\phi_\alpha^{-1} \circ \phi_\beta)(x,f) = (x, \tau_{\alpha\beta}(x) \cdot f).
 \]
 Define 
 \[
@@ -69,13 +70,13 @@ E^\prime := \left( \coprod_{\alpha \in A} U_\alpha \times F^\prime \right)_{\rai
 \]
 where the equivalence relation $\sim$ is defined by
 \[
-(b,f^\prime,\beta) \sim (b,\tau_{\alpha,\beta}(b) \cdot f^\prime,\alpha)
+(b,f^\prime,\beta) \sim (b,\tau_{\alpha\beta}(b) \cdot f^\prime,\alpha)
 \]
 and let $p^\prime \colon E^\prime \to B, \: [(b,f^\prime,\alpha)] \mapsto b$. Then the maps
 \[
     \psi_\alpha \colon U_\alpha \times F^\prime \to (p^\prime)^{-1}(U_\alpha), \; (b,f^\prime) \mapsto [(b,f^\prime,\alpha)].
 \]
-define local trivialisations of $p^\prime$ with the same transition functions $\tau_{\alpha\beta}$, giving $p^\prime \colon E^\prime \to B$ the structure of a fiber bundle with fiber $F^\prime$ and structure group $G$. We say that this new bundle is obtained from $E \to B$ by \textit{changing the fiber} from $F$ to $F^\prime$ (with the $G$-action on $F^\prime$ being implicit). Note that we can also obtain $E \to B$ from $E^\prime \to B$ by changing the fiber from $F^\prime$ back to $F$. Thus no information is lost in this process. Considering the special case $F^\prime = G$ with $G$ acting on itself by left translations, we call the bundle obtained from $E \to B$ by changing the fiber from $F$ to $G$ the \textit{associated principal bundle}. Morally speaking if we want to understand the bundle $E \to B$ it is sufficient to understand its associated prinicpal bundle, as it contains the same information as we have seen above. The benefit of studying principal bundles is that they are highly symmetric objects, and thus usually easier to understand. For example many constructions simplify for principal bundles, such as the concept of universal bundles as we will see in the next subsection. Another such instance is the construction for changing the fiber from above, which can be carried out more directly in the case of principal bundles and has the benefit of also allowing for non-effective group actions. This is known as the \textit{Borel Construction}.
+define local trivialisations of $p^\prime$ with the same transition functions $\tau_{\alpha\beta}$, giving $p^\prime \colon E^\prime \to B$ the structure of a fiber bundle with fiber $F^\prime$ and structure group $G$. We say that this new bundle is obtained from $E \to B$ by \textit{changing the fiber} from $F$ to $F^\prime$ (with the $G$-action on $F^\prime$ being implicit). Note that we can also obtain $E \to B$ from $E^\prime \to B$ by changing the fiber from $F^\prime$ back to $F$. Thus no information is lost in this process. Considering the special case $F^\prime = G$ with $G$ acting on itself by left translations, we call the bundle obtained from $E \to B$ by changing the fiber from $F$ to $G$ the \textit{associated principal bundle}. Morally speaking, if we want to understand the bundle $E \to B$, it is sufficient to understand its associated principal bundle, since this contains the same information, as we have seen above. The benefit of studying principal bundles is that they are highly symmetric objects, and thus usually easier to understand. For example, many constructions simplify for principal bundles, such as the concept of universal bundles, as we will see in the next section. Another such instance is the construction for changing the fiber from above. In the case of principal bundles this can be carried out more directly and has the benefit of also allowing for non-effective group actions. This is known as the \textit{Borel Construction}.
 
 \begin{lemma}
     \label{bundles:lem:borel_construction}
@@ -87,7 +88,7 @@ define local trivialisations of $p^\prime$ with the same transition functions $\
 \end{lemma}
 
 \begin{proof}
-    To see that $P \times_G F$ is locally trivial let $\psi \colon U \times G \to P$ be a local trivialisation. Then the homeomorphism 
+    To see that $P \times_G F$ is locally trivial, let $\psi \colon U \times G \to P$ be a local trivialisation. Then the homeomorphism 
     \[
     \psi \times \mathrm{id}_F \colon U \times G \times F \to p^{-1}(U) \times F
     \]
@@ -95,11 +96,11 @@ define local trivialisations of $p^\prime$ with the same transition functions $\
     \[
     \tilde{\kappa} \colon \modulo{(U \times G \times F)}{\sim} \to \modulo{(p^{-1}(U) \times F)}{\sim} = \pi^{-1}(U),
     \]
-    where the equivalence relation on $U \times G \times F$ is given by $(x,g,f) \sim (x,gh,h^{-1}f)$. Moreover the map 
+    where the equivalence relation on $U \times G \times F$ is given by $(x,g,f) \sim (x,gh,h^{-1}f)$. Moreover, the map 
     \[
     U \times G \times F \to U \times F, \; (x,g,f) \mapsto (x,gf)
     \]
-    descends to a homeomorphism $\modulo{(U \times G \times F)}{\sim} \to U \times F$ with inverse given by $(x,f) \mapsto [(x,e,f)]$. Under this homeomorphism $\tilde{\kappa}$ corresponds to a homeomorphism $\kappa \colon U \times F \to \pi^{-1}(U)$, which is explicitly given by $(x,f) \mapsto [(\psi(x,e),f)]$ and
+    descends to a homeomorphism $\modulo{(U \times G \times F)}{\sim} \to U \times F$ with inverse given by $(x,f) \mapsto [(x,e,f)]$. Under this homeomorphism, $\tilde{\kappa}$ corresponds to a homeomorphism $\kappa \colon U \times F \to \pi^{-1}(U)$, which is explicitly given by $(x,f) \mapsto [(\psi(x,e),f)]$. Since
     \[\begin{tikzcd}
 	{U \times F} & {\pi^{-1}(U)} \\
 	{} & U
@@ -107,18 +108,18 @@ define local trivialisations of $p^\prime$ with the same transition functions $\
 	\arrow["{\mathrm{proj.}}"', from=1-1, to=2-2]
     \arrow["\pi", from=1-2, to=2-2]
     \end{tikzcd}\]
-    commutes. So $P \times_G F$ is locally trivial. To see that this construction agrees with the change of fiber construction from above if $G$ acts effectively we have to compute the transition functions of the local trivialisations. Let $U_\alpha, U_\beta \subseteq B$ be two trivialising neighbourhoods for $P$ with  local trivialisations $\psi_\alpha, \psi_\beta$ and transition function $\tau_{\alpha,\beta} \colon U_\alpha \cap U_\beta \to G$. Moreover let $\kappa_\alpha, \kappa_\beta$ be the corresponding local trivialisations for $P \times_G F$ as constructed above. Then we compute 
+    commutes, this shows that $\pi \colon E \to B$ is locally trivial. To see that, for effective $G$-actions, this construction agrees with the change-of-fiber construction introduced above, we compute the transition functions of the local trivialisations just defined. Let $U_\alpha, U_\beta \subseteq B$ be two trivialising neighbourhoods for $P \to B$ with local trivialisations $\psi_\alpha, \psi_\beta$ and transition function $\tau_{\alpha\beta} \colon U_\alpha \cap U_\beta \to G$. Moreover, let $\kappa_\alpha, \kappa_\beta$ be the corresponding local trivialisations for $E \to B$ as constructed above. Then we compute 
     \begin{align*}
-        (\kappa_\alpha^{-1} \circ \kappa_\beta)(x,f) & = \kappa_\alpha^{-1}([(\psi_\beta(x,e),f)]) = (x,\tau_{\alpha,\beta}(x) f).
+        (\kappa_\alpha^{-1} \circ \kappa_\beta)(x,f) & = \kappa_\alpha^{-1}([(\psi_\beta(x,e),f)]) = (x,\tau_{\alpha\beta}(x) f).
     \end{align*}
-    Thus the statement follows from the fact that fiber bundles with structure group are uniquely determined by the transition functions of local trivialisations.
+    Thus the statement follows from the fact that fiber bundles, where the structure group acts effectively, are uniquely determined by the transition functions of local trivialisations.
 \end{proof}
 
-In view of the above constrcution one usually denotes the bundle obtained  from $P \to B$ by changing the fiber from $G$ to $F$ as $P \times_G F \to B$. The Borel construction is natural in the following sense.
+We denote the bundle $E \to B$ obtained from the above construction by $P \times_G F \to B$. The Borel construction is natural with respect to pullbacks, as stated in the following lemma.
 
 \begin{lemma}
         \label{bundles:lem:natruality_of_changing_fiber}
-        Let $p \colon P \to B$ be a $G$-prinicpal bundle, $F$ a space upon which $G$ acts from the left and $f \colon B^\prime \to B$ a continuous map. Then 
+        Let $p \colon P \to B$ be a $G$-principal bundle, $F$ a space upon which $G$ acts from the left and $f \colon B^\prime \to B$ a continuous map. Then 
         \[
         (f^\ast P) \times_G F \cong f^\ast(P \times_G F).
         \]
@@ -133,7 +134,7 @@ In view of the above constrcution one usually denotes the bundle obtained  from 
     \[
     (f^\ast P) \times_G F = \{(y,b^\prime,f) \in P \times B^\prime \times F \mid p(y) = f(b^\prime)\} / \sim,
     \]
-    for $(y , b^\prime, f) \sim (y \cdot g, b^\prime, g^{-1} \cdot f)$. Moreover 
+    for $(y, b^\prime, f) \sim (y \cdot g, b^\prime, g^{-1} \cdot f)$. Moreover, 
     \begin{align*}
     f^\ast(P \times_G F) & = \{([y,f],b^\prime) \in P \times_G F \times B^\prime \mid p(y) = f(b^\prime)\} \\
     & \cong \{(y,f,b^\prime) \in P \times F \times B^\prime \mid p(y) = f(b^\prime)\} / \sim
@@ -143,60 +144,40 @@ In view of the above constrcution one usually denotes the bundle obtained  from 
 
 \begin{remark}
     \label{bundles:rem:naturality_change_of_fiber}
-    We explicitly remark that the action of $G$ on $F$ in the above Lemma need not be effective. If we restrict ourselves to effective actions, a more general naturality result holds for changing the fiber of arbitrary fiber bundles. Namely first pulling a bundle back under some continuous map and then changing the fiber amounts to the same as first changing the fiber and then pulling back. This can easily be seen by comparing the transition functions of local trivialisations in both cases and observing that they agree. 
+    We remark that the action of $G$ on $F$ in the above lemma need not be effective. If we restrict ourselves to effective actions, a more general naturality result holds for the change-of-fiber construction of arbitrary bundles. Namely, first pulling a bundle back under some continuous map and then changing the fiber amounts to the same as first changing the fiber and then pulling back. Comparing the transition functions of the local trivialisations in both cases shows that they in fact agree.
 \end{remark}
 
-Lets look at some concrete examples for the theory developed above.
+Let's look at some concrete examples for the theory developed above.
 
-\begin{example} For simplicity we assume all base spaces $B$ to be smooth manifolds in this example.
+\begin{example}
     \label{bundles:ex:associated_bundles}
     \begin{enumerate}[label=(\roman*)]
-        \item Let $E \to B$ be a real rank $n$ vector bundle. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $O(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle $\mathrm{O}(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all ordered orthonormal bases of $E_x$. The topology on $O(E)$ is the subspace topology $O(E) \subseteq E \times \ldots \times E$. Local trivialisations of the canonical map $p \colon \mathrm{O}(E) \to B$ can be defined as follows. Choose an orthonormal local frame $e_1,\ldots,e_n$ of $E$ defined over an open set $U \subseteq B$. Then a trivialisation $\phi \colon U \times \mathrm{O}(n) \to p^{-1}(U)$ is given by
+        \item Let $\pi \colon E \to B$ be a real rank $n$ vector bundle over a paracompact base space $B$. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $O(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle $\mathrm{O}(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all ordered orthonormal bases of $E_x$. The topology on $O(E)$ is the subspace topology $O(E) \subseteq E \times \ldots \times E$. Local trivialisations of the canonical projection map $p \colon \mathrm{O}(E) \to B$ can be defined as follows. Choose an orthonormal local frame $e_1,\ldots,e_n$ of $E$ defined over an open set $U \subseteq B$. Then a trivialisation $\phi \colon U \times \mathrm{O}(n) \to p^{-1}(U)$ is given by
         \[
             (x,A) \mapsto \left(\sum_{i=1}^n a_{i1}e_i(x),\ldots,\sum_{i=1}^n a_{in}e_i(x)\right),
         \]
-        where $A = (a_{ij})$, i.e. $\phi(x,A)$ is the basis of $E_x = p^{-1}(x)$, whose coordinates in the frame $(e_i)$ are precisely the columns of the matrix $A$. The transition functions of these trivialisations agree with the transition functions of the trivialisations of $E$. Again, since the transition functions uniquely determine the bundle, we conclude that $O(E)$ is in fact isomorphic to the associated principle bundle as defined at the beginning of this section. Analogously, if $E \to B$ is a complex rank $n$ vector bundle, choosing a hermitian metric on $E$ allows us to reduce the structure group to $U(n)$ and the corresponding associated principal bundle is the \textit{unitary frame bundle}. 
-        % \item An orientation of a real vector bundle allows us to further reduce the structure group to $SO(n)$. Similiarly, the associated principal bundle is then given by the \textit{oriented orthonormal frame bundle $\so(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all oriented ordered orthonormal bases of $E_x$. 
+        where $A = (a_{ij})$. So $\phi(x,A)$ is the basis of $E_x = \pi^{-1}(x)$, whose coordinates in the frame $(e_i)$ are precisely the columns of the matrix $A$. The transition functions of these trivialisations agree with the transition functions of the trivialisations of $E$. Since the transition functions uniquely determine the bundle, we conclude that $O(E)$ is in fact isomorphic to the associated principal bundle as defined at the beginning of this section. Analogously, if $E \to B$ is a complex rank $n$ vector bundle, choosing a hermitian metric on $E$ allows us to reduce the structure group to $U(n)$, and the corresponding associated principal bundle is the \textit{unitary frame bundle}. 
+        % \item An orientation of a real vector bundle allows us to further reduce the structure group to $SO(n)$. Similarly, the associated principal bundle is then given by the \textit{oriented orthonormal frame bundle $\so(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all oriented ordered orthonormal bases of $E_x$. 
         \item \label{bundles:ex:associated_bundles_cpn} Let $p \colon \tau_1^n \to \CP^n$ be the tautological complex line bundle equipped with the canonical hermitian metric. Since this bundle is of rank $1$, its unitary frame bundle is simply the subspace $U(\tau_1^n) \subseteq \tau_1^n$ of all vectors of norm $1$, together with the restriction of $p$ to this subspace. Recall that
         \[
         \tau_1^n = \{(L,z) \in \CP^n \times \C^{n+1} \mid z \in L\}.
         \]
-        So explicitly
+        So, explicitly,
         \[
-        U(\tau_1^n) := \{(L,z) \in \tau_1^n \mid \abs{z} = 1\}.
+        U(\tau_1^n) = \{(L,z) \in \tau_1^n \mid \abs{z} = 1\}.
         \]
         Consider the diffeomorphism 
         \[
         U(\tau_1^n) \to S^{2n+1}, \; (L,z) \mapsto z
         \]
-        with inverse $S^{2n+1} \to U(\tau_1^n),\; z \mapsto (\pi(z),z)$, where $\pi \colon S^{2n+1} \to \CP^n$ is the canonical projection. Then the restriction of $p$ to $U(\tau_1^n)$ corresponds to $\pi$ under this diffeomorphism. Hence $\pi$ defines an $U(1) \cong S^1$-principal bundle, which agrees with the associated principal bundle of $\tau_1^n \to \CP^n$.
-        \item \label{bundles:ex:associated_bundles_part3} An example, which will be of relevance later, is the following. Let $E \to B$ be an $S^1$-principal bundle over a manifold $B$ without boundary. We can change the fiber of $E$ from $S^1$ to $D^2$ to obtain another bundle $DE \to B$, where $S^1$ acts on $D^2$ by rotations. By definition of the change-of-fiber construction, trivialisations $U \times D^2 \to DE$, restricted to the boundary $U \times S^1 \to \partial DE$, have the same transition functions as the corresponding trivialisations of $E \to B$. Since the action of $S^1$ on $D^2$ just extends the action of $S^1$ on itself, we see that $E \cong \partial DE$. So, in particular, the total space of any $S^1$-principal bundle is null-bordant.
+        with inverse $S^{2n+1} \to U(\tau_1^n),\; z \mapsto (\pi(z),z)$, where $\pi \colon S^{2n+1} \to \CP^n$ is the canonical projection. Under this diffeomorphism the restriction of $p$ to $U(\tau_1^n)$ corresponds to $\pi$. Hence $\pi$ defines a $U(1) \cong S^1$-principal bundle, which agrees with the associated principal bundle of $\tau_1^n \to \CP^n$.
+        \item \label{bundles:ex:associated_bundles_part3} Let $E \to B$ be an $S^1$-principal bundle over a smooth manifold $B$ without boundary. We can change the fiber of $E$ from $S^1$ to $D^2$ to obtain another bundle $DE \to B$, where $S^1$ acts on $D^2$ by rotations. By definition of the change-of-fiber construction, trivialisations $U \times D^2 \to DE$ have the same transition functions as the corresponding trivialisations of $E \to B$. Moreover, they restrict to trivialisations $U \times S^1 \to \partial DE$ of the boundary. Since the action of $S^1$ on $D^2$ restricts to the action of $S^1$ on itself, we see that $E \cong \partial DE$. So, in particular, the total space of any $S^1$-principal bundle is null-bordant. We will make use of this fact in \hyperref[chapter:main_construction]{Chapter 4}.
     \end{enumerate}
 \end{example}
 
 
-
-
-% We recall the following Definition.
-
-% \begin{definition}
-%     \label{bundles:def:principal_bundle}
-%     Let $G$ be a topological group. A $G$-principal bundle is a fiber bundle with fiber $G$ and structure group $G$ acting by left translations.
-% \end{definition}
-
-% Given a fiber bundle $E \to B$ with fiber $F$ and structure group $G$ and another space $F^\prime$ upon which $G$ acts effectively, one can construct a new bundle $E^\prime \to B$ with fiber $F^\prime$ and structure group $G$, which has the same transition functions as the original bundle. We will refer to this as \textit{changing the fiber from $F$ to $F^\prime$}. See for example \cite[Theorem 3.2]{steenrod1951topology}. Since any group acts on itself by left translations the structure group $G$ itself is always a viable choice for $F^\prime$. The bundle $E^\prime \to B$ obtained from $E \to B$ with this choice is called the \textit{associated principal bundle of $E \to B$}. Note that this new bundle contains precisely the same information as the original one, since we can always apply the same construction to $E^\prime \to B$ by considering the original action of $G$ on $F$ and recover $E \to B$.
-
-% \begin{example} For simplicity we assume all base spaces $B$ to be smooth manifolds in this example.
-%     \begin{enumerate}[label=\roman*)]
-%         \item Let $E \to B$ be a real rank $n$ vector bundle. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $O(n)$. Thus real rank $n$ vector bundles are nothing but $O(n)$-prinicpal bundles. Similiarly complex rank $n$ vector bundles are nothing but $U(n)$-principal bundles.
-%         \item An orientation of a real vector bundle allows us to further reduce the structure group to $SO(n)$, thus orientable real rank $n$ vector bundles are nothing but $SO(n)$-prinicpal bundles.
-%         \item An example, which will be of relevance later is the following. Since $U(1) \cong S^1$, complex rank one vector bundles are nothing but $S^1$-prinicpal bundles. Moreover, given any $S^1$-principal bundle $E \to B$ we can change the fiber to $D^2$ to construct a bundle $E^\prime \to B$, where $S^1$ acts on $D^2$ by rotations. Since this action just extends the canonical action of $S^1 = \partial D^2$ on itself we see that $E \cong \partial E^\prime$. So in particular the total space of any $S^1$-prinicpal bundle is null-bordant. 
-%     \end{enumerate}
-% \end{example}
-
 \section{Universal Bundles and Classifying Spaces}
-A natural question is which fiber bundles with specified fiber and structure group can exist over a given base space. Again, this classification problem turns out to be easier for principal bundles.
-For simplicity we assume all base spaces to be CW-complexes in this section.
+A natural question is which fiber bundles with specified fiber and structure group can exist over a given base space. As before, this problem turns out to be easier for principal bundles. We assume all base spaces to be CW-complexes in this section.
 
 \begin{definition}
     A $G$-principal bundle $E \to B$ is called \textit{universal} if $E$ is weakly contractible as a topological space.
@@ -209,19 +190,19 @@ The significance of this definition is established by the following theorem. We 
     Let $E \to B$ be a universal $G$-principal bundle. Then for any other $G$-principal bundle $P \to X$ there exists a morphism $P \to E$ of $G$-principal bundles, which is unique up to $G$-homotopy.
 \end{theorem}
 
-Before showing the theorem let us discuss its implications. Firstly we can equivalently formulate the theorem by saying that $E \to B$ is a terminal object in the homotopy category of $G$-principal bundles over CW-complexes and thus in particular uniquely determined (up to $G$-homotopy equivalence). This justifies writing $EG:= E$ and $BG := B$ and we refer to $EG \to BG$ as \textit{the} universal $G$-principal bundle. The base space $BG$ is called the \textit{classifiying space} of $G$. Since any bundle morphism $(F,f) \colon P \to EG$ induces a morphism $P \to f^\ast EG$ (and vice versa, which is true for arbitrary fiber bundles) we conclude from Proposition \ref{bundles:prop:morphisms_of_principal_bundles} that 
+Before showing the theorem, let us discuss its implications. Firstly, we can equivalently formulate the theorem by saying that $E \to B$ is a terminal object in the homotopy category of $G$-principal bundles over CW-complexes and thus, in particular, uniquely determined (up to $G$-homotopy equivalence). In view of this, one usually writes $EG := E$ and $BG := B$, and refers to $EG \to BG$ as \textit{the} universal $G$-principal bundle. The base space $BG$ is called the \textit{classifying space} of $G$. Since any bundle morphism $(F,f) \colon P \to EG$ induces a morphism $P \to f^\ast EG$ (and vice versa, which is true for arbitrary fiber bundles), we conclude from Proposition \ref{bundles:prop:morphisms_of_principal_bundles} that 
 \[
 P \cong f^\ast EG.
 \]
-We call $f$ a \textit{classifiying map} for $P$. By homotopy invariance of the pullback we get a well-defined bijection 
+We call $f$ a \textit{classifying map} for $P$. By homotopy invariance of the pullback, we get a well-defined bijection 
 \[
 \phi_X \colon [X,BG] \to \mathcal{P}_G(X), \; [f] \mapsto [f^\ast EG],
 \]
-where $\mathcal{P}_G(X)$ denotes the set of isomorphism classes of $G$-principal bundles over $X$. To see that $\phi_X$ is indeed bijective note that the existence result in Theorem \ref{bundles:thm:universal_principal_bundle} shows that $\phi_X$ is surjective and the uniqueness result shows that it is injective. Moreover $\phi_X$ is clearly natural in $X$. Thus we have shown.
+where $\mathcal{P}_G(X)$ denotes the set of isomorphism classes of $G$-principal bundles over $X$. The existence result in Theorem \ref{bundles:thm:universal_principal_bundle} shows that $\phi_X$ is surjective and the uniqueness result shows that it is injective. Moreover, $\phi_X$ is clearly natural in $X$. Thus we have shown:
 
 \begin{corollary}
 \label{bundles:cor:universal_bundle_defines_natural_isomorphism}
-    The maps $\phi_X$ define a natural isomorphism of contravaraint functors 
+    The maps $\phi_X$ define a natural isomorphism of contravariant functors 
     \[  
         [-,BG], \mathcal{P}_G(-) \colon \mathsf{HCW} \to \mathsf{Set},
     \]
@@ -232,10 +213,10 @@ Theorem \ref{bundles:thm:universal_principal_bundle} will be a simple applicatio
 
 \begin{theorem}
     \label{bundles:thm:extension_theorem}
-    Let $P \to X$ be a $G$-principal bundle and $A \subseteq X$ a subcomplex. Then any morphism $P|_A \to EG$ of $G$-principal bundles can be extended to a morphism $P \to EG$ of $G$-principal bundles. 
+    Let $P \to X$ be a $G$-principal bundle and $A \subseteq X$ a subcomplex. Then any morphism $P|_A \to EG$ of $G$-principal bundles extends to a morphism $P \to EG$ of $G$-principal bundles. 
 \end{theorem}
 
-The proof of this Theorem based on an inductive cell by cell approach. We refer the reader to \cite[Theorem 2.7.1]{ebert_bordism_script}. 
+The proof of this theorem is based on an inductive, cell-by-cell approach. We refer the reader to \cite[Theorem 2.7.1]{ebert_bordism_script}. 
 
 \begin{proof}[Proof of Theorem \ref{bundles:thm:universal_principal_bundle}]
     Applying Theorem \ref{bundles:thm:extension_theorem} to $A = \emptyset$ shows the existence of a morphism $P \to EG$. Now suppose we are given morphisms $F_0,F_1 \colon P \to EG$. Consider the $G$-principal bundle 
@@ -249,13 +230,13 @@ The proof of this Theorem based on an inductive cell by cell approach. We refer 
     which by Theorem \ref{bundles:thm:extension_theorem} can be extended to $P \times [0,1]$, thus yielding a $G$-homotopy between $F_0$ and $F_1$.
 \end{proof}
 
-Of course for this theory to be of any use we need such universal bundles to exist. The following general existence theorem is due to Milnor.
+Of course, for this theory to be of any use, we need such universal bundles to exist. The following general existence theorem was first shown by Milnor \cite{milnor1956universalII}.
 
-\begin{theorem}[OG Milnor paper, Ebert]
+\begin{theorem}
     For any topological group $G$ there exists a universal $G$-principal bundle $EG \to BG$, where $BG$ is a CW-complex.
 \end{theorem}
 
-A priori the space $BG$ constructed in [OG Milnor paper, Ebert] may not be a CW complex. However, if we choose a CW-approximation $f \colon X \to BG$ the total space of the bundle $f^\ast EG \to X$ is still weakly contractible. This follows by applying the five lemma to the following diagram.
+A priori, the space $BG$ constructed in \cite{milnor1956universalII} may not be a CW-complex. However, if we choose a CW-approximation $f \colon X \to BG$, the total space of the bundle $f^\ast EG \to X$ is still weakly contractible. This follows by applying the five lemma to the following diagram.
 \[\begin{tikzcd}
 	{\pi_{k+1}(X)} & {\pi_k(G)} & {\pi_k(f^\ast EG)} & {\pi_k(X)} & {\pi_{k-1}(G)} \\
 	{\pi_{k+1}(BG)} & {\pi_k(G)} & {\pi_k(EG)} & {\pi_k(BG)} & {\pi_{k-1}(G)}
@@ -274,7 +255,7 @@ A priori the space $BG$ constructed in [OG Milnor paper, Ebert] may not be a CW 
 	\arrow[from=2-4, to=2-5]
 \end{tikzcd}\]
 
-We can now use the classification results for principal bundles to obtain analogues results for general fiber bundles. As discussed in section \ref{subsec:principal_bundles} we can generally recover information about arbitrary fiber bundles by changing the fiber.
+We can now use these classification results for principal bundles to obtain analogous results for general fiber bundles by appealing to the change-of-fiber construction discussed in the preceding section.
 
 \begin{corollary}
     \label{bundles:cor:universal_fiber_bundles}
@@ -286,11 +267,11 @@ We can now use the classification results for principal bundles to obtain analog
 \end{corollary}
 
 \begin{proof}
-    By \ref{bundles:cor:universal_bundle_defines_natural_isomorphism} the map 
+    By Corollary \ref{bundles:cor:universal_bundle_defines_natural_isomorphism}, the map 
     \[
     [X,BG] \to \mathcal{P}_G(X), \; \; [f] \mapsto [f^\ast EG]
     \]
-    is a natural bijection and by Lemma \ref{bundles:lem:natruality_of_changing_fiber}
+    is a natural bijection, and by Lemma \ref{bundles:lem:natruality_of_changing_fiber}
     \[
     \mathcal{P}_G(X) \to \mathcal{F}_{F,G}(X), \; \; [P] \mapsto \left[P \times_G F\right]
     \]
