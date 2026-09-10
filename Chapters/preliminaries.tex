@@ -147,16 +147,16 @@ We denote the bundle $E \to B$ obtained from the above construction by $P \times
     We remark that the action of $G$ on $F$ in the above lemma need not be effective. If we restrict ourselves to effective actions, a more general naturality result holds for the change-of-fiber construction of arbitrary bundles. Namely, first pulling a bundle back under some continuous map and then changing the fiber amounts to the same as first changing the fiber and then pulling back. Comparing the transition functions of the local trivialisations in both cases shows that they in fact agree.
 \end{remark}
 
-Let's look at some concrete examples for the theory developed above.
+Let us look at some concrete examples for the theory developed above.
 
 \begin{example}
     \label{bundles:ex:associated_bundles}
     \begin{enumerate}[label=(\roman*)]
-        \item Let $\pi \colon E \to B$ be a real rank $n$ vector bundle over a paracompact base space $B$. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $O(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle $\mathrm{O}(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all ordered orthonormal bases of $E_x$. The topology on $O(E)$ is the subspace topology $O(E) \subseteq E \times \ldots \times E$. Local trivialisations of the canonical projection map $p \colon \mathrm{O}(E) \to B$ can be defined as follows. Choose an orthonormal local frame $e_1,\ldots,e_n$ of $E$ defined over an open set $U \subseteq B$. Then a trivialisation $\phi \colon U \times \mathrm{O}(n) \to p^{-1}(U)$ is given by
+        \item Let $\pi \colon E \to B$ be a real rank $n$ vector bundle over a paracompact base space $B$. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $\mathrm{O}(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle $\mathrm{O}(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all ordered orthonormal bases of $E_x$. The topology on $\mathrm{O}(E)$ is the subspace topology $\mathrm{O}(E) \subseteq E \times \ldots \times E$. Local trivialisations of the canonical projection map $p \colon \mathrm{O}(E) \to B$ can be defined as follows. Choose an orthonormal local frame $e_1,\ldots,e_n$ of $E$ defined over an open set $U \subseteq B$. Then a trivialisation $\phi \colon U \times \mathrm{O}(n) \to p^{-1}(U)$ is given by
         \[
             (x,A) \mapsto \left(\sum_{i=1}^n a_{i1}e_i(x),\ldots,\sum_{i=1}^n a_{in}e_i(x)\right),
         \]
-        where $A = (a_{ij})$. So $\phi(x,A)$ is the basis of $E_x = \pi^{-1}(x)$, whose coordinates in the frame $(e_i)$ are precisely the columns of the matrix $A$. The transition functions of these trivialisations agree with the transition functions of the trivialisations of $E$. Since the transition functions uniquely determine the bundle, we conclude that $O(E)$ is in fact isomorphic to the associated principal bundle as defined at the beginning of this section. Analogously, if $E \to B$ is a complex rank $n$ vector bundle, choosing a hermitian metric on $E$ allows us to reduce the structure group to $U(n)$, and the corresponding associated principal bundle is the \textit{unitary frame bundle}. 
+        where $A = (a_{ij})$. So $\phi(x,A)$ is the basis of $E_x = \pi^{-1}(x)$, whose coordinates in the frame $(e_i)$ are precisely the columns of the matrix $A$. The transition functions of these trivialisations agree with the transition functions of the trivialisations of $E$. Since the transition functions uniquely determine the bundle, we conclude that $\mathrm{O}(E)$ is in fact isomorphic to the associated principal bundle as defined at the beginning of this section. Analogously, if $E \to B$ is a complex rank $n$ vector bundle, choosing a hermitian metric on $E$ allows us to reduce the structure group to $\mathrm{U}(n)$, and the corresponding associated principal bundle is the \textit{unitary frame bundle} $\mathrm{U}(E)$. 
         % \item An orientation of a real vector bundle allows us to further reduce the structure group to $SO(n)$. Similarly, the associated principal bundle is then given by the \textit{oriented orthonormal frame bundle $\so(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all oriented ordered orthonormal bases of $E_x$. 
         \item \label{bundles:ex:associated_bundles_cpn} Let $p \colon \tau_1^n \to \CP^n$ be the tautological complex line bundle equipped with the canonical hermitian metric. Since this bundle is of rank $1$, its unitary frame bundle is simply the subspace $U(\tau_1^n) \subseteq \tau_1^n$ of all vectors of norm $1$, together with the restriction of $p$ to this subspace. Recall that
         \[
@@ -271,24 +271,24 @@ We can now use these classification results for principal bundles to obtain anal
     \[
     [X,BG] \to \mathcal{P}_G(X), \; \; [f] \mapsto [f^\ast EG]
     \]
-    is a natural bijection, and by Lemma \ref{bundles:lem:natruality_of_changing_fiber}
+    is a natural bijection. Moreover, since $G$ acts effectively the map 
     \[
     \mathcal{P}_G(X) \to \mathcal{F}_{F,G}(X), \; \; [P] \mapsto \left[P \times_G F\right]
     \]
-    is a natural bijection. Composing both thus yields the natural bijection 
+    is a bijection, which is natural by Lemma \ref{bundles:lem:natruality_of_changing_fiber}. Composing both thus yields the natural bijection 
     \[
-    [X,BG] \to \mathcal{F}_{F,G}(X), \; \; [f] \mapsto \left[(f^\ast EG) \times_G F\right].
+    [X,BG] \to \mathcal{F}_{F,G}(X), \; \; [f] \mapsto \left[(f^\ast EG) \times_G F\right] = \left[(f^\ast EG \times_G F)\right],
     \]
-    So the statement follows by again applying Lemma \ref{bundles:lem:natruality_of_changing_fiber}.
+    once more applying Lemma \ref{bundles:lem:natruality_of_changing_fiber} in the last equality.
 \end{proof}
 
-Again let us discuss a few examples.
+\needspace{4cm}
+We conclude this section by discussing some examples.
 
 \begin{example}
     \label{bundles:ex:examples_for_classifiying_spaces}
     \begin{enumerate}[label=(\roman*)]
         \item[]
-        \item The universal cover $\R \to S^1$ is a $\Z$-prinicpal bundle, $\Z$ acting on itself by addition. Since $\R$ is contractible we obtain $B\Z \cong S^1$ and $E\Z \cong \R$.
         \item \label{bundles:ex:homotopy_groups_of_BG} From the long exact sequence of homotopy groups 
         \[\begin{tikzcd}
         {\pi_k(EG)} & {\pi_k(BG)} & {\pi_{k-1}(G)} & {\pi_{k-1}(EG)}
@@ -296,13 +296,14 @@ Again let us discuss a few examples.
         \arrow[from=1-2, to=1-3]
         \arrow[from=1-3, to=1-4]
         \end{tikzcd}\]
-        we conclude that $\pi_k(BG) \cong \pi_{k-1}(G)$ for $k \geq 1$. Moreover, $BG$ is connected since it is the image of the connected space $EG$ under $EG \to BG$.
-        \item The universal $O(k)$-prinicpal bundle $EO(k) \to BO(k)$ also has an explicit description. Consider the Stiefel manifold $V_k^n \subseteq \R^{n\times k}$, which is defined as the compact space of orthonormal $k$-tuples of vectors in $\R^n$. Moreover let $\mathrm{Gr}_k^n$ be the Grassmanian of $k$-planes in $\R^n$, i.e. the set of $k$-dimensional linear subspaces of $\R^n$. The topology on $\mathrm{Gr}_k^n$ is induced by the projection map
+        we conclude that $\pi_k(BG) \cong \pi_{k-1}(G)$ for $k \geq 1$. Moreover, $BG$ is connected as the image of the connected space $EG$ under $EG \to BG$.
+        \item The universal cover $\R \to S^1$ is a $\Z$-principal bundle, $\Z$ acting on itself by addition. Since $\R$ is contractible we obtain $B\Z \cong S^1$ and $E\Z \cong \R$.
+        \item The universal $O(k)$-principal bundle $EO(k) \to BO(k)$ also has an explicit description. Consider the Stiefel manifold $V_k^n \subseteq \R^{n\times k}$, which is defined as the compact space of orthonormal $k$-tuples of vectors in $\R^n$. Furthermore, let $\mathrm{Gr}_k^n$ be the Grassmannian of $k$-planes in $\R^n$, i.e. the set of $k$-dimensional linear subspaces of $\R^n$ with the topology induced by the projection map
         \[
-        p \colon V_k^n \to \mathrm{Gr}_k^n, \; (v_1,\ldots,v_k) \mapsto \mathrm{span}(v_1,\ldots,v_k)
+        p \colon V_k^n \to \mathrm{Gr}_k^n, \; (v_1,\ldots,v_k) \mapsto \mathrm{span}(v_1,\ldots,v_k).
         \] 
-        Identifying a linear subspace $V \in \mathrm{Gr}_k^n$ with $\R^k$ yields an identification of the fiber $p^{-1}(V)$ with $O(k)$. Moreover the identifications $V \cong \R^k$ can be chosen consistently in a small neighbourhood around $V$, providing local trivialisations for $p$. The transition of two such trivialisations is realized by actions of $O(k)$, hence $p$ defines an $O(k)$-principal bundle.
-        Now the canonical inclusion $\R^n \to \R^{n+1}$ induces inclusions $V_k^n \to V_k^{n+1}$ and $\mathrm{Gr}_k^n \to \mathrm{Gr}_k^{n+1}$. Consider the colimits over these inclusions 
+        Identifying a linear subspace $V \in \mathrm{Gr}_k^n$ with $\R^k$ yields an identification of the fiber $p^{-1}(V)$ with $O(k)$. Moreover, the identifications $V \cong \R^k$ can be chosen consistently in a small neighbourhood around $V$, providing local trivialisations for $p$. The transition function of two such trivialisations takes values in $O(k)$, hence $p$ defines an $O(k)$-principal bundle.
+        The canonical inclusion $\R^n \to \R^{n+1}$ induces inclusions $V_k^n \to V_k^{n+1}$ and $\mathrm{Gr}_k^n \to \mathrm{Gr}_k^{n+1}$. Consider the colimits over these inclusions 
         \[
         V_k^\infty := \operatorname*{colim}_n\,(V_k^n), \quad \mathrm{Gr}_k^\infty := \operatorname*{colim}_n\,(\mathrm{Gr}_k^n)
         \] 
@@ -310,7 +311,7 @@ Again let us discuss a few examples.
         \[
         V_k^n \to S^{n-1}, \; (v_1, \ldots, v_k) \mapsto v_1.
         \]
-        Similiar arguments as above shows that this map is locally trivial with fiber $V_{k-1}^{n-1}$. Hence we can consider the long exact sequence of homotopy groups 
+        Similar arguments as above show that this map is locally trivial with fiber $V_{k-1}^{n-1}$. Hence we can consider the long exact sequence of homotopy groups 
         \[\begin{tikzcd}[column sep=scriptsize]
         {\pi_{i+1}(S^{n-1})} & {\pi_i(V_{k-1}^{n-1})} & {\pi_i(V_n^k)} & {\pi_i(S^{n-1})}
         \arrow[from=1-1, to=1-2]
@@ -321,15 +322,15 @@ Again let us discuss a few examples.
         \[
         \pi_i(V_k^n) \cong \pi_i(V_1^{n-(k-1)}) = \pi_i(S^{n-k+1}) = 0
         \] 
-        for $i \leq n-k-1$. Now from compactness of $S^i$ and the fact that $V_k^n$ is closed in $V_k^{n+1}$ we conclude that the image of any map $S^i \to V_k^\infty$ is contained in some finite stage $V_k^n$. Therefore $\pi_i(V_k^\infty) = 0$ for all $i \geq 0$, such that the universal $O(k)$-principal bundle is explicitly given by $V_k^\infty \to \mathrm{Gr}_k^\infty$.
+        for $i \leq n-k-1$. Now from compactness of $S^i$ and the fact that $V_k^n$ is closed in $V_k^{n+1}$, we conclude that the image of any map $S^i \to V_k^\infty$ is contained in some finite stage $V_k^n$. Therefore $\pi_i(V_k^\infty) = 0$ for all $i \geq 0$, such that the universal $O(k)$-principal bundle is explicitly given by $V_k^\infty \to \mathrm{Gr}_k^\infty$.
 
-        Similiarly we get an explicit description of the universal $SO(k)$-prinicpal bundle. Let $\tilde{\mathrm{Gr}}_k^n$ be the set of tuples consisting of a $k$-dimensional linear subspace of $\R^n$ together with a chosen orientation. The topology on $\tilde{\mathrm{Gr}}_k^n$ is induced by 
+        Similarly we get an explicit description of the universal $SO(k)$-principal bundle. Let $\tilde{\mathrm{Gr}}_k^n$ be the set of tuples consisting of a $k$-dimensional linear subspace of $\R^n$ together with a chosen orientation. The topology on $\tilde{\mathrm{Gr}}_k^n$ is induced by 
         \[
         p \colon V_k^n \to \tilde{\mathrm{Gr}}_k^n, \; (v_1,\ldots,v_k) \mapsto (\mathrm{span}(v_1,\ldots,v_k), \mathrm{o}_{(v_1,\ldots,v_k)}),
         \] 
-        where $\mathrm{o}_{(v_1,\ldots,v_k)}$ is the unique orientation on $\mathrm{span}(v_1,\ldots,v_k)$, such that $(v_1,\ldots,v_k)$ is positively oriented. Similiar to above we see that $p$ defines an $SO(k)$-principal bundle. Taking the colimit, we obtain the universal $SO(k)$-principal bundle $V_k^\infty \to \tilde{\mathrm{Gr}}_k^\infty$.
+        where $\mathrm{o}_{(v_1,\ldots,v_k)}$ is the unique orientation on $\mathrm{span}(v_1,\ldots,v_k)$, such that $(v_1,\ldots,v_k)$ is positively oriented. Arguments analogous to the above show that $p$ defines an $SO(k)$-principal bundle. Taking the colimit, we obtain the universal $SO(k)$-principal bundle $V_k^\infty \to \tilde{\mathrm{Gr}}_k^\infty$.
 
-        \item \label{bundles:ex:examples_for_classifiying_spaces_universal_vector_bundle} Any real $k$-dimensional vector bundle $E \to X$ can be considered as a fiber bundle with fiber $\R^k$ and structure group $O(k)$. So Corollary \ref{bundles:cor:universal_fiber_bundles} and the example above show that every such $E$ is the pullback of the universal real $k$-dimensional vector bundle $V_k^\infty \times_{O(k)} \R^k$ under some map $X \to \mathrm{Gr}_k^\infty$. We show that this universal vector bundle also has a more explicit description, namely as the tautological bundle $\gamma_k \to \mathrm{Gr}_k^\infty$. Recall that this bundle is defined as 
+        \item \label{bundles:ex:examples_for_classifiying_spaces_universal_vector_bundle} Any real $k$-dimensional vector bundle $E \to X$ can be considered as a fiber bundle with fiber $\R^k$ and structure group $O(k)$. So Corollary \ref{bundles:cor:universal_fiber_bundles} and the preceding example show that every such $E$ is the pullback of the universal real $k$-dimensional vector bundle $V_k^\infty \times_{O(k)} \R^k$ under some map $X \to \mathrm{Gr}_k^\infty$. We show that this universal vector bundle also has a more explicit description, namely as the tautological bundle $\gamma_k \to \mathrm{Gr}_k^\infty$. Recall that this bundle is defined as 
         \[
         \gamma_k := \{(X,v) \in \mathrm{Gr}_k^\infty \times \R^\infty \mid v \in X\}
         \] 
@@ -339,7 +340,7 @@ Again let us discuss a few examples.
         \]
         descends to the quotient, defining a vector bundle map $V_k^\infty \times_{O(k)} \R^k \to \gamma_k$. This map is clearly a linear isomorphism on fibers, hence an isomorphism of vector bundles. 
 
-        Similiarly, oriented real $k$-dimensional vector bundles are classified by maps to $\tilde{\mathrm{Gr}}_k^\infty$. We claim that the universal oriented real $k$-dimensional vector bundle is given by the tautological bundle $\gamma_k^{SO} \to \tilde{\mathrm{Gr}}_k^\infty$ defined by 
+        Similarly, oriented real $k$-dimensional vector bundles are classified by maps to $\tilde{\mathrm{Gr}}_k^\infty$. We claim that the universal oriented real $k$-dimensional vector bundle is given by the tautological bundle $\gamma_k^{SO} \to \tilde{\mathrm{Gr}}_k^\infty$ defined by 
         \[
         \gamma_k^{SO} := \{(X,\mathrm{o}_X,v) \in \tilde{\mathrm{Gr}}_k^\infty \times \R^k \mid v \in X\}
         \]
@@ -347,16 +348,9 @@ Again let us discuss a few examples.
         \[
         V_k^\infty \times \R^k \to \gamma_k^{SO}, \;\; (A,v) \mapsto (\mathrm{im}(A), \mathrm{o}_A, Av),
         \]
-        where $\mathrm{o}_A$ is the unique orientation on $\mathrm{im}(A)$, such that $A \colon \R^k \to \mathrm{im}(A)$ is orientation preserving. Again this map descends to the quotient defining an isomorphism $V_k^\infty \times_{SO(k)} \R^k \to \gamma_k^{SO}$.
-
-
-
-         
-        
-        
-        % $BO(n)$ and $EO(n)$ explicit via Stiefel Manifolds (compare n lab) + $EO(n) \times_{O(n)} \R^n \cong \gamma_n$ for $\gamma_n$ tautological bundle over grassmanain + orientable vector bundles classfied by BSO(n) (universal vector bundle over this denoted by $\gamma_n^{\so}$)
-        \item \label{bundles:ex:examples_for_classifiying_spaces_universal_complex_vector_bundle}Completely analogous to the real case we can also define the complex Stiefel manifolds $V_k^\infty(\C)$ and complex Grassmanians $\mathrm{Gr}_k^\infty(\C)$ and show that the universal $U(k)$-prinicpal bundle is given by $V_k^\infty(\C) \to \mathrm{Gr}_k^\infty(\C)$. The universal complex $k$-dimensional vector bundle is the tautological bundle $\tau_k \to \mathrm{Gr}_k^\infty(\C)$. 
-        \item \label{bundles:es:examples_for_classifying_spaces_special_case}As special cases of the preceeding examples we obtain
+        where $\mathrm{o}_A$ is the unique orientation on $\mathrm{im}(A)$, such that $A \colon \R^k \to \mathrm{im}(A)$ is orientation preserving. Again this map descends to the quotient, defining an isomorphism $V_k^\infty \times_{SO(k)} \R^k \to \gamma_k^{SO}$.
+        \item \label{bundles:ex:examples_for_classifiying_spaces_universal_complex_vector_bundle}Completely analogous to the real case, we can also define the complex Stiefel manifolds $V_k^\infty(\C)$ and complex Grassmannians $\mathrm{Gr}_k^\infty(\C)$ and show that the universal $U(k)$-principal bundle is given by $V_k^\infty(\C) \to \mathrm{Gr}_k^\infty(\C)$. The universal complex $k$-dimensional vector bundle is the tautological bundle $\tau_k \to \mathrm{Gr}_k^\infty(\C)$. 
+        \item \label{bundles:es:examples_for_classifying_spaces_special_case}From the special cases $k=1$ of the preceding examples we obtain
         \[
         B\Z_2 \cong \RP^\infty, \quad BS^1 \cong \CP^\infty. 
         \]
@@ -367,55 +361,55 @@ Again let us discuss a few examples.
 
 \section{Stiefel-Whitney and Chern-Classes}
 
-In the preceding chapter we discussed the question of how bundles can be classified. Another fundamental question is, of course, how to determine whether two given bundles are isomorphic. As usual in topology, a partial solution to this problem is provided by defining computable invariants. For vector bundles the most important invariants are so-called \textit{characteristic classes}. The general definition of a characteristic class is as follows. Let $\K = \R, \C$ and write $\mathrm{Vect}_\K(B)$ for the set of isomorphism classes of $\K$-vector bundles over a space $B$. Then $\mathrm{Vect}_\K(-)$ defines a contravariant functor $\mathsf{Top} \to \mathsf{Set}$. A characteristic class $c$ for $\K$-vector bundles with values in a cohomology theory $H^\ast$ is a natural transformation from the functor $\mathrm{Vect}_\K(-)$ to the functor $H^\ast$, regarded as a functor with values in $\mathsf{Set}$. In more concrete terms, $c$ assigns to each $\K$-vector bundle $E \to B$ a cohomology class $c(E) \in H^\ast(B)$, depending only on the isomorphism class of $E$, such that for any continuous map $f \colon B' \to B$ the following naturality condition holds:
+Again we assume all base spaces to be CW-complexes in this section. In the preceding chapter we discussed the question of how bundles can be classified. Another fundamental question is, of course, how to determine whether two given bundles are isomorphic. As usual in topology, a partial solution to this problem is provided by constructing computable invariants. For vector bundles the most important invariants are so-called \textit{characteristic classes}. The general definition of a characteristic class is as follows. Let $\K = \R, \C$ and write $\mathrm{Vect}_\K(X)$ for the set of isomorphism classes of $\K$-vector bundles over a space $X$. Together with the pullback operation, $\mathrm{Vect}_\K(-)$ defines a contravariant functor $\mathsf{CW} \to \mathsf{Set}$. A characteristic class $c$ for $\K$-vector bundles with values in a cohomology theory $H^\ast$ is a natural transformation from the functor $\mathrm{Vect}_\K(-)$ to the functor $H^\ast$, regarded as a functor with values in $\mathsf{Set}$. In more concrete terms, $c$ assigns to each $\K$-vector bundle $E \to X$ a cohomology class $c(E) \in H^\ast(X)$, depending only on the isomorphism class of $E$, such that for any continuous map $f \colon X' \to X$ the following naturality condition holds:
 \[
 c(f^\ast E) = f^\ast c(E).
 \]
-Using the theory of classifying spaces developed above, it follows that for real (resp. complex) $k$-dimensional vector bundles, the characteristic class $c$ is uniquely determined by its value on the universal bundle $\gamma_k$ (resp. $\tau_k$) discussed in Example~\ref{bundles:ex:examples_for_classifiying_spaces}~\ref{bundles:ex:examples_for_classifiying_spaces_universal_vector_bundle} (resp.~\ref{bundles:ex:examples_for_classifiying_spaces_universal_complex_vector_bundle6}).
+Using the theory of classifying spaces developed above, it follows that for real (resp. complex) $k$-dimensional vector bundles, any characteristic class $c$ is uniquely determined by its value on the universal bundle $\gamma_k$ (resp. $\tau_k$) discussed in Example~\ref{bundles:ex:examples_for_classifiying_spaces}~\ref{bundles:ex:examples_for_classifiying_spaces_universal_vector_bundle} (resp.~\ref{bundles:ex:examples_for_classifiying_spaces_universal_complex_vector_bundle6}).
 
-For real vector bundles the most important characteristic classes are the \textit{Stiefel-Whitney classes} and for complex vector bundles the \textit{Chern classes}. Both are characterized by a few axioms.
+For real vector bundles, the most important characteristic classes are the \textit{Stiefel-Whitney classes}, and for complex vector bundles, the \textit{Chern classes}. Both are characterized by a few axioms.
 
-\begin{definition}[Stiefel-Whitney Classes, HATCHER]
+\begin{definition}[Stiefel-Whitney Classes]
     \label{bundles:def:Steifel_Whitney_Classes}
     There is a unique sequence of characteristic classes $w_1, w_2, \ldots$ for real vector bundles with values in $H^\ast(-;\Z_2)$, such that 
     \begin{enumerate}[label=(\roman*)]
-        \item $w_i(E) \in H^i(B;\Z_2)$ for any real bundle $E \to B$,
+        \item $w_i(E) \in H^i(X;\Z_2)$ for any real vector bundle $E \to X$,
         \item \label{bundles:eq:prop2_for_stiefel_whitney_classes} $w_i(E) = 0$ for $i > \mathrm{rank}(E)$,
         \item \label{bundles:eq:prop3_for_stiefel_whitney_classes} $w(E_1 \oplus E_2) = w(E_1) \smile w(E_2)$, where $w = 1 + w_1 + w_2 + \ldots$,
         \item \label{bundles:eq:prop4_for_stiefel_whitney_classes} For the universal real line bundle $\gamma_1 \to \RP^\infty$, $w_1(\gamma_1)$ is the generator of $H^1(\RP^\infty;\Z_2) \cong \Z_2$.
     \end{enumerate}
 \end{definition}
 
-Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes} the sum $w = 1 + w_1 + w_2 + \ldots$ is always finite. The class $w(E)$ is called the \textit{total Stiefel-Whitney class of $E$}. We sometimes write $w_0(E) := 1 \in H^0(B;\Z_2)$ to simplify notation.
+Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes}, the sum $w = 1 + w_1 + w_2 + \ldots$ is always finite. The class $w(E)$ is called the \textit{total Stiefel-Whitney class of $E$}. We sometimes write $w_0(E) := 1 \in H^0(X;\Z_2)$ to simplify notation.
 
-\begin{definition}[Chern Classes, HATCHER]
+\begin{definition}[Chern Classes]
     There is a unique sequence of characteristic classes $c_1, c_2, \ldots$ for complex vector bundles with values in $H^\ast(-;\Z)$, such that 
     \begin{enumerate}[label=(\roman*)]
-        \item $c_i(E) \in H^{2i}(B;\Z)$ for any complex bundle $E \to B$,
+        \item $c_i(E) \in H^{2i}(X;\Z)$ for any complex vector bundle $E \to X$,
         \item $c_i(E) = 0$ for $i > \mathrm{rank}(E)$,
         \item $c(E_1 \oplus E_2) = c(E_1) \smile c(E_2)$, where $c = 1 + c_1 + c_2 + \ldots$,
         \item For the universal complex line bundle $\tau_1 \to \CP^\infty$, $c_1(\tau_1)$ is a generator of $H^2(\CP^\infty;\Z) \cong \Z$ specified in advance.
     \end{enumerate}
 \end{definition}
 
-Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write $c_0(E) := 1 \in H^0(B;\Z)$. Note that in both definitions, property \ref{bundles:eq:prop4_for_stiefel_whitney_classes} uniquely determines the values of the respective characteristic classes on line bundles and, together with property \ref{bundles:eq:prop3_for_stiefel_whitney_classes}, prescribes their values on bundles that split as sums of line bundles. The values on arbitrary bundles can then be deduced from a general splitting principle [??]. We refer the reader to [HATCHER] for a detailed proof of existence and uniqueness.
+Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write $c_0(E) := 1 \in H^0(X;\Z)$. Note that in both definitions, property \ref{bundles:eq:prop4_for_stiefel_whitney_classes} uniquely determines the values of the respective characteristic classes on line bundles and, together with property \ref{bundles:eq:prop3_for_stiefel_whitney_classes}, prescribes their values on bundles that split as sums of line bundles. The values on arbitrary vector bundles can then be deduced from a general splitting principle \cite[Proposition 3.3]{Hatcher2003VectorBundles}. We refer the reader to \cite{Hatcher2003VectorBundles} for a detailed proof of existence and uniqueness.
 
-Not only are the definitions of Stiefel-Whitney and Chern classes formally quite similiar, but there is also a direct connection between the two.
+Not only are the definitions of Stiefel-Whitney and Chern classes formally quite similar, but there is also a direct connection between the two.
 
-\begin{proposition}[Hatcher Proposition 3.8]
+\begin{proposition}[{\cite[Proposition 3.8]{Hatcher2003VectorBundles}}]
     \label{bundles:prop:connection_chern_stiefel_whitney_classes}
-    Regarding a complex rank $n$ vector bundle $E \to B$ as a real rank $2n$ vector bundle, $w_{2i +1}(E) = 0$ and $w_{2i}(E)$ is the image of $c_i(E)$ under the coefficient homomorphism $H^{2i}(B;\Z) \to H^{2i}(B;\Z_2)$.  
+    Regarding a complex rank $n$ vector bundle $E \to X$ as a real rank $2n$ vector bundle, $w_{2i +1}(E) = 0$ and $w_{2i}(E)$ is the image of $c_i(E)$ under the coefficient homomorphism $H^{2i}(X;\Z) \to H^{2i}(X;\Z_2)$.  
 \end{proposition}
 
-Let us consider some examples.
+Let us look at a few examples.
 
 \begin{example}
     \label{bundles:ex:characteristic_classes}
     \begin{enumerate}[label=(\roman*)]
         \item[]
-        \item Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1$ is isomorphic to the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^1(\RP^n;\Z_2) \cong \Z_2$. Similiarly, $c_1(\tau_1^n)$ of the tautological complex line bundle $\tau_1^n \to \CP^n$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
-        \item Let $\epsilon \to B$ be a trivial real bundle over some space $B$. Then $\epsilon \cong f^\ast \epsilon$ for a constant map $f \colon B \to B$ and thus $w_i(\epsilon_n) = f^\ast w_i(\epsilon) = 0$ for all $i \geq 1$. Similiarly all Chern classes for complex trivial bundles vanish.
-        \item \label{bundles:ex:characteristic_classes_part3} Let $TS^n \to S^n$ be the tangent bundle of the sphere and let $\nu_n \to S^n$ be the normal bundle with respect to the standard embedding $S^n \to \R^{n+1}$. Since $\nu_n$ and $TS^n \oplus \nu_n$ are trivial we conclude from the example above and property \ref{bundles:eq:prop3_for_stiefel_whitney_classes} in Definition \ref{bundles:def:Steifel_Whitney_Classes} that 
+        \item Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1$ is isomorphic to the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology, we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^1(\RP^n;\Z_2) \cong \Z_2$. Similarly, for the tautological complex line bundle $\tau_1^n \to \CP^n$, the class $c_1(\tau_1^n)$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
+        \item Let $E \to X$ be a trivial real vector bundle. Then $E \cong f^\ast E$ for a constant map $f \colon X \to X$, and thus $w_i(E) = f^\ast w_i(E) = 0$ for all $i \geq 1$. Similarly, all Chern classes for complex trivial vector bundles vanish.
+        \item \label{bundles:ex:characteristic_classes_part3} Let $TS^n \to S^n$ be the tangent bundle of the sphere and let $\nu_n \to S^n$ be the normal bundle with respect to the standard embedding $S^n \to \R^{n+1}$. Since $\nu_n$ and $TS^n \oplus \nu_n$ are trivial, we conclude from the previous example and property \ref{bundles:eq:prop3_for_stiefel_whitney_classes} in Definition \ref{bundles:def:Steifel_Whitney_Classes} that 
         \[
         1 = w(TS^n \oplus \nu_n) = w(TS^n) \smile w(\nu_n) = w(TS^n) \smile 1 = w(TS^n).
         \]
@@ -423,33 +417,32 @@ Let us consider some examples.
     \end{enumerate}
 \end{example}
 
-In the last example we saw that although all Stiefel-Whitney classes of a bundle vanish, it need not be trivial. However for one-dimensional real (resp. complex) bundles it turns out that the first Stiefel-Whitney (resp. Chern) class already completely determines the bundle:
+The last example shows that although all Stiefel-Whitney classes of a vector bundle vanish, it need not be trivial. However, for real (resp. complex) vector bundles of rank $1$, it turns out that the first Stiefel-Whitney (resp. Chern) class already determines the bundle:
 
-\begin{theorem}[Hathcer, Proposition 3.10]
+\begin{proposition}[{\cite[Proposition 3.10]{Hatcher2003VectorBundles}}]
     \label{bundles:thm:line_bundles_determined_by_chern_class}
-    Let $X$ be a CW-complex. Then the maps 
+    The maps 
     $$w_1 \colon \mathrm{Vect}_\R(X) \to H^1(X;\Z_2)$$ 
     and 
     $$c_1 \colon \mathrm{Vect}_\C(X) \to H^2(X;\Z)$$ 
     are bijections. 
-\end{theorem}
-
-% This allows us to define line bundles by only prescribing their first Stiefel-Whitney class (resp. Chern class), which is often technically easier thank directly writing down this bundle. 
-While the first Stiefel-Whitney class of higher dimensional bundles does not identify their isomorphism type it does characterize another important invariant, namely orientability:
-
-\begin{proposition}[Hatcher, Prop 3.11]
-    \label{bundles:prop:orientable_iff_w1_vanishes}
-    Let $X$ be a CW-complex. A real vector bundle $E \to X$ is orientable if and only if $w_1(E) = 0$.
 \end{proposition}
 
-Similiarly vanishing of the second Stiefel Whitney class corresponds to the existence of another structure, namely that of a \textit{spin structure}. 
+While the first Stiefel-Whitney class of higher dimensional bundles does not identify their isomorphism type, it does characterize another important invariant, namely orientability:
+
+\begin{proposition}[{\cite[Proposition 3.11]{Hatcher2003VectorBundles}}]
+    \label{bundles:prop:orientable_iff_w1_vanishes}
+    A real vector bundle $E \to X$ is orientable if and only if $w_1(E) = 0$.
+\end{proposition}
+
+Similarly, vanishing of the second Stiefel-Whitney class corresponds to the existence of another structure, namely that of a \textit{spin structure}. 
 
 \begin{definition}
     \begin{enumerate}[label=(\roman*)]
-        \item For $n \geq 2$ the \textit{spin group} $\mathrm{Spin}(n)$ is defined as the total space of the non-trivial two-sheeted cover $\rho \colon \mathrm{Spin}(n) \to \mathrm{SO}(n)$. If $n \geq 3$ this is the universal cover and in the case $n=2$ we have $\spin(2) \cong \so(2)$. For $n=1$ we define $\spin(1) := \Z_2$, the total space of the two-sheeted cover $\rho \colon \Z_2 \to \so(1)$.
-        \item Let $E \to B$ be an oriented real vector bundle equipped with a fiber metric and let $P_{\mathrm{SO}(n)}$ be its oriented orthonormal frame bundle. A \textit{spin structure} on $E$ is a $\mathrm{Spin}(n)$-principal bundle $P_{\mathrm{Spin}(n)}$ together with a map 
+        \item For $n \geq 2$ the \textit{spin group} $\spin(n)$ is defined as the total space of the non-trivial two-sheeted cover $\rho \colon \spin(n) \to \so(n)$. If $n \geq 3$, this is the universal cover, and in the case $n=2$ we have $\spin(2) \cong \so(2)$. For $n=1$ we define $\spin(1) := \Z_2$, the total space of the two-sheeted cover $\rho \colon \Z_2 \to \so(1)$.
+        \item Let $E \to X$ be an oriented real vector bundle equipped with a fiber metric and let $\so(E)$ be its oriented orthonormal frame bundle. A \textit{spin structure} on $E$ is a $\spin(n)$-principal bundle $\spin(E) \to X$ together with a map 
         \[
-        \phi \colon P_{\mathrm{Spin}(n)} \to P_{\mathrm{SO}(n)}
+        \phi \colon \spin(E) \to \so(E)
         \]
         of principal bundles, which is $\rho$-equivariant (compare Definition \ref{bundles:def:principal_bundles_morphism}).
         \item An orientable manifold $M$ is called \textit{spin} if its tangent bundle $TM$ admits a spin structure and is called \textit{totally non-spin} if the universal cover of $M$ is not spin.
@@ -457,42 +450,46 @@ Similiarly vanishing of the second Stiefel Whitney class corresponds to the exis
 \end{definition}
 
 \begin{remark}
-    When $n=1$, $P_{\so(1)} \cong X$ and a spin structure is simply a two-sheeted cover of $X$.
+    When $n=1$, $\mathrm{SO}(E) \cong X$ and a spin structure is simply a two-sheeted cover of $X$.
 \end{remark}
-Note that the existence of a spin structure does not depend on the chose orientation or fiber metric on $E$, since different choices yield isomorphic oriented orthonormal frame bundles. In fact the only obstruction to the existence of a spin structure is the second Stiefel-Whitney class, as mentioned above.
+Note that the existence of a spin structure does not depend on the chosen orientation or fiber metric on $E$, since different choices yield isomorphic oriented orthonormal frame bundles. In fact, the only obstruction to the existence of a spin structure is the second Stiefel-Whitney class, as mentioned above:
 
-\begin{theorem}[Lawson,Micheaslon] %in der quelle steht es glaub ich nur für X eine maniigfaltigkeit, suche noch andere quelle
+\begin{theorem}[{\cite[Chapter 2, Theorem 1.7]{LawsonMichelsohn1989SpinGeometry}}]
     \label{bundles:thm:spin_iff_w2_vanishes}
-    Let $X$ be a CW-complex. An orientable real vector bundle $E \to X$ admits a spin structure if and only if $w_2(E) = 0$. 
+    An orientable real vector bundle $E \to X$ admits a spin structure if and only if $w_2(E) = 0$. 
 \end{theorem}
 
 \begin{example}
     \begin{enumerate}[label=(\roman*)]
-        \item All spheres $S^n$, $n\geq 1$ are spin by Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3}.
-        \item \label{bundles:ex:cp2_not_spin} The standard example for non-spin manifolds are all even dimensional complex projective spaces $\CP^{2k}$, see [MilnorStasheff??].
+        \item It follows from the above theorem and Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3} that all spheres $S^n$, $n\geq 1$, are spin.
+        \item \label{bundles:ex:cp2_not_spin} The total Chern class of the tangent bundle $T\CP^n$ of $\CP^n$ can be computed to be 
+        \[
+        c(T\CP^n) = (1 + \alpha)^{n+1}
+        \]
+        for a suitably chosen generator $\alpha \in H^2(\CP^n;\Z)$; see \cite[Theorem 14.10]{MilnorStasheff1974}. In particular, $c_1(T\CP^n) = (n+1) \alpha$. From Proposition \ref{bundles:prop:connection_chern_stiefel_whitney_classes} we see that $w_2(T\CP^n) = 0$ if and only if $n$ is odd. Therefore, $\CP^n$ is spin if and only if $n$ is odd.
     \end{enumerate}
 \end{example}
 
 \begin{remark}
     \label{bundles:rem:classifying_map_for_spin_bundles}
-    Let $E \to X$ be a real vector bundle over a CW-complex. If $E$ is orientable, we have seen that this bundle is classified by a map $X \to B\mathrm{SO}(n)$. Similiarly, if a spin structure exists, $E$ is classified by a map $X \to B\mathrm{Spin}(n)$, which can be seen as follows. Let $\phi \colon P_{\mathrm{Spin}(n)} \to P_{\mathrm{SO}(n)}$ be a spin structure on $E$ and let $f \colon X \to B\mathrm{Spin}(n)$ be a classifiying map for $P_{\mathrm{Spin}(n)}$. Define a vector bundle 
+    Let $E \to X$ be a real vector bundle. If $E$ is orientable, we have seen that this bundle is classified by a map $X \to B\mathrm{SO}(n)$. Similarly, if a spin structure exists, $E$ is classified by a map $X \to B\mathrm{Spin}(n)$, which can be seen as follows. Define a vector bundle 
     \[
-    \gamma_n^\spin := E\mathrm{Spin}(n) \times_{\mathrm{Spin}(n)} \R^n
+    \gamma_n^\spin := E\spin(n) \times_{\spin(n)} \R^n
     \]
-    using Lemma \ref{bundles:lem:borel_construction}, where $\mathrm{Spin}(n)$ acts on $\R^n$ by virtue of the covering map $\rho \colon \mathrm{Spin}(n) \to \mathrm{SO}(n)$ and the canonical action of $\so(n)$. From Lemma \ref{bundles:lem:natruality_of_changing_fiber} we obtain
+    using Lemma \ref{bundles:lem:borel_construction}, where $\spin(n)$ acts on $\R^n$ by virtue of the covering map $\rho \colon \spin(n) \to \so(n)$ and the canonical action of $\so(n)$. Let $\phi \colon \spin(E) \to \so(E)$ be a spin structure on $E$ and let $f \colon X \to B\mathrm{Spin}(n)$ be a classifying map for $\spin(E)$. From Lemma \ref{bundles:lem:natruality_of_changing_fiber} we obtain
     \[
-    f^\ast \gamma_n^\spin \cong P_{\spin(n)} \times_{\spin(n)} \R^n.
+    f^\ast \gamma_n^\spin \cong \spin(E) \times_{\spin(n)} \R^n.
     \]
-    Moreover, the spin structure $\phi$ induces an isomorphism $P_{\spin(n)} \times_{\spin(n)} \R^n \to P_{\so(n)} \times_{\so(n)} \R^n \cong E$ of vector bundles by
+    Moreover, the spin structure $\phi$ induces an isomorphism $\spin(E) \times_{\spin(n)} \R^n \to \so(E) \times_{\so(n)} \R^n \cong E$ of vector bundles by
     \[
     [(x,v)] \mapsto [(\phi(x),v)].
     \]
-    This map is clearly a linear bijection on fibers, hence an isomorphism of vector bundles. 
+    Since this map restricts to a linear bijection on each fiber, it is an isomorphism of vector bundles. 
 \end{remark}
 
-Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ restricted to any embedded loop $S^1 \subseteq M$ is trivial. Or in other words ``$TM$ does not contain any Moebius Bands''. A similiar characterization can be given for spin manifolds, which is why the property of being spin is sometimes referred to as a higher dimensional analogue of orientability.
+Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ restricted to any embedded loop $S^1 \subseteq M$ is trivial. Or, in other words, ``$TM$ does not contain any Moebius bands''. A similar characterization can be given for spin manifolds, which is why the property of being spin is sometimes referred to as a higher dimensional analogue of orientability.
 
-\begin{proposition}[Georg Paper, Proposition 2.6]
+\begin{proposition}
     \label{bundles:prop:spin_characterisation}
     Let $M$ be a connected oriented manifold of dimension at least $5$.
     \begin{enumerate}[label=(\roman*)]
@@ -502,28 +499,32 @@ Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ 
 \end{proposition}
 
 \begin{proof}
-    Since we will not be making use of the first characterization, we shall only proof part \ref{bundles:eq:characterization_totally_non_spin} of the proposition and refer the reader to [Georg Paper] for a proof of part \ref{bundles:eq:characterization_spin}. Let $\tilde{M}$ be the universal cover of $M$. Since $T\tilde{M}$ does not admit a spin structure we conclude from Theorem \ref{bundles:thm:spin_iff_w2_vanishes} that $w_2(T\tilde{M}) \neq 0$. So by the universal coefficient theorem there exists a homology class $a \in H_2(\tilde{M};\Z_2)$ with 
+    Since we will not be making use of the first characterization, we shall only prove part \ref{bundles:eq:characterization_totally_non_spin} of the proposition and refer the reader to \cite[Proposition 2.6]{Frenck2026Doubling} for a proof of part \ref{bundles:eq:characterization_spin}. The proof closely follows \cite{Frenck2026Doubling}. Let $\tilde{M}$ be the universal cover of $M$. Suppose that $T\tilde{M}$ does not admit a spin structure. Then we conclude from Theorem \ref{bundles:thm:spin_iff_w2_vanishes} that $w_2(T\tilde{M}) \neq 0$. So, by the universal coefficient theorem, there exists a homology class $a \in H_2(\tilde{M};\Z_2)$ with 
     \[
     \langle w_2(T\tilde{M}), a\rangle \neq 0.
     \]
-    Once more applying the universal coefficient theorem as well as the Hurewicz theorem we obtain an isomorphism
+    Once more applying the universal coefficient theorem as well as the Hurewicz theorem, we obtain an isomorphism
     \[
     \pi_2(\tilde{M}) \otimes \Z_2 \to H_2(\tilde{M};\Z) \otimes \Z_2 \cong H_2(\tilde{M};\Z_2). 
     \]
-    Explicitly, for some class $\alpha \in \pi_2(\tilde{M})$ represented by a map $f \colon S^2 \to \tilde{M}$ the above isomorphism maps $\alpha \otimes 1$ to $f_\ast [S^2]_{\Z_2}$, where $[S^2]_{\Z_2}$ is the $\Z_2$-fundamental class of $S^2$. Therefore we can write $a = f_\ast [S^2]_{\Z_2}$ for some $f \colon S^2 \to \tilde{M}$. Let $p \colon \tilde{M} \to M$ be the projection and define $\iota := p \circ f \colon S^2 \to M$. Since $\mathrm{dim}(M) \geq 5$ we may assume $\iota$ to be an embedding. We compute 
+    Explicitly, for some class $\alpha \in \pi_2(\tilde{M})$ represented by a map $f \colon S^2 \to \tilde{M}$, the above isomorphism maps $\alpha \otimes 1$ to $f_\ast [S^2]_{\Z_2}$, where $[S^2]_{\Z_2}$ is the $\Z_2$-fundamental class of $S^2$. Therefore we can write $a = f_\ast [S^2]_{\Z_2}$ for some $f \colon S^2 \to \tilde{M}$. Let $p \colon \tilde{M} \to M$ be the projection and define $\iota := p \circ f \colon S^2 \to M$. Since $\mathrm{dim}(M) \geq 5$, we may assume $\iota$ to be an embedding. We compute 
     \[
     \langle w_2(\iota^\ast TM), [S^2]_{\Z_2}\rangle = \langle f^\ast w_2(p^\ast TM), [S^2]_{\Z_2}\rangle = \langle w_2(T\tilde{M}), f_\ast [S^2]_{\Z_2}\rangle = \langle w_2(T\tilde{M}), a \rangle \neq 0,
     \]
-    where we used $p^\ast TM \cong T \tilde{M}$ and naturality of the Kronecker pairing in the second equation. Therefore $w_2(\iota^\ast TM) \neq 0$.
+    where we used $p^\ast TM \cong T \tilde{M}$ and naturality of the Kronecker pairing in the second equation. Therefore $w_2(\iota^\ast TM) \neq 0$. Conversely, if there exists some embedding $\iota \colon S^2 \to M$ with $w_2(\iota^\ast TM) \neq 0$, we can lift $\iota$ along $p$ to an embedding $\tilde{\iota} \colon S^2 \to \tilde{M}$. Again using $p^\ast TM \cong T\tilde{M}$ we obtain 
+    \[
+    w_2(\tilde{\iota}^\ast T\tilde{M}) = w_2(\iota^\ast TM) \neq 0.
+    \]
+    Therefore $w_2(T\tilde{M}) \neq 0$ by naturality of $w_2$.
 \end{proof}
 
-Finally we record another scenario in which the vanishing of all Stiefel-Whitney classes of a bundle is sufficient for triviality.
+Finally, we record another scenario in which the vanishing of all Stiefel-Whitney classes of a vector bundle is sufficient for triviality.
 
 \begin{lemma}
     \label{bundles:lem:criterion_for_triviality}
-    Let $E \to S$ be a real vector bundle of rank at least $3$ over a two dimensional CW-complex $S$. Then $E$ is trivial if and only if $w_1(E) = w_2(E) = 0$.
+    Let $E \to S$ be a real vector bundle of rank at least $3$ over a two-dimensional CW-complex $S$. Then $E$ is trivial if and only if $w_1(E) = w_2(E) = 0$.
 \end{lemma}
 
 \begin{proof}
-    Combining Theorem \ref{bundles:thm:spin_iff_w2_vanishes} and Remark \ref{bundles:rem:classifying_map_for_spin_bundles} we conclude that there exists a classifiying map $f \colon S \to B\spin(n)$ for $E$, where $n$ is the rank of $E$. From Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG} it follows that $\pi_k(B\spin(n)) = 0$ for $k \geq 2$. Since $S$ is two dimensional the map $f$ is homotopic to a constant ([Hatcher, Lemma 4.6]), therefore $E \cong f^\ast \xi_\spin$ is trivial.
+    Combining Theorem \ref{bundles:thm:spin_iff_w2_vanishes} and Remark \ref{bundles:rem:classifying_map_for_spin_bundles}, we conclude that there exists a classifying map $f \colon S \to B\spin(n)$ for $E$, where $n$ is the rank of $E$. From Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG} it follows that $\pi_k(B\spin(n)) = 0$ for $k \leq 2$. Since $S$ is two-dimensional, the map $f$ is homotopic to a constant by \cite[Lemma 4.6]{Hatcher2002AlgebraicTopology}, therefore $E \cong f^\ast \xi_\spin$ is trivial.
 \end{proof}

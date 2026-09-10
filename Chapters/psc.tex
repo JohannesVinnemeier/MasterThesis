@@ -1,11 +1,11 @@
 \chapter{Positive Scalar Curvature}
 \label{chapter:psc}
 
-The purpose of this chapter is twofold. The first section provides a brief introduction to scalar curvature, following \cite{walsh2017aspects} and \cite{carlotto2021survey}. In the second section, we prove two concrete existence results for metrics of positive scalar curvature, which will be used in the construction presented in \hyperref[chapter:main_construction]{Chapter 4}.
+The purpose of this chapter is twofold. The first section provides a brief introduction to positive scalar curvature, following \cite{walsh2017aspects} and \cite{carlotto2021survey}. In the second section, we prove two concrete existence results for metrics of positive scalar curvature, which will be used in the construction presented in \hyperref[chapter:main_construction]{Chapter 4}.
 
 \section{A Brief Introduction}
 
-Let $M^n$ be an $n$-dimensional manifold. Given any Riemannian metric $g$ on $M$, we can associate to it a smooth function $\scal_g \colon M \to \R$ called the \textit{scalar curvature} of $M$. In the case where $M$ is an embedded surface in $\R^3$, the scalar curvature equals twice the classical Gaussian curvature $K \colon M \to \R$. So in this case we can intuitively quantify the scalar curvature at a given point.
+Let $M^n$ be an $n$-dimensional manifold. Given any Riemannian metric $g$ on $M$, we can associate to it a smooth function $\scal_g \colon M \to \R$ called the \textit{scalar curvature} of $M$. In the case where $M$ is an embedded surface in $\R^3$, $\scal_g$ equals twice the classical Gaussian curvature $K \colon M \to \R$. So in this case, the scalar curvature has a clear geometric interpretation, illustrated below.
 
 \vspace{.2cm}
 \begin{figure}[ht]
@@ -16,48 +16,49 @@ Let $M^n$ be an $n$-dimensional manifold. Given any Riemannian metric $g$ on $M$
 \end{figure}
 \vspace{.1cm}
 
-In dimension $2$ the scalar curvature is the only intrinsic notion of curvature; however, in dimensions $n \geq 3$ there exists a whole hierarchy of different curvatures. The most prominent are sectional curvature, Ricci curvature and scalar curvature, where the sectional curvature is the strongest notion, determining the entire geometry of $M$. In this thesis we are concerned with the scalar curvature, which is the weakest of the three. In most textbooks on Riemannian geometry it is defined as twice the trace of the Riemannian curvature tensor. While this definition is best suited for explicit computations, it provides no further intuition on what scalar curvature is. Since we have no need for doing such explicit computations, we give a more geometric definition, which essentially extends our intuition in the $2$-dimensional case to arbitrary dimensions.
+In dimension $2$, scalar curvature is the only intrinsic notion of curvature. However, in dimensions $n \geq 3$, there exists a whole hierarchy of different curvatures, the most prominent of which are sectional curvature, Ricci curvature and scalar curvature. The sectional curvature is the strongest notion and determines the entire geometry of $M$. In this thesis, we are concerned with the scalar curvature, which is the weakest among the three. In most textbooks on Riemannian geometry, it is defined by taking twice the trace of the Riemannian curvature tensor. While this definition is best suited for explicit computations, it provides no further intuition on what scalar curvature is. Since we have no need for doing such explicit computations, we give a more geometric definition, which essentially extends our intuition in the $2$-dimensional case to arbitrary dimensions.
 
 \begin{definition}
-    Let $(M^n,g)$ be an $n$-dimensional Riemannian manifold. The scalar curvature $\scal_g(x) \in \R$ at the point $x\in M$ is defined as the value appearing in the third coefficient of the Taylor expansion
+    Let $(M^n,g)$ be an $n$-dimensional Riemannian manifold. The scalar curvature $\scal_g(x) \in \R$ at the point $x \in M$ is defined as the value appearing in the third coefficient of the Taylor expansion
     \begin{equation*}
     \frac{\mathrm{vol}(B_r(x))}{\mathrm{vol}(B_r^{\text{eucl.}}(0))} = 1 - \frac{\scal_g(x)}{6(n+2)}r^2 + \dots,
     \end{equation*}
-    where $\mathrm{vol}(B_r(x))$ denotes the volume of a geodesic ball in $M$ of radius $r$ centered at $x$ and $\mathrm{vol}(B_r^{\text{eucl.}}(0))$ denotes the volume of a ball of the same radius $r$ in standard Euclidean space $\R^n$.
+    where $\mathrm{vol}(B_r(x))$ denotes the volume of a geodesic ball in $M$ of radius $r$ centered at $x$, and $\mathrm{vol}(B_r^{\text{eucl.}}(0))$ denotes the volume of a ball of the same radius $r$ in standard Euclidean space $\R^n$.
 \end{definition}
 
-So, intuitively, $\scal_g(x) > 0$ means that the volume of balls in $M$ around $x$ of sufficiently small radius $r$ is smaller than the volume of the Euclidean ball of the same radius. Similarly, if $\scal_g(x) < 0$, the volume of the ball in $M$ is larger, and if $\scal_g(x) = 0$, the volumes are (asymptotically) identical. Note that this is in accordance with Figure \ref{fig:scalar_curvature}. 
+So, intuitively, $\scal_g(x) > 0$ means that the volume of a ball in $M$ around $x$ of sufficiently small radius $r$ is smaller than that of a Euclidean ball of the same radius. Similarly, if $\scal_g(x) < 0$, the volume of the ball in $M$ is larger, and if $\scal_g(x) = 0$, the volumes are (asymptotically) identical. Note that this is in accordance with Figure \ref{fig:scalar_curvature}. 
 
 \begin{example}
     \begin{enumerate}[label=(\roman*)]
         \label{psc:ex:scalar_curvature_examples}
         \item We immediately obtain from the definition that the scalar curvature of $\R^n$ with the usual Euclidean metric is zero.
-        \item \label{psc:ex:scalar_curvature_examples2} If $(M,g)$ is one-dimensional, the volume of a radius $r$ ball is simply $2r$. Therefore $\scal_g = 0$.
-        \item The scalar curvature of the unit sphere $S^n \subseteq \R^{n+1}$ can be computed to equal $n(n-1)$.
-        \item \label{psc:ex:scalar_curvature_examples4} Let $(M_1,g_1)$ and $(M_2,g_2)$ be Riemannian manifolds. Then for the scalar curvature of the product $(M_1 \times M_2, g_1 + g_2)$ equipped with the product metric $g_1 + g_2$ one obtains $\scal_{g_1 + g_2}(x_1,x_2) = \scal_{g_1}(x_1) + \scal_{g_2}(x_2)$ for $x_i \in M_i$. We refer the reader to any classical textbook on Riemannian geometry for a proof of these last two examples.
+        \item \label{psc:ex:scalar_curvature_examples2} If $(M,g)$ is one-dimensional, the volume of a geodesic ball of radius $r$ is simply $2r$. Therefore, $\scal_g = 0$.
+        \item \label{psc:ex:scalar_curvature_examples3} The scalar curvature of the unit sphere $S^n \subseteq \R^{n+1}$ can be computed to equal $n(n-1)$.
+        \item \label{psc:ex:scalar_curvature_examples4} Let $(M_1,g_1)$ and $(M_2,g_2)$ be Riemannian manifolds. Then, for the scalar curvature of the product $(M_1 \times M_2, g_1 + g_2)$ equipped with the product metric $g_1 + g_2$, one obtains $\scal_{g_1 + g_2}(x_1,x_2) = \scal_{g_1}(x_1) + \scal_{g_2}(x_2)$ for $x_i \in M_i$. We refer the reader to any classical textbook on Riemannian geometry for a proof of these last two examples.
     \end{enumerate}
 \end{example}
 
-Broadly speaking, the study of scalar curvature falls into two categories: \textit{Rigidity} results and \textit{flexibility} results. As the title of this chapter suggests, one is primarily concerned with results about \textit{positive} scalar curvature. The reason for this is the following theorem.
+Broadly speaking, the study of scalar curvature falls into two categories: \textit{rigidity} results and \textit{flexibility} results. As the title of this chapter suggests, one is primarily concerned with results about \textit{positive} scalar curvature. The reason for this is the following theorem. See, for example, \cite{stolz2014metrics}.
 
 \begin{theorem}
-    Let $M^n$ be a closed manifold of dimension $n \geq 3$ and let $f \colon M \to \R$ be a smooth function.
+    \label{psc:kazdan_warner}
+    Let $M^n$ be a closed connected manifold of dimension $n \geq 3$, and let $f \colon M \to \R$ be a smooth function.
     \begin{enumerate}[label=(\roman*)]
         \item \label{psc:thm:kazdan_warner_part1} If there exists a point $p \in M$ with $f(p) < 0$, then $M$ admits a metric $g$ with scalar curvature $\scal_g = f$.
-        \item \label{psc:thm:kazdan_warner_part2} If $M$ admits a metric whose scalar curvature is non-negative but not identically zero then $M$ admits another metric $g$ with scalar curvature $\scal_g = f$.
+        \item \label{psc:thm:kazdan_warner_part2} If $M$ admits a metric whose scalar curvature is non-negative but not identically zero, then $M$ admits another metric $g$ with scalar curvature $\scal_g = f$.
     \end{enumerate}
 \end{theorem}
 
-So part \ref{psc:thm:kazdan_warner_part1} of the theorem asserts that the only scalar curvature condition from which we can expect any kind of obstruction results is non-negativity. Moreover, aside from the scalar-flat case (where the scalar curvature is identically zero), part \ref{psc:thm:kazdan_warner_part2} shows that studying non-negative scalar curvature yields nothing new beyond what is already captured by positive, scalar curvature. In the following we refer to a metric $g$ on $M$, whose scalar curvature is everywhere positive as a \psc-metric.
+Part \ref{psc:thm:kazdan_warner_part1} of the theorem asserts that the only scalar curvature condition from which we can expect any kind of obstruction results is non-negativity. Moreover, aside from the scalar-flat case (where the scalar curvature is identically zero), part \ref{psc:thm:kazdan_warner_part2} shows that studying non-negative scalar curvature yields nothing new beyond what is already captured by positive scalar curvature. In the following, we refer to a metric $g$ on $M$ whose scalar curvature is everywhere positive as a \psc-metric.
 
-The reason why the study of positive scalar curvature has attracted particular attention compared to other curvature conditions, such as positive Ricci or sectional curvature, is that it strikes an exceptionally good balance between the rigidity and flexibility aspects. While positive Ricci or sectional curvature have substantial topological implitcatons, this also makes it significantly more difficult to construct metrics with these curvature conditons. For example the Bonnet-Myers theorem states that a positive lower bound on the Ricci curvature of $M$ already implies that $M$ must be compact with finite fundamental group. For \psc-metrics however, there are existence results under quite general assumptions, which we will discuss below. First let us consider some examples illustrating the rigidity aspects of positive scalar curvature. The most prominent obstruction to the existence of a \psc-metric comes from spin geometry. Let $(M^n,g)$ be a closed Riemannian spin manifold with $n$ even. Then the spin structure and the metric $g$ determine a Hermitian vector bundle $S \to M$ together with a compatible connection $\nabla^S$ and a self-adjoint first order differential operator $D \colon \Gamma(S) \to \Gamma(S)$ acting on sections of $S$. Moreover, there exists a canonical splitting $S \cong S^+ \oplus S^-$ with respect to which $D$ splits as
+The reason why the study of positive scalar curvature has attracted particular attention compared to other curvature conditions, such as positive Ricci or sectional curvature, is that it strikes an exceptionally good balance between the rigidity and flexibility aspects. While positive Ricci or sectional curvature has substantial topological implications, this also makes it significantly more difficult to construct metrics with these curvature conditions. For example, the Bonnet-Myers theorem states that a positive lower bound on the Ricci curvature of a complete Riemannian manifold $M$ already implies that $M$ must be compact with finite fundamental group. For \psc-metrics, however, there are existence results under quite general assumptions, which we will discuss below. First, let us consider some examples illustrating the rigidity aspects of positive scalar curvature. The most prominent obstruction to the existence of a \psc-metric comes from spin geometry. Let $(M^n,g)$ be a closed Riemannian spin manifold with $n$ even. Then the spin structure and the metric $g$ determine a Hermitian vector bundle $S \to M$ together with a compatible connection $\nabla^S$ and a self-adjoint first-order differential operator $D \colon \Gamma(S) \to \Gamma(S)$ acting on sections of $S$. Moreover, there exists a canonical splitting $S \cong S^+ \oplus S^-$ with respect to which $D$ splits as
 \[
 D = \begin{pmatrix}
     0 & D^- \\
     D^+ & 0
 \end{pmatrix}.
 \]
-We call $S \to M$ the \textit{spinor bundle} of $M$ and $D$ the \textit{Dirac operator}. One of the central motivations behind constructing this operator was to find a first order differential operator squaring to the Laplacian. The spinor bundle $S$ carries additional structure making it possible to define such an operator, however, its square agrees with the Laplacian only up to an error term determined by the curvature of $M$. More precisely, the \textit{Schrödinger--Lichnerowicz formula} holds:
+We call $S \to M$ the \textit{spinor bundle} of $M$ and $D$ the \textit{Dirac operator}. One of the central motivations behind constructing this operator was to find a first-order differential operator squaring to the Laplacian. The spinor bundle $S$ carries additional structure making it possible to define such an operator. However, its square agrees with the Laplacian only up to an error term determined by the curvature of $M$. More precisely, the \textit{Schrödinger--Lichnerowicz formula} holds:
 \[
 D^2 = \Delta^S + \frac{1}{4} \scal_g,
 \]
@@ -65,36 +66,36 @@ where $\Delta^S \colon \Gamma(S) \to \Gamma(S)$ is the connection Laplacian dete
 \[
 0 \leq \langle D\psi, D\psi \rangle = \langle D^2\psi, \psi \rangle = \langle \Delta^S\psi, \psi \rangle + \frac{1}{4} \int_M \scal_g \norm{\psi}^2,
 \]
-where we used self-adjointness of $D$ in the first equation and the Schrödinger--Lichnerowicz formula in the second. If $\scal_g > 0$ and $\psi \neq 0$, the right-hand side is strictly positive, since $\Delta^S$ is a non-negative operator. But the right-hand side equals $\langle D\psi,D\psi\rangle = \norm{D\psi}^2$, so this forces $D\psi \neq 0$. Hence the kernel of $D$ must be trivial. In particular the integer
+where we used self-adjointness of $D$ in the first equation and the Schrödinger--Lichnerowicz formula in the second. If $\scal_g > 0$ and $\psi \neq 0$, the right-hand side is strictly positive, since $\Delta^S$ is a non-negative operator. But the right-hand side equals $\langle D\psi,D\psi\rangle = \norm{D\psi}^2$, so this forces $D\psi \neq 0$. Hence the kernel of $D$ must be trivial. In particular, the integer
 \[
 \mathrm{ind}(D) := \mathrm{dim}(\mathrm{ker}\,D^+) - \mathrm{dim}(\mathrm{ker}\,D^-),
 \]
-known as the \textit{index} of $D$, must vanish (one can show that the kernels of $D^\pm$ are finite-dimensional, so this is well defined). Now the major insight is that this index can also be computed in terms of a purely topological invariant of $M$, namely the so-called $\hat{A}$-class $\hat{A}(TM) \in H^{4\ast}(M; \Q)$ of the tangent bundle $TM \to M$, which is a certain characteristic class. The connection between the index of the Dirac operator and the $\hat{A}$-class of the tangent bundle is established by the famous \textit{Atiyah--Singer index theorem}, which states:
+known as the \textit{index} of $D$, must vanish (one can show that the kernels of $D^\pm$ are finite-dimensional, so this is well defined). The major insight is that this index can also be computed in terms of a purely topological invariant of $M$, namely the so-called $\hat{A}$-class $\hat{A}(TM) \in H^{4\ast}(M; \Q)$ of the tangent bundle $TM \to M$, which is a certain characteristic class. The connection between the index of the Dirac operator and the $\hat{A}$-class of the tangent bundle is established by the famous \textit{Atiyah--Singer index theorem}, which states:
 \[
-\mathrm{ind}(D) = \langle \hat{A}(TM), [M]\rangle,
+\mathrm{ind}(D) = \langle \hat{A}(TM), [M]\rangle ,
 \]
-where the right-hand side is the evaluation of the cohomology class $\hat{A}(TM)$ against the fundamental class $[M]$ of $M$ (for the components of $\hat{A}(TM)$ in degree $\neq n$ this is $0$, so in particular $\hat{A}(M) = 0$ if $n$ is not divisible by $4$). The number $\hat{A}(M) := \langle \hat{A}(TM), [M]\rangle \in \Q$ is also referred to as the \textit{$\hat{A}$-genus} of $M$. In summary:
+where the right-hand side is the evaluation of the cohomology class $\hat{A}(TM)$ against the fundamental class $[M]$ of $M$ (for the components of $\hat{A}(TM)$ in degree $\neq n$, this is $0$, so in particular $\langle \hat{A}(TM), [M]\rangle = 0$ if $n$ is not divisible by $4$). The number $\hat{A}(M) := \langle \hat{A}(TM), [M]\rangle \in \Q$ is also referred to as the \textit{$\hat{A}$-genus} of $M$. In summary:
 \begin{theorem}[Lichnerowicz, 1963]
     Let $(M^{4k},g)$ be a closed Riemannian spin manifold with positive scalar curvature. Then $\hat{A}(M) = 0$.
 \end{theorem}
 
-A further, more accessible and geometric example for a rigidity result concerning positive scalar curvature is the following classical result by Llarull.
+We refer the reader to \cite{LawsonMichelsohn1989SpinGeometry} for an in-depth discussion of the above results. A further, more accessible and more geometric example for a rigidity result concerning positive scalar curvature is the following classical result by Llarull \cite{Llarull1998SharpEstimates}.
 
 \begin{theorem}[Llarull, 1998]
     Let $M^n$ be a closed connected Riemannian spin manifold of dimension $n \geq 2$. Suppose $\scal_g \geq n(n-1)$ and let $f\colon M \to S^n$ be a smooth $1$-Lipschitz map with $\mathrm{deg}(f) \neq 0$. Then $f$ is an isometry.
 \end{theorem}
 
-The constant $n(n-1)$ appearing is no coincidence as the scalar curvature of the $n$-sphere $S^n$ with the standard metric $g_0$ can be computed to precisely equal this constant. Llarull then applied this theorem in the special case $M = S^n$ and $f = \mathrm{id}$ to show that the only metric $g$ on $S^n$ with $\scal_g \geq n(n-1)$ and $g \geq g_0$ is the standard metric. Said differently, one cannot increase the curvature of the sphere without contracting distances. We conclude our discussion of scalar curvature rigidity results with another quite geometric statement, which is an example for a so called \textit{band width estimate}. 
+As we noted in Example \ref{psc:ex:scalar_curvature_examples} \ref{psc:ex:scalar_curvature_examples3}, the constant $n(n-1)$ is equal to the scalar curvature of the $n$-sphere $S^n$ with the standard round metric $g_0$. Llarull then applied this theorem in the special case $M = S^n$ and $f = \mathrm{id}$ to show that the only metric $g$ on $S^n$ with $\scal_g \geq n(n-1)$ and $g \geq g_0$ is $g_0$ itself. Said differently, one cannot increase the curvature of the sphere without contracting distances. We conclude our discussion of scalar curvature rigidity results with another strongly geometric statement, which is an example for a so-called \textit{band width estimate} \cite{gromov2018metric}. 
 
-\begin{theorem}[Gromov]
+\begin{theorem}[Gromov, 2018]
     \label{psc:thm:band_width_estimate}
-    Let $M = T^{n-1} \times [-1,1]$ and let $g$ be a Riemannian metric on $M$ with scalar curvature bounded from below by a positive constant $\sigma > 0$. Then the distance between the boundary components $\partial_{-} M =T^{n-1} \times \{-1\}$ and $\partial_{+} M =T^{n-1} \times \{1\}$ satisfies
+    Let $M = T^{n-1} \times [-1,1]$ and let $g$ be a Riemannian metric on $M$ with scalar curvature bounded from below by a positive constant $\sigma > 0$. Then the distance between the two boundary components $\partial_{-} M =T^{n-1} \times \{-1\}$ and $\partial_{+} M =T^{n-1} \times \{1\}$ satisfies
     \[
     \mathrm{dist}_g(\partial_{-}M, \partial_{+}M) \leq 2 \pi \sqrt{\frac{n-1}{n\sigma}}.
     \]
 \end{theorem}
 
-Intuitively we think of $M$ as a cylinder (a `band') over $T^{n-1}$ with a left boundary component $\partial_{-} M$ and a right boundary component $\partial_{+} M$. Then this theorem says, that the boundaries of a band, which is highly positively curved must be close together. There are various generalisations of Theorem \ref{psc:thm:band_width_estimate} to allow for bands over other manifolds [??]. Gromov even conjectures that $T^{n-1}$ can be replaced by any manifold not admitting a \psc-metric [Conjecture C in Metric inequalities].
+Intuitively, we think of $M$ as a cylinder (a `band') over $T^{n-1}$ with a left boundary component $\partial_{-} M$ and a right boundary component $\partial_{+} M$. Then this theorem essentially states that the boundaries of such a band, which is highly positively curved, must be close together. There are various generalisations of Theorem \ref{psc:thm:band_width_estimate} to allow for bands over other manifolds \cite{zeidler2022band}, \cite{cecchini2024scalar}. Gromov even conjectures that $T^{n-1}$ can be replaced by any manifold of dimension $n-1 \geq 5$ not admitting a \psc-metric \cite[Conjecture C]{gromov2018metric}.
 
 Let us now turn to the flexibility aspect of positive scalar curvature. The primary method for constructing \psc-metrics is the following theorem, known as the Surgery Theorem, which has been shown independently by Schoen and Yau [SY79] as well as Gromov and Lawson [GL80]. We refer the reader to the Appendix for a brief introduction to surgery and cobordism theory.
 

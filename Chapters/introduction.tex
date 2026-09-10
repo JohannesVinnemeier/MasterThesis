@@ -1,11 +1,11 @@
 \chapter*{Introduction}
 
-The scalar curvature of a Riemannian manifold $(M,g)$ is a smooth function $\mathrm{scal} \colon M \to \R$. Roughly speaking, the value $\mathrm{scal}_g(x)$ at a point $x \in M$ measures how much the volume of a small geodesic ball around $x$ deviates from that of a Euclidean ball of the same radius. While scalar curvature is the weakest of the standard curvature conditions for a Riemannian manifold, the presence of \emph{positive} scalar curvature can still have strong topological implications. The archetypal example is the celebrated Gauß-Bonnet Theorem:
+The scalar curvature of a Riemannian manifold $(M,g)$ is a smooth function $\mathrm{scal}_g \colon M \to \R$. Roughly speaking, the value $\mathrm{scal}_g(x)$ at a point $x \in M$ measures how much the volume of a small geodesic ball around $x$ deviates from that of a Euclidean ball of the same radius. While scalar curvature is the weakest of the standard curvature conditions for a Riemannian manifold, the presence of \emph{positive} scalar curvature can still have strong topological implications. The archetypal example is the celebrated Gauß-Bonnet Theorem:
 
 \begin{theorem*}[Gauß-Bonnet]
     Let $(M,g)$ be a closed Riemannian $2$-manifold. Then 
     \[
-    \int_M \mathrm{scal} \, \mathrm{d}A = 4\pi\chi(M),
+    \int_M \mathrm{scal}_g \, \mathrm{d}A = 4\pi\chi(M),
     \]
     where $\chi(M)$ is the Euler characteristic of $M$.
 \end{theorem*}
@@ -13,14 +13,14 @@ The scalar curvature of a Riemannian manifold $(M,g)$ is a smooth function $\mat
 So any closed surface carrying a metric of positive scalar curvature must be diffeomorphic to either the sphere $S^2$ or $\RP^2$. For non-compact complete manifolds, positive scalar curvature alone may be too weak a condition for such rigidity results though. The problem is that $\mathrm{scal}$ can still tend to zero quite rapidly at infinity. However, if the rate of decay at infinity can be controlled, positive scalar curvature still has profound consequences. For example, Chen has recently shown a decomposition result for $3$-manifolds under the assumption that a metric of positive scalar curvature with controlled decay at infinity exists [Chen2025]. This naturally raises the question of how fast the scalar curvature of a given complete Riemannian manifold $X$ decays at infinity. One result in this direction is the following theorem by Gromov \cite[p. 15f.]{gromov2018metric}.
 
 \begin{theorem*}[Enlargeable Decay Theorem] \label{intro:thm:gromov_thm}
-Let $X$ be a complete Riemannian manifold and $V \to M$ a $2$-dimensional real vector bundle over an enlargeable manifold $M$. Assume that 
+Let $(X,g)$ be a complete Riemannian manifold and $V \to M$ a $2$-dimensional real vector bundle over an enlargeable manifold $M$. Assume that 
 \begin{enumerate}[label=(\roman*)]
     \item There exists a proper map $f \colon X \to V$, $\mathrm{deg}(f) \neq 0$,
     \item \label{intro:eq:gromov_thm_condition_2}The total space of the circle bundle corresponding to $V$ is enlargeable.
 \end{enumerate}
 Then 
 \[
-\min_{B_R(x_0)} \mathrm{scal}(X) \leq \frac{8 \pi^2}{(R-R_0)^2}
+\min_{B_R(x_0)} \mathrm{scal}_g \leq \frac{8 \pi^2}{(R-R_0)^2}
 \]
 for some $R_0 = R_0(X,x_0)$ and all $R > R_0$, where $B_R(x_0)$ is the ball of radius $R$ around a point $x_0 \in M$.
 \end{theorem*}
