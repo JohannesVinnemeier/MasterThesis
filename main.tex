@@ -19,13 +19,13 @@
 \usepackage{etoolbox}
 \usepackage{needspace}
 \usepackage{xfrac}
-% \usepackage[
-%     backend=biber,
-%     style=alphabetic,
-%     sorting=nyt
-% ]{biblatex}
+\usepackage[
+    backend=biber,
+    style=alphabetic,
+    sorting=nyt
+]{biblatex}
 
-% \addbibresource{ref.bib}
+\addbibresource{ref.bib}
 
 
 %Prevents footnotes from breaking across pages
@@ -140,9 +140,9 @@
 
   % \frontmatter
 
-  % \include{Titlepage/titlepage}
-  % \tableofcontents
-  % \newpage
+  \include{Titlepage/titlepage}
+  \tableofcontents
+  \newpage
 
   \mainmatter
 
@@ -150,25 +150,25 @@
 
   \addcontentsline{toc}{chapter}{Introduction}
   \include{Chapters/introduction}
-  % \include{Chapters/preliminaries}
+  \include{Chapters/preliminaries}
   \include{Chapters/psc}
-  % \include{Chapters/enlargeability}
-  % \include{Chapters/main_construction}
-  % \include{Chapters/further_questions}
+  \include{Chapters/enlargeability}
+  \include{Chapters/main_construction}
+  \include{Chapters/further_questions}
 
   % \backmatter
 
-  % \include{Chapters/appendix}
+  \include{Chapters/appendix}
 
   % \include{Misc/to_do}
 
   % Bibliography (Comment out for faster compilation)
 
-  % \cleardoublepage
+  \cleardoublepage
 
-  % % \nocite{*} %Include all entries from BibTeX file
-  % \addcontentsline{toc}{chapter}{Bibliography}
-  % \printbibliography
+  % \nocite{*} %Include all entries from BibTeX file
+  \addcontentsline{toc}{chapter}{Bibliography}
+  \printbibliography
 
 
 \end{document}
