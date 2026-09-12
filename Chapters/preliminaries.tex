@@ -144,7 +144,7 @@ We denote the bundle $E \to B$ obtained from the above construction by $P \times
 
 \begin{remark}
     \label{bundles:rem:naturality_change_of_fiber}
-    We remark that the action of $G$ on $F$ in the above lemma need not be effective. If we restrict ourselves to effective actions, a more general naturality result holds for the change-of-fiber construction of arbitrary bundles. Namely, first pulling a bundle back under some continuous map and then changing the fiber amounts to the same as first changing the fiber and then pulling back. Comparing the transition functions of the local trivialisations in both cases shows that they in fact agree.
+    We remark that the action of $G$ on $F$ in the above lemma need not be effective. If we restrict ourselves to effective actions, a more general naturality result holds for the change-of-fiber construction of arbitrary bundles. Namely, first pulling a bundle back under some continuous map and then changing the fiber amounts to the same as first changing the fiber and then pulling back. Comparing the transition functions of the local trivialisations in both cases shows that they do in fact agree.
 \end{remark}
 
 Let us look at some concrete examples for the theory developed above.
@@ -407,7 +407,7 @@ Let us look at a few examples.
     \label{bundles:ex:characteristic_classes}
     \begin{enumerate}[label=(\roman*)]
         \item[]
-        \item Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1$ is isomorphic to the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology, we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^1(\RP^n;\Z_2) \cong \Z_2$. Similarly, for the tautological complex line bundle $\tau_1^n \to \CP^n$, the class $c_1(\tau_1^n)$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
+        \item \label{bundles:ex:characteristic_classes_part1} Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1$ is isomorphic to the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology, we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^1(\RP^n;\Z_2) \cong \Z_2$. Similarly, for the tautological complex line bundle $\tau_1^n \to \CP^n$, the class $c_1(\tau_1^n)$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
         \item Let $E \to X$ be a trivial real vector bundle. Then $E \cong f^\ast E$ for a constant map $f \colon X \to X$, and thus $w_i(E) = f^\ast w_i(E) = 0$ for all $i \geq 1$. Similarly, all Chern classes for complex trivial vector bundles vanish.
         \item \label{bundles:ex:characteristic_classes_part3} Let $TS^n \to S^n$ be the tangent bundle of the sphere and let $\nu_n \to S^n$ be the normal bundle with respect to the standard embedding $S^n \to \R^{n+1}$. Since $\nu_n$ and $TS^n \oplus \nu_n$ are trivial, we conclude from the previous example and property \ref{bundles:eq:prop3_for_stiefel_whitney_classes} in Definition \ref{bundles:def:Steifel_Whitney_Classes} that 
         \[
@@ -460,6 +460,7 @@ Note that the existence of a spin structure does not depend on the chosen orient
 \end{theorem}
 
 \begin{example}
+    \label{bundles:ex:spin_and_non_spin}
     \begin{enumerate}[label=(\roman*)]
         \item It follows from the above theorem and Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3} that all spheres $S^n$, $n\geq 1$, are spin.
         \item \label{bundles:ex:cp2_not_spin} The total Chern class of the tangent bundle $T\CP^n$ of $\CP^n$ can be computed to be 

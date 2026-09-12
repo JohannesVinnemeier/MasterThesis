@@ -1,56 +1,60 @@
-\chapter{Further Questions}\
+\chapter{Further Questions}
 \label{chapter:further_questions}
 
 \section{Problems with Extending the Construction to the Spin Case}
 
-The base spaces $M$ of the circle bundles $E \to M$ constructed in the previous Chapter are all totally non-spin manifolds. As we have seen in Chapter \ref{sec:psc} many constructions in positive scalar curvature geometry require the existence of a spin structure, so it may also be desirable to get examples of such circle bundles over spin manifolds. However, our methods do not straightforwardly extend to the spin case. Let us discuss the difficulties that arise. 
+The base spaces $M$ of the circle bundles $E \to M$ constructed in the previous chapter are all totally non-spin manifolds. As we have seen in Chapter \ref{chapter:psc}, many constructions in positive scalar curvature geometry require the existence of a spin structure, so it may also be desirable to get examples of such circle bundles over spin manifolds. However, our methods do not straightforwardly extend to the spin case. In this section we discuss the difficulties that arise. 
 
-Suppose we are given an $S^1$-principal bundle $\pi \colon E \to M$ over a spin manifold $M$ (in particular $M$ is orientable). First of all we cannot conclude the existence of a \psc-metric on $E$ from Theorem \ref{psc:thm:existence_result_totally_non_spin} anymore, since the total space $E$ is itself a spin manifold. The reason is the following. There exists a splitting 
+Suppose we are given an $S^1$-principal bundle $\pi \colon E \to M$ over a spin manifold $M$ (in particular $M$ is orientable). First of all, Theorem \ref{psc:thm:existence_result_totally_non_spin} no longer applies to conclude the existence of a \psc-metric on $E$, since the total space $E$ is itself a spin manifold. This can be seen as follows. There exists a splitting 
 \[
-TE \cong HE \oplus VE,
+TE \cong VE \oplus HE,
 \]
-of the tangent bundle $TE$ of $E$ into a \textit{vertical} bundle $VE$ and a \textit{horizontal} bundle $HE$. The bundle $VE$ is simply the kernel of the differential $d\pi \colon TE \to TM$ and we can then choose $HE$ as any complementary subbundle (for example by choosing a fiber metric on $TE$). By construction $d \pi \colon HE \to TM$ is an isomorphism on fibers, such that $HE \cong \pi^\ast TM$. In our case $VE$ is one-dimensional, such that $w_2(VE) = 0$ and therefore
+of the tangent bundle $TE$ of $E$ into a \textit{vertical} bundle $VE$ and a \textit{horizontal} bundle $HE$. The bundle $VE$ is simply the kernel of the differential $d\pi \colon TE \to TM$, and we can then choose $HE$ as any complementary subbundle (for example by choosing a fiber metric on $TE$). By construction, $d \pi \colon HE \to TM$ is an isomorphism on fibers, so that $HE \cong \pi^\ast TM$. In our case, $VE$ is one-dimensional, so that $w_2(VE) = 0$ and therefore
 \[
-w_2(TE) = w_1(HE) \smile w_1(VE) + w_2(HE) = \pi^\ast w_1(TM) \smile w_1(VE) + \pi^\ast w_2(TM) = 0.
+w_2(TE) = w_1(HE) \smile w_1(VE) + w_2(HE) = \pi^\ast w_1(TM) \smile w_1(VE) + \pi^\ast w_2(TM) = 0,
 \]
-So instead we are inclined to use the spin analogue of Theorem \ref{psc:thm:existence_result_totally_non_spin} to conclude the existence of a \psc-metric on $E$, namely:
+using the fact that $M$ is spin in the last equality.
+So instead, we are inclined to use the spin analogue of Theorem \ref{psc:thm:existence_result_totally_non_spin} to conclude the existence of a \psc-metric on $E$, namely:
 
 \vspace{\baselineskip}
 \noindent\textbf{Theorem \ref{psc:thm:existence_result_spin}.}\itshape\ 
-Let $W^{n+1}$ be a cobordism from $M_0$ to $M_1$, $n \geq 5$, such that $W$ is spin. Suppose that $M_1$ is connected, the inlcusion $M_1 \to W$ induces an isomorphism on $\pi_1$ and that $M_0$ carries a psc-metric. Then $M_1$ also carries a psc-metric. In fact the psc-metric on $M_0$ can be extended to a psc-metric on $W$, which is of product form near the boundary. 
+Let $W^{n+1}$ be a connected spin cobordism from $M_0$ to $M_1$, $n \geq 5$. Suppose $M_1$ is connected, the inclusion $M_1 \to W$ induces an isomorphism on $\pi_1$, and $M_0$ admits a \psc-metric. Then $M_1$ also admits a \psc-metric. In fact, any \psc-metric on $M_0$ can be extended to a \psc-metric on $W$, which is of product form near the boundary. 
 \normalfont
+\vspace{\baselineskip}
 
-\noindent Proceeding as before we would like to take the disk bundle $DE$ as a nullbordism of $E$ and show:
-\begin{enumerate}[label=(\Roman*\ensuremath{^\prime})]
+\noindent Proceeding as before, we would like to take the disk bundle $DE$ as a nullbordism of $E$ and show:
+\begin{enumerate}[label=(\Roman*)]
 	\item \label{constr:property1_spin} $DE$ is spin,
 	\item \label{constr:property2_spin} The inclusion $S^1 \to E$ is trivial on $\pi_1$.
 \end{enumerate}
-However, these properties contradict themselves. To see this we make the following observations. Let $L \to M$ be the complex line bundle associated to $E \to M$ and consider the inclusion $\iota \colon DE \to L$. Since the differential $d \iota \colon TDE \to TL$ is an isomorphism on fibers we conclude $TDE \cong \iota^\ast TL$. Thus 
+However, these properties contradict each other. To see this, we make the following observations. Let $L \to M$ be the complex line bundle associated to $E \to M$ and consider the inclusion $\iota \colon DE \to L$. Then $TDE \cong \iota^\ast TL$ and thus 
 \[
 \iota^\ast w_2(TL) = w_2(TDE) = 0
 \]
-by property \ref{constr:property1_spin}. But $\iota$ is a homotopy equivalence so consequently $w_2(TL) = 0$. Let $p \colon L \to M$ be the bundle proejction. As before we have a splitting 
+by property \ref{constr:property1_spin}. Since $\iota$ is a homotopy equivalence we obtain $w_2(TL) = 0$. Let $p \colon L \to M$ be the bundle projection. As before, we have a splitting 
 \[
-TL \cong HL \oplus VL
+TL \cong VL \oplus HL
 \]
-into a vertical and horizontal subbundle with $HL \cong p^\ast TM$. For vector bundles it is a standard fact that $VL = \mathrm{ker}(dp) \cong p^\ast E$, hence 
+into a vertical and horizontal subbundle with $HL \cong p^\ast TM$. For vector bundles, it is a standard fact that $VL = \mathrm{ker}(dp) \cong p^\ast L$, hence 
 \[
-0 = w_2(TL) = \pi^\ast w_2(HL) + \pi^\ast w_1(HL) \smile p^\ast w_1(L) + p^\ast w_2(L) = p^\ast w_2(L).
+0 = w_2(TL) = p^\ast w_2(L) + p^\ast w_1(L) \smile p^\ast w_1(TM) + p^\ast w_2(TM) = p^\ast w_2(L).
 \]
-Again we conclude $w_2(E) = 0$ since $p$ is a homotopy equivalence. Therefore the first chern class $c_1(L)$ lies in the kernel of the coefficient homomorphism
+Again, we conclude $w_2(L) = 0$ since $p$ is a homotopy equivalence. Therefore, the first Chern class $c_1(L)$ lies in the kernel of the coefficient homomorphism
 \[
 H^2(M;\Z) \to H^2(M;\Z_2)
 \]
-by Proposition \ref{bundles:prop:connection_chern_stiefel_whitney_classes}. In other words, $c_1(L)$ can be written as $c_1(L) = 2 \alpha$ for some $\alpha \in H^2(M;\Z)$. To derive a contradiction from this we claim that the following diagram commutes up to sign
-\[\begin{tikzcd}[column sep=6em,row sep=2.5em]
-	{\pi_2(M)} & {\pi_1(S^1)} \\
-	{H_2(M;\Z)} & {H_1(S^1;\Z)}
-	\arrow["\partial", from=1-1, to=1-2]
-	\arrow[from=1-1, to=2-1]
-	\arrow["\cong", from=1-2, to=2-2]
-	\arrow["{\langle c_1(L),-\rangle [S^1]}", from=2-1, to=2-2]
-\end{tikzcd}\]
-where $\partial$ is the boundary map from the long exact sequence of homotopy groups for the fibration $E \to M$ and the vertical maps are given by the Hurewicz homomorphism. Moreover $[S^1]$ denotes the fundamental class of $S^1$. Granting this claim for now, it then follows from $c_1(L) = 2\alpha$ that $\partial \colon \pi_2(M) \to \pi_1(S^1)$ cannot be surjective and consequently $\pi_1(S^1) \to \pi_1(E)$ is non-zero by exactness. Hence a bundle satisfying both \ref{constr:property1_spin} and \ref{constr:property2_spin} does not exist. To show commutativity of the above square let $\tau_1 \to \CP^\infty$ be the universal complex line bundle (compare Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:es:examples_for_classifying_spaces_special_case}) and let $f \colon M \to \CP^\infty$ be a classifiying map for $L \to M$. Then essentially commutativity is due to the fact that the corresponding square for the \emph{universal} principal bundle commutes and all maps are compatible with the classifiying map $f$. To make this precise we extend the diagram as follows 
+by Proposition \ref{bundles:prop:connection_chern_stiefel_whitney_classes}. In other words, $c_1(L)$ can be written as $c_1(L) = 2 \alpha$ for some $\alpha \in H^2(M;\Z)$. To derive a contradiction to property \ref{constr:property2_spin} from this, we claim that the following diagram commutes up to sign
+\begin{equation}
+\begin{tikzcd}[column sep=6em,row sep=2.5em]
+    {\pi_2(M)} & {\pi_1(S^1)} \\
+    {H_2(M;\Z)} & {H_1(S^1;\Z)}
+    \arrow["\partial", from=1-1, to=1-2]
+    \arrow[from=1-1, to=2-1]
+    \arrow["\cong", from=1-2, to=2-2]
+    \arrow["{\langle c_1(L),-\rangle [S^1]}", from=2-1, to=2-2]
+\end{tikzcd}
+\end{equation}
+where $\partial$ is the boundary map from the long exact sequence of homotopy groups for the fibration $E \to M$ and the vertical maps are given by the Hurewicz homomorphism. Moreover, $[S^1]$ denotes the fundamental class of $S^1$. Observe that $\pi_1(S^1) \to H_1(S^1;\Z)$ is an isomorphism, since $\pi_1(S^1)$ is abelian. Granting this claim for now, it follows from $c_1(L) = 2\alpha$ that the image of $\partial \colon \pi_2(M) \to \pi_1(S^1)$ contains only even multiples of the generator of $\pi_1(S^1)$. Thus $\partial$ is not surjective, and consequently $\pi_1(S^1) \to \pi_1(E)$ is non-zero by exactness. Therefore, a bundle satisfying both \ref{constr:property1_spin} and \ref{constr:property2_spin} does not exist. To show commutativity of the above square, let $\tau_1 \to \CP^\infty$ be the universal complex line bundle (compare Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:es:examples_for_classifying_spaces_special_case}) and let $f \colon M \to \CP^\infty$ be a classifying map for $L \to M$. Essentially, commutativity of the square is then due to the fact that the corresponding square for the \emph{universal} principal bundle commutes and all maps are compatible with the classifying map $f$. To make this precise, we extend the diagram above as follows: 
 
 \[\begin{tikzcd}[column sep=1.5em,row sep=large, execute at end picture={
   \node at (3.3,0) {$(1)$};
@@ -76,52 +80,49 @@ where $\partial$ is the boundary map from the long exact sequence of homotopy gr
 	\arrow["{\langle c_1(\tau_1),-\rangle [S^1]}", bend right = 6, from=4-1, to=4-6]
 \end{tikzcd}\]
 
-Again the top horizontal map is the boundary map from the long exact sequence for the fibration $ES^1 \to \CP^\infty$ and the outer vertical maps are given by the Hurewicz homomorphism. Since $\CP^\infty$ is simply connected $\pi_2(\CP^\infty) \to H_2(\CP^\infty;\Z)$ is an isomorphism. Moreover, the boundary map $\partial \colon \pi_2(\CP^\infty) \to \pi_1(S^1)$ is an isomorphism by Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG}. Clearly $(1)$ commutes. Furthermore $(2)$ commutes by naturality of the long exact sequence of homotopy groups and $(3)$ commutes by naturality of the Hurewicz homomorphism. For commutativity of $(4)$ we compute for $a \in H_2(M;\Z)$:
+Again, the top horizontal map is the boundary map from the long exact sequence for the fibration $ES^1 \to \CP^\infty$ and the outer vertical maps are given by the Hurewicz homomorphism. Since $\CP^\infty$ is simply connected, $\pi_2(\CP^\infty) \to H_2(\CP^\infty;\Z)$ is an isomorphism. Moreover, the boundary map $\partial \colon \pi_2(\CP^\infty) \to \pi_1(S^1)$ is an isomorphism by Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG}. Clearly, $(1)$ commutes. Furthermore, $(2)$ commutes by naturality of the long exact sequence of homotopy groups and $(3)$ commutes by naturality of the Hurewicz homomorphism. For commutativity of $(4)$, we compute for $a \in H_2(M;\Z)$:
 \[
 \langle c_1(\tau_1),f_\ast a \rangle = \langle f^\ast c_1(\tau_1),a \rangle = \langle c_1(L),a \rangle,
 \]
-using the fact that $f$ is a classifiying map in the last equation. Finally we have to show commutativity of the outer square. From the universal coefficient theorem we obtain that 
+using the fact that $f$ is a classifying map for $L$ in the last equation. Finally, we have to show commutativity of the outer square. From the universal coefficient theorem, we obtain that 
 \[
 H^2(\CP^\infty;\Z) \to \mathrm{Hom}(H_2(\CP^\infty;\Z),\Z), \;\; \beta \mapsto \langle \beta, - \rangle 
 \]
-is an isomorphism. By definiton $c_1(\tau_1) \in H^2(\CP^\infty;\Z)$ is a generator, thus $\langle c_1(\tau_1), - \rangle $ is a generator of $\mathrm{Hom}(H_2(\CP^\infty;\Z),\Z)$ and consequently evaluates to $\pm 1$ on a generator of $H_2(\CP^\infty;\Z)$. From this we see that
+is an isomorphism. By definition, $c_1(\tau_1) \in H^2(\CP^\infty;\Z)$ is a generator. Thus $\langle c_1(\tau_1), - \rangle $ is a generator of $\mathrm{Hom}(H_2(\CP^\infty;\Z),\Z)$ and consequently evaluates to $\pm 1$ on a generator of $H_2(\CP^\infty;\Z)$. From this we see that
 \[
 \langle c_1(\tau_1), - \rangle [S^1] \colon H_2(\CP^\infty;\Z) \to H_2(S^1;\Z)
 \]
-is an isomorphism. So all maps in the outer square are isomorphisms and, moreover, all groups are isomorphic to $\Z$. Hence the outer square commutes up to sign and the claim follows. 
+is an isomorphism. So all maps in the outer square are isomorphisms and, moreover, all groups are isomorphic to $\Z$. Since the only isomorphisms of $\Z$ are $\pm \mathrm{id}$, the outer square commutes up to sign. It follows that the inner square commutes as well. 
 
-Thus, we have established that our previous methods for constructing a \psc-metric on $E \to M$ do not apply when $M$ is a spin manifold. Nevertheless, examples answering Question \ref{constr:question_A} in the spin case do exist. These were obtained by Kumar and Sen \cite{kumar2025circle} using more sophisticated methods, as we have briefly sketched in the introduction.
-
+Thus, we have established that our previous methods for constructing a \psc-metric on $E \to M$ do not apply when $M$ is a spin manifold. Nevertheless, examples in the spin case do exist. These were obtained by Kumar and Sen \cite{kumar2025circle} using more sophisticated methods, as we have briefly sketched in the \hyperref[chapter:intro]{Introduction}.
 
 \section{A Question about the Homotopy Groups of the Space of \psc-Metrics}
 
-In Chapter \ref{sec:psc} we have discussed sufficient conditions for the the existence of a \psc-metric on a manifold. Given a manifold $M$, which admits a \psc-metric we can further ask how many of such metrics exist. More precisely the question should be whether any two \psc-metrics on $M$ can be deformed into each other via a continous path of \psc-metrics. Phrased differently, if we denote by $\mR(M)$ the space of all \psc-metrics on $M$, equipped with the $C^\infty$-topology, this statement asks whether $\pi_0(\mR(M))$ is trivial. For instance, this is always true for $M = S^2$. In fact $\mR(S^2)$ is contractible and so in particular connected [??]. However, in higher dimensions this breaks down even for such simple spaces as spheres as demonstrated by the following theorem due to Carr.
+In \hyperref[chapter:psc]{Chapter 2} we have discussed sufficient conditions for the existence of a \psc-metric on a manifold. Given a manifold $M$ which admits a \psc-metric, we can further ask how many such metrics exist. More precisely, the question should be whether any two \psc-metrics on $M$ can be deformed into each other via a continuous path of \psc-metrics. Phrased differently, if we denote by $\mR(M)$ the space of all \psc-metrics on $M$, equipped with the $C^\infty$-topology, this statement asks whether $\pi_0(\mR(M))$ is trivial. For instance, this is always true for $M = S^2$. In fact, $\mR(S^2)$ is contractible, and so in particular connected \cite[Thm. 3.4]{stolz2014metrics}. However, in higher dimensions this breaks down even for such simple spaces as spheres, as demonstrated by the following theorem due to Carr \cite[Thm. 4]{Carr1988}.
 
 \begin{theorem}
 	\label{further_questions:thm:carr}
 	For $n \geq 2$ the space $\mR(S^{4n-1})$ has infinitely many path components.
 \end{theorem}
 
-This already illustrates the complexity the space of \psc-metrics may exhibit. Going one step further, we can also investigate the higher homotopy groups of this space, essentially asking which \emph{families} of \psc-metrics can be deformed into each other. One result in this direction is the following theorem due to Hanke, Schick and Steimle.
+This already illustrates the complexity that the space of \psc-metrics may exhibit. Going one step further, we can also investigate the higher homotopy groups of this space, essentially asking which \emph{families} of \psc-metrics can be deformed into each other. One result in this direction is the following theorem due to Hanke, Schick and Steimle \cite[Thm. 1.1]{HankeSchickSteimle}.
 
 \begin{theorem}
-	Let $k \in \N_0$. Then there exists a number $N(k)$, such that for every $n \geq N(k)$ and every spin manifold $M$ of dimension $4n - k - 1$ admitting a \psc-metric $g_0$, the homotopy group 
+	Let $k \in \N_0$. Then there exists a number $N(k)$ such that for every $n \geq N(k)$ and every spin manifold $M$ of dimension $4n - k - 1$ admitting a \psc-metric $g_0$, the homotopy group 
 	\[
 	\pi_k(\mR(M), g_0)
 	\]
 	contains elements of infinite order if $k \geq 1$ and infinitely many distinct elements if $k=0$.
 \end{theorem}
 
-Note that for $k=0$ and $M=S^{4n-1}$, the statement above generalizes Theorem \ref{further_questions:thm:carr} quite substantially. Tying this discussion back to our results of Chapter \ref{sec:constr}, let us analyze the \psc-metric constructed on $E$ more closely. A natural question is whether this metric is invariant under the $S^1$-action on $E$. We can answer this question in the negative due to a theorem of Bérard-Bergery, which states that a closed manifold with a free $S^1$-action admits an $S^1$-invariant \psc-metric if and only if its orbit space admits a \psc-metric; see \cite[Theorem C]{BerardBergery1983} and \cite[Theorem 2.2]{Wiemeler2016}. But in our case $E / S^1 \cong M$ and $M$ is enlargeable. Therefore it follows from Theorem \ref{enl:thm:enl_mnf_do_not_admit_psc} that $M$ does not admit a \psc-metric. In view of the above dicussion about the homotopy groups of the space of \psc-metrics we are thus lead to the following question.
+Note that for $k=0$ and $M=S^{4n-1}$, the statement above generalizes Theorem \ref{further_questions:thm:carr} quite substantially. Tying this discussion back to our results of \hyperref[chapter:constr]{Chapter 4}, let us analyze the \psc-metric constructed on $E$ more closely. A natural question is whether this metric is invariant under the $S^1$-action on $E$. We can answer this question in the negative due to a theorem of Bérard-Bergery, which states that a closed manifold with a free $S^1$-action admits an $S^1$-invariant \psc-metric if and only if its orbit space admits a \psc-metric \cite[Theorem C]{BerardBergery1983}, \cite[Theorem 2.2]{Wiemeler2016}. In our case, $E / S^1 \cong M$ and $M$ is enlargeable. Therefore, it follows from Theorem \ref{enl:thm:enl_mnf_do_not_admit_psc} that $M$ does not admit a \psc-metric, and hence the \psc-metric on $E$ cannot be $S^1$-invariant. In view of the above discussion about the homotopy groups of spaces of \psc-metrics, we are led to the following question.
 
-\begin{question}
-	\label{further_questions:question_B}
-	Let $g \in \mathcal{R}^+(E)$ be the \psc-metric constructed in Chapter \ref{sec:constr}. Does the map 
+\begin{question*}
+	Let $g \in \mathcal{R}^+(E)$ be the \psc-metric constructed in \hyperref[chapter:constr]{Chapter 4}. Does the map 
 	\[
 	S^1 \to \mathcal{R}^+(E), \;\; \zeta \mapsto \zeta^\ast g
 	\] 
 	represent a non-trivial element in $\pi_1(\mathcal{R}^+(E),g)$?
-\end{question}
+\end{question*}
 
-Given the preceding observations, the most that can be said is that this loop is non-constant. However, it may of course still be contractible. At the time of writing, we do not know the answer to Question \ref{further_questions:question_B} and leave it as an open problem for future investigation.
-
+Here we denote by $\zeta^\ast g$ the \psc-metric on $E$ arising as the pullback of $g$ under the diffeomorphism induced by $\zeta \in S^1$. Given the preceding observations, the most that can be said is that this loop is non-constant. However, it may of course still be contractible. At the time of writing, we do not know the answer to the above question and leave it as an open problem for future investigation.
