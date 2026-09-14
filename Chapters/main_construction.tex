@@ -4,7 +4,7 @@
 Recall the following question discussed in the \hyperref[chapter:intro]{Introduction}.
 
 \begin{question*}
-    Does there exist a circle bundle $E \to M$ over an enlargeable manifold $M$, such that the total space $E$ is non-enlargeable? Moreover, does there exist a $2$-dimensional real vector bundle $V \to M$, such that $V$ admits a complete metric of uniformly positive scalar curvature?
+    Does there exist a circle bundle $E \to M$ over an enlargeable manifold $M$, such that the total space $E$ is non-enlargeable? Moreover, does there exist a real rank $2$ vector bundle $V \to M$, such that $V$ admits a complete metric of uniformly positive scalar curvature?
 \end{question*}
 
 We begin this chapter with an alternative approach to the one presented in \cite{kumar2025circle} for constructing examples addressing the first part of the question. We subsequently build on this construction to obtain an affirmative answer to the second part of the question.  
@@ -26,7 +26,7 @@ In order to apply this in our case, we make the following two observations, vali
 	\item \label{constr:eq:circle_bundle_observation2} The inclusion $E \cong \partial DE \to DE$ induces an isomorphism on $\pi_1$ if and only if the fibers of $E$ are contractible within $E$, that is the inclusion $S^1 \to E$ is trivial on $\pi_1$.
 \end{enumerate}
 
-We have already observed in Example \ref{bundles:ex:associated_bundles_part3} that $DE$ is a nullbordism of $E$. Moreover, the structure group of $DE \to M$ acts on fibers by orientation-preserving diffeomorphisms. Thus any orientation on $M$ gives rise to an orientation on $DE$, which is uniquely determined by requiring local trivialisations to be orientation preserving. For \ref{constr:eq:circle_bundle_observation2}, note that $DE \to M$ is a homotopy equivalence. Hence the diagram 
+We have already observed in Example \ref{bundles:ex:associated_bundles} \ref{bundles:ex:associated_bundles_part3} that $DE$ is a nullbordism of $E$. Moreover, the structure group of $DE \to M$ acts on fibers by orientation-preserving diffeomorphisms. Thus any orientation on $M$ gives rise to an orientation on $DE$, which is uniquely determined by requiring local trivialisations to be orientation preserving. For \ref{constr:eq:circle_bundle_observation2}, note that $DE \to M$ is a homotopy equivalence. Hence the diagram 
 \[\begin{tikzcd}[column sep=0cm]
 	E && DE \\
 	& M
@@ -63,7 +63,7 @@ Intuitively, the bundle $E \to M$ will now look as follows. It is trivial over t
 \end{figure}
 \vspace{.1cm}
 
-The presence of the torus summand then corresponds to property \ref{constr:property1}, the trivial bundle over $N$ to property \ref{constr:property2}, and the $S^{2n+1}$ over $\CP^n$ to property \ref{constr:property3}. We will now construct this bundle rigorously and subsequently discuss the proof of properties \ref{constr:property1} - \ref{constr:property3} in more detail. Implicitly, all homology and cohomology groups in this chapter are taken with $\Z$-coefficients. Recall that for manifolds $M_1$ and $M_2$ of dimension $m$, the cohomology of a connected sum $M_1 \# M_2$ is 
+The presence of the torus summand then corresponds to property \ref{constr:property1}, the trivial bundle over $N$ to property \ref{constr:property2}, and the $S^{2n+1}$ over $\CP^n$ to property \ref{constr:property3}. We will now construct this bundle rigorously and subsequently discuss the proof of properties \ref{constr:property1} - \ref{constr:property3} in more detail. Implicitly, all homology and cohomology groups in this section are taken with $\Z$-coefficients. Recall that for manifolds $M_1$ and $M_2$ of dimension $m$, the cohomology of a connected sum $M_1 \# M_2$ is 
 \[
 H^k(M_1 \# M_2) \cong H^k(M_1) \oplus H^k(M_2)
 \]
@@ -75,7 +75,7 @@ where all maps are induced by inclusions. Applying this to $M$, we obtain an iso
 \[
 \phi \colon H^2(\CP^n) \oplus H^2(T^{2n}) \oplus H^2(N) \to H^2(M).
 \]
-Let $\alpha = c_1(\tau_1^n) \in H^2(\CP^n)$ be the first Chern class of the tautological complex line bundle $\tau_1^n \to \CP^n$ and set $c_1 := \phi(\alpha,0,0) \in H^2(M)$. By Theorem \ref{bundles:thm:line_bundles_determined_by_chern_class}, there exists a unique complex line bundle $L \to M$ with first Chern class $c_1(L) = c_1$. Now define $E \to M$ as the $S^1$-principal bundle associated to this line bundle. We claim that $E$ is of the form as described above. To this end, we will show that $L \to M$ is trivial over the summands $T^{2n}$ and $N$, and is given by the restriction of $\tau_1^n \to \CP^n$ to $\CP^n - D^{2n} \subseteq M$ over the $\CP^n$ summand. By Example \ref{bundles:ex:associated_bundles} \ref{bundles:ex:associated_bundles_cpn}, the associated principal bundle of $\tau_1^n \to \CP^n$ is precisely $S^{2n+1} \to \CP^n$, so that the claim then follows from the naturality of the change-of-fiber construction; see Remark \ref{bundles:rem:naturality_change_of_fiber}. To establish the statements made about $L \to M$, let
+Let $\alpha = c_1(\tau_1^n) \in H^2(\CP^n)$ be the first Chern class of the tautological complex line bundle $\tau_1^n \to \CP^n$ and set $c_1 := \phi(\alpha,0,0) \in H^2(M)$. By Proposition \ref{bundles:thm:line_bundles_determined_by_chern_class}, there exists a unique complex line bundle $L \to M$ with first Chern class $c_1(L) = c_1$. Now define $E \to M$ as the $S^1$-principal bundle associated to this line bundle. We claim that $E$ is of the form as described above. To this end, we will show that $L \to M$ is trivial over the summands $T^{2n}$ and $N$, and is given by the restriction of $\tau_1^n \to \CP^n$ to $\CP^n - D^{2n} \subseteq M$ over the $\CP^n$ summand. By Example \ref{bundles:ex:associated_bundles} \ref{bundles:ex:associated_bundles_cpn}, the associated principal bundle of $\tau_1^n \to \CP^n$ is precisely $S^{2n+1} \to \CP^n$, so that the claim follows from the naturality of the change-of-fiber construction, see Remark \ref{bundles:rem:naturality_change_of_fiber}. To establish the statements made about $L \to M$, let
 \[
 i \colon N - D^{2n} \to M, \quad i_1 \colon N - D^{2n} \to N
 \]
@@ -101,10 +101,10 @@ the inclusions, the diagram
 	\arrow["{\mathrm{proj.}}", from=2-1, to=2-2]
 	\arrow["\cong", "j_1^\ast"', from=2-2, to=1-2]
 \end{tikzcd}\]
-commutes, and thus $c_1(j^\ast L) = j^\ast(c_1) = j_1^\ast(\alpha) = c_1(j_1^\ast \tau_1^n)$. Hence, applying Theorem \ref{bundles:thm:line_bundles_determined_by_chern_class} once more shows that $j^\ast L$ and $j_1^\ast \tau_1^n$ are isomorphic bundles. This concludes the construction of $E$. Let us now verify properties \ref{constr:property1} - \ref{constr:property3}.
+commutes, and thus $c_1(j^\ast L) = j^\ast(c_1) = j_1^\ast(\alpha) = c_1(j_1^\ast \tau_1^n)$. Hence, applying Proposition \ref{bundles:thm:line_bundles_determined_by_chern_class} once more shows that $j^\ast L$ and $j_1^\ast \tau_1^n$ are isomorphic bundles. This concludes the construction of $E$. Let us now verify properties \ref{constr:property1} - \ref{constr:property3}.
 
 \begin{proof}[\normalfont\textbf{Proof of property \ref{constr:property1}}]
-$M$ is connected and orientable, as each summand is. Moreover, since the collapse map $M \to T^{2n}$ has degree $1$ and $T^{2n}$ is enlargeable, it follows from Lemma \ref{enl:lem:constructing_enlargeable_mnf} that $M$ is also enlargeable. 
+$M$ is connected and orientable, as each summand is. Moreover, since the collapse map $M \to T^{2n}$ has degree $1$ and $T^{2n}$ is enlargeable, it follows from Lemma \ref{enl:lem:constructing_enlargeable_mnf} \ref{enl:eq:lem_for_constructing_enlargeable_mnf_1} that $M$ is also enlargeable. 
 \end{proof}
 
 \begin{proof}[\normalfont\textbf{Proof of property \ref{constr:property2}}]
@@ -151,12 +151,12 @@ We now claim that $\partial_1$ is surjective. For this, it suffices to show surj
 is the zero map.
 \end{proof}
 
-The above construction now gives examples of circle bundles with positive scalar curvature over enlargeable manifolds $M$ in all even dimensions $\mathrm{dim}(M)\geq 4$. We argue as in \cite{kumar2025circle} to also obtain examples in odd dimensions as follows. Let $E \to M$ be as above and let $\pi \colon M \times S^1 \to M$ be the projection. Then, by Example \ref{psc:ex:scalar_curvature_examples}, the pullback bundle $\pi^\ast E \cong E \times S^1$ admits a metric of positive scalar curvature. Furthermore, the base space $M \times S^1$ is still enlargeable by Lemma \ref{enl:lem:constructing_enlargeable_mnf}. Naturally, the question arises as to what happens in dimensions $\mathrm{dim}(M) \leq 3$. In this case, it turns out that no circle bundle $E \to M$ over an enlargeable manifold $M$ can admit a metric of positive scalar curvature \cite[Theorem B, Remark 2]{kumar2025circle}.
+The above construction now gives examples of circle bundles with positive scalar curvature over enlargeable manifolds $M$ in all even dimensions $\mathrm{dim}(M)\geq 4$. We argue as in \cite{kumar2025circle} to also obtain examples in odd dimensions as follows. Let $E \to M$ be as above and let $\pi \colon M \times S^1 \to M$ be the projection. Then, by Example \ref{psc:ex:scalar_curvature_examples} \ref{psc:ex:scalar_curvature_examples4}, the pullback bundle $\pi^\ast E \cong E \times S^1$ admits a metric of positive scalar curvature. Furthermore, the base space $M \times S^1$ is still enlargeable by Lemma \ref{enl:lem:constructing_enlargeable_mnf} \ref{enl:eq:lem_for_constructing_enlargeable_mnf_1}. Naturally, the question arises as to what happens in dimensions $\mathrm{dim}(M) \leq 3$. In this case, it turns out that no circle bundle $E \to M$ over an enlargeable manifold $M$ can admit a metric of positive scalar curvature \cite[Thm. B, Remark 2]{kumar2025circle}.
 
 % \section{Necessity of the Enlargeability Assumption in Gromov's Decay Theorem}
 \section{Vector Bundles with Uniformly Positive Scalar Curvature}
 
-In this section, we will use the preceding results to construct examples of $2$-dimensional real vector bundles $V \to M$ over enlargeable manifolds $M$, such that $V$ admits a complete metric of uniformly positive scalar curvature, thereby answering the second part of the question formulated at the beginning of this chapter.
+In this section, we will use the preceding results to construct examples of real rank $2$ vector bundles $V \to M$ over enlargeable manifolds $M$, such that $V$ admits a complete metric of uniformly positive scalar curvature, thereby answering the second part of the question formulated at the beginning of this chapter.
 
 Let $E \to M$ be a circle bundle as constructed in the previous section. The existence of a \psc-metric on $E$ followed from an application of Theorem \ref{psc:thm:existence_result_totally_non_spin}. However, we did not make use of the full strength of this theorem. Not only do we obtain a \psc-metric on $E$, but also a \psc-metric on the nullbordism $DE$, which is of product form near the boundary. This observation allows for the following construction. Let $g$ be such a \psc-metric on $DE$ and denote the induced metric on $E$ by $g_E$. Choose some collar neighbourhood $\iota \colon E \times [0,1) \to DE$ with respect to which $g$ is in product form, i.e. 
 \[

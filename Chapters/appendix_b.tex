@@ -1,4 +1,5 @@
 \chapter{Proof of a Result about Homotopy Groups of CW-Pairs}
+\label{chapter:appendix_b}
 
 In this section, we give a detailed proof of the following proposition, which was used in the proof of Theorem \ref{psc:thm:existence_result_spin} and Theorem \ref{psc:thm:existence_result_totally_non_spin}.
 
@@ -26,14 +27,14 @@ Moreover, we need the following fact concerning the homology of relative CW-comp
 
 \begin{lemma}
     \label{appendix2:lem:finite_generated_homology}
-Let $Y$ and $B$ be topological spaces, where $Y$ is obtained from $B$ by attaching finitely many $n$-cells. Let $p \colon \hat{Y} \to Y$ be some cover, such that the group $\mathrm{Deck}(p)$ of deck transformations of $p$ acts transitively on the fibers. Set $\hat{B} := p^{-1}(B)$. Then $H_n(\hat{Y},\hat{B})$ is finitely generated as a $\Z[\mathrm{Deck}(p)]$-module, where the action of an element $\phi \in \mathrm{Deck}(p)$ is given by $\phi_\ast \colon H_n(\hat{Y},\hat{B}) \to H_n(\hat{Y},\hat{B})$.
+Let $Y$ and $B$ be topological spaces, where $Y$ is obtained from $B$ by attaching finitely many $n$-cells. Let $p \colon \hat{Y} \to Y$ be some covering, such that the group $\mathrm{Deck}(p)$ of deck transformations of $p$ acts transitively on the fibers. Set $\hat{B} := p^{-1}(B)$. Then $H_n(\hat{Y},\hat{B})$ is finitely generated as a $\Z[\mathrm{Deck}(p)]$-module, where the action of an element $\phi \in \mathrm{Deck}(p)$ is given by $\phi_\ast \colon H_n(\hat{Y},\hat{B}) \to H_n(\hat{Y},\hat{B})$.
 \end{lemma}
 
 \begin{proof}
 Let us recall how the relative CW-structure of $(Y,B)$ lifts to a relative CW-structure of $(\hat{Y},\hat{B})$. Let $I$ be the index set for the $n$-cells of $(Y,B)$ with characteristic maps $Q_i \colon D^n \to Y$, $i \in I$. Choose some fixed basepoint $e_0 \in D^n$. Then for each $y \in \tilde{Y}$ with $p(y) = Q_i(e_0)$, there exists a unique lift $Q_i^y \colon D^n \to \hat{Y}$ of $Q_i$ along $p$, such that $Q_i^y(e_0) = y$. These $Q_i^y$, indexed over the set
 $\Lambda := \{(y,i) \in \hat{Y} \times I \mid p(y) = Q_i(e_0)\}$,
 are then the characteristic maps for the $n$-cells of $(\hat{Y},\hat{B})$. The corresponding attaching maps are the restrictions $q_i^y := Q_i^y|_{S^{n-1}} \colon S^{n-1} \to \hat{B}$.
-See \cite[Theorem 1.1.6]{fritsch1990cellular} for further details. From excision in the pushout
+See \cite[Thm. 1.1.6]{fritsch1990cellular} for further details. From excision in the pushout
 
 \[\begin{tikzcd}
 {\coprod_{\Lambda}S^{n-1}} & {\hat{B}} \\
@@ -64,7 +65,7 @@ Therefore, $\bm{Q}$ is an isomorphism of $\Z[\mathrm{Deck}(p)]$-modules. But sin
 \end{proof}
 
 \begin{proof}[Proof of Proposition \ref{appendix2:prop:finite_generation_lemma}]
-    Let $p \colon \tX \to X$ be the universal cover. Since the inclusion $A \to X$ induces an isomorphism on $\pi_1$, the universal cover of $A$ is given by $\tA = p^{-1}(A)$. Choosing basepoints $x_0 \in A$ and $\tx_0 \in \tA$ with $p(\tx_0) = x_0$, we obtain canonical isomorphisms 
+    Let $p \colon \tX \to X$ be the universal covering. Since the inclusion $A \to X$ induces an isomorphism on $\pi_1$, the universal cover of $A$ is given by $\tA = p^{-1}(A)$. Choosing basepoints $x_0 \in A$ and $\tx_0 \in \tA$ with $p(\tx_0) = x_0$, we obtain canonical isomorphisms 
     \[
     \pi_1(A,x_0) \cong \pi_1(X,x_0) \cong \mathrm{Deck}(p),
     \]
@@ -84,7 +85,7 @@ Therefore, $\bm{Q}$ is an isomorphism of $\Z[\mathrm{Deck}(p)]$-modules. But sin
     \[
     h \colon \pi_n(\tX,\tA,\tx_0) \to H_n(\tX,\tA),
     \]
-    where $h$ is the Hurewicz map. Note that $h$ is an isomorphism by the Hurewicz Theorem since $\pi_k(\tX,\tA,\tx_0) \cong \pi_k(X,A,x_0) = 0$ for $2 \leq k \leq n-1$, and $\tX, \tA$ are simply connected. These isomorphisms are now equivariant with respect to the $\pi$-actions defined above. For $p_\ast$, this is a direct consequence of the definitions, and for $h$, this follows from naturality of the Hurewicz map and the fact that $h([f])$ only depends on the free homotopy class of $f \colon (D^n,S^{n-1}) \to (\tX,\tA)$, which is invariant under the change of basepoint isomorphism. So, in other words, $p_\ast$ and $h$ are isomorphisms of $\Z[\pi]$-modules (note that even for $n=2$ all groups are abelian). Therefore, it suffices to show that $H_n(\tX,\tA)$ is a finitely generated $\Z[\pi]$-module. Let $C_\ast^\mathrm{cell}(\tX,\tA)$ be the cellular chain complex of $(\tX,\tA)$ with respect to the relative CW-structure induced by $(X,A)$. If $X_k$ denotes the $k$-skeleton of $(X,A)$, the $k$-skeleton of $(\tX,\tA)$ is given by $\tX_k = p^{-1}(X_k)$. Compare the proof of Lemma \ref{appendix2:lem:finite_generated_homology} or \cite[Proposition 2.3.9]{fritsch1990cellular}. By assumption, $X_n$ is obtained from $X_{n-1}$ by attaching finitely many $n$-cells. Consider the cover $p|_{\tX_n} \colon \tX_n \to X_n$ and note that $\pi = \mathrm{Deck}(p) \cong \mathrm{Deck}(p|_{\tX_n})$, the isomorphism being given by restricting a deck transformation of $p$ to the $n$-skeleton $\tX_n$. Clearly $\mathrm{Deck}(p|_{\tX_n})$ still acts transitively on the fibers. Therefore, we can apply Lemma \ref{appendix2:lem:finite_generated_homology} to conclude that 
+    where $h$ is the Hurewicz map. Note that $h$ is an isomorphism by the Hurewicz Theorem since $\pi_k(\tX,\tA,\tx_0) \cong \pi_k(X,A,x_0) = 0$ for $2 \leq k \leq n-1$, and $\tX, \tA$ are simply connected. These isomorphisms are now equivariant with respect to the $\pi$-actions defined above. For $p_\ast$, this is a direct consequence of the definitions, and for $h$, this follows from naturality of the Hurewicz map and the fact that $h([f])$ only depends on the free homotopy class of $f \colon (D^n,S^{n-1}) \to (\tX,\tA)$, which is invariant under the change of basepoint isomorphism. So, in other words, $p_\ast$ and $h$ are isomorphisms of $\Z[\pi]$-modules (note that even for $n=2$ all groups are abelian). Therefore, it suffices to show that $H_n(\tX,\tA)$ is a finitely generated $\Z[\pi]$-module. Let $C_\ast^\mathrm{cell}(\tX,\tA)$ be the cellular chain complex of $(\tX,\tA)$ with respect to the relative CW-structure induced by $(X,A)$. If $X_k$ denotes the $k$-skeleton of $(X,A)$, the $k$-skeleton of $(\tX,\tA)$ is given by $\tX_k = p^{-1}(X_k)$. Compare the proof of Lemma \ref{appendix2:lem:finite_generated_homology} or \cite[Prop. 2.3.9]{fritsch1990cellular}. By assumption, $X_n$ is obtained from $X_{n-1}$ by attaching finitely many $n$-cells. Consider the covering $p|_{\tX_n} \colon \tX_n \to X_n$ and note that $\pi = \mathrm{Deck}(p) \cong \mathrm{Deck}(p|_{\tX_n})$, the isomorphism being given by restricting a deck transformation of $p$ to the $n$-skeleton $\tX_n$. Clearly $\mathrm{Deck}(p|_{\tX_n})$ still acts transitively on the fibers. Therefore, we can apply Lemma \ref{appendix2:lem:finite_generated_homology} to conclude that 
     \[
     C_n^\mathrm{cell}(\tX,\tA) = H_n(\tX_{n},\tX_{n-1})
     \]

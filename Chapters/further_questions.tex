@@ -3,13 +3,13 @@
 
 \section{Problems with Extending the Construction to the Spin Case}
 
-The base spaces $M$ of the circle bundles $E \to M$ constructed in the previous chapter are all totally non-spin manifolds. As we have seen in Chapter \ref{chapter:psc}, many constructions in positive scalar curvature geometry require the existence of a spin structure, so it may also be desirable to get examples of such circle bundles over spin manifolds. However, our methods do not straightforwardly extend to the spin case. In this section we discuss the difficulties that arise. 
+The base spaces $M$ of the circle bundles $E \to M$ constructed in the previous chapter are all totally non-spin manifolds. As we have seen in \hyperref[chapter:psc]{Chapter 2}, many results in positive scalar curvature geometry require the existence of a spin structure, so it may also be desirable to get examples of such circle bundles over spin manifolds. However, our methods do not straightforwardly extend to the spin case. In this section we discuss the difficulties that arise. 
 
-Suppose we are given an $S^1$-principal bundle $\pi \colon E \to M$ over a spin manifold $M$ (in particular $M$ is orientable). First of all, Theorem \ref{psc:thm:existence_result_totally_non_spin} no longer applies to conclude the existence of a \psc-metric on $E$, since the total space $E$ is itself a spin manifold. This can be seen as follows. There exists a splitting 
+Suppose we are given an $S^1$-principal bundle $\pi \colon E \to M$ over a closed spin manifold $M$ (in particular $M$ is orientable). First of all, Theorem \ref{psc:thm:existence_result_totally_non_spin} no longer applies to conclude the existence of a \psc-metric on $E$, since the total space $E$ is itself a spin manifold. This can be seen as follows. There exists a splitting 
 \[
 TE \cong VE \oplus HE,
 \]
-of the tangent bundle $TE$ of $E$ into a \textit{vertical} bundle $VE$ and a \textit{horizontal} bundle $HE$. The bundle $VE$ is simply the kernel of the differential $d\pi \colon TE \to TM$, and we can then choose $HE$ as any complementary subbundle (for example by choosing a fiber metric on $TE$). By construction, $d \pi \colon HE \to TM$ is an isomorphism on fibers, so that $HE \cong \pi^\ast TM$. In our case, $VE$ is one-dimensional, so that $w_2(VE) = 0$ and therefore
+of the tangent bundle $TE$ of $E$ into a \textit{vertical} bundle $VE$ and a \textit{horizontal} bundle $HE$. The bundle $VE$ is simply the kernel of the differential $d\pi \colon TE \to TM$, and we can then choose $HE$ as any complementary subbundle (for example by choosing a fiber metric on $TE$). By construction, $d \pi \colon HE \to TM$ is an isomorphism on fibers, so that $HE \cong \pi^\ast TM$. In our case, $VE$ is of rank $1$, so that $w_2(VE) = 0$ and therefore
 \[
 w_2(TE) = w_1(HE) \smile w_1(VE) + w_2(HE) = \pi^\ast w_1(TM) \smile w_1(VE) + \pi^\ast w_2(TM) = 0,
 \]
@@ -108,17 +108,17 @@ In \hyperref[chapter:psc]{Chapter 2} we have discussed sufficient conditions for
 This already illustrates the complexity that the space of \psc-metrics may exhibit. Going one step further, we can also investigate the higher homotopy groups of this space, essentially asking which \emph{families} of \psc-metrics can be deformed into each other. One result in this direction is the following theorem due to Hanke, Schick and Steimle \cite[Thm. 1.1]{HankeSchickSteimle}.
 
 \begin{theorem}
-	Let $k \in \N_0$. Then there exists a number $N(k)$ such that for every $n \geq N(k)$ and every spin manifold $M$ of dimension $4n - k - 1$ admitting a \psc-metric $g_0$, the homotopy group 
+	Let $k \in \N_0$. Then there exists a number $N(k)$ such that for every $n \geq N(k)$ and every closed spin manifold $M$ of dimension $4n - k - 1$ admitting a \psc-metric $g_0$, the homotopy group 
 	\[
 	\pi_k(\mR(M), g_0)
 	\]
 	contains elements of infinite order if $k \geq 1$ and infinitely many distinct elements if $k=0$.
 \end{theorem}
 
-Note that for $k=0$ and $M=S^{4n-1}$, the statement above generalizes Theorem \ref{further_questions:thm:carr} quite substantially. Tying this discussion back to our results of \hyperref[chapter:constr]{Chapter 4}, let us analyze the \psc-metric constructed on $E$ more closely. A natural question is whether this metric is invariant under the $S^1$-action on $E$. We can answer this question in the negative due to a theorem of Bérard-Bergery, which states that a closed manifold with a free $S^1$-action admits an $S^1$-invariant \psc-metric if and only if its orbit space admits a \psc-metric \cite[Theorem C]{BerardBergery1983}, \cite[Theorem 2.2]{Wiemeler2016}. In our case, $E / S^1 \cong M$ and $M$ is enlargeable. Therefore, it follows from Theorem \ref{enl:thm:enl_mnf_do_not_admit_psc} that $M$ does not admit a \psc-metric, and hence the \psc-metric on $E$ cannot be $S^1$-invariant. In view of the above discussion about the homotopy groups of spaces of \psc-metrics, we are led to the following question.
+Note that for $k=0$ and $M=S^{4n-1}$, the statement above generalizes Theorem \ref{further_questions:thm:carr} quite substantially. Tying this discussion back to our results of \hyperref[chapter:main_construction]{Chapter 4}, let us analyze the \psc-metric constructed on $E$ more closely. A natural question is whether this metric is invariant under the $S^1$-action on $E$. We can answer this question in the negative due to a theorem of Bérard-Bergery, which states that a closed manifold with a free $S^1$-action admits an $S^1$-invariant \psc-metric if and only if its orbit space admits a \psc-metric \cite[Thm. C]{BerardBergery1983}, \cite[Thm. 2.2]{Wiemeler2016}. In our case, $E / S^1 \cong M$ and $M$ is enlargeable. Therefore, it follows from Theorem \ref{enl:thm:enl_mnf_do_not_admit_psc} that $M$ does not admit a \psc-metric, and hence the \psc-metric on $E$ cannot be $S^1$-invariant. In view of the above discussion about the homotopy groups of spaces of \psc-metrics, we are led to the following question.
 
 \begin{question*}
-	Let $g \in \mathcal{R}^+(E)$ be the \psc-metric constructed in \hyperref[chapter:constr]{Chapter 4}. Does the map 
+	Let $g \in \mathcal{R}^+(E)$ be the \psc-metric constructed in \hyperref[chapter:main_construction]{Chapter 4}. Does the map 
 	\[
 	S^1 \to \mathcal{R}^+(E), \;\; \zeta \mapsto \zeta^\ast g
 	\] 
