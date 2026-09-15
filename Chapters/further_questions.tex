@@ -43,8 +43,8 @@ Again, we conclude $w_2(L) = 0$ since $p$ is a homotopy equivalence. Therefore, 
 \[
 H^2(M;\Z) \to H^2(M;\Z_2)
 \]
-by Proposition \ref{bundles:prop:connection_chern_stiefel_whitney_classes}. In other words, $c_1(L)$ can be written as $c_1(L) = 2 \alpha$ for some $\alpha \in H^2(M;\Z)$. To derive a contradiction to property \ref{constr:property2_spin} from this, we claim that the following diagram commutes up to sign
-\begin{equation}
+by Proposition \ref{bundles:prop:connection_chern_stiefel_whitney_classes}. In other words, $c_1(L)$ can be written as $c_1(L) = 2 \alpha$ for some \linebreak$\alpha \in H^2(M;\Z)$. To derive a contradiction to property \ref{constr:property2_spin} from this, we claim that the following diagram commutes up to sign
+\[
 \begin{tikzcd}[column sep=6em,row sep=2.5em]
     {\pi_2(M)} & {\pi_1(S^1)} \\
     {H_2(M;\Z)} & {H_1(S^1;\Z)}
@@ -53,9 +53,10 @@ by Proposition \ref{bundles:prop:connection_chern_stiefel_whitney_classes}. In o
     \arrow["\cong", from=1-2, to=2-2]
     \arrow["{\langle c_1(L),-\rangle [S^1]}", from=2-1, to=2-2]
 \end{tikzcd}
-\end{equation}
+\]
 where $\partial$ is the boundary map from the long exact sequence of homotopy groups for the fibration $E \to M$ and the vertical maps are given by the Hurewicz homomorphism. Moreover, $[S^1]$ denotes the fundamental class of $S^1$. Observe that $\pi_1(S^1) \to H_1(S^1;\Z)$ is an isomorphism, since $\pi_1(S^1)$ is abelian. Granting this claim for now, it follows from $c_1(L) = 2\alpha$ that the image of $\partial \colon \pi_2(M) \to \pi_1(S^1)$ contains only even multiples of the generator of $\pi_1(S^1)$. Thus $\partial$ is not surjective, and consequently $\pi_1(S^1) \to \pi_1(E)$ is non-zero by exactness. Therefore, a bundle satisfying both \ref{constr:property1_spin} and \ref{constr:property2_spin} does not exist. To show commutativity of the above square, let $\tau_1 \to \CP^\infty$ be the universal complex line bundle (compare Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:es:examples_for_classifying_spaces_special_case}) and let $f \colon M \to \CP^\infty$ be a classifying map for $L \to M$. Essentially, commutativity of the square is then due to the fact that the corresponding square for the \emph{universal} principal bundle commutes and all maps are compatible with the classifying map $f$. To make this precise, we extend the diagram above as follows: 
 
+\vspace{0.5\baselineskip}
 \[\begin{tikzcd}[column sep=1.5em,row sep=large, execute at end picture={
   \node at (3.3,0) {$(1)$};
   \node at (-3,0) {$(3)$};
@@ -79,6 +80,7 @@ where $\partial$ is the boundary map from the long exact sequence of homotopy gr
 	\arrow["{\mathrm{id}}", from=3-5, to=4-6]
 	\arrow["{\langle c_1(\tau_1),-\rangle [S^1]}", bend right = 6, from=4-1, to=4-6]
 \end{tikzcd}\]
+\vspace{\baselineskip}
 
 Again, the top horizontal map is the boundary map from the long exact sequence for the fibration $ES^1 \to \CP^\infty$ and the outer vertical maps are given by the Hurewicz homomorphism. Since $\CP^\infty$ is simply connected, $\pi_2(\CP^\infty) \to H_2(\CP^\infty;\Z)$ is an isomorphism. Moreover, the boundary map $\partial \colon \pi_2(\CP^\infty) \to \pi_1(S^1)$ is an isomorphism by Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG}. Clearly, $(1)$ commutes. Furthermore, $(2)$ commutes by naturality of the long exact sequence of homotopy groups and $(3)$ commutes by naturality of the Hurewicz homomorphism. For commutativity of $(4)$, we compute for $a \in H_2(M;\Z)$:
 \[
@@ -98,7 +100,7 @@ Thus, we have established that our previous methods for constructing a \psc-metr
 
 \section{A Question about the Homotopy Groups of the Space of \psc-Metrics}
 
-In \hyperref[chapter:psc]{Chapter 2} we have discussed sufficient conditions for the existence of a \psc-metric on a manifold. Given a manifold $M$ which admits a \psc-metric, we can further ask how many such metrics exist. More precisely, the question should be whether any two \psc-metrics on $M$ can be deformed into each other via a continuous path of \psc-metrics. Phrased differently, if we denote by $\mR(M)$ the space of all \psc-metrics on $M$, equipped with the $C^\infty$-topology, this statement asks whether $\pi_0(\mR(M))$ is trivial. For instance, this is always true for $M = S^2$. In fact, $\mR(S^2)$ is contractible, and so in particular connected \cite[Thm. 3.4]{stolz2014metrics}. However, in higher dimensions this breaks down even for such simple spaces as spheres, as demonstrated by the following theorem due to Carr \cite[Thm. 4]{Carr1988}.
+In \hyperref[chapter:psc]{Chapter 2} we have discussed sufficient conditions for the existence of a \psc-metric on a manifold. Given a manifold $M$ which admits a \psc-metric, we can further ask how many such metrics exist. More precisely, the question should be whether any two \psc-metrics on $M$ can be deformed into each other via a continuous path of \psc-metrics. Phrased differently, if we denote by $\mR(M)$ the space of all \psc-metrics on $M$, equipped with the $C^\infty$-topology, this statement asks whether $\pi_0(\mR(M))$ is trivial. For instance, this is always true for $M = S^2$. In fact, $\mR(S^2)$ is contractible, and so in particular connected \cite[Thm. 3.4]{stolz2014metrics}. However, in higher dimensions things get much more complex even for such simple spaces as spheres, as demonstrated by the following theorem due to Carr \cite[Thm. 4]{Carr1988}.
 
 \begin{theorem}
 	\label{further_questions:thm:carr}

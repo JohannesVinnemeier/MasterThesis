@@ -26,7 +26,7 @@ In order to apply this in our case, we make the following two observations, vali
 	\item \label{constr:eq:circle_bundle_observation2} The inclusion $E \cong \partial DE \to DE$ induces an isomorphism on $\pi_1$ if and only if the fibers of $E$ are contractible within $E$, that is the inclusion $S^1 \to E$ is trivial on $\pi_1$.
 \end{enumerate}
 
-We have already observed in Example \ref{bundles:ex:associated_bundles} \ref{bundles:ex:associated_bundles_part3} that $DE$ is a nullbordism of $E$. Moreover, the structure group of $DE \to M$ acts on fibers by orientation-preserving diffeomorphisms. Thus any orientation on $M$ gives rise to an orientation on $DE$, which is uniquely determined by requiring local trivialisations to be orientation preserving. For \ref{constr:eq:circle_bundle_observation2}, note that $DE \to M$ is a homotopy equivalence. Hence the diagram 
+We have already observed in Example \ref{bundles:ex:associated_bundles} \ref{bundles:ex:associated_bundles_part3} that $DE$ is a nullbordism of $E$. Moreover, the structure group of $DE \to M$ acts on fibers by orientation preserving diffeomorphisms. Thus any orientation on $M$ gives rise to an orientation on $DE$, which is uniquely determined by requiring local trivialisations to be orientation preserving. For \ref{constr:eq:circle_bundle_observation2}, note that $DE \to M$ is a homotopy equivalence. Hence the diagram 
 \[\begin{tikzcd}[column sep=0cm]
 	E && DE \\
 	& M
@@ -49,7 +49,7 @@ With these observations in mind, we need to construct circle bundles $E \to M$ w
 	\item \label{constr:property3} The inclusion $S^1 \to E$ is trivial on $\pi_1$.
 \end{enumerate}
 
-We define $M$ as the connected sum of three closed manifolds. Let $N^{2n}$ be any closed $2n$-dimensional totally non-spin manifold, which is moreover connected and orientable. For example, take $N:= \CP^2 \times T^{2n-4}$, which is totally non-spin by Lemma \ref{psc:lem:totally_non_spin_lemma} and Example \ref{bundles:ex:spin_and_non_spin} \ref{bundles:ex:cp2_not_spin}. Then consider
+We define $M$ as the connected sum of three closed manifolds. Let $N^{2n}$ be any closed totally non-spin manifold of dimension $2n$, which is moreover connected and orientable. For example, take $N:= \CP^2 \times T^{2n-4}$, which is totally non-spin by Lemma \ref{psc:lem:totally_non_spin_lemma} and Example \ref{bundles:ex:spin_and_non_spin} \ref{bundles:ex:cp2_not_spin}. Then consider
 \[
 M := \CP^n \# T^{2n} \# N.
 \] 
@@ -88,7 +88,7 @@ be the inclusions. Then
 	\arrow["{\mathrm{proj.}}", from=2-1, to=2-2]
 	\arrow["\cong", "i_1^\ast"', from=2-2, to=1-2]
 \end{tikzcd}\]
-commutes, and therefore $c_1(i^\ast L) =  i^\ast(c_1) = 0$. Again, using Theorem \ref{bundles:thm:line_bundles_determined_by_chern_class}, we conclude that $i^\ast L$ is trivial. An analogous argument shows triviality of $L$ over the $T^{2n}$ summand. Similarly, if we denote by 
+commutes, and therefore $c_1(i^\ast L) =  i^\ast(c_1) = 0$. Again, using Proposition \ref{bundles:thm:line_bundles_determined_by_chern_class}, we conclude that $i^\ast L$ is trivial. An analogous argument shows triviality of $L$ over the $T^{2n}$ summand. Similarly, if we denote by 
 \[
 j \colon \CP^n - D^{2n} \to M, \quad j_1 \colon \CP^{n}-D^{2n} \to \CP^{n}
 \]
@@ -104,7 +104,7 @@ the inclusions, the diagram
 commutes, and thus $c_1(j^\ast L) = j^\ast(c_1) = j_1^\ast(\alpha) = c_1(j_1^\ast \tau_1^n)$. Hence, applying Proposition \ref{bundles:thm:line_bundles_determined_by_chern_class} once more shows that $j^\ast L$ and $j_1^\ast \tau_1^n$ are isomorphic bundles. This concludes the construction of $E$. Let us now verify properties \ref{constr:property1} - \ref{constr:property3}.
 
 \begin{proof}[\normalfont\textbf{Proof of property \ref{constr:property1}}]
-$M$ is connected and orientable, as each summand is. Moreover, since the collapse map $M \to T^{2n}$ has degree $1$ and $T^{2n}$ is enlargeable, it follows from Lemma \ref{enl:lem:constructing_enlargeable_mnf} \ref{enl:eq:lem_for_constructing_enlargeable_mnf_1} that $M$ is also enlargeable. 
+$M$ is connected and orientable, as each summand is. Moreover, since the collapse map $M \to T^{2n}$ has degree $1$ and $T^{2n}$ is enlargeable, it follows from Lemma \ref{enl:lem:constructing_enlargeable_mnf} \ref{enl:eq:lem_for_constructing_enlargeable_mnf_2} that $M$ is also enlargeable. 
 \end{proof}
 
 \begin{proof}[\normalfont\textbf{Proof of property \ref{constr:property2}}]

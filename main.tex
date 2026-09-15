@@ -10,7 +10,7 @@
 \usepackage{tikz-cd}                           
 \usepackage{graphicx}                           
 \usepackage{hyperref, xurl}                     
-\usepackage{needspace}                          
+\usepackage{needspace}   
 \usepackage[
     backend=biber,
     style=alphabetic,
@@ -87,12 +87,13 @@
 
 \begin{document}
 
-
   \frontmatter
   \pagenumbering{gobble}
 
   \newgeometry{margin=3cm}
   \include{Titlepage/titlepage}
+  \cleardoublepage
+  \include{Titlepage/erklaerung_danksagung}
   \restoregeometry
   \cleardoublepage
 
@@ -113,14 +114,14 @@
     \include{Chapters/appendix_b}
 
   \backmatter
-    \include{Misc/to_do}
 
-  \cleardoublepage
-  \addcontentsline{toc}{chapter}{List of Figures}
-  \listoffigures
+    \cleardoublepage
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \listoffigures
 
-  \cleardoublepage
-  \addcontentsline{toc}{chapter}{Bibliography}
-  \printbibliography
+    \cleardoublepage
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \printbibliography
 
 \end{document}
+

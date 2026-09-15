@@ -19,7 +19,7 @@ and let $\phi^{-1}(y) = (\pi(y),h)$. Then set
 \[
 y \cdot g := \phi(\pi(y),hg).
 \]
-This is well defined since, by definition, $G$ acts on itself by \textit{left} translations under a change of local trivialisation. 
+This is well-defined since, by definition, $G$ acts on itself by \textit{left} translations under a change of local trivialisation. 
 A morphism of principal bundles should respect this right action, thus we define:
 
 \begin{definition}
@@ -100,7 +100,7 @@ define local trivialisations of $p^\prime$ with the same transition functions $\
     \[
     U \times G \times F \to U \times F, \; (x,g,f) \mapsto (x,gf)
     \]
-    descends to a homeomorphism $\modulo{(U \times G \times F)}{\sim} \to U \times F$ with inverse given by $(x,f) \mapsto [(x,e,f)]$. Under this homeomorphism, $\tilde{\kappa}$ corresponds to a homeomorphism $\kappa \colon U \times F \to \pi^{-1}(U)$, which is explicitly given by $(x,f) \mapsto [(\psi(x,e),f)]$. Since
+    descends to a homeomorphism $\modulo{(U \times G \times F)}{\sim} \to U \times F$. Explicitly, the inverse is given by $(x,f) \mapsto [(x,e,f)]$. Under this homeomorphism, $\tilde{\kappa}$ corresponds to a homeomorphism $\kappa \colon U \times F \to \pi^{-1}(U)$, given by $(x,f) \mapsto [(\psi(x,e),f)]$. Since
     \[\begin{tikzcd}
 	{U \times F} & {\pi^{-1}(U)} \\
 	{} & U
@@ -108,7 +108,7 @@ define local trivialisations of $p^\prime$ with the same transition functions $\
 	\arrow["{\mathrm{proj.}}"', from=1-1, to=2-2]
     \arrow["\pi", from=1-2, to=2-2]
     \end{tikzcd}\]
-    commutes, this shows that $\pi \colon E \to B$ is locally trivial. To see that, for effective $G$-actions, this construction agrees with the change-of-fiber construction introduced above, we compute the transition functions of the local trivialisations just defined. Let $U_\alpha, U_\beta \subseteq B$ be two trivialising neighbourhoods for $P \to B$ with local trivialisations $\psi_\alpha, \psi_\beta$ and transition function $\tau_{\alpha\beta} \colon U_\alpha \cap U_\beta \to G$. Moreover, let $\kappa_\alpha, \kappa_\beta$ be the corresponding local trivialisations for $E \to B$ as constructed above. Then we compute 
+    commutes, this shows that $\pi \colon E \to B$ is locally trivial. To see that, for effective $G$\nobreakdash-actions, this construction agrees with the change-of-fiber construction introduced above, we compute the transition functions of the local trivialisations just defined. Let $U_\alpha, U_\beta \subseteq B$ be two trivialising neighbourhoods for $P \to B$ with local trivialisations $\psi_\alpha, \psi_\beta$ and transition function $\tau_{\alpha\beta} \colon U_\alpha \cap U_\beta \to G$. Moreover, let $\kappa_\alpha, \kappa_\beta$ be the corresponding local trivialisations for $E \to B$ as constructed above. Then we compute 
     \begin{align*}
         (\kappa_\alpha^{-1} \circ \kappa_\beta)(x,f) & = \kappa_\alpha^{-1}([(\psi_\beta(x,e),f)]) = (x,\tau_{\alpha\beta}(x) f).
     \end{align*}
@@ -151,8 +151,9 @@ Let us look at some concrete examples for the theory developed above.
 
 \begin{example}
     \label{bundles:ex:associated_bundles}
-    \begin{enumerate}[label=(\roman*)]
-        \item Let $\pi \colon E \to B$ be a real rank $n$ vector bundle over a paracompact base space $B$. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $\mathrm{O}(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle $\mathrm{O}(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all ordered orthonormal bases of $E_x$. The topology on $\mathrm{O}(E)$ is the subspace topology $\mathrm{O}(E) \subseteq E \times \ldots \times E$. Local trivialisations of the canonical projection map $p \colon \mathrm{O}(E) \to B$ can be defined as follows. Choose an orthonormal local frame $e_1,\ldots,e_n$ of $E$ defined over an open set $U \subseteq B$. Then a trivialisation $\phi \colon U \times \mathrm{O}(n) \to p^{-1}(U)$ is given by
+    \begin{enumerate}[label=(\roman*)] 
+        \item[] 
+        \item \vspace{-.5em} Let $\pi \colon E \to B$ be a real rank $n$ vector bundle over a paracompact base space $B$. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $\mathrm{O}(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle $\mathrm{O}(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all ordered orthonormal bases of $E_x$. The topology on $\mathrm{O}(E)$ is the subspace topology $\mathrm{O}(E) \subseteq E \times \ldots \times E$. Local trivialisations of the canonical projection map $p \colon \mathrm{O}(E) \to B$ can be defined as follows. Choose an orthonormal local frame $e_1,\ldots,e_n$ of $E$ defined over an open set $U \subseteq B$. Then a trivialisation $\phi \colon U \times \mathrm{O}(n) \to p^{-1}(U)$ is given by
         \[
             (x,A) \mapsto \left(\sum_{i=1}^n a_{i1}e_i(x),\ldots,\sum_{i=1}^n a_{in}e_i(x)\right),
         \]
@@ -187,7 +188,7 @@ The significance of this definition is established by the following theorem. We 
 
 \begin{theorem}
     \label{bundles:thm:universal_principal_bundle}
-    Let $E \to B$ be a universal $G$-principal bundle. Then for any other $G$-principal bundle $P \to X$ there exists a morphism $P \to E$ of $G$-principal bundles, which is unique up to $G$-homotopy.
+    Let $E \to B$ be a universal $G$-principal bundle. Then for any other $G$\nobreakdash-principal bundle $P \to X$ there exists a morphism $P \to E$ of $G$-principal bundles, which is unique up to $G$-homotopy.
 \end{theorem}
 
 Before showing the theorem, let us discuss its implications. Firstly, we can equivalently formulate the theorem by saying that $E \to B$ is a terminal object in the homotopy category of $G$-principal bundles over CW-complexes and thus, in particular, uniquely determined (up to $G$-homotopy equivalence). In view of this, one usually writes $EG := E$ and $BG := B$, and refers to $EG \to BG$ as \textit{the} universal $G$-principal bundle. The base space $BG$ is called the \textit{classifying space} of $G$. Since any bundle morphism $(F,f) \colon P \to EG$ induces a morphism $P \to f^\ast EG$ (and vice versa, which is true for arbitrary fiber bundles), we conclude from Proposition \ref{bundles:prop:morphisms_of_principal_bundles} that 
@@ -307,7 +308,7 @@ We conclude this section by discussing some examples.
         \[
         V_k^\infty := \operatorname*{colim}_n\,(V_k^n), \quad \mathrm{Gr}_k^\infty := \operatorname*{colim}_n\,(\mathrm{Gr}_k^n)
         \] 
-        and the induced map $V_k^\infty \to \mathrm{Gr}_k^\infty$. One can choose trivialisations of $V_k^n \to \mathrm{Gr}_k^n$ for varying $n$, which fit together to induce a trivialisation in the colimit, such that $V_k^\infty \to \mathrm{Gr}_k^\infty$ defines an $\o(k)$-principal bundle. We claim that $V_k^\infty$ is weakly contractible. Consider the map 
+        and the induced map $V_k^\infty \to \mathrm{Gr}_k^\infty$. One can choose trivialisations of $V_k^n \to \mathrm{Gr}_k^n$ for varying $n$, which fit together to induce a trivialisation in the colimit, such that \linebreak $V_k^\infty \to \mathrm{Gr}_k^\infty$ defines an $\o(k)$-principal bundle. We claim that $V_k^\infty$ is weakly contractible. Consider the map 
         \[
         V_k^n \to S^{n-1}, \; (v_1, \ldots, v_k) \mapsto v_1.
         \]
@@ -324,7 +325,7 @@ We conclude this section by discussing some examples.
         \] 
         for $i \leq n-k-1$. Now from compactness of $S^i$ and the fact that $V_k^n$ is closed in $V_k^{n+1}$, we conclude that the image of any map $S^i \to V_k^\infty$ is contained in some finite stage $V_k^n$. Therefore $\pi_i(V_k^\infty) = 0$ for all $i \geq 0$, such that the universal $\o(k)$-principal bundle is explicitly given by $V_k^\infty \to \mathrm{Gr}_k^\infty$.
 
-        Similarly we get an explicit description of the universal $\so(k)$-principal bundle. Let $\tilde{\mathrm{Gr}}_k^n$ be the set of tuples consisting of a $k$-dimensional linear subspace of $\R^n$ together with a chosen orientation. The topology on $\tilde{\mathrm{Gr}}_k^n$ is induced by 
+        Similarly, we get an explicit description of the universal $\so(k)$-principal bundle. Let $\tilde{\mathrm{Gr}}_k^n$ be the set of tuples consisting of a $k$-dimensional linear subspace of $\R^n$ together with a chosen orientation. The topology on $\tilde{\mathrm{Gr}}_k^n$ is induced by 
         \[
         p \colon V_k^n \to \tilde{\mathrm{Gr}}_k^n, \; (v_1,\ldots,v_k) \mapsto (\mathrm{span}(v_1,\ldots,v_k), \mathrm{o}_{(v_1,\ldots,v_k)}),
         \] 
@@ -376,11 +377,11 @@ For real vector bundles, the most important characteristic classes are the \text
         \item $w_i(E) \in H^i(X;\Z_2)$ for any real vector bundle $E \to X$,
         \item \label{bundles:eq:prop2_for_stiefel_whitney_classes} $w_i(E) = 0$ for $i > \mathrm{rank}(E)$,
         \item \label{bundles:eq:prop3_for_stiefel_whitney_classes} $w(E_1 \oplus E_2) = w(E_1) \smile w(E_2)$, where $w = 1 + w_1 + w_2 + \ldots$,
-        \item \label{bundles:eq:prop4_for_stiefel_whitney_classes} For the universal real line bundle $\gamma_1 \to \RP^\infty$, $w_1(\gamma_1)$ is the generator of $H^1(\RP^\infty;\Z_2) \cong \Z_2$.
+        \item \label{bundles:eq:prop4_for_stiefel_whitney_classes} For the universal real line bundle $\gamma_1 \to \RP^\infty$, the class $w_1(\gamma_1)$ is the generator of $H^1(\RP^\infty;\Z_2) \cong \Z_2$.
     \end{enumerate}
 \end{definition}
 
-Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes}, the sum $w = 1 + w_1 + w_2 + \ldots$ is always finite. The class $w(E)$ is called the \textit{total Stiefel-Whitney class of $E$}. We sometimes write $w_0(E) := 1 \in H^0(X;\Z_2)$ to simplify notation.
+Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes}, the sum $w = 1 + w_1 + w_2 + \ldots$ is always finite. The class \linebreak $w(E)$ is called the \textit{total Stiefel-Whitney class of $E$}. To simplify notation we also write \linebreak $w_0(E) := 1 \in H^0(X;\Z_2)$ .
 
 \begin{definition}[Chern Classes]
     There is a unique sequence of characteristic classes $c_1, c_2, \ldots$ for complex vector bundles with values in $H^\ast(-;\Z)$, such that 
@@ -388,11 +389,11 @@ Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes}, the su
         \item $c_i(E) \in H^{2i}(X;\Z)$ for any complex vector bundle $E \to X$,
         \item $c_i(E) = 0$ for $i > \mathrm{rank}(E)$,
         \item $c(E_1 \oplus E_2) = c(E_1) \smile c(E_2)$, where $c = 1 + c_1 + c_2 + \ldots$,
-        \item For the universal complex line bundle $\tau_1 \to \CP^\infty$, $c_1(\tau_1)$ is a generator of $H^2(\CP^\infty;\Z) \cong \Z$ specified in advance.
+        \item For the universal complex line bundle $\tau_1 \to \CP^\infty$, the class $c_1(\tau_1)$ is a generator of $H^2(\CP^\infty;\Z) \cong \Z$ specified in advance.
     \end{enumerate}
 \end{definition}
 
-Again the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write $c_0(E) := 1 \in H^0(X;\Z)$. Note that in both definitions, property \ref{bundles:eq:prop4_for_stiefel_whitney_classes} uniquely determines the values of the respective characteristic classes on line bundles and, together with property \ref{bundles:eq:prop3_for_stiefel_whitney_classes}, prescribes their values on bundles that split as sums of line bundles. The values on arbitrary vector bundles can then be deduced from a general splitting principle \cite[Prop. 3.3]{Hatcher2003VectorBundles}. We refer the reader to \cite{Hatcher2003VectorBundles} for a detailed proof of existence and uniqueness.
+Again, the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write \linebreak $c_0(E) := 1 \in H^0(X;\Z)$. Note that in both definitions, property \ref{bundles:eq:prop4_for_stiefel_whitney_classes} uniquely determines the values of the respective characteristic classes on line bundles and, together with property \ref{bundles:eq:prop3_for_stiefel_whitney_classes}, prescribes their values on bundles that split as sums of line bundles. The values on arbitrary vector bundles can then be deduced from a general splitting principle \cite[Prop. 3.3]{Hatcher2003VectorBundles}. We refer the reader to \cite{Hatcher2003VectorBundles} for a detailed proof of existence and uniqueness.
 
 Not only are the definitions of Stiefel-Whitney and Chern classes formally quite similar, but there is also a direct connection between the two.
 
@@ -417,7 +418,7 @@ Let us look at a few examples.
     \end{enumerate}
 \end{example}
 
-The last example shows that although all Stiefel-Whitney classes of a vector bundle vanish, it need not be trivial. However, for real (resp. complex) vector bundles of rank $1$, it turns out that the first Stiefel-Whitney (resp. Chern) class already determines the bundle:
+The last example shows that although all Stiefel-Whitney classes of a vector bundle vanish, it need not be trivial. However, for real (resp. complex) vector bundles of rank~$1$, it turns out that the first Stiefel-Whitney (resp. Chern) class already determines the bundle:
 
 \begin{proposition}[{\cite[Prop. 3.10]{Hatcher2003VectorBundles}}]
     \label{bundles:thm:line_bundles_determined_by_chern_class}
@@ -462,6 +463,7 @@ Note that the existence of a spin structure does not depend on the chosen orient
 \begin{example}
     \label{bundles:ex:spin_and_non_spin}
     \begin{enumerate}[label=(\roman*)]
+        \item[]
         \item It follows from the above theorem and Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3} that all spheres $S^n$, $n\geq 1$, are spin.
         \item \label{bundles:ex:cp2_not_spin} The total Chern class of the tangent bundle $T\CP^n$ of $\CP^n$ can be computed to be 
         \[
@@ -473,22 +475,26 @@ Note that the existence of a spin structure does not depend on the chosen orient
 
 \begin{remark}
     \label{bundles:rem:classifying_map_for_spin_bundles}
-    Let $E \to X$ be a real vector bundle. If $E$ is orientable, we have seen that this bundle is classified by a map $X \to B\mathrm{SO}(n)$. Similarly, if a spin structure exists, $E$ is classified by a map $X \to B\spin(n)$, which can be seen as follows. Define a vector bundle 
+    Let $E \to X$ be a real vector bundle. If $E$ is orientable, we have seen that this bundle is classified by a map $X \to B\mathrm{SO}(n)$. Similarly, if a spin structure exists, $E$ is classified by a map $X \to B\spin(n)$, which can be seen as follows. Using Lemma \ref{bundles:lem:borel_construction}, define a vector bundle 
     \[
-    \gamma_n^\spin := E\spin(n) \times_{\spin(n)} \R^n
+    \gamma_n^\spin := E\spin(n) \times_{\spin(n)} \R^n,
     \]
-    using Lemma \ref{bundles:lem:borel_construction}, where $\spin(n)$ acts on $\R^n$ by virtue of the covering map $\rho \colon \spin(n) \to \so(n)$ and the canonical action of $\so(n)$. Let $\phi \colon \spin(E) \to \so(E)$ be a spin structure on $E$ and let $f \colon X \to B\spin(n)$ be a classifying map for $\spin(E)$. From Lemma \ref{bundles:lem:natruality_of_changing_fiber} we obtain
+    where $\spin(n)$ acts on $\R^n$ by virtue of the covering map $\rho \colon \spin(n) \to \so(n)$ and the canonical action of $\so(n)$. Let $\phi \colon \spin(E) \to \so(E)$ be a spin structure on $E$ and let $f \colon X \to B\spin(n)$ be a classifying map for $\spin(E)$. From Lemma \ref{bundles:lem:natruality_of_changing_fiber} we obtain
     \[
     f^\ast \gamma_n^\spin \cong \spin(E) \times_{\spin(n)} \R^n.
     \]
-    Moreover, the spin structure $\phi$ induces an isomorphism $\spin(E) \times_{\spin(n)} \R^n \to \so(E) \times_{\so(n)} \R^n \cong E$ of vector bundles by
+    Moreover, the spin structure $\phi$ induces a map
     \[
+    \spin(E) \times_{\spin(n)} \R^n \to \so(E) \times_{\so(n)} \R^n \cong E
+    \] 
+    of vector bundles by
+    $
     [(x,v)] \mapsto [(\phi(x),v)].
-    \]
+    $
     Since this map restricts to a linear bijection on each fiber, it is an isomorphism of vector bundles. 
 \end{remark}
 
-Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ restricted to any embedded loop $S^1 \subseteq M$ is trivial. Or, in other words, ``$TM$ does not contain any Moebius bands''. A similar characterization can be given for spin manifolds, which is why the property of being spin is sometimes referred to as a higher dimensional analogue of orientability.
+Recall that a manifold $M$ is orientable if and only if its tangent bundle $TM$ restricted to any embedded loop $S^1 \subseteq M$ is trivial. Or, in other words, ``$TM$ does not contain any Möbius bands''. A similar characterization can be given for spin manifolds, which is why the property of being spin is sometimes referred to as a higher dimensional analogue of orientability.
 
 \begin{proposition}
     \label{bundles:prop:spin_characterisation}
@@ -527,5 +533,5 @@ Finally, we record another scenario in which the vanishing of all Stiefel-Whitne
 \end{lemma}
 
 \begin{proof}
-    Combining Theorem \ref{bundles:thm:spin_iff_w2_vanishes} and Remark \ref{bundles:rem:classifying_map_for_spin_bundles}, we conclude that there exists a classifying map $f \colon S \to B\spin(n)$ for $E$, where $n$ is the rank of $E$. From Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG} it follows that $\pi_k(B\spin(n)) = 0$ for $k \leq 2$. Since $S$ is two-dimensional, the map $f$ is homotopic to a constant by \cite[Lem. 4.6]{Hatcher2002AlgebraicTopology}, therefore $E \cong f^\ast \xi_\spin$ is trivial.
+    We argue as in \cite[Proof of Prop. 2.6 (i)]{Frenck2026Doubling}. Combining Theorem \ref{bundles:thm:spin_iff_w2_vanishes} and Remark \ref{bundles:rem:classifying_map_for_spin_bundles}, we conclude that there exists a classifying map $f \colon S \to B\spin(n)$ for $E$, where $n$ is the rank of $E$. From Example \ref{bundles:ex:examples_for_classifiying_spaces} \ref{bundles:ex:homotopy_groups_of_BG} it follows that $\pi_k(B\spin(n)) = 0$ for $k \leq 2$. Since $S$ is two-dimensional, the map $f$ is homotopic to a constant by \cite[Lem. 4.6]{Hatcher2002AlgebraicTopology}, therefore $E \cong f^\ast \xi_\spin$ is trivial.
 \end{proof}
