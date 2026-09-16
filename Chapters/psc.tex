@@ -16,7 +16,7 @@ Let $M^n$ be an $n$-dimensional manifold. Given any Riemannian metric $g$ on $M$
 \end{figure}
 \vspace{.1cm}
 
-In dimension $2$, scalar curvature is the only intrinsic notion of curvature. However, in dimensions $n \geq 3$, there exists a whole hierarchy of different curvatures, the most prominent of which are sectional curvature, Ricci curvature and scalar curvature. The sectional curvature is the strongest notion and determines the entire geometry of $M$. In this thesis, we are concerned with the scalar curvature, which is the weakest among the three. In most textbooks on Riemannian geometry, it is defined by taking twice the trace of the Riemannian curvature tensor. While this definition is best suited for explicit computations, it provides no further intuition on what scalar curvature is. Since we have no need for doing such explicit computations, we give a more geometric definition, which essentially extends our intuition in the $2$-dimensional case to arbitrary dimensions.
+In dimension $2$, scalar curvature is the only intrinsic notion of curvature. However, in dimensions $n \geq 3$, there exists a whole hierarchy of different curvatures, the most prominent of which are sectional curvature, Ricci curvature and scalar curvature. The sectional curvature is the strongest notion and determines the entire geometry of $M$. In this thesis, we are concerned with the scalar curvature, which is the weakest among the three. In most textbooks on Riemannian geometry, it is defined by taking twice the trace of the Riemannian curvature tensor. While this definition is best suited for explicit computations, it provides no further intuition on what scalar curvature is. Since we have no need for doing such explicit computations, we give a more geometric definition, which essentially extends the intuition in the $2$-dimensional case to arbitrary dimensions.
 
 \begin{definition}
     Let $(M^n,g)$ be an $n$-dimensional Riemannian manifold. The scalar curvature $\scal_g(x) \in \R$ at an interior point $x \in M$ is defined as the value appearing in the third coefficient of the Taylor expansion
@@ -32,7 +32,7 @@ So, intuitively, $\scal_g(x) > 0$ means that the volume of a ball in $M$ around 
     \begin{enumerate}[label=(\roman*)]
         \label{psc:ex:scalar_curvature_examples}
         \item[]
-        \item \vspace{-.4em} We immediately obtain from the definition that the scalar curvature of $\R^n$ with the usual Euclidean metric is zero.
+        \item \vspace{-.5em} We immediately obtain from the definition that the scalar curvature of $\R^n$ with the usual Euclidean metric is zero.
         \item \label{psc:ex:scalar_curvature_examples2} If $(M,g)$ is one-dimensional, the volume of a geodesic ball of radius $r$ is simply $2r$. Therefore, $\scal_g = 0$.
         \item \label{psc:ex:scalar_curvature_examples3} The scalar curvature of the unit sphere $S^n \subseteq \R^{n+1}$ can be computed to equal $n(n-1)$.
         \item \label{psc:ex:scalar_curvature_examples4} Let $(M_1,g_1)$ and $(M_2,g_2)$ be Riemannian manifolds. Then the scalar curvature of the product $(M_1 \times M_2, g_1 + g_2)$ equipped with the product metric $g_1 + g_2$, is given by $\scal_{g_1 + g_2}(x_1,x_2) = \scal_{g_1}(x_1) + \scal_{g_2}(x_2)$ for $x_i \in M_i$. We refer the reader to any classical textbook on Riemannian geometry for a proof of these last two examples.
@@ -86,7 +86,7 @@ We refer the reader to \cite{LawsonMichelsohn1989SpinGeometry} for an in-depth d
     Let $M^n$ be a closed connected Riemannian spin manifold of dimension $n \geq 2$. Suppose $\scal_g \geq n(n-1)$ and let $f\colon M \to S^n$ be a smooth $1$-Lipschitz map with $\mathrm{deg}(f) \neq 0$. Then $f$ is an isometry.
 \end{theorem}
 
-As we noted in Example \ref{psc:ex:scalar_curvature_examples} \ref{psc:ex:scalar_curvature_examples3}, the constant $n(n-1)$ is equal to the scalar curvature of the $n$-sphere $S^n$ with the standard round metric $g_0$. Llarull then applied this theorem in the special case $M = S^n$ and $f = \mathrm{id}$ to show that the only metric $g$ on $S^n$ with $\scal_g \geq n(n-1)$ and $g \geq g_0$ is $g_0$ itself. Said differently, one cannot increase the curvature of the sphere without contracting distances. We conclude our discussion of scalar curvature rigidity results with another strongly geometric statement, which is an example for a so-called \textit{band width estimate} \cite[p. 2]{gromov2018metric}. 
+As we noted in Example \ref{psc:ex:scalar_curvature_examples} \ref{psc:ex:scalar_curvature_examples3}, the constant $n(n-1)$ is equal to the scalar curvature of the $n$-sphere $S^n$ with the standard round metric $g_0$. Llarull then applied this theorem in the special case $M = S^n$ and $f = \mathrm{id}$ to show that the only metric $g$ on $S^n$ with $\scal_g \geq n(n-1)$ and $g \geq g_0$ is $g_0$ itself. Said differently, one cannot increase the curvature of the sphere without contracting distances. We conclude our discussion of positive scalar curvature rigidity results with another strongly geometric statement, which is an example for a so-called \textit{band width estimate} \cite[p. 2]{gromov2018metric}. 
 
 \begin{theorem}[Gromov, 2018]
     \label{psc:thm:band_width_estimate}
@@ -168,11 +168,11 @@ Using surjectivity of $f_\ast$, a diagram chase shows that there exist lifts $\a
 \[
 \phi_i \colon S^2 \to W.
 \]
-We show that the normal bundle $\nu_i$ of $\phi_i$ is trivial. Since $W$ is oriented, it follows from Proposition \ref{bundles:prop:orientable_iff_w1_vanishes} that $w_1(\phi_i^\ast TW) = 0$. Furthermore, $F\circ \phi_i$ is null-homotopic by construction, so that 
+We show that the normal bundle $\nu_i$ of $\phi_i$ is trivial. By construction, $F\circ \phi_i$ is null-homotopic, so that 
 \[
-w_2(\phi_i^\ast TW) = w_2 ((F \circ \phi_i)^\ast \gamma_{n+1}^\so) = 0.
+\phi_i^\ast TW = (F \circ \phi_i)^\ast \gamma_{n+1}^\so
 \]
-Using $w_k(TS^2) = 0$ (see Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3}), we compute
+is trivial. Using $w_k(TS^2) = 0$ (see Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3}), we compute
 \[
 w_k(\nu_i) = w_k(\nu_i \oplus TS^2) = w_k(\phi_i^\ast TW) = 0
 \]
@@ -180,7 +180,7 @@ for $k = 1,2$. Thus, Lemma \ref{bundles:lem:criterion_for_triviality} shows that
 \[
 \pi_2(W^\prime,M_1) = 0
 \]
-and $\pi_1(W^\prime,M_1) \cong \pi_1(W,M_1) = 0$; see Proposition \ref{appendix:prop:surger_killer} \ref{appendix:eq:surgery_killer_relative_version} and Remark \ref{appendix:rem:zpi_module_in_kernel}. In other words, the inclusion $M_1 \to W^\prime$ is $2$-connected. So, by Theorem \ref{psc:thm:extending_psc_to_cobordism}, there exists a \psc\nobreakdash-metric $g$ on $W^\prime$, which is of product form near the boundary. To construct a \psc\nobreakdash-metric on the original cobordism $W$, observe that, since $W^\prime$ was obtained from $W$ by surgeries of dimension $2$, $W$ can be obtained from $W^\prime$ by surgeries of codimension $3$. Therefore, the Surgery Theorem applies to construct a \psc-metric on $W$ and by Remark \ref{psc:rem:surgery_thm_locality} this metric is still in product form near the boundary.
+and $\pi_1(W^\prime,M_1) \cong \pi_1(W,M_1) = 0$; see Proposition \ref{appendix:prop:surger_killer} \ref{appendix:eq:surgery_killer_relative_version} and Remark \ref{appendix:rem:zpi_module_in_kernel}. In other words, the inclusion $M_1 \to W^\prime$ is $2$-connected. So, by Theorem \ref{psc:thm:extending_psc_to_cobordism}, there exists a \psc\nobreakdash-metric $g$ on $W^\prime$, which is of product form near the boundary. To construct a \psc\nobreakdash-metric on the original cobordism $W$, observe that, since $W^\prime$ was obtained from $W$ by surgeries of dimension $2$, $W$ can be obtained from $W^\prime$ by surgeries of codimension $3$. Therefore, the Surgery Theorem applies to construct a \psc-metric on $W$ and by Remark \ref{psc:rem:surgery_thm_locality} this metric is still of product form near the boundary.
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{psc:thm:existence_result_spin}]
@@ -193,10 +193,13 @@ and $\pi_1(W^\prime,M_1) \cong \pi_1(W,M_1) = 0$; see Proposition \ref{appendix:
 
 In the construction in \hyperref[chapter:main_construction]{Chapter 4} we will invoke Theorem \ref{psc:thm:existence_result_totally_non_spin} to obtain a \psc\nobreakdash-metric, so let us conclude this section by discussing some basic results for identifying totally non-spin manifolds.
 
+\needspace{5cm}
+
 \begin{lemma}
     \label{psc:lem:totally_non_spin_lemma} 
     \begin{enumerate}[label=(\roman*)]
-        \item The product of a totally non-spin manifold with any non-empty manifold is totally non-spin. \label{eq:totally_non_spin_lemma1}
+        \item[]
+        \item \vspace{-.5em} The product of a totally non-spin manifold with any non-empty manifold is totally non-spin. \label{eq:totally_non_spin_lemma1}
         \item A manifold containing a totally non-spin submanifold of codimension $0$ is totally non-spin. \label{eq:totally_non_spin_lemma2}
         \item If $M$ is totally non-spin and of dimension $n \geq 3$, then $M - D^n$ is totally non-spin for any embedded disk $D^n \subseteq \mathrm{int}(M)$ in the interior of $M$. \label{eq:totally_non_spin_lemma3}
     \end{enumerate}

@@ -1,6 +1,19 @@
-\chapter{Short Introduction to Surgery and Cobordisms}
+\cleardoublepage
+\hypertarget{appendixdivider}{}
+\addtocontents{toc}{\protect\contentsline{chapter}{\protect\hyperlink{appendixdivider}{\appendixname}}{}{}}
+\begingroup
+  \let\OriginalChapterHeadStartVSkip\chapterheadstartvskip
+  \renewcommand*{\chapterheadstartvskip}{%
+    \OriginalChapterHeadStartVSkip
+    \raggedright\usekomafont{chapter}\sffamily\bfseries\appendixname\par
+    \vspace{0.5em}%
+  }
+  \chapter{Short Introduction to Surgery and Cobordisms}
+  \label{chapter:appendix_a}
+\endgroup
+\vspace{-1.9em}
 
-Surgery is a method to change the topology of a manifold in a controlled way. The basic idea is the observation that a product of spheres $S^k \times S^{n-k-1}$ can be considered as the boundary of both $S^k \times D^{n-k}$ and of $D^{k+1} \times S^{n-k-1}$. This allows for the following construction. Let $M^n$ be a manifold of dimension $n$ and let $F \colon S^k \times D^{n-k} \to M$ be an embedding into the interior of $M$. Consider the manifold
+\noindent Surgery is a method to change the topology of a manifold in a controlled way. The basic idea is the observation that a product of spheres $S^k \times S^{n-k-1}$ can be considered as the boundary of both $S^k \times D^{n-k}$ and of $D^{k+1} \times S^{n-k-1}$. This allows for the following construction. Let $M^n$ be a manifold of dimension $n$ and let $F \colon S^k \times D^{n-k} \to M$ be an embedding into the interior of $M$. Consider the manifold
 \[
 \tilde{M} := M - \mathrm{int}(\mathrm{im}(F)).
 \]
@@ -15,7 +28,7 @@ To $\tilde{M}$ we can attach $D^{k+1} \times S^{n-k-1}$ along the boundary compo
 \end{tikzcd}\]
 Up to diffeomorphism, there exists a unique smooth structure on $M^\prime$, such that the topological embeddings $\tilde{M} \to M^\prime$ and $D^{k+1} \times S^{n-k-1} \to M^\prime$ are smooth embeddings, see \cite[Thm. 1.4]{Milnor1965}. We say that the manifold $M^\prime$ is obtained from $M$ by surgery along $F$. Intuitively, we remove a thickened $k$-sphere from $M$ and glue in its place a thickened $(n-k-1)$-sphere. Accordingly, we refer to the surgery along $F$ as a surgery of dimension $k$, or simply a $k$-surgery. 
 
-A closely related concept is the theory of cobordisms. Two closed $n$-dimensional manifolds $M$ and $M^\prime$ are called \textit{cobordant} if there exists a compact manifold $W^{n+1}$ whose boundary is the disjoint union of $M$ and $M^\prime$. The manifold $W$ is called a \textit{cobordism} between $M$ and $M^\prime$. If $M^\prime = \emptyset$, we also refer to $W$ as a \textit{nullbordism} and call $M$ \textit{nullbordant}. Since any closed manifold is cobordant to itself via the trivial cobordism $M \times [0,1]$, and cobordisms can be glued together along common boundary components, the relation of cobordism defines an equivalence relation on the class of closed $n$-dimensional manifolds. One way to construct a new cobordism out of a given one is by means of \textit{handle attachments}. Suppose we are given an embedding $\phi \colon S^k \times D^{n-k} \to \partial W$. Then we can form a new manifold $W^\prime$ by attaching a so-called $(k+1)$-handle $D^{k+1} \times D^{n-k}$ to $W$ along $\phi$, that is, we form the pushout 
+A closely related concept is the theory of cobordisms. Two closed $n$-dimensional manifolds $M$ and $M^\prime$ are called \textit{cobordant} if there exists a compact manifold $W^{n+1}$ whose boundary is the disjoint union of $M$ and $M^\prime$. The manifold $W$ is called a \textit{cobordism} between $M$ and $M^\prime$. If $M^\prime = \emptyset$, we also refer to $W$ as a \textit{nullbordism} and call $M$ \textit{nullbordant}. Since any closed manifold is cobordant to itself via the trivial cobordism $M \times [0,1]$, and cobordisms can be glued together along common boundary components, the relation of manifolds being cobordant defines an equivalence relation on the class of closed $n$-dimensional manifolds. One way to construct a new cobordism out of a given one is by means of \textit{handle attachments}. Suppose we are given an embedding $\phi \colon S^k \times D^{n-k} \to \partial W$. Then we can form a new manifold $W^\prime$ by attaching a so-called $(k+1)$-handle $D^{k+1} \times D^{n-k}$ to $W$ along $\phi$, that is, we form the pushout 
 \[\begin{tikzcd}
 	{S^k \times D^{n-k}} & W \\
 	{D^{k+1} \times D^{n-k}} & {W^\prime}
@@ -33,14 +46,19 @@ Again, some care needs to be taken to define a smooth structure on $W^\prime$, s
 
 The cobordism $W$ in the above theorem corresponding to a specific surgery is also referred to as the \emph{trace of the surgery}. It turns out that an arbitrary cobordism $W$ from $M$ to $M^\prime$ can be obtained from the trivial cobordism $M \times [0,1]$ by attaching finitely many handles \cite[Chapter VII, Thm. 1.1]{kosinski2013differential}. Combining this with the above theorem, we conclude that $M$ and $M^\prime$ are cobordant if and only if they can be obtained from each other by performing finitely many surgeries and, moreover, the dimensions of these surgeries correspond to the indices of the handles in the cobordism.
 
-One common use case of surgery is to modify a given manifold $M$ so as to simplify its homotopy groups. Essentially, given some embedding $f \colon S^k \to M$, we would like to modify the topology of $M$, such that $f$ becomes contractible. We could just glue in a disk $D^{k+1}$ along $f$. However, this would destroy the manifold structure. So instead we ``thicken'' the embedded sphere $f(S^k)$ by extending $f$ to an embedding $F \colon S^k \times D^{n-k} \to M$, remove this thickened sphere, and glue in a whole family of disks $D^{k+1} \times S^{n-k-1}$, i.e. we perform a $k$-surgery. This process is often referred to as ``killing'' the homotopy class $[f]$ by surgery. Such a surgery is, of course, only possible if an extension $F$ of $f$ exists, which is the case if and only if the normal bundle of $f$ is trivial. The following proposition now formalizes this idea of killing homotopy classes by surgery.
+One common use case of surgery is to modify a given manifold $M$ so as to simplify its homotopy groups. Essentially, given some embedding $f \colon S^k \to M$, we would like to modify the topology of $M$, such that $f$ becomes contractible. We could just glue in a disk $D^{k+1}$ along $f$. However, this would destroy the manifold structure. So instead we ``thicken'' the embedded sphere $f(S^k)$ by extending $f$ to an embedding $F \colon S^k \times D^{n-k} \to M$, remove this thickened sphere, and glue in a whole family of disks $D^{k+1} \times S^{n-k-1}$, i.e. we perform a $k$-surgery. This process is often referred to as ``killing'' the homotopy class $[f]$ by surgery.
 
+\vspace{\baselineskip}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{graphics/surgery/surgery_graphic.pdf}
     \caption[Performing a $1$-surgery on the torus]{Performing a $1$-surgery on the torus to kill the homotopy class represented by $f$. The resulting space is a $2$-sphere, where the corresponding class is now trivial.}
 \end{figure} 
+\vspace{\baselineskip}
 
+Such a surgery is, of course, only possible if an extension $F$ of $f$ exists, which is the case if and only if the normal bundle of $f$ is trivial. The following proposition now formalizes this idea of killing homotopy classes by surgery.
+
+\newpage
 \begin{proposition}
     \label{appendix:prop:surger_killer}
     Let $W^n$ be a manifold with basepoint $w_0 \in W$, $M \subseteq \partial W$ a subset of the boundary with basepoint $x_0 \in M$, and $k \geq 1$ with $2(k+1) \leq n$.
@@ -102,6 +120,8 @@ One common use case of surgery is to modify a given manifold $M$ so as to simpli
     \end{dcases}
     \] 
 \end{proof}
+
+\needspace{5cm}
 
 \begin{proof}[Proof of Proposition \ref{appendix:prop:surger_killer}]
     Without loss of generality, $W$ may be assumed to be connected. We first prove the absolute version \ref{appendix:eq:surgery_killer_absolute_version} of the proposition in three steps.

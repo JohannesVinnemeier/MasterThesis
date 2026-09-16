@@ -76,7 +76,7 @@ and let $p^\prime \colon E^\prime \to B, \: [(b,f^\prime,\alpha)] \mapsto b$. Th
 \[
     \psi_\alpha \colon U_\alpha \times F^\prime \to (p^\prime)^{-1}(U_\alpha), \; (b,f^\prime) \mapsto [(b,f^\prime,\alpha)].
 \]
-define local trivialisations of $p^\prime$ with the same transition functions $\tau_{\alpha\beta}$, giving $p^\prime \colon E^\prime \to B$ the structure of a fiber bundle with fiber $F^\prime$ and structure group $G$. We say that this new bundle is obtained from $E \to B$ by \textit{changing the fiber} from $F$ to $F^\prime$ (with the $G$-action on $F^\prime$ being implicit). Note that we can also obtain $E \to B$ from $E^\prime \to B$ by changing the fiber from $F^\prime$ back to $F$. Thus no information is lost in this process. Considering the special case $F^\prime = G$ with $G$ acting on itself by left translations, we call the bundle obtained from $E \to B$ by changing the fiber from $F$ to $G$ the \textit{associated principal bundle}. Morally speaking, if we want to understand the bundle $E \to B$, it is sufficient to understand its associated principal bundle, since this contains the same information, as we have seen above. The benefit of studying principal bundles is that they are highly symmetric objects, and thus usually easier to understand. For example, many constructions simplify for principal bundles, such as the concept of universal bundles, as we will see in the next section. Another such instance is the construction for changing the fiber from above. In the case of principal bundles this can be carried out more directly and has the benefit of also allowing for non-effective group actions. This is known as the \textit{Borel Construction}.
+define local trivialisations of $p^\prime$ with the same transition functions $\tau_{\alpha\beta}$, giving $p^\prime \colon E^\prime \to B$ the structure of a fiber bundle with fiber $F^\prime$ and structure group $G$. We say that this new bundle is obtained from $E \to B$ by \textit{changing the fiber} from $F$ to $F^\prime$ (with the $G$-action on $F^\prime$ being implicit). Note that we can also obtain $E \to B$ from $E^\prime \to B$ by changing the fiber from $F^\prime$ back to $F$. Thus no information is lost in this process. Considering the special case $F^\prime = G$ with $G$ acting on itself by left translations, we call the bundle obtained from $E \to B$ by changing the fiber from $F$ to $G$ the \textit{associated principal bundle}. Morally speaking, if we want to understand the bundle $E \to B$, it is sufficient to understand its associated principal bundle, since this contains the same information, as we have seen above. The benefit of studying principal bundles is that they are highly symmetric objects, and thus usually easier to understand. For example, many constructions simplify for principal bundles, such as the concept of universal bundles, as we will see in the next section. Another such instance is the change-of-fiber construction from above. In the case of principal bundles this can be carried out more directly and has the benefit of also allowing for non-effective group actions. This is known as the \textit{Borel Construction}.
 
 \begin{lemma}
     \label{bundles:lem:borel_construction}
@@ -153,11 +153,11 @@ Let us look at some concrete examples for the theory developed above.
     \label{bundles:ex:associated_bundles}
     \begin{enumerate}[label=(\roman*)] 
         \item[] 
-        \item \vspace{-.5em} Let $\pi \colon E \to B$ be a real rank $n$ vector bundle over a paracompact base space $B$. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $\mathrm{O}(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle $\mathrm{O}(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all ordered orthonormal bases of $E_x$. The topology on $\mathrm{O}(E)$ is the subspace topology $\mathrm{O}(E) \subseteq E \times \ldots \times E$. Local trivialisations of the canonical projection map $p \colon \mathrm{O}(E) \to B$ can be defined as follows. Choose an orthonormal local frame $e_1,\ldots,e_n$ of $E$ defined over an open set $U \subseteq B$. Then a trivialisation $\phi \colon U \times \mathrm{O}(n) \to p^{-1}(U)$ is given by
+        \item \vspace{-.5em} Let $\pi \colon E \to B$ be a real rank $n$ vector bundle over a paracompact base space $B$. Choosing a bundle metric gives $E \to B$ the structure of a fiber bundle with fiber $\R^n$ and structure group $\mathrm{O}(n)$. The associated principal bundle is explicitly given by the \textit{orthonormal frame bundle} $\mathrm{O}(E)$ of $E$, whose fiber over a point $x \in B$ is the space of all ordered orthonormal bases of $E_x$. The topology on $\mathrm{O}(E)$ is the subspace topology $\mathrm{O}(E) \subseteq E \times \ldots \times E$. Local trivialisations of the canonical projection map $p \colon \mathrm{O}(E) \to B$ can be defined as follows. Choose an orthonormal local frame $e_1,\ldots,e_n$ of $E$ defined over an open set $U \subseteq B$. Then a trivialisation $\phi \colon U \times \mathrm{O}(n) \to p^{-1}(U)$ is given by
         \[
             (x,A) \mapsto \left(\sum_{i=1}^n a_{i1}e_i(x),\ldots,\sum_{i=1}^n a_{in}e_i(x)\right),
         \]
-        where $A = (a_{ij})$. So $\phi(x,A)$ is the basis of $E_x = \pi^{-1}(x)$, whose coordinates in the frame $(e_i)$ are precisely the columns of the matrix $A$. The transition functions of these trivialisations agree with the transition functions of the trivialisations of $E$. Since the transition functions uniquely determine the bundle, we conclude that $\mathrm{O}(E)$ is in fact isomorphic to the associated principal bundle as defined at the beginning of this section. If $E \to B$ is orientable, the structure group can be further reduced to $\so(n)$. Similarly, the associated principal bundle is then given by the \textit{oriented orthonormal frame bundle $\so(E)$ of $E$}, whose fiber over a point $x \in B$ is the space of all oriented ordered orthonormal bases of $E_x$. 
+        where $A = (a_{ij})$. So $\phi(x,A)$ is the basis of $E_x = \pi^{-1}(x)$, whose coordinates in the frame $(e_i)$ are precisely the columns of the matrix $A$. The transition functions of these trivialisations agree with the transition functions of the trivialisations of $E$. Since the transition functions uniquely determine the bundle, we conclude that $\mathrm{O}(E)$ is in fact isomorphic to the associated principal bundle as defined at the beginning of this section. If $E \to B$ is orientable, the structure group can be further reduced to $\so(n)$. Similarly, the associated principal bundle is then given by the \textit{oriented orthonormal frame bundle} $\so(E)$ of $E$, whose fiber over a point $x \in B$ is the space of all oriented ordered orthonormal bases of $E_x$. 
         \item Let $E \to B$ be a complex rank $n$ vector bundle. Analogous to the real case, a choice of hermitian metric on $E$ allows us to reduce the structure group to $\mathrm{U}(n)$, and the corresponding associated principal bundle is the \textit{unitary frame bundle} $\mathrm{U}(E)$, whose fiber over a point $x \in B$ is the space of all ordered unitary bases of $E_x$.
         \item \label{bundles:ex:associated_bundles_cpn} Let $p \colon \tau_1^n \to \CP^n$ be the tautological complex line bundle equipped with the canonical hermitian metric. Since this bundle is of rank $1$, its unitary frame bundle is simply the subspace $\mathrm{U}(\tau_1^n) \subseteq \tau_1^n$ of all vectors of norm $1$, together with the restriction of $p$ to this subspace. Recall that
         \[
@@ -195,7 +195,7 @@ Before showing the theorem, let us discuss its implications. Firstly, we can equ
 \[
 P \cong f^\ast EG.
 \]
-We call $f$ a \textit{classifying map} for $P$. By homotopy invariance of the pullback, we get a well-defined bijection 
+We call $f$ a \textit{classifying map} for $P$. By homotopy invariance of the pullback, we get a well-defined map 
 \[
 \phi_X \colon [X,BG] \to \mathcal{P}_G(X), \; [f] \mapsto [f^\ast EG],
 \]
@@ -290,7 +290,7 @@ We conclude this section by discussing some examples.
     \label{bundles:ex:examples_for_classifiying_spaces}
     \begin{enumerate}[label=(\roman*)]
         \item[]
-        \item \label{bundles:ex:homotopy_groups_of_BG} From the long exact sequence of homotopy groups 
+        \item \vspace{-.5em}\label{bundles:ex:homotopy_groups_of_BG} From the long exact sequence of homotopy groups 
         \[\begin{tikzcd}
         {\pi_k(EG)} & {\pi_k(BG)} & {\pi_{k-1}(G)} & {\pi_{k-1}(EG)}
         \arrow[from=1-1, to=1-2]
@@ -393,7 +393,7 @@ Note that by property \ref{bundles:eq:prop2_for_stiefel_whitney_classes}, the su
     \end{enumerate}
 \end{definition}
 
-Again, the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write \linebreak $c_0(E) := 1 \in H^0(X;\Z)$. Note that in both definitions, property \ref{bundles:eq:prop4_for_stiefel_whitney_classes} uniquely determines the values of the respective characteristic classes on line bundles and, together with property \ref{bundles:eq:prop3_for_stiefel_whitney_classes}, prescribes their values on bundles that split as sums of line bundles. The values on arbitrary vector bundles can then be deduced from a general splitting principle \cite[Prop. 3.3]{Hatcher2003VectorBundles}. We refer the reader to \cite{Hatcher2003VectorBundles} for a detailed proof of existence and uniqueness.
+Again, the \textit{total Chern class} $c = 1 + c_1 + c_2 + \ldots$ is well-defined and we write \linebreak $c_0(E) := 1 \in H^0(X;\Z)$. Note that in both definitions, property \ref{bundles:eq:prop4_for_stiefel_whitney_classes} uniquely determines the values of the respective characteristic classes on line bundles and, together with property \ref{bundles:eq:prop3_for_stiefel_whitney_classes}, prescribes their values on bundles that split as sums of line bundles. \linebreak The values on arbitrary vector bundles can then be deduced from a general splitting principle \cite[Prop. 3.3]{Hatcher2003VectorBundles}. We refer the reader to \cite{Hatcher2003VectorBundles} for a detailed proof of existence and uniqueness.
 
 Not only are the definitions of Stiefel-Whitney and Chern classes formally quite similar, but there is also a direct connection between the two.
 
@@ -408,7 +408,7 @@ Let us look at a few examples.
     \label{bundles:ex:characteristic_classes}
     \begin{enumerate}[label=(\roman*)]
         \item[]
-        \item \label{bundles:ex:characteristic_classes_part1} Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1$ is isomorphic to the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology, we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^1(\RP^n;\Z_2) \cong \Z_2$. Similarly, for the tautological complex line bundle $\tau_1^n \to \CP^n$, the class $c_1(\tau_1^n)$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
+        \item \vspace{-.5em} \label{bundles:ex:characteristic_classes_part1} Let $\iota \colon \RP^n \to \RP^\infty$ be the canonical inclusion. Then the pullback $\iota^\ast \gamma_1$ is isomorphic to the tautological line bundle $\gamma_1^n \to \RP^n$. Since $\iota$ induces an isomorphism on cohomology, we conclude from naturality that $w_1(\gamma_1^n) = \iota^\ast w_1(\gamma_1)$ is the generator of $H^1(\RP^n;\Z_2) \cong \Z_2$. Similarly, for the tautological complex line bundle $\tau_1^n \to \CP^n$, the class $c_1(\tau_1^n)$ is a generator of $H^2(\CP^n;\Z) \cong \Z$.
         \item Let $E \to X$ be a trivial real vector bundle. Then $E \cong f^\ast E$ for a constant map $f \colon X \to X$, and thus $w_i(E) = f^\ast w_i(E) = 0$ for all $i \geq 1$. Similarly, all Chern classes for complex trivial vector bundles vanish.
         \item \label{bundles:ex:characteristic_classes_part3} Let $TS^n \to S^n$ be the tangent bundle of the sphere and let $\nu_n \to S^n$ be the normal bundle with respect to the standard embedding $S^n \to \R^{n+1}$. Since $\nu_n$ and $TS^n \oplus \nu_n$ are trivial, we conclude from the previous example and property \ref{bundles:eq:prop3_for_stiefel_whitney_classes} in Definition \ref{bundles:def:Steifel_Whitney_Classes} that 
         \[
@@ -426,7 +426,7 @@ The last example shows that although all Stiefel-Whitney classes of a vector bun
     $$w_1 \colon \mathrm{Vect}_\R(X) \to H^1(X;\Z_2)$$ 
     and 
     $$c_1 \colon \mathrm{Vect}_\C(X) \to H^2(X;\Z)$$ 
-    are bijections. 
+    are natural bijections. 
 \end{proposition}
 
 While the first Stiefel-Whitney class of higher dimensional bundles does not identify their isomorphism type, it does characterize another important invariant, namely orientability:
@@ -438,9 +438,11 @@ While the first Stiefel-Whitney class of higher dimensional bundles does not ide
 
 Similarly, vanishing of the second Stiefel-Whitney class corresponds to the existence of another structure, namely that of a \textit{spin structure}. 
 
+\needspace{5cm}
 \begin{definition}
     \begin{enumerate}[label=(\roman*)]
-        \item For $n \geq 2$ the \textit{spin group} $\spin(n)$ is defined as the total space of the non-trivial two-sheeted covering $\rho \colon \spin(n) \to \so(n)$. If $n \geq 3$, this is the universal covering, and in the case $n=2$ we have $\spin(2) \cong \so(2)$. For $n=1$ we define $\spin(1) := \Z_2$, the total space of the two-sheeted covering $\rho \colon \Z_2 \to \so(1)$.
+        \item[]
+        \item \vspace{-.5em}For $n \geq 2$ the \textit{spin group} $\spin(n)$ is defined as the total space of the non-trivial two-sheeted covering $\rho \colon \spin(n) \to \so(n)$. If $n \geq 3$, this is the universal covering, and in the case $n=2$ we have $\spin(2) \cong \so(2)$. For $n=1$ we define $\spin(1) := \Z_2$, the total space of the two-sheeted covering $\rho \colon \Z_2 \to \so(1)$.
         \item Let $E \to X$ be an oriented real vector bundle equipped with a fiber metric and let $\so(E)$ be its oriented orthonormal frame bundle. A \textit{spin structure} on $E$ is a $\spin(n)$-principal bundle $\spin(E) \to X$ together with a map 
         \[
         \phi \colon \spin(E) \to \so(E)
@@ -450,9 +452,9 @@ Similarly, vanishing of the second Stiefel-Whitney class corresponds to the exis
     \end{enumerate}
 \end{definition}
 
-\begin{remark}
-    When $n=1$, $\mathrm{SO}(E) \cong X$ and a spin structure is simply a two-sheeted covering of $X$.
-\end{remark}
+% \begin{remark}
+%     When $n=1$, $\mathrm{SO}(E) \cong X$ and a spin structure is simply a two-sheeted covering of $X$.
+% \end{remark}
 Note that the existence of a spin structure does not depend on the chosen orientation or fiber metric on $E$, since different choices yield isomorphic oriented orthonormal frame bundles. In fact, the only obstruction to the existence of a spin structure is the second Stiefel-Whitney class, as mentioned above:
 
 \begin{theorem}[{\cite[Chapter 2, Thm. 1.7]{LawsonMichelsohn1989SpinGeometry}}]
@@ -464,7 +466,7 @@ Note that the existence of a spin structure does not depend on the chosen orient
     \label{bundles:ex:spin_and_non_spin}
     \begin{enumerate}[label=(\roman*)]
         \item[]
-        \item It follows from the above theorem and Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3} that all spheres $S^n$, $n\geq 1$, are spin.
+        \item \vspace{-.5em} It follows from the above theorem and Example \ref{bundles:ex:characteristic_classes} \ref{bundles:ex:characteristic_classes_part3} that all spheres $S^n$, $n\geq 1$, are spin.
         \item \label{bundles:ex:cp2_not_spin} The total Chern class of the tangent bundle $T\CP^n$ of $\CP^n$ can be computed to be 
         \[
         c(T\CP^n) = (1 + \alpha)^{n+1}

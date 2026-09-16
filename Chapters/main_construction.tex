@@ -4,7 +4,7 @@
 Recall the following question discussed in the \hyperref[chapter:intro]{Introduction}.
 
 \begin{question*}
-    Does there exist a circle bundle $E \to M$ over an enlargeable manifold $M$, such that the total space $E$ is non-enlargeable? Moreover, does there exist a real rank $2$ vector bundle $V \to M$, such that $V$ admits a complete metric of uniformly positive scalar curvature?
+    Does there exist a circle bundle $E \to M$ over an enlargeable manifold $M$, such that $E$ is non-enlargeable? Moreover, does there exist a real rank $2$ vector bundle $V \to M$, such that $V$ admits a complete metric of uniformly positive scalar curvature?
 \end{question*}
 
 We begin this chapter with an alternative approach to the one presented in \cite{kumar2025circle} for constructing examples addressing the first part of the question. We subsequently build on this construction to obtain an affirmative answer to the second part of the question.  
@@ -116,7 +116,7 @@ From Lemma \ref{psc:lem:totally_non_spin_lemma} \ref{eq:totally_non_spin_lemma1}
 \end{proof}
 
 \begin{proof}[\normalfont\textbf{Proof of property \ref{constr:property3}}]
-Intuitively, we can contract the fibers over the $S^{2n+1}$ contained in $E$. We can formalize this as follows. Consider the following commutative diagram, where the rows are taken from the long exact sequences of homotopy groups of the respective fibrations, and the vertical maps are induced by inclusions: 
+Intuitively, one can contract the fibers over the $S^{2n+1}$ contained in $E$. We can formalize this as follows. Consider the following commutative diagram, where the rows are taken from the long exact sequences of homotopy groups of the respective fibrations, and the vertical maps are induced by inclusions: 
 	\[\begin{tikzcd}
 	{\pi_2(M)} & {\pi_1(S^1)} & {\pi_1(E)} \\
 	{\pi_2(\CP^n - D^{2n})} & {\pi_1(S^1)} & {\pi_1(j^\ast E)} \\
@@ -166,7 +166,7 @@ Moreover, consider the Riemannian manifold $(E \times [1,\infty), g_E + dt^2)$ e
 \[
 (V^\prime, h) := (E \times [1,\infty) \cup_E DE, (g_E + dt^2) \cup_E g).
 \]
-We explicitly mention that the smooth structure on $V^\prime$ is defined with respect to the chosen collar neighbourhoods $\iota$ and $\mathrm{id}_{E \times [1,\infty)}$, so that $h$ is indeed smooth. Note that the metrics on both $E \times [1,\infty)$ and $DE$ are complete. Therefore $h$ is also complete. Furthermore, $g_E$ is a \psc-metric, hence the scalar curvature of $g_E + dt^2$ is uniformly positive by compactness of $E$ and Example \ref{psc:ex:scalar_curvature_examples} \ref{psc:ex:scalar_curvature_examples4}. The same holds for the scalar curvature of $g$. Consequently, $\scal_h$ is uniformly positive as well. Now consider the map $p_0 \colon E \times [1,\infty) \to M$ defined as the composition of the projection $E \times [1,\infty) \to E$ and the bundle projection $p \colon E \to M$. Together with the bundle projection $q \colon DE \to M$, we set
+The smooth structure on $V^\prime$ is defined with respect to the chosen collar neighbourhoods $\iota$ and $\mathrm{id}_{E \times [1,\infty)}$, so that $h$ is indeed smooth. Note that the metrics on both $E \times [1,\infty)$ and $DE$ are complete. Therefore $h$ is also complete. Furthermore, $g_E$ is a \psc-metric, hence the scalar curvature of $g_E + dt^2$ is uniformly positive by compactness of $E$ and \linebreak Example \ref{psc:ex:scalar_curvature_examples} \ref{psc:ex:scalar_curvature_examples4}. The same holds for the scalar curvature of $g$. Consequently, $\scal_h$ is uniformly positive as well. Now consider the map $p_0 \colon E \times [1,\infty) \to M$ defined as the composition of the projection $E \times [1,\infty) \to E$ and the bundle projection $p \colon E \to M$. Together with the bundle projection $q \colon DE \to M$, we set
 \[
 \pi := p_0 \cup_E q \colon V^\prime \to M,
 \] 
@@ -178,7 +178,7 @@ of $E \to M$ with smooth transition function $\tau_{\alpha\beta} \colon U_\alpha
 \[
 \psi_\alpha \colon U_\alpha \times D^2 \to q^{-1}(U_\alpha), \;\; \psi_\beta \colon U_\beta \times D^2 \to q^{-1}(U_\beta)
 \]
-of $DE \to M$ with the same transition function $\tau_{\alpha\beta}$. Let $B \subseteq \R^2$ be the open ball of radius $1$ and consider the diffeomorphism
+of $DE \to M$ with the same transition function $\tau_{\alpha\beta}$. Let $B \subseteq \R^2$ be the open ball of radius~$1$ and consider the diffeomorphism
 \[
 \mu \colon \R^2 - B \to S^1 \times [1,\infty), \; w \mapsto \left( \frac{w}{\abs{w}}, \abs{w} \right),
 \]
